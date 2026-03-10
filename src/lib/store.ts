@@ -1,4 +1,4 @@
-import { Client, Project, Transaction, UserPlan, PlanType } from "./types";
+import { Client, Project, Transaction, UserPlan, PlanType, IncomeGoal, Invoice } from "./types";
 import type { RecurringTransaction } from "./types";
 import { supabase } from "./supabase";
 
@@ -11,6 +11,9 @@ const STORAGE_KEYS = {
   userPlan: "ff_user_plan",
   recurring: "ff_recurring",
   currency: "ff_currency",
+  incomeGoal: "ff_income_goal",
+  invoices: "ff_invoices",
+  categories: "ff_categories",
 };
 
 // ─── Helpers ────────────────────────────────────────────────────────────
@@ -399,6 +402,51 @@ export function clearDemoData() {
   setItem(STORAGE_KEYS.transactions, getTransactions().filter((t) => !t.id.startsWith("demo-")));
   setItem(STORAGE_KEYS.clients, getClients().filter((c) => !c.id.startsWith("demo-")));
   setItem(STORAGE_KEYS.projects, getProjects().filter((p) => !p.id.startsWith("demo-")));
+}
+
+// ─── Categories ──────────────────────────────────────────────────────────
+
+export function getCategories(): string[] {
+  return getItem<string[]>(STORAGE_KEYS.categories, []);
+}
+
+export function saveCategory(name: string) {
+  const cats = getCategories();
+  if (!cats.includes(name)) {
+    cats.push(name);
+    setItem(STORAGE_KEYS.categories, cats);
+  }
+}
+
+export function deleteCategory(name: string) {
+  setItem(STORAGE_KEYS.categories, getCategories().filter((c) => c !== name));
+}
+
+// ─── Income Goals ────────────────────────────────────────────────────────
+
+export function getIncomeGoal(): IncomeGoal {
+  return getItem<IncomeGoal>(STORAGE_KEYS.incomeGoal, {
+    monthlyTarget: 0,
+    yearlyTarget: 0,
+  });
+}
+
+export function setIncomeGoal(goal: IncomeGoal) {
+  setItem(STORAGE_KEYS.incomeGoal, goal);
+}
+
+// ─── Invoices ────────────────────────────────────────────────────────────
+
+export function getInvoices(): Invoice[] {
+  return getItem<Invoice[]>(STORAGE_KEYS.invoices, []);
+}
+
+export function getOverdueInvoiceCount(): number {
+  const invoices = getInvoices();
+  const today = new Date().toISOString().split("T")[0];
+  return invoices.filter(
+    (inv) => (inv.status === "overdue" || (inv.status === "sent" && inv.dueDate < today))
+  ).length;
 }
 
 // ─── Plan ───────────────────────────────────────────────────────────────

@@ -205,43 +205,128 @@ export default function InvoicesPage() {
     const client = clients.find((c) => c.id === inv.clientId);
     const total = getTotal(inv.items);
 
+    const user = JSON.parse(localStorage.getItem("ff_user") || "{}");
+    const userName = user.name || "FreelanceFlow";
+    const userEmail = user.email || "";
+
     const html = `
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"><title>${inv.invoiceNumber}</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body{font-family:'Noto Sans Thai',sans-serif;margin:40px;color:#1a1a1a}
-  .header{display:flex;justify-content:space-between;margin-bottom:40px}
-  .title{font-size:28px;font-weight:bold;color:#6366f1}
-  .info{text-align:right;color:#64748b;font-size:14px}
-  .info strong{color:#1a1a1a}
-  table{width:100%;border-collapse:collapse;margin:24px 0}
-  th{background:#f1f5f9;text-align:left;padding:10px 12px;font-size:13px;color:#64748b}
-  td{padding:10px 12px;border-bottom:1px solid #e2e8f0;font-size:14px}
-  .total-row td{font-weight:bold;font-size:16px;border-top:2px solid #1a1a1a}
-  .notes{margin-top:24px;padding:16px;background:#f8fafc;border-radius:8px;font-size:13px;color:#64748b}
-  .status{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans Thai',sans-serif;color:#1e293b;background:#fff}
+  .page{max-width:800px;margin:0 auto;padding:48px}
+  .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px;padding-bottom:32px;border-bottom:3px solid #6366f1}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-icon{width:48px;height:48px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;font-weight:700}
+  .brand-name{font-size:24px;font-weight:700;color:#1e293b}
+  .brand-sub{font-size:13px;color:#94a3b8;margin-top:2px}
+  .inv-meta{text-align:right}
+  .inv-number{font-size:20px;font-weight:700;color:#6366f1;margin-bottom:8px}
+  .inv-date{font-size:13px;color:#64748b;line-height:1.8}
+  .parties{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px}
+  .party-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;font-weight:600;margin-bottom:8px}
+  .party-name{font-size:18px;font-weight:600;color:#1e293b;margin-bottom:4px}
+  .party-email{font-size:13px;color:#64748b}
+  .status-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-top:8px}
+  .status-paid{background:#dcfce7;color:#16a34a}
+  .status-sent{background:#dbeafe;color:#2563eb}
+  .status-draft{background:#f1f5f9;color:#64748b}
+  .status-overdue{background:#fef2f2;color:#dc2626}
+  table{width:100%;border-collapse:collapse;margin-bottom:32px}
+  thead th{background:#f8fafc;padding:14px 16px;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#64748b;font-weight:600;border-bottom:2px solid #e2e8f0}
+  thead th:first-child{text-align:left;border-radius:8px 0 0 0}
+  thead th:last-child{border-radius:0 8px 0 0}
+  tbody td{padding:14px 16px;font-size:14px;border-bottom:1px solid #f1f5f9;color:#334155}
+  tbody tr:hover{background:#fafbfc}
+  .text-right{text-align:right}
+  .total-section{display:flex;justify-content:flex-end;margin-bottom:40px}
+  .total-box{width:280px}
+  .total-row{display:flex;justify-content:space-between;padding:8px 0;font-size:14px;color:#64748b}
+  .total-row.grand{padding:14px 0;margin-top:8px;border-top:2px solid #1e293b;font-size:18px;font-weight:700;color:#1e293b}
+  .notes{padding:20px;background:#f8fafc;border-radius:12px;border-left:4px solid #6366f1;margin-bottom:40px}
+  .notes-label{font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#6366f1;font-weight:600;margin-bottom:8px}
+  .notes-text{font-size:13px;color:#64748b;line-height:1.6}
+  .footer{text-align:center;padding-top:32px;border-top:1px solid #e2e8f0;color:#94a3b8;font-size:12px}
+  .footer strong{color:#64748b}
+  @media print{.page{padding:24px}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style></head><body>
-<div class="header">
-  <div><div class="title">FreelanceFlow</div><div style="color:#64748b;font-size:14px;margin-top:4px">ใบแจ้งหนี้</div></div>
-  <div class="info">
-    <div><strong>${inv.invoiceNumber}</strong></div>
-    <div>วันที่: ${formatDate(inv.issueDate)}</div>
-    <div>ครบกำหนด: ${formatDate(inv.dueDate)}</div>
+<div class="page">
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">$</div>
+      <div>
+        <div class="brand-name">${userName}</div>
+        <div class="brand-sub">${userEmail}</div>
+      </div>
+    </div>
+    <div class="inv-meta">
+      <div class="inv-number">${inv.invoiceNumber}</div>
+      <div class="inv-date">
+        วันที่ออก: ${formatDate(inv.issueDate)}<br>
+        ครบกำหนด: ${formatDate(inv.dueDate)}
+      </div>
+    </div>
+  </div>
+
+  <div class="parties">
+    <div>
+      <div class="party-label">ผู้ออกใบแจ้งหนี้</div>
+      <div class="party-name">${userName}</div>
+      ${userEmail ? `<div class="party-email">${userEmail}</div>` : ""}
+    </div>
+    <div>
+      <div class="party-label">เรียกเก็บจาก</div>
+      <div class="party-name">${client?.name || "-"}</div>
+      ${client?.email ? `<div class="party-email">${client.email}</div>` : ""}
+      <span class="status-badge status-${inv.status}">${statusConfig[inv.status].label}</span>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:50%">รายการ</th>
+        <th class="text-right" style="width:15%">จำนวน</th>
+        <th class="text-right" style="width:17%">ราคา/หน่วย</th>
+        <th class="text-right" style="width:18%">รวม</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${inv.items.map((item, idx) => `
+      <tr>
+        <td><strong>${idx + 1}.</strong> ${item.description}</td>
+        <td class="text-right">${item.quantity}</td>
+        <td class="text-right">${formatCurrency(item.unitPrice)}</td>
+        <td class="text-right"><strong>${formatCurrency(item.quantity * item.unitPrice)}</strong></td>
+      </tr>`).join("")}
+    </tbody>
+  </table>
+
+  <div class="total-section">
+    <div class="total-box">
+      <div class="total-row">
+        <span>รวมย่อย (${inv.items.length} รายการ)</span>
+        <span>${formatCurrency(total)}</span>
+      </div>
+      <div class="total-row grand">
+        <span>ยอดรวมทั้งสิ้น</span>
+        <span>${formatCurrency(total)}</span>
+      </div>
+    </div>
+  </div>
+
+  ${inv.notes ? `
+  <div class="notes">
+    <div class="notes-label">หมายเหตุ</div>
+    <div class="notes-text">${inv.notes}</div>
+  </div>` : ""}
+
+  <div class="footer">
+    สร้างโดย <strong>FreelanceFlow</strong> · ขอบคุณที่ใช้บริการ
   </div>
 </div>
-<div style="margin-bottom:24px">
-  <div style="font-size:13px;color:#64748b">เรียกเก็บจาก:</div>
-  <div style="font-weight:600;font-size:16px">${client?.name || "-"}</div>
-  ${client?.email ? `<div style="color:#64748b;font-size:14px">${client.email}</div>` : ""}
-</div>
-<table>
-  <thead><tr><th>รายการ</th><th style="text-align:right">จำนวน</th><th style="text-align:right">ราคา/หน่วย</th><th style="text-align:right">รวม</th></tr></thead>
-  <tbody>
-    ${inv.items.map((item) => `<tr><td>${item.description}</td><td style="text-align:right">${item.quantity}</td><td style="text-align:right">${formatCurrency(item.unitPrice)}</td><td style="text-align:right">${formatCurrency(item.quantity * item.unitPrice)}</td></tr>`).join("")}
-    <tr class="total-row"><td colspan="3" style="text-align:right">ยอดรวมทั้งสิ้น</td><td style="text-align:right">${formatCurrency(total)}</td></tr>
-  </tbody>
-</table>
-${inv.notes ? `<div class="notes"><strong>หมายเหตุ:</strong> ${inv.notes}</div>` : ""}
 </body></html>`;
 
     const blob = new Blob([html], { type: "text/html" });

@@ -13,6 +13,8 @@ import {
   FileText,
   Lock,
   AlertTriangle,
+  Calendar as CalendarIcon,
+  Filter,
 } from "lucide-react";
 import {
   getTransactions,
@@ -21,6 +23,9 @@ import {
   getClients,
   getProjects,
   getDefaultCurrency,
+  getCategories,
+  saveCategory,
+  deleteCategory as removeCategory,
 } from "@/lib/store";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Transaction, Client, Project } from "@/lib/types";
@@ -31,7 +36,7 @@ import { exportTransactionsCSV, exportTransactionsPDF } from "@/lib/export";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
 
-const EXPENSE_CATEGORIES = [
+const DEFAULT_CATEGORIES = [
   "ซอฟต์แวร์และเครื่องมือ",
   "ฮาร์ดแวร์",
   "การตลาด",
@@ -82,6 +87,13 @@ export default function TransactionsPage() {
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState<"all" | "income" | "expense">("all");
   const [mounted, setMounted] = useState(false);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [showCategoryForm, setShowCategoryForm] = useState(false);
+  const [newCategoryName, setNewCategoryName] = useState("");
+  const [filterClient, setFilterClient] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTo] = useState("");
   const { isPro, canAddTransaction, transactionsRemaining } = usePlan();
   const { toast } = useToast();
   const { confirm } = useConfirm();
@@ -90,18 +102,55 @@ export default function TransactionsPage() {
     setTransactions(getTransactions());
     setClients(getClients());
     setProjects(getProjects());
+    setCategories([...DEFAULT_CATEGORIES, ...getCategories()]);
     setMounted(true);
   }, []);
+
+  const handleAddCategory = () => {
+    const name = newCategoryName.trim();
+    if (!name) return;
+    if (categories.includes(name)) {
+      toast("หมวดหมู่นี้มีอยู่แล้ว", "warning");
+      return;
+    }
+    saveCategory(name);
+    setCategories([...categories, name]);
+    setNewCategoryName("");
+    setShowCategoryForm(false);
+    toast("เพิ่มหมวดหมู่สำเร็จ");
+  };
+
+  const handleDeleteCategory = (name: string) => {
+    if (DEFAULT_CATEGORIES.includes(name)) return;
+    removeCategory(name);
+    setCategories(categories.filter((c) => c !== name));
+    toast("ลบหมวดหมู่สำเร็จ");
+  };
 
   const filtered = useMemo(() => {
     return transactions
       .filter((tx) => {
         if (filterType !== "all" && tx.type !== filterType) return false;
         if (search && !tx.description.toLowerCase().includes(search.toLowerCase())) return false;
+        if (filterClient && tx.clientId !== filterClient) return false;
+        if (filterCategory && tx.category !== filterCategory) return false;
+        if (dateFrom && tx.date < dateFrom) return false;
+        if (dateTo && tx.date > dateTo) return false;
         return true;
       })
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  }, [transactions, filterType, search]);
+  }, [transactions, filterType, search, filterClient, filterCategory, dateFrom, dateTo]);
+
+  const hasActiveFilters = search || filterType !== "all" || filterClient || filterCategory || dateFrom || dateTo;
+
+  const clearAllFilters = () => {
+    setSearch("");
+    setFilterType("all");
+    setFilterClient("");
+    setFilterCategory("");
+    setDateFrom("");
+    setDateTo("");
+  };
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -241,7 +290,7 @@ export default function TransactionsPage() {
             className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition flex items-center gap-2"
           >
             <Plus className="w-4 h-4" />
-            เพิ่ม
+            เพิ่มรายการ
           </button>
         </div>
       </div>
@@ -374,14 +423,42 @@ export default function TransactionsPage() {
               {/* Category (expenses only) */}
               {form.type === "expense" && (
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">หมวดหมู่</label>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="block text-sm font-medium">หมวดหมู่</label>
+                    <button
+                      type="button"
+                      onClick={() => setShowCategoryForm(!showCategoryForm)}
+                      className="text-xs text-primary hover:underline"
+                    >
+                      + เพิ่มหมวดหมู่
+                    </button>
+                  </div>
+                  {showCategoryForm && (
+                    <div className="flex gap-2 mb-2">
+                      <input
+                        type="text"
+                        value={newCategoryName}
+                        onChange={(e) => setNewCategoryName(e.target.value)}
+                        placeholder="ชื่อหมวดหมู่ใหม่"
+                        className="flex-1 px-3 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        onKeyDown={(e) => e.key === "Enter" && handleAddCategory()}
+                      />
+                      <button
+                        type="button"
+                        onClick={handleAddCategory}
+                        className="px-3 py-2 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary-dark transition"
+                      >
+                        เพิ่ม
+                      </button>
+                    </div>
+                  )}
                   <select
                     value={form.category}
                     onChange={(e) => { setForm({ ...form, category: e.target.value }); setErrors({ ...errors, category: "" }); }}
                     className={`w-full px-4 py-2.5 rounded-xl border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${errors.category ? "border-danger" : "border-border"}`}
                   >
                     <option value="">เลือกหมวดหมู่</option>
-                    {EXPENSE_CATEGORIES.map((cat) => (
+                    {categories.map((cat) => (
                       <option key={cat} value={cat}>{cat}</option>
                     ))}
                   </select>
@@ -401,31 +478,83 @@ export default function TransactionsPage() {
       )}
 
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-3">
-        <div className="relative flex-1">
-          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="ค้นหารายการ..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-          />
+      <div className="space-y-3">
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="ค้นหารายการ..."
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
+          <div className="flex gap-2">
+            {(["all", "income", "expense"] as const).map((type) => (
+              <button
+                key={type}
+                onClick={() => setFilterType(type)}
+                className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
+                  filterType === type
+                    ? "bg-primary/10 text-primary"
+                    : "bg-card border border-border text-muted hover:text-foreground"
+                }`}
+              >
+                {type === "all" ? "ทั้งหมด" : type === "income" ? "รายรับ" : "รายจ่าย"}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="flex gap-2">
-          {(["all", "income", "expense"] as const).map((type) => (
+
+        {/* Advanced Filters */}
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex items-center gap-2 flex-1">
+            <CalendarIcon className="w-4 h-4 text-muted shrink-0" />
+            <input
+              type="date"
+              value={dateFrom}
+              onChange={(e) => setDateFrom(e.target.value)}
+              className="flex-1 px-3 py-2 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="จากวันที่"
+            />
+            <span className="text-muted text-sm">ถึง</span>
+            <input
+              type="date"
+              value={dateTo}
+              onChange={(e) => setDateTo(e.target.value)}
+              className="flex-1 px-3 py-2 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
+          <select
+            value={filterClient}
+            onChange={(e) => setFilterClient(e.target.value)}
+            className="px-3 py-2 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="">ลูกค้าทั้งหมด</option>
+            {clients.map((c) => (
+              <option key={c.id} value={c.id}>{c.name}</option>
+            ))}
+          </select>
+          <select
+            value={filterCategory}
+            onChange={(e) => setFilterCategory(e.target.value)}
+            className="px-3 py-2 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="">หมวดหมู่ทั้งหมด</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
+          {hasActiveFilters && (
             <button
-              key={type}
-              onClick={() => setFilterType(type)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
-                filterType === type
-                  ? "bg-primary/10 text-primary"
-                  : "bg-card border border-border text-muted hover:text-foreground"
-              }`}
+              onClick={clearAllFilters}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium text-danger bg-danger/10 hover:bg-danger/20 transition whitespace-nowrap"
             >
-              {type === "all" ? "ทั้งหมด" : type === "income" ? "รายรับ" : "รายจ่าย"}
+              <Filter className="w-3.5 h-3.5" />
+              ล้างตัวกรอง
             </button>
-          ))}
+          )}
         </div>
       </div>
 

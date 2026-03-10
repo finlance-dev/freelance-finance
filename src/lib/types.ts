@@ -105,3 +105,21 @@ export interface DashboardStats {
   monthsOfRunway: number;
   estimatedQuarterlyTax: number;
 }
+
+export interface IncomeGoal {
+  monthlyTarget: number;
+  yearlyTarget: number;
+}
+
+export interface Invoice {
+  id: string;
+  invoiceNumber: string;
+  clientId: string | null;
+  projectId: string | null;
+  items: { description: string; quantity: number; unitPrice: number }[];
+  status: "draft" | "sent" | "paid" | "overdue";
+  issueDate: string;
+  dueDate: string;
+  notes: string;
+  createdAt: string;
+}

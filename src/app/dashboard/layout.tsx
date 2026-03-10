@@ -24,13 +24,15 @@ import {
 import { cn } from "@/lib/utils";
 import { usePlan } from "@/hooks/usePlan";
 import { useTheme } from "@/components/theme-provider";
-import { processRecurringTransactions, syncFromCloud, isCloudEnabled } from "@/lib/store";
+import { processRecurringTransactions, syncFromCloud, isCloudEnabled, getOverdueInvoiceCount } from "@/lib/store";
+import { BarChart3 } from "lucide-react";
 
 const navItems = [
   { href: "/dashboard", label: "ภาพรวม", icon: LayoutDashboard },
   { href: "/dashboard/transactions", label: "รายการเงิน", icon: ArrowLeftRight },
   { href: "/dashboard/clients", label: "ลูกค้าและโปรเจกต์", icon: Users },
-  { href: "/dashboard/invoices", label: "ใบแจ้งหนี้", icon: FileText },
+  { href: "/dashboard/invoices", label: "ใบแจ้งหนี้", icon: FileText, badge: "overdue" as const },
+  { href: "/dashboard/reports", label: "รายงาน", icon: BarChart3 },
   { href: "/dashboard/recurring", label: "รายการประจำ", icon: RefreshCw },
   { href: "/dashboard/tax", label: "ประมาณภาษี", icon: Calculator },
   { href: "/dashboard/settings", label: "ตั้งค่า", icon: Settings },
@@ -48,6 +50,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [userName, setUserName] = useState("");
+  const [overdueCount, setOverdueCount] = useState(0);
   const { planLabel, isPro } = usePlan();
   const { theme, setTheme } = useTheme();
 
@@ -62,6 +65,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
     // Process recurring transactions on app load
     processRecurringTransactions();
+
+    // Check overdue invoices
+    setOverdueCount(getOverdueInvoiceCount());
 
     // Sync from cloud if Supabase is configured
     if (isCloudEnabled()) {
@@ -99,6 +105,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               >
                 <item.icon className="w-5 h-5" />
                 {item.label}
+                {"badge" in item && item.badge === "overdue" && overdueCount > 0 && (
+                  <span className="ml-auto bg-danger text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+                    {overdueCount}
+                  </span>
+                )}
               </Link>
             );
           })}
@@ -200,6 +211,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 >
                   <item.icon className="w-5 h-5" />
                   {item.label}
+                  {"badge" in item && item.badge === "overdue" && overdueCount > 0 && (
+                    <span className="ml-auto bg-danger text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+                      {overdueCount}
+                    </span>
+                  )}
                 </Link>
               );
             })}
