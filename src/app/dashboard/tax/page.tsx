@@ -558,6 +558,95 @@ export default function TaxEstimatorPage() {
         </div>
       </div>
 
+      {/* WHT Summary */}
+      {(() => {
+        const yearTxs = transactions.filter(
+          (t) => t.type === "income" && new Date(t.date).getFullYear() === selectedYear
+        );
+        const totalWHT = yearTxs.reduce((s, t) => s + (t.withholdingTax || 0), 0);
+        const txWithWHT = yearTxs.filter((t) => t.withholdingTax && t.withholdingTax > 0);
+        if (totalWHT <= 0) return null;
+        return (
+          <div className="bg-card border border-border rounded-2xl p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <Shield className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold">หัก ณ ที่จ่าย (WHT) สะสม</h3>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4 mb-4">
+              <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                <p className="text-xs text-muted mb-1">WHT ที่ถูกหักทั้งหมด</p>
+                <p className="text-xl font-bold text-primary">{formatCurrency(totalWHT)}</p>
+              </div>
+              <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                <p className="text-xs text-muted mb-1">ภาษีที่ต้องจ่าย (ประมาณ)</p>
+                <p className="text-xl font-bold text-warning">{formatCurrency(analysis.estimatedAnnualTax)}</p>
+              </div>
+              <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                <p className="text-xs text-muted mb-1">ภาษีคงเหลือ / ได้คืน</p>
+                <p className={`text-xl font-bold ${analysis.estimatedAnnualTax - totalWHT <= 0 ? "text-accent" : "text-danger"}`}>
+                  {analysis.estimatedAnnualTax - totalWHT <= 0 ? "ได้คืน " : "จ่ายเพิ่ม "}
+                  {formatCurrency(Math.abs(analysis.estimatedAnnualTax - totalWHT))}
+                </p>
+              </div>
+            </div>
+            <p className="text-xs text-muted">จากรายการรายรับที่มี WHT {txWithWHT.length} รายการ</p>
+          </div>
+        );
+      })()}
+
+      {/* ภ.ง.ด.90 Annual Tax Summary */}
+      <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Calculator className="w-5 h-5 text-warning" />
+          <h3 className="font-semibold">สรุปภาษีประจำปี (แบบ ภ.ง.ด.90)</h3>
+        </div>
+        <div className="bg-secondary/50 rounded-xl p-4 space-y-2 text-sm">
+          <div className="flex justify-between">
+            <span className="text-muted">1. เงินได้พึงประเมิน (รายได้รวมปี {selectedYear})</span>
+            <span className="font-medium">{formatCurrency(analysis.yearIncome)}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-muted">2. หักค่าใช้จ่าย (60% ไม่เกิน 60,000)</span>
+            <span className="font-medium text-accent">-{formatCurrency(60000)}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-muted">3. หักค่าลดหย่อน (ส่วนตัว + อื่นๆ)</span>
+            <span className="font-medium text-accent">-{formatCurrency(deductions)}</span>
+          </div>
+          <div className="flex justify-between border-t border-border pt-2">
+            <span className="font-medium">4. เงินได้สุทธิ</span>
+            <span className="font-bold">{formatCurrency(analysis.taxableIncome)}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="font-medium">5. ภาษีที่คำนวณได้ (ขั้นบันได)</span>
+            <span className="font-bold text-warning">{formatCurrency(analysis.estimatedAnnualTax)}</span>
+          </div>
+          {(() => {
+            const totalWHT = transactions
+              .filter((t) => t.type === "income" && new Date(t.date).getFullYear() === selectedYear)
+              .reduce((s, t) => s + (t.withholdingTax || 0), 0);
+            const remaining = analysis.estimatedAnnualTax - totalWHT;
+            return (
+              <>
+                <div className="flex justify-between">
+                  <span className="text-muted">6. หัก ณ ที่จ่ายที่ถูกหักไว้</span>
+                  <span className="font-medium text-accent">-{formatCurrency(totalWHT)}</span>
+                </div>
+                <div className="flex justify-between border-t border-border pt-2">
+                  <span className="font-bold">{remaining <= 0 ? "7. ภาษีที่ชำระไว้เกิน (ขอคืน)" : "7. ภาษีที่ต้องชำระเพิ่ม"}</span>
+                  <span className={`font-bold text-lg ${remaining <= 0 ? "text-accent" : "text-danger"}`}>
+                    {formatCurrency(Math.abs(remaining))}
+                  </span>
+                </div>
+              </>
+            );
+          })()}
+        </div>
+        <p className="text-xs text-muted mt-3">
+          * ตัวเลขเป็นการประมาณ ใช้เป็นแนวทางเตรียมยื่น ภ.ง.ด.90 • ค่าใช้จ่ายหักเหมา 60% (สำหรับฟรีแลนซ์ ม.40(2))
+        </p>
+      </div>
+
       {/* Thai Tax Brackets Reference */}
       <div className="bg-card border border-border rounded-2xl p-5">
         <h3 className="font-semibold mb-4">อัตราภาษีเงินได้บุคคลธรรมดา (ขั้นบันได)</h3>

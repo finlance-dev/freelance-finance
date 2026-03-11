@@ -15,6 +15,7 @@ const STORAGE_KEYS = {
   invoices: "ff_invoices",
   categories: "ff_categories",
   promptpayId: "ff_promptpay_id",
+  lineNotifyToken: "ff_line_notify_token",
 };
 
 // ─── Helpers ────────────────────────────────────────────────────────────
@@ -446,6 +447,16 @@ export function getPromptPayId(): string {
 
 export function setPromptPayId(id: string) {
   setItem(STORAGE_KEYS.promptpayId, id);
+}
+
+// ─── Line Notify ─────────────────────────────────────────────────────────
+
+export function getLineNotifyToken(): string {
+  return getItem<string>(STORAGE_KEYS.lineNotifyToken, "");
+}
+
+export function setLineNotifyToken(token: string) {
+  setItem(STORAGE_KEYS.lineNotifyToken, token);
 }
 
 // ─── Income Goals ────────────────────────────────────────────────────────

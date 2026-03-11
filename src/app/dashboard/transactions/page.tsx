@@ -49,6 +49,7 @@ function getEmptyTx(): Omit<Transaction, "id"> {
     projectId: null,
     clientId: null,
     currency: typeof window !== "undefined" ? getDefaultCurrency() : "THB",
+    withholdingTax: 0,
   };
 }
 
@@ -381,6 +382,40 @@ export default function TransactionsPage() {
                 </div>
               </div>
 
+              {/* Withholding Tax (income only) */}
+              {form.type === "income" && (
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="block text-sm font-medium">หัก ณ ที่จ่าย (WHT)</label>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const wht = Math.round(form.amount * 0.03 * 100) / 100;
+                        setForm({ ...form, withholdingTax: wht });
+                      }}
+                      className="text-xs text-primary hover:underline"
+                    >
+                      คำนวณ 3%
+                    </button>
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <input
+                      type="number"
+                      value={form.withholdingTax || ""}
+                      onChange={(e) => setForm({ ...form, withholdingTax: Number(e.target.value) })}
+                      placeholder="0"
+                      className="flex-1 px-4 py-2.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                    <span className="text-sm text-muted whitespace-nowrap">บาท</span>
+                  </div>
+                  {form.withholdingTax ? (
+                    <p className="text-xs text-muted mt-1">
+                      รายได้สุทธิ: {formatCurrency(form.amount - (form.withholdingTax || 0))} (หลังหัก WHT)
+                    </p>
+                  ) : null}
+                </div>
+              )}
+
               {/* Description */}
               <div>
                 <label className="block text-sm font-medium mb-1.5">รายละเอียด</label>
@@ -685,6 +720,7 @@ export default function TransactionsPage() {
                       {tx.clientId && ` · ${getClientName(tx.clientId)}`}
                       {tx.projectId && ` · ${getProjectName(tx.projectId)}`}
                       {tx.category && ` · ${tx.category}`}
+                      {tx.withholdingTax ? ` · WHT ${formatCurrency(tx.withholdingTax)}` : ""}
                     </p>
                   </div>
                 </div>

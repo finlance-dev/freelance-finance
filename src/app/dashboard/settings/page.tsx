@@ -10,6 +10,8 @@ import {
   Shield,
   Trash2,
   QrCode,
+  MessageCircle,
+  Send,
 } from "lucide-react";
 import {
   exportAllData,
@@ -21,8 +23,11 @@ import {
   clearDemoData,
   getPromptPayId,
   setPromptPayId as storeSetPromptPayId,
+  getLineNotifyToken,
+  setLineNotifyToken as storeSetLineToken,
 } from "@/lib/store";
 import { isValidPromptPayId } from "@/lib/promptpay";
+import { sendLineNotify } from "@/lib/line-notify";
 import { SUPPORTED_CURRENCIES } from "@/lib/types";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
@@ -33,6 +38,8 @@ export default function SettingsPage() {
   const [syncing, setSyncing] = useState(false);
   const [promptpayId, setPromptpayId] = useState("");
   const [promptpayError, setPromptpayError] = useState("");
+  const [lineToken, setLineToken] = useState("");
+  const [lineTesting, setLineTesting] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
   const { confirm } = useConfirm();
@@ -40,8 +47,21 @@ export default function SettingsPage() {
   useEffect(() => {
     setCurrency(getDefaultCurrency());
     setPromptpayId(getPromptPayId());
+    setLineToken(getLineNotifyToken());
     setMounted(true);
   }, []);
+
+  const handleSaveLineToken = () => {
+    storeSetLineToken(lineToken.trim());
+    toast(lineToken.trim() ? "บันทึก Line Notify Token สำเร็จ" : "ลบ Line Notify Token สำเร็จ");
+  };
+
+  const handleTestLineNotify = async () => {
+    setLineTesting(true);
+    const ok = await sendLineNotify("\n✅ ทดสอบจาก FreelanceFlow\nระบบแจ้งเตือน Line ทำงานปกติ!");
+    setLineTesting(false);
+    toast(ok ? "ส่งข้อความทดสอบสำเร็จ ตรวจสอบ Line ของคุณ" : "ส่งไม่สำเร็จ ตรวจสอบ Token อีกครั้ง", ok ? "success" : "error");
+  };
 
   const handleExport = () => {
     const json = exportAllData();
@@ -219,6 +239,49 @@ export default function SettingsPage() {
         {!promptpayError && promptpayId && isValidPromptPayId(promptpayId) && (
           <p className="text-accent text-xs mt-1.5">PromptPay QR จะแสดงในใบแจ้งหนี้อัตโนมัติ</p>
         )}
+      </div>
+
+      {/* Line Notify */}
+      <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-center gap-3 mb-3">
+          <MessageCircle className="w-5 h-5 text-accent" />
+          <h3 className="font-semibold">Line Notify</h3>
+        </div>
+        <p className="text-sm text-muted mb-3">
+          เชื่อมต่อ Line เพื่อรับแจ้งเตือนใบแจ้งหนี้เลยกำหนดและกำหนดจ่ายภาษี
+        </p>
+        <div className="flex gap-2 mb-2">
+          <input
+            type="text"
+            value={lineToken}
+            onChange={(e) => setLineToken(e.target.value)}
+            placeholder="วาง Line Notify Token ที่นี่"
+            className="flex-1 px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm font-mono"
+          />
+          <button
+            onClick={handleSaveLineToken}
+            className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
+          >
+            บันทึก
+          </button>
+        </div>
+        {lineToken && (
+          <button
+            onClick={handleTestLineNotify}
+            disabled={lineTesting}
+            className="flex items-center gap-1.5 text-sm text-accent hover:text-accent/80 transition disabled:opacity-50"
+          >
+            <Send className="w-3.5 h-3.5" />
+            {lineTesting ? "กำลังส่ง..." : "ทดสอบส่งข้อความ"}
+          </button>
+        )}
+        <p className="text-xs text-muted mt-2">
+          สร้าง Token ได้ที่{" "}
+          <a href="https://notify-bot.line.me/my/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            notify-bot.line.me
+          </a>
+          {" "}→ Generate Token → เลือกห้องแชท
+        </p>
       </div>
 
       {/* Backup & Restore */}

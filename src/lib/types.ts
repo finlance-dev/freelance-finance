@@ -25,6 +25,7 @@ export interface Transaction {
   description: string;
   category: string;
   currency?: string;
+  withholdingTax?: number; // WHT amount (e.g. 3% of income)
 }
 
 export interface RecurringTransaction {
