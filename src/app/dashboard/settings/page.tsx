@@ -5,7 +5,6 @@ import {
   Download,
   Upload,
   Cloud,
-  CloudOff,
   Globe,
   Shield,
   Trash2,
@@ -158,17 +157,13 @@ export default function SettingsPage() {
         <p className="text-muted text-sm mt-1">จัดการข้อมูลและการตั้งค่าระบบ</p>
       </div>
 
-      {/* Cloud Status */}
-      <div className="bg-card border border-border rounded-2xl p-5">
-        <div className="flex items-center gap-3 mb-3">
-          {cloud ? (
+      {/* Cloud Status — show only when connected */}
+      {cloud && (
+        <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
             <Cloud className="w-5 h-5 text-accent" />
-          ) : (
-            <CloudOff className="w-5 h-5 text-muted" />
-          )}
-          <h3 className="font-semibold">การเชื่อมต่อคลาวด์</h3>
-        </div>
-        {cloud ? (
+            <h3 className="font-semibold">การเชื่อมต่อคลาวด์</h3>
+          </div>
           <div className="space-y-3">
             <p className="text-sm text-accent">เชื่อมต่อ Supabase แล้ว — ข้อมูลจะซิงค์อัตโนมัติ</p>
             <button
@@ -179,17 +174,8 @@ export default function SettingsPage() {
               {syncing ? "กำลังซิงค์..." : "ซิงค์จากคลาวด์"}
             </button>
           </div>
-        ) : (
-          <div className="space-y-2">
-            <p className="text-sm text-muted">ไม่ได้เชื่อมต่อ — ข้อมูลเก็บในเบราว์เซอร์เท่านั้น</p>
-            <p className="text-xs text-muted">
-              ตั้งค่า <code className="font-mono bg-secondary px-1.5 py-0.5 rounded">NEXT_PUBLIC_SUPABASE_URL</code> และ{" "}
-              <code className="font-mono bg-secondary px-1.5 py-0.5 rounded">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> ใน{" "}
-              <code className="font-mono bg-secondary px-1.5 py-0.5 rounded">.env.local</code> เพื่อเปิดใช้คลาวด์
-            </p>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Default Currency */}
       <div className="bg-card border border-border rounded-2xl p-5">
@@ -308,36 +294,46 @@ export default function SettingsPage() {
       )}
 
       {/* Backup & Restore */}
-      <div className="bg-card border border-border rounded-2xl p-5">
-        <div className="flex items-center gap-3 mb-3">
-          <Shield className="w-5 h-5 text-warning" />
-          <h3 className="font-semibold">สำรองและกู้คืนข้อมูล</h3>
+      {isPro ? (
+        <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <Shield className="w-5 h-5 text-warning" />
+            <h3 className="font-semibold">สำรองและกู้คืนข้อมูล</h3>
+          </div>
+          <p className="text-sm text-muted mb-4">ส่งออกข้อมูลทั้งหมดเป็น JSON หรือนำเข้าจากไฟล์สำรอง</p>
+          <div className="flex flex-wrap gap-3">
+            <button
+              onClick={handleExport}
+              className="flex items-center gap-2 bg-accent/10 text-accent hover:bg-accent/20 px-4 py-2.5 rounded-xl text-sm font-medium transition"
+            >
+              <Download className="w-4 h-4" />
+              ส่งออกข้อมูล
+            </button>
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="flex items-center gap-2 bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2.5 rounded-xl text-sm font-medium transition"
+            >
+              <Upload className="w-4 h-4" />
+              นำเข้าข้อมูล
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".json"
+              onChange={handleImport}
+              className="hidden"
+            />
+          </div>
         </div>
-        <p className="text-sm text-muted mb-4">ส่งออกข้อมูลทั้งหมดเป็น JSON หรือนำเข้าจากไฟล์สำรอง</p>
-        <div className="flex flex-wrap gap-3">
-          <button
-            onClick={handleExport}
-            className="flex items-center gap-2 bg-accent/10 text-accent hover:bg-accent/20 px-4 py-2.5 rounded-xl text-sm font-medium transition"
-          >
-            <Download className="w-4 h-4" />
-            ส่งออกข้อมูล
-          </button>
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            className="flex items-center gap-2 bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2.5 rounded-xl text-sm font-medium transition"
-          >
-            <Upload className="w-4 h-4" />
-            นำเข้าข้อมูล
-          </button>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept=".json"
-            onChange={handleImport}
-            className="hidden"
-          />
+      ) : (
+        <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <Shield className="w-5 h-5 text-warning" />
+            <h3 className="font-semibold">สำรองและกู้คืนข้อมูล</h3>
+          </div>
+          <UpgradePrompt feature="สำรองและกู้คืนข้อมูล" description="ส่งออกและนำเข้าข้อมูลทั้งหมดเป็น JSON อัปเกรดเป็นโปรเพื่อปลดล็อค" />
         </div>
-      </div>
+      )}
 
       {/* Danger Zone */}
       <div className="bg-card border border-danger/30 rounded-2xl p-5">
