@@ -13,6 +13,8 @@ export async function signUp(email: string, password: string, name: string) {
   if (!isSupabaseConfigured()) {
     // Demo mode: store in localStorage
     localStorage.setItem("ff_user", JSON.stringify({ email, name }));
+    // Reset onboarding for new signups
+    localStorage.removeItem("ff_onboarding_done");
     return { user: { email, name }, error: null };
   }
 
@@ -30,7 +32,12 @@ export async function signUp(email: string, password: string, name: string) {
 export async function signIn(email: string, password: string) {
   if (!isSupabaseConfigured()) {
     const name = email.split("@")[0];
+    const isNewUser = !localStorage.getItem("ff_user");
     localStorage.setItem("ff_user", JSON.stringify({ email, name }));
+    // Show onboarding for first-time users
+    if (isNewUser) {
+      localStorage.removeItem("ff_onboarding_done");
+    }
     return { user: { email, name }, error: null };
   }
 

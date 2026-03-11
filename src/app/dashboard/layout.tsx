@@ -88,6 +88,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   const handleLogout = () => {
     localStorage.removeItem("ff_user");
+    localStorage.removeItem("ff_onboarding_done");
     router.push("/");
   };
 
