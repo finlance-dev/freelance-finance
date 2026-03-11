@@ -21,6 +21,7 @@ import {
   Moon,
   Monitor,
   UserCircle,
+  BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePlan } from "@/hooks/usePlan";
@@ -39,6 +40,7 @@ const navItems = [
   { href: "/dashboard/profile", label: "โปรไฟล์", icon: UserCircle },
   { href: "/dashboard/settings", label: "ตั้งค่า", icon: Settings },
   { href: "/dashboard/pricing", label: "แพลน", icon: CreditCard },
+  { href: "/dashboard/guide", label: "คู่มือใช้งาน", icon: BookOpen },
 ];
 
 const themeOptions = [
