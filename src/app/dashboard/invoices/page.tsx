@@ -210,8 +210,14 @@ export default function InvoicesPage() {
     const total = getTotal(inv.items);
 
     const user = JSON.parse(localStorage.getItem("ff_user") || "{}");
-    const userName = user.name || "FreelanceFlow";
-    const userEmail = user.email || "";
+    const profile = JSON.parse(localStorage.getItem("ff_user_profile") || "{}");
+    const userName = profile.businessName || profile.name || user.name || "FreelanceFlow";
+    const userEmail = profile.email || user.email || "";
+    const userPhone = profile.phone || "";
+    const userAddress = profile.address || "";
+    const userTaxId = profile.taxId || "";
+    const bankName = profile.bankName || "";
+    const bankAccount = profile.bankAccount || "";
 
     const ppId = getPromptPayId();
     let qrDataUrl = "";
@@ -270,7 +276,7 @@ export default function InvoicesPage() {
       <div class="brand-icon">$</div>
       <div>
         <div class="brand-name">${userName}</div>
-        <div class="brand-sub">${userEmail}</div>
+        <div class="brand-sub">${userEmail}${userPhone ? ` · ${userPhone}` : ""}</div>
       </div>
     </div>
     <div class="inv-meta">
@@ -287,6 +293,9 @@ export default function InvoicesPage() {
       <div class="party-label">ผู้ออกใบแจ้งหนี้</div>
       <div class="party-name">${userName}</div>
       ${userEmail ? `<div class="party-email">${userEmail}</div>` : ""}
+      ${userPhone ? `<div class="party-email">${userPhone}</div>` : ""}
+      ${userAddress ? `<div class="party-email" style="margin-top:4px">${userAddress}</div>` : ""}
+      ${userTaxId ? `<div class="party-email" style="margin-top:4px">เลขประจำตัวผู้เสียภาษี: ${userTaxId}</div>` : ""}
     </div>
     <div>
       <div class="party-label">เรียกเก็บจาก</div>
@@ -333,6 +342,16 @@ export default function InvoicesPage() {
   <div class="notes">
     <div class="notes-label">หมายเหตุ</div>
     <div class="notes-text">${inv.notes}</div>
+  </div>` : ""}
+
+  ${bankName && bankAccount ? `
+  <div style="margin-bottom:24px;padding:20px;background:#f8fafc;border-radius:12px;border-left:4px solid #6366f1">
+    <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#6366f1;font-weight:600;margin-bottom:10px">ข้อมูลการชำระเงิน</div>
+    <div style="font-size:14px;color:#334155;line-height:1.8">
+      <strong>ธนาคาร:</strong> ${bankName}<br>
+      <strong>เลขบัญชี:</strong> ${bankAccount}<br>
+      <strong>ชื่อบัญชี:</strong> ${profile.name || user.name || userName}
+    </div>
   </div>` : ""}
 
   ${qrDataUrl ? `
