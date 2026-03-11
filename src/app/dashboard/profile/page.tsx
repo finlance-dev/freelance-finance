@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useToast } from "@/components/toast";
 import { usePlan } from "@/hooks/usePlan";
+import { UpgradePrompt } from "@/components/upgrade-prompt";
 
 const STORAGE_KEY = "ff_user_profile";
 
@@ -146,6 +147,21 @@ export default function ProfilePage() {
   };
 
   if (!mounted) return null;
+
+  if (!isPro) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold">โปรไฟล์</h1>
+          <p className="text-muted text-sm mt-1">ข้อมูลส่วนตัวและธุรกิจของคุณ</p>
+        </div>
+        <UpgradePrompt
+          feature="โปรไฟล์"
+          description="จัดการข้อมูลส่วนตัว ธุรกิจ และบัญชีธนาคาร เพื่อใช้ในใบแจ้งหนี้และเอกสารต่างๆ อัปเกรดเป็นโปรเพื่อปลดล็อค"
+        />
+      </div>
+    );
+  }
 
   const initials = profile.name
     ? profile.name
