@@ -25,6 +25,8 @@ import {
 import { getTransactions, getClients } from "@/lib/store";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Transaction, Client } from "@/lib/types";
+import { usePlan } from "@/hooks/usePlan";
+import { UpgradePrompt } from "@/components/upgrade-prompt";
 
 const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#14b8a6", "#f97316"];
 
@@ -48,12 +50,28 @@ export default function ReportsPage() {
   const [mounted, setMounted] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const monthOptions = useMemo(() => getMonthOptions(), []);
+  const { isPro } = usePlan();
 
   useEffect(() => {
     setTransactions(getTransactions());
     setClients(getClients());
     setMounted(true);
   }, []);
+
+  if (mounted && !isPro) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold">รายงาน</h1>
+          <p className="text-muted text-sm mt-1">สรุปรายงานรายเดือนอย่างละเอียด</p>
+        </div>
+        <UpgradePrompt
+          feature="รายงานรายเดือน"
+          description="ดูสรุปรายรับ-รายจ่าย กราฟหมวดหมู่ และวิเคราะห์รายได้ตามลูกค้า อัปเกรดเป็นโปรเพื่อปลดล็อค"
+        />
+      </div>
+    );
+  }
 
   const selected = monthOptions[selectedIdx];
   const prevMonth = monthOptions[selectedIdx + 1];

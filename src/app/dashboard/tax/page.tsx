@@ -462,7 +462,8 @@ export default function TaxEstimatorPage() {
         )}
       </div>
 
-      {/* Cash Flow & Recommendations */}
+      {/* Cash Flow & Recommendations (Pro only) */}
+      {isPro ? (
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Runway */}
         <div className="bg-card border border-border rounded-2xl p-5">
@@ -557,6 +558,12 @@ export default function TaxEstimatorPage() {
           </div>
         </div>
       </div>
+      ) : (
+        <div className="bg-card border border-border rounded-2xl p-5 text-center">
+          <h3 className="font-semibold mb-2">กระแสเงินสดและคำแนะนำ</h3>
+          <UpgradePrompt feature="พยากรณ์กระแสเงินสด" compact />
+        </div>
+      )}
 
       {/* WHT Summary */}
       {(() => {

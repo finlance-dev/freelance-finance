@@ -488,9 +488,13 @@ export default function ClientsPage() {
                           <div className="flex items-center gap-3">
                             <div className="text-right">
                               <p className="text-sm font-medium">{formatCurrency(rev)}</p>
-                              <p className={`text-xs ${profit >= 0 ? "text-accent" : "text-danger"}`}>
-                                กำไร: {formatCurrency(profit)}
-                              </p>
+                              {isPro ? (
+                                <p className={`text-xs ${profit >= 0 ? "text-accent" : "text-danger"}`}>
+                                  กำไร: {formatCurrency(profit)}
+                                </p>
+                              ) : (
+                                <p className="text-xs text-muted">อัปเกรดเพื่อดูกำไร</p>
+                              )}
                             </div>
                             <div className="flex gap-1">
                               <button
