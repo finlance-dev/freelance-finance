@@ -31,6 +31,8 @@ import { sendLineNotify } from "@/lib/line-notify";
 import { SUPPORTED_CURRENCIES } from "@/lib/types";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
+import { usePlan } from "@/hooks/usePlan";
+import { UpgradePrompt } from "@/components/upgrade-prompt";
 
 export default function SettingsPage() {
   const [mounted, setMounted] = useState(false);
@@ -43,6 +45,7 @@ export default function SettingsPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
   const { confirm } = useConfirm();
+  const { isPro } = usePlan();
 
   useEffect(() => {
     setCurrency(getDefaultCurrency());
@@ -214,75 +217,95 @@ export default function SettingsPage() {
       </div>
 
       {/* PromptPay */}
-      <div className="bg-card border border-border rounded-2xl p-5">
-        <div className="flex items-center gap-3 mb-3">
-          <QrCode className="w-5 h-5 text-primary" />
-          <h3 className="font-semibold">PromptPay QR</h3>
+      {isPro ? (
+        <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <QrCode className="w-5 h-5 text-primary" />
+            <h3 className="font-semibold">PromptPay QR</h3>
+          </div>
+          <p className="text-sm text-muted mb-3">ใส่เบอร์โทรหรือเลขบัตรประชาชน เพื่อแสดง QR Code ในใบแจ้งหนี้</p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={promptpayId}
+              onChange={(e) => { setPromptpayId(e.target.value); setPromptpayError(""); }}
+              placeholder="เช่น 0812345678 หรือ 1234567890123"
+              className={`flex-1 px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm ${promptpayError ? "border-danger" : "border-border"}`}
+            />
+            <button
+              onClick={handleSavePromptPay}
+              className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
+            >
+              บันทึก
+            </button>
+          </div>
+          {promptpayError && <p className="text-danger text-xs mt-1.5">{promptpayError}</p>}
+          {!promptpayError && promptpayId && isValidPromptPayId(promptpayId) && (
+            <p className="text-accent text-xs mt-1.5">PromptPay QR จะแสดงในใบแจ้งหนี้อัตโนมัติ</p>
+          )}
         </div>
-        <p className="text-sm text-muted mb-3">ใส่เบอร์โทรหรือเลขบัตรประชาชน เพื่อแสดง QR Code ในใบแจ้งหนี้</p>
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={promptpayId}
-            onChange={(e) => { setPromptpayId(e.target.value); setPromptpayError(""); }}
-            placeholder="เช่น 0812345678 หรือ 1234567890123"
-            className={`flex-1 px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm ${promptpayError ? "border-danger" : "border-border"}`}
-          />
-          <button
-            onClick={handleSavePromptPay}
-            className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
-          >
-            บันทึก
-          </button>
+      ) : (
+        <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <QrCode className="w-5 h-5 text-primary" />
+            <h3 className="font-semibold">PromptPay QR</h3>
+          </div>
+          <UpgradePrompt feature="PromptPay QR" description="ตั้งค่า PromptPay ID เพื่อแสดง QR Code ในใบแจ้งหนี้อัตโนมัติ อัปเกรดเป็นโปรเพื่อปลดล็อค" />
         </div>
-        {promptpayError && <p className="text-danger text-xs mt-1.5">{promptpayError}</p>}
-        {!promptpayError && promptpayId && isValidPromptPayId(promptpayId) && (
-          <p className="text-accent text-xs mt-1.5">PromptPay QR จะแสดงในใบแจ้งหนี้อัตโนมัติ</p>
-        )}
-      </div>
+      )}
 
       {/* Line Notify */}
-      <div className="bg-card border border-border rounded-2xl p-5">
-        <div className="flex items-center gap-3 mb-3">
-          <MessageCircle className="w-5 h-5 text-accent" />
-          <h3 className="font-semibold">Line Notify</h3>
+      {isPro ? (
+        <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <MessageCircle className="w-5 h-5 text-accent" />
+            <h3 className="font-semibold">Line Notify</h3>
+          </div>
+          <p className="text-sm text-muted mb-3">
+            เชื่อมต่อ Line เพื่อรับแจ้งเตือนใบแจ้งหนี้เลยกำหนดและกำหนดจ่ายภาษี
+          </p>
+          <div className="flex gap-2 mb-2">
+            <input
+              type="text"
+              value={lineToken}
+              onChange={(e) => setLineToken(e.target.value)}
+              placeholder="วาง Line Notify Token ที่นี่"
+              className="flex-1 px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm font-mono"
+            />
+            <button
+              onClick={handleSaveLineToken}
+              className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
+            >
+              บันทึก
+            </button>
+          </div>
+          {lineToken && (
+            <button
+              onClick={handleTestLineNotify}
+              disabled={lineTesting}
+              className="flex items-center gap-1.5 text-sm text-accent hover:text-accent/80 transition disabled:opacity-50"
+            >
+              <Send className="w-3.5 h-3.5" />
+              {lineTesting ? "กำลังส่ง..." : "ทดสอบส่งข้อความ"}
+            </button>
+          )}
+          <p className="text-xs text-muted mt-2">
+            สร้าง Token ได้ที่{" "}
+            <a href="https://notify-bot.line.me/my/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              notify-bot.line.me
+            </a>
+            {" "}→ Generate Token → เลือกห้องแชท
+          </p>
         </div>
-        <p className="text-sm text-muted mb-3">
-          เชื่อมต่อ Line เพื่อรับแจ้งเตือนใบแจ้งหนี้เลยกำหนดและกำหนดจ่ายภาษี
-        </p>
-        <div className="flex gap-2 mb-2">
-          <input
-            type="text"
-            value={lineToken}
-            onChange={(e) => setLineToken(e.target.value)}
-            placeholder="วาง Line Notify Token ที่นี่"
-            className="flex-1 px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm font-mono"
-          />
-          <button
-            onClick={handleSaveLineToken}
-            className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
-          >
-            บันทึก
-          </button>
+      ) : (
+        <div className="bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <MessageCircle className="w-5 h-5 text-accent" />
+            <h3 className="font-semibold">Line Notify</h3>
+          </div>
+          <UpgradePrompt feature="Line Notify" description="เชื่อมต่อ Line เพื่อรับแจ้งเตือนใบแจ้งหนี้เลยกำหนดและกำหนดจ่ายภาษี อัปเกรดเป็นโปรเพื่อปลดล็อค" />
         </div>
-        {lineToken && (
-          <button
-            onClick={handleTestLineNotify}
-            disabled={lineTesting}
-            className="flex items-center gap-1.5 text-sm text-accent hover:text-accent/80 transition disabled:opacity-50"
-          >
-            <Send className="w-3.5 h-3.5" />
-            {lineTesting ? "กำลังส่ง..." : "ทดสอบส่งข้อความ"}
-          </button>
-        )}
-        <p className="text-xs text-muted mt-2">
-          สร้าง Token ได้ที่{" "}
-          <a href="https://notify-bot.line.me/my/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-            notify-bot.line.me
-          </a>
-          {" "}→ Generate Token → เลือกห้องแชท
-        </p>
-      </div>
+      )}
 
       {/* Backup & Restore */}
       <div className="bg-card border border-border rounded-2xl p-5">
