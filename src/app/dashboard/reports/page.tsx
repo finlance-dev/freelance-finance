@@ -132,6 +132,44 @@ export default function ReportsPage() {
           feature="รายงานรายเดือน"
           description="ดูสรุปรายรับ-รายจ่าย กราฟหมวดหมู่ และวิเคราะห์รายได้ตามลูกค้า อัปเกรดเป็นโปรเพื่อปลดล็อค"
         />
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <TrendingUp className="w-5 h-5 text-accent" />
+              <h3 className="font-semibold text-sm">สรุปรายรับ-รายจ่าย</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ดูยอดรายรับ รายจ่าย และกำไรสุทธิของแต่ละเดือน พร้อมเปรียบเทียบกับเดือนก่อนหน้าเป็นเปอร์เซ็นต์
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Tag className="w-5 h-5 text-warning" />
+              <h3 className="font-semibold text-sm">กราฟหมวดหมู่ค่าใช้จ่าย</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              วิเคราะห์ค่าใช้จ่ายตามหมวดหมู่ ทั้งแบบแท่งและแบบวงกลม ให้เห็นสัดส่วนชัดเจนว่าเงินหมดไปกับอะไร
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Users className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold text-sm">รายได้ตามลูกค้า</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ดูว่าลูกค้าคนไหนสร้างรายได้มากที่สุด ช่วยตัดสินใจว่าควรโฟกัสงานจากลูกค้าไหน
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <DollarSign className="w-5 h-5 text-danger" />
+              <h3 className="font-semibold text-sm">รายการใหญ่สุด</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              แสดง 10 รายการที่มียอดสูงสุดในเดือน ช่วยให้ตรวจสอบและวิเคราะห์รายการสำคัญได้ง่าย
+            </p>
+          </div>
+        </div>
       </div>
     );
   }

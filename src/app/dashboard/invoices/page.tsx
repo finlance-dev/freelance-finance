@@ -388,6 +388,44 @@ export default function InvoicesPage() {
           feature="ใบแจ้งหนี้"
           description="สร้างใบแจ้งหนี้แบบมืออาชีพพร้อม PromptPay QR ส่งให้ลูกค้าได้ทันที อัปเกรดเป็นโปรเพื่อปลดล็อค"
         />
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <FileText className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold text-sm">สร้างใบแจ้งหนี้</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              สร้างใบแจ้งหนี้แบบมืออาชีพ กรอกรายการสินค้า/บริการ ระบบคำนวณยอดรวมให้อัตโนมัติ พร้อมเลขที่ใบแจ้งหนี้ที่เรียงลำดับ
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Download className="w-5 h-5 text-accent" />
+              <h3 className="font-semibold text-sm">ดาวน์โหลด PDF</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ดาวน์โหลดใบแจ้งหนี้เป็น PDF พร้อม PromptPay QR Code ส่งให้ลูกค้าชำระเงินได้สะดวก รวดเร็ว
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Clock className="w-5 h-5 text-warning" />
+              <h3 className="font-semibold text-sm">ติดตามสถานะ</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ติดตามสถานะใบแจ้งหนี้ทุกใบ ตั้งแต่แบบร่าง ส่งแล้ว ชำระแล้ว จนถึงเลยกำหนด พร้อมแจ้งเตือนอัตโนมัติ
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Eye className="w-5 h-5 text-danger" />
+              <h3 className="font-semibold text-sm">ดูตัวอย่างก่อนส่ง</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ดูตัวอย่างใบแจ้งหนี้ก่อนส่งให้ลูกค้า มีข้อมูลธุรกิจ ที่อยู่ และรายละเอียดครบถ้วน
+            </p>
+          </div>
+        </div>
       </div>
     );
   }

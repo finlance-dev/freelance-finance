@@ -159,6 +159,44 @@ export default function ProfilePage() {
           feature="โปรไฟล์"
           description="จัดการข้อมูลส่วนตัว ธุรกิจ และบัญชีธนาคาร เพื่อใช้ในใบแจ้งหนี้และเอกสารต่างๆ อัปเกรดเป็นโปรเพื่อปลดล็อค"
         />
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <User className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold text-sm">ข้อมูลส่วนตัว</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              กรอกชื่อ อีเมล เบอร์โทร เว็บไซต์ และแนะนำตัว พร้อมอัปโหลดรูปโปรไฟล์ แสดงในใบแจ้งหนี้อัตโนมัติ
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Building2 className="w-5 h-5 text-accent" />
+              <h3 className="font-semibold text-sm">ข้อมูลธุรกิจ</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ใส่ชื่อธุรกิจ เลข Tax ID และที่อยู่ เพื่อใช้ในใบแจ้งหนี้และเอกสารภาษี ภ.ง.ด.90
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <FileText className="w-5 h-5 text-warning" />
+              <h3 className="font-semibold text-sm">บัญชีธนาคาร</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              บันทึกข้อมูลบัญชีธนาคาร เพื่อแสดงในใบแจ้งหนี้ ลูกค้าโอนเงินได้สะดวกขึ้น
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Camera className="w-5 h-5 text-danger" />
+              <h3 className="font-semibold text-sm">รูปโปรไฟล์</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              อัปโหลดรูปโปรไฟล์เพื่อแสดงใน Sidebar และใบแจ้งหนี้ ช่วยสร้างความน่าเชื่อถือกับลูกค้า
+            </p>
+          </div>
+        </div>
       </div>
     );
   }

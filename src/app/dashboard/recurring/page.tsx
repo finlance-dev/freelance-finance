@@ -173,6 +173,44 @@ export default function RecurringPage() {
           feature="รายการประจำ"
           description="ตั้งค่ารายรับ-รายจ่ายที่เกิดขึ้นซ้ำอัตโนมัติ เช่น ค่าเช่า ค่าซอฟต์แวร์รายเดือน อัปเกรดเป็นโปรเพื่อปลดล็อค"
         />
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <RefreshCw className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold text-sm">ตั้งรายการอัตโนมัติ</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ตั้งค่ารายรับ-รายจ่ายที่เกิดขึ้นซ้ำ เช่น ค่าเช่าสำนักงาน ค่าซอฟต์แวร์ ค่าสาธารณูปโภค ระบบบันทึกให้อัตโนมัติตามรอบที่กำหนด
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Play className="w-5 h-5 text-accent" />
+              <h3 className="font-semibold text-sm">หยุด/เริ่มได้ตลอดเวลา</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              หยุดพักหรือเริ่มรายการประจำใหม่ได้ทุกเมื่อ ไม่ต้องลบทิ้งแล้วสร้างใหม่ ยืดหยุ่นตามสถานการณ์
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Pencil className="w-5 h-5 text-warning" />
+              <h3 className="font-semibold text-sm">แก้ไขรายละเอียดง่าย</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              แก้ไขจำนวนเงิน หมวดหมู่ หรือรอบการชำระได้ตลอด รองรับรายวัน รายสัปดาห์ รายเดือน และรายปี
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
+            <div className="flex items-center gap-2 mb-2">
+              <Plus className="w-5 h-5 text-danger" />
+              <h3 className="font-semibold text-sm">เชื่อมลูกค้าและโปรเจกต์</h3>
+            </div>
+            <p className="text-xs text-muted leading-relaxed">
+              ผูกรายการประจำกับลูกค้าและโปรเจกต์ เพื่อติดตามต้นทุนและรายได้ได้อย่างแม่นยำ
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
