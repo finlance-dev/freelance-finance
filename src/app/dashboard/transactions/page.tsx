@@ -438,8 +438,8 @@ export default function TransactionsPage() {
                 </select>
               </div>
 
-              {/* Category (expenses only) */}
-              {form.type === "expense" && (
+              {/* Category */}
+              {(form.type === "expense" || form.type === "income") && (
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
                     <label className="block text-sm font-medium">หมวดหมู่</label>

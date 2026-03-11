@@ -1,8 +1,10 @@
 "use client";
 
-import { Check, Sparkles, Crown } from "lucide-react";
+import { useState } from "react";
+import { Check, Sparkles, Crown, QrCode, X } from "lucide-react";
 import { usePlan } from "@/hooks/usePlan";
 import type { PlanType } from "@/lib/types";
+import { generatePromptPayQRDataURL } from "@/lib/promptpay";
 
 const plans = [
   {
@@ -63,8 +65,37 @@ const plans = [
   },
 ];
 
+const PROMPTPAY_MERCHANT = "0899999999"; // FreelanceFlow merchant PromptPay
+
 export default function PricingPage() {
   const { plan: currentPlan, upgrade, mounted } = usePlan();
+  const [qrModal, setQrModal] = useState<{ plan: PlanType; price: number; name: string } | null>(null);
+  const [qrDataUrl, setQrDataUrl] = useState<string>("");
+  const [qrLoading, setQrLoading] = useState(false);
+
+  const handleUpgradeWithQR = async (planId: PlanType, price: number, name: string) => {
+    if (planId === "free") {
+      upgrade(planId);
+      return;
+    }
+    setQrModal({ plan: planId, price, name });
+    setQrLoading(true);
+    try {
+      const url = await generatePromptPayQRDataURL(PROMPTPAY_MERCHANT, price);
+      setQrDataUrl(url);
+    } catch {
+      setQrDataUrl("");
+    }
+    setQrLoading(false);
+  };
+
+  const handleConfirmPayment = () => {
+    if (qrModal) {
+      upgrade(qrModal.plan);
+      setQrModal(null);
+      setQrDataUrl("");
+    }
+  };
 
   if (!mounted) return null;
 
@@ -78,6 +109,7 @@ export default function PricingPage() {
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {plans.map((p) => {
           const isCurrentPlan = currentPlan === p.id;
+          const numericPrice = Number(p.price.replace(/,/g, ""));
           return (
             <div
               key={p.id}
@@ -127,21 +159,77 @@ export default function PricingPage() {
                   แพลนปัจจุบัน
                 </button>
               ) : (
-                <button
-                  onClick={() => upgrade(p.id)}
-                  className={`w-full py-2.5 rounded-xl font-semibold transition ${
-                    p.highlighted
-                      ? "bg-primary hover:bg-primary-dark text-white"
-                      : "bg-secondary hover:bg-border text-foreground"
-                  }`}
-                >
-                  {p.id === "free" ? "ดาวน์เกรด" : `อัปเกรดเป็น${p.name}`}
-                </button>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => upgrade(p.id)}
+                    className={`w-full py-2.5 rounded-xl font-semibold transition ${
+                      p.highlighted
+                        ? "bg-primary hover:bg-primary-dark text-white"
+                        : "bg-secondary hover:bg-border text-foreground"
+                    }`}
+                  >
+                    {p.id === "free" ? "ดาวน์เกรด" : `อัปเกรดเป็น${p.name}`}
+                  </button>
+                  {p.id !== "free" && (
+                    <button
+                      onClick={() => handleUpgradeWithQR(p.id, numericPrice, p.name)}
+                      className="w-full py-2 rounded-xl font-medium text-sm transition flex items-center justify-center gap-2 border border-primary/30 text-primary hover:bg-primary/5"
+                    >
+                      <QrCode className="w-4 h-4" />
+                      ชำระผ่าน PromptPay
+                    </button>
+                  )}
+                </div>
               )}
             </div>
           );
         })}
       </div>
+
+      {/* PromptPay QR Modal */}
+      {qrModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-sm text-center">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-bold">ชำระเงินผ่าน PromptPay</h2>
+              <button onClick={() => { setQrModal(null); setQrDataUrl(""); }} className="text-muted hover:text-foreground">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="bg-primary/5 rounded-xl p-4 mb-4">
+              <p className="text-sm text-muted mb-1">แพลน{qrModal.name}</p>
+              <p className="text-2xl font-bold text-primary">฿{qrModal.price.toLocaleString()}</p>
+            </div>
+
+            {qrLoading ? (
+              <div className="py-12">
+                <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto" />
+                <p className="text-sm text-muted mt-3">กำลังสร้าง QR Code...</p>
+              </div>
+            ) : qrDataUrl ? (
+              <div className="space-y-3">
+                <div className="bg-white rounded-xl p-4 inline-block">
+                  <img src={qrDataUrl} alt="PromptPay QR" className="w-56 h-56 mx-auto" />
+                </div>
+                <p className="text-xs text-muted">สแกน QR Code ด้วยแอปธนาคาร</p>
+              </div>
+            ) : (
+              <p className="text-sm text-danger py-8">ไม่สามารถสร้าง QR Code ได้</p>
+            )}
+
+            <div className="mt-4 space-y-2">
+              <button
+                onClick={handleConfirmPayment}
+                className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition"
+              >
+                ชำระแล้ว — เปิดใช้งาน
+              </button>
+              <p className="text-xs text-muted">โหมดทดลอง: กดเพื่อเปิดใช้งานทันที</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <p className="text-center text-xs text-muted">
         โหมดทดลอง: การเปลี่ยนแพลนมีผลทันที ยังไม่มีการเรียกเก็บเงินจริง

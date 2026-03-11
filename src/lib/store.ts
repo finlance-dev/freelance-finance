@@ -14,6 +14,7 @@ const STORAGE_KEYS = {
   incomeGoal: "ff_income_goal",
   invoices: "ff_invoices",
   categories: "ff_categories",
+  promptpayId: "ff_promptpay_id",
 };
 
 // ─── Helpers ────────────────────────────────────────────────────────────
@@ -435,6 +436,16 @@ export function renameCategory(oldName: string, newName: string) {
     }
   });
   if (changed) setItem(STORAGE_KEYS.transactions, txs);
+}
+
+// ─── PromptPay ───────────────────────────────────────────────────────────
+
+export function getPromptPayId(): string {
+  return getItem<string>(STORAGE_KEYS.promptpayId, "");
+}
+
+export function setPromptPayId(id: string) {
+  setItem(STORAGE_KEYS.promptpayId, id);
 }
 
 // ─── Income Goals ────────────────────────────────────────────────────────

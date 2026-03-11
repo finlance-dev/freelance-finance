@@ -12,7 +12,8 @@ import {
   Clock,
   AlertCircle,
 } from "lucide-react";
-import { getClients, getProjects } from "@/lib/store";
+import { getClients, getProjects, getPromptPayId } from "@/lib/store";
+import { generatePromptPayQRDataURL, isValidPromptPayId } from "@/lib/promptpay";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Client, Project } from "@/lib/types";
 import { useToast } from "@/components/toast";
@@ -201,13 +202,21 @@ export default function InvoicesPage() {
     setForm({ ...form, items });
   };
 
-  const handleDownloadPDF = (inv: Invoice) => {
+  const handleDownloadPDF = async (inv: Invoice) => {
     const client = clients.find((c) => c.id === inv.clientId);
     const total = getTotal(inv.items);
 
     const user = JSON.parse(localStorage.getItem("ff_user") || "{}");
     const userName = user.name || "FreelanceFlow";
     const userEmail = user.email || "";
+
+    const ppId = getPromptPayId();
+    let qrDataUrl = "";
+    if (ppId && isValidPromptPayId(ppId)) {
+      try {
+        qrDataUrl = await generatePromptPayQRDataURL(ppId, total);
+      } catch { /* ignore */ }
+    }
 
     const html = `
 <!DOCTYPE html>
@@ -321,6 +330,14 @@ export default function InvoicesPage() {
   <div class="notes">
     <div class="notes-label">หมายเหตุ</div>
     <div class="notes-text">${inv.notes}</div>
+  </div>` : ""}
+
+  ${qrDataUrl ? `
+  <div class="promptpay-section" style="text-align:center;margin-bottom:40px;padding:24px;background:#f8fafc;border-radius:12px;border:2px dashed #6366f1">
+    <div style="font-size:14px;font-weight:600;color:#6366f1;margin-bottom:12px">ชำระเงินผ่าน PromptPay</div>
+    <img src="${qrDataUrl}" alt="PromptPay QR" style="width:200px;height:200px;margin:0 auto;display:block" />
+    <div style="margin-top:12px;font-size:13px;color:#64748b">สแกน QR Code เพื่อชำระ <strong style="color:#1e293b">${formatCurrency(total)}</strong></div>
+    <div style="margin-top:4px;font-size:11px;color:#94a3b8">PromptPay ID: ${ppId.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3")}</div>
   </div>` : ""}
 
   <div class="footer">

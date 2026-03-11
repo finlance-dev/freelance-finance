@@ -9,6 +9,7 @@ import {
   Globe,
   Shield,
   Trash2,
+  QrCode,
 } from "lucide-react";
 import {
   exportAllData,
@@ -18,7 +19,10 @@ import {
   getDefaultCurrency,
   setDefaultCurrency,
   clearDemoData,
+  getPromptPayId,
+  setPromptPayId as storeSetPromptPayId,
 } from "@/lib/store";
+import { isValidPromptPayId } from "@/lib/promptpay";
 import { SUPPORTED_CURRENCIES } from "@/lib/types";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
@@ -27,12 +31,15 @@ export default function SettingsPage() {
   const [mounted, setMounted] = useState(false);
   const [currency, setCurrency] = useState("THB");
   const [syncing, setSyncing] = useState(false);
+  const [promptpayId, setPromptpayId] = useState("");
+  const [promptpayError, setPromptpayError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
   const { confirm } = useConfirm();
 
   useEffect(() => {
     setCurrency(getDefaultCurrency());
+    setPromptpayId(getPromptPayId());
     setMounted(true);
   }, []);
 
@@ -85,6 +92,17 @@ export default function SettingsPage() {
     } else {
       toast("ซิงค์ไม่สำเร็จ ตรวจสอบการเชื่อมต่อ Supabase", "error");
     }
+  };
+
+  const handleSavePromptPay = () => {
+    const clean = promptpayId.replace(/[-\s]/g, "");
+    if (clean && !isValidPromptPayId(clean)) {
+      setPromptpayError("กรุณาใส่เบอร์โทร (10 หลัก) หรือเลขบัตรประชาชน/Tax ID (13 หลัก)");
+      return;
+    }
+    setPromptpayError("");
+    storeSetPromptPayId(clean);
+    toast(clean ? "บันทึก PromptPay ID สำเร็จ" : "ลบ PromptPay ID สำเร็จ");
   };
 
   const handleCurrencyChange = (code: string) => {
@@ -173,6 +191,34 @@ export default function SettingsPage() {
           ))}
         </div>
         <p className="text-xs text-muted mt-2">สกุลเงินเริ่มต้นสำหรับรายการใหม่</p>
+      </div>
+
+      {/* PromptPay */}
+      <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-center gap-3 mb-3">
+          <QrCode className="w-5 h-5 text-primary" />
+          <h3 className="font-semibold">PromptPay QR</h3>
+        </div>
+        <p className="text-sm text-muted mb-3">ใส่เบอร์โทรหรือเลขบัตรประชาชน เพื่อแสดง QR Code ในใบแจ้งหนี้</p>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={promptpayId}
+            onChange={(e) => { setPromptpayId(e.target.value); setPromptpayError(""); }}
+            placeholder="เช่น 0812345678 หรือ 1234567890123"
+            className={`flex-1 px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm ${promptpayError ? "border-danger" : "border-border"}`}
+          />
+          <button
+            onClick={handleSavePromptPay}
+            className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
+          >
+            บันทึก
+          </button>
+        </div>
+        {promptpayError && <p className="text-danger text-xs mt-1.5">{promptpayError}</p>}
+        {!promptpayError && promptpayId && isValidPromptPayId(promptpayId) && (
+          <p className="text-accent text-xs mt-1.5">PromptPay QR จะแสดงในใบแจ้งหนี้อัตโนมัติ</p>
+        )}
       </div>
 
       {/* Backup & Restore */}
