@@ -422,6 +422,21 @@ export function deleteCategory(name: string) {
   setItem(STORAGE_KEYS.categories, getCategories().filter((c) => c !== name));
 }
 
+export function renameCategory(oldName: string, newName: string) {
+  const cats = getCategories().map((c) => (c === oldName ? newName : c));
+  setItem(STORAGE_KEYS.categories, cats);
+  // Also update existing transactions that use this category
+  const txs = getTransactions();
+  let changed = false;
+  txs.forEach((tx) => {
+    if (tx.category === oldName) {
+      tx.category = newName;
+      changed = true;
+    }
+  });
+  if (changed) setItem(STORAGE_KEYS.transactions, txs);
+}
+
 // ─── Income Goals ────────────────────────────────────────────────────────
 
 export function getIncomeGoal(): IncomeGoal {

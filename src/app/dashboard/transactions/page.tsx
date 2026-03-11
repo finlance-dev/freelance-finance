@@ -26,6 +26,7 @@ import {
   getCategories,
   saveCategory,
   deleteCategory as removeCategory,
+  renameCategory,
 } from "@/lib/store";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Transaction, Client, Project } from "@/lib/types";
@@ -36,17 +37,7 @@ import { exportTransactionsCSV, exportTransactionsPDF } from "@/lib/export";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
 
-const DEFAULT_CATEGORIES = [
-  "ซอฟต์แวร์และเครื่องมือ",
-  "ฮาร์ดแวร์",
-  "การตลาด",
-  "การเดินทาง",
-  "สำนักงาน",
-  "การศึกษา",
-  "ประกัน",
-  "สาธารณูปโภค",
-  "อื่นๆ",
-];
+const DEFAULT_CATEGORIES: string[] = [];
 
 function getEmptyTx(): Omit<Transaction, "id"> {
   return {
@@ -90,6 +81,9 @@ export default function TransactionsPage() {
   const [categories, setCategories] = useState<string[]>([]);
   const [showCategoryForm, setShowCategoryForm] = useState(false);
   const [newCategoryName, setNewCategoryName] = useState("");
+  const [editingCat, setEditingCat] = useState<string | null>(null);
+  const [editingCatName, setEditingCatName] = useState("");
+  const [showCategoryManager, setShowCategoryManager] = useState(false);
   const [filterClient, setFilterClient] = useState("");
   const [filterCategory, setFilterCategory] = useState("");
   const [dateFrom, setDateFrom] = useState("");
@@ -120,11 +114,35 @@ export default function TransactionsPage() {
     toast("เพิ่มหมวดหมู่สำเร็จ");
   };
 
-  const handleDeleteCategory = (name: string) => {
+  const handleDeleteCategory = async (name: string) => {
     if (DEFAULT_CATEGORIES.includes(name)) return;
+    const ok = await confirm({ title: "ลบหมวดหมู่", message: `ต้องการลบหมวดหมู่ "${name}" หรือไม่?`, variant: "danger" });
+    if (!ok) return;
     removeCategory(name);
     setCategories(categories.filter((c) => c !== name));
+    if (form.category === name) setForm({ ...form, category: "" });
     toast("ลบหมวดหมู่สำเร็จ");
+  };
+
+  const handleEditCategory = (name: string) => {
+    setEditingCat(name);
+    setEditingCatName(name);
+  };
+
+  const handleSaveEditCategory = () => {
+    const newName = editingCatName.trim();
+    if (!newName || !editingCat) return;
+    if (newName === editingCat) { setEditingCat(null); return; }
+    if (categories.includes(newName)) {
+      toast("หมวดหมู่นี้มีอยู่แล้ว", "warning");
+      return;
+    }
+    renameCategory(editingCat, newName);
+    setCategories(categories.map((c) => (c === editingCat ? newName : c)));
+    if (form.category === editingCat) setForm({ ...form, category: newName });
+    setTransactions(getTransactions());
+    setEditingCat(null);
+    toast("แก้ไขหมวดหมู่สำเร็จ");
   };
 
   const filtered = useMemo(() => {
@@ -425,13 +443,24 @@ export default function TransactionsPage() {
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
                     <label className="block text-sm font-medium">หมวดหมู่</label>
-                    <button
-                      type="button"
-                      onClick={() => setShowCategoryForm(!showCategoryForm)}
-                      className="text-xs text-primary hover:underline"
-                    >
-                      + เพิ่มหมวดหมู่
-                    </button>
+                    <div className="flex items-center gap-2">
+                      {categories.length > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => setShowCategoryManager(!showCategoryManager)}
+                          className="text-xs text-muted hover:text-foreground"
+                        >
+                          {showCategoryManager ? "ซ่อน" : "จัดการ"}
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => setShowCategoryForm(!showCategoryForm)}
+                        className="text-xs text-primary hover:underline"
+                      >
+                        + เพิ่มหมวดหมู่
+                      </button>
+                    </div>
                   </div>
                   {showCategoryForm && (
                     <div className="flex gap-2 mb-2">
@@ -450,6 +479,46 @@ export default function TransactionsPage() {
                       >
                         เพิ่ม
                       </button>
+                    </div>
+                  )}
+                  {showCategoryManager && categories.length > 0 && (
+                    <div className="mb-2 border border-border rounded-xl divide-y divide-border overflow-hidden">
+                      {categories.map((cat) => (
+                        <div key={cat} className="flex items-center gap-2 px-3 py-2 text-sm">
+                          {editingCat === cat ? (
+                            <>
+                              <input
+                                type="text"
+                                value={editingCatName}
+                                onChange={(e) => setEditingCatName(e.target.value)}
+                                onKeyDown={(e) => { if (e.key === "Enter") handleSaveEditCategory(); if (e.key === "Escape") setEditingCat(null); }}
+                                className="flex-1 px-2 py-1 rounded-lg border border-primary bg-background text-sm focus:outline-none"
+                                autoFocus
+                              />
+                              <button type="button" onClick={handleSaveEditCategory} className="text-accent hover:text-accent/80 p-1" title="บันทึก">
+                                <ArrowUpRight className="w-3.5 h-3.5" />
+                              </button>
+                              <button type="button" onClick={() => setEditingCat(null)} className="text-muted hover:text-foreground p-1" title="ยกเลิก">
+                                <X className="w-3.5 h-3.5" />
+                              </button>
+                            </>
+                          ) : (
+                            <>
+                              <span className="flex-1 truncate">{cat}</span>
+                              {!DEFAULT_CATEGORIES.includes(cat) && (
+                                <div className="flex items-center gap-1">
+                                  <button type="button" onClick={() => handleEditCategory(cat)} className="text-muted hover:text-primary p-1" title="แก้ไข">
+                                    <Pencil className="w-3.5 h-3.5" />
+                                  </button>
+                                  <button type="button" onClick={() => handleDeleteCategory(cat)} className="text-muted hover:text-danger p-1" title="ลบ">
+                                    <Trash2 className="w-3.5 h-3.5" />
+                                  </button>
+                                </div>
+                              )}
+                            </>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   )}
                   <select
