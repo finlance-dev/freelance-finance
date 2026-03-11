@@ -186,7 +186,7 @@ export default function TransactionsPage() {
 
     // Check free plan limit (only for new transactions)
     if (!editingId && !canAddTransaction()) {
-      toast("แพลนฟรีจำกัด 50 รายการ กรุณาอัปเกรดเป็นโปร", "warning");
+      toast("แพลนฟรีจำกัด 30 รายการ กรุณาอัปเกรดเป็นโปร", "warning");
       return;
     }
 
@@ -298,7 +298,7 @@ export default function TransactionsPage() {
           <button
             onClick={() => {
               if (!canAddTransaction()) {
-                toast("แพลนฟรีจำกัด 50 รายการ กรุณาอัปเกรดเป็นโปร", "warning");
+                toast("แพลนฟรีจำกัด 30 รายการ กรุณาอัปเกรดเป็นโปร", "warning");
                 return;
               }
               setShowForm(true);
@@ -318,7 +318,7 @@ export default function TransactionsPage() {
       {!isPro && remaining !== Infinity && remaining <= 10 && remaining > 0 && (
         <div className="flex items-center gap-2 bg-warning/10 border border-warning/30 text-warning px-4 py-3 rounded-xl text-sm">
           <AlertTriangle className="w-4 h-4 shrink-0" />
-          <span>เหลือเพิ่มได้อีก {remaining} รายการ (แพลนฟรีจำกัด 50 รายการ)</span>
+          <span>เหลือเพิ่มได้อีก {remaining} รายการ (แพลนฟรีจำกัด 30 รายการ)</span>
         </div>
       )}
 

@@ -336,7 +336,7 @@ export default function LandingPage() {
             พร้อมควบคุมการเงินแล้วหรือยัง?
           </h2>
           <p className="text-lg text-muted mb-8">
-            สมัคร waitlist เพื่อเข้าถึงก่อนใคร และรับแพลนโปรฟรี 3 เดือน
+            สมัคร waitlist เพื่อเข้าถึงก่อนใคร และรับสิทธิพิเศษสำหรับผู้ใช้งานกลุ่มแรก
           </p>
           {submitted ? (
             <div className="bg-accent/10 text-accent-dark border border-accent/30 px-6 py-4 rounded-xl font-medium">

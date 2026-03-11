@@ -24,6 +24,8 @@ import type { RecurringTransaction, Client, Project } from "@/lib/types";
 import { SUPPORTED_CURRENCIES } from "@/lib/types";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
+import { usePlan } from "@/hooks/usePlan";
+import { UpgradePrompt } from "@/components/upgrade-prompt";
 
 const EXPENSE_CATEGORIES = [
   "ค่าเช่าสำนักงาน", "ค่าอุปกรณ์", "ค่าซอฟต์แวร์",
@@ -61,6 +63,7 @@ export default function RecurringPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
   const { confirm } = useConfirm();
+  const { isPro, mounted: planMounted } = usePlan();
 
   useEffect(() => {
     setItems(getRecurringTransactions());
@@ -157,7 +160,22 @@ export default function RecurringPage() {
     setShowForm(false);
   };
 
-  if (!mounted) return null;
+  if (!mounted || !planMounted) return null;
+
+  if (!isPro) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold">รายการประจำ</h1>
+          <p className="text-muted text-sm mt-1">จัดการรายรับรายจ่ายที่เกิดขึ้นซ้ำ</p>
+        </div>
+        <UpgradePrompt
+          feature="รายการประจำ"
+          description="ตั้งค่ารายรับ-รายจ่ายที่เกิดขึ้นซ้ำอัตโนมัติ เช่น ค่าเช่า ค่าซอฟต์แวร์รายเดือน อัปเกรดเป็นโปรเพื่อปลดล็อค"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

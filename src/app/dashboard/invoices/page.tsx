@@ -18,6 +18,8 @@ import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Client, Project } from "@/lib/types";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
+import { usePlan } from "@/hooks/usePlan";
+import { UpgradePrompt } from "@/components/upgrade-prompt";
 
 interface InvoiceItem {
   description: string;
@@ -89,6 +91,7 @@ export default function InvoicesPage() {
 
   const { toast } = useToast();
   const { confirm } = useConfirm();
+  const { isPro, mounted: planMounted } = usePlan();
 
   useEffect(() => {
     setInvoices(getInvoices());
@@ -358,7 +361,7 @@ export default function InvoicesPage() {
 
   const previewInvoice = previewId ? invoices.find((i) => i.id === previewId) : null;
 
-  if (!mounted) {
+  if (!mounted || !planMounted) {
     return (
       <div className="space-y-6">
         <div className="h-7 w-36 bg-secondary rounded animate-pulse" />
@@ -370,6 +373,21 @@ export default function InvoicesPage() {
             </div>
           ))}
         </div>
+      </div>
+    );
+  }
+
+  if (!isPro) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold">ใบแจ้งหนี้</h1>
+          <p className="text-muted text-sm mt-1">สร้างและจัดการใบแจ้งหนี้</p>
+        </div>
+        <UpgradePrompt
+          feature="ใบแจ้งหนี้"
+          description="สร้างใบแจ้งหนี้แบบมืออาชีพพร้อม PromptPay QR ส่งให้ลูกค้าได้ทันที อัปเกรดเป็นโปรเพื่อปลดล็อค"
+        />
       </div>
     );
   }

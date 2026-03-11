@@ -62,7 +62,7 @@ export interface UserPlan {
 export const PLAN_LIMITS = {
   free: {
     maxClients: 3,
-    maxTransactions: 50,
+    maxTransactions: 30,
     hasTaxEstimator: false,
     hasCashFlow: false,
     hasExport: false,
