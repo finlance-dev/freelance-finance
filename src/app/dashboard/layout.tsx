@@ -28,6 +28,7 @@ import { usePlan } from "@/hooks/usePlan";
 import { useTheme } from "@/components/theme-provider";
 import { processRecurringTransactions, syncFromCloud, isCloudEnabled, getOverdueInvoiceCount } from "@/lib/store";
 import { BarChart3 } from "lucide-react";
+import { OnboardingModal } from "@/components/onboarding";
 
 const navItems = [
   { href: "/dashboard", label: "ภาพรวม", icon: LayoutDashboard },
@@ -55,7 +56,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [userName, setUserName] = useState("");
   const [overdueCount, setOverdueCount] = useState(0);
-  const { planLabel, isPro } = usePlan();
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const { planLabel, isPro, isTrial, trialDaysLeft, startTrial } = usePlan();
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -76,6 +78,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     // Sync from cloud if Supabase is configured
     if (isCloudEnabled()) {
       syncFromCloud();
+    }
+
+    // Show onboarding for new users
+    if (!localStorage.getItem("ff_onboarding_done")) {
+      setShowOnboarding(true);
     }
   }, [router]);
 
@@ -236,10 +243,28 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Main content */}
       <main className="flex-1 lg:ml-64 pt-14 lg:pt-0">
+        {/* Trial banner */}
+        {isTrial && (
+          <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 border-b border-primary/20 px-4 py-2 text-center text-sm">
+            <span className="text-primary font-medium">
+              ทดลองใช้โปร — เหลืออีก {trialDaysLeft} วัน
+            </span>
+            <Link href="/dashboard/pricing" className="ml-2 text-xs text-primary underline hover:no-underline">
+              อัปเกรดเลย
+            </Link>
+          </div>
+        )}
         <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
           {children}
         </div>
       </main>
+
+      {/* Onboarding */}
+      <OnboardingModal
+        isOpen={showOnboarding}
+        onClose={() => setShowOnboarding(false)}
+        onStartTrial={startTrial}
+      />
     </div>
   );
 }

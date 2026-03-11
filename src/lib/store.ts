@@ -394,9 +394,96 @@ export function seedDemoData() {
     });
   });
 
+  // Demo Invoices
+  const demoInvoices = [
+    {
+      id: "demo-inv-1",
+      invoiceNumber: "INV-202601-0001",
+      clientId: "demo-client-1",
+      projectId: "demo-proj-1",
+      items: [
+        { description: "พัฒนาเว็บไซต์ E-commerce", quantity: 1, unitPrice: 150000 },
+        { description: "ออกแบบ UI/UX", quantity: 1, unitPrice: 35000 },
+      ],
+      status: "paid" as const,
+      issueDate: "2026-01-15",
+      dueDate: "2026-02-15",
+      notes: "ชำระแล้วผ่านโอนบัญชี",
+      createdAt: "2026-01-15T00:00:00.000Z",
+    },
+    {
+      id: "demo-inv-2",
+      invoiceNumber: "INV-202602-0002",
+      clientId: "demo-client-2",
+      projectId: "demo-proj-2",
+      items: [
+        { description: "ระบบจัดการสินค้าคงคลัง", quantity: 1, unitPrice: 85000 },
+        { description: "ฝึกอบรมทีมงาน", quantity: 2, unitPrice: 5000 },
+      ],
+      status: "sent" as const,
+      issueDate: "2026-02-20",
+      dueDate: "2026-03-20",
+      notes: "",
+      createdAt: "2026-02-20T00:00:00.000Z",
+    },
+    {
+      id: "demo-inv-3",
+      invoiceNumber: "INV-202603-0003",
+      clientId: "demo-client-3",
+      projectId: "demo-proj-3",
+      items: [
+        { description: "แอป Mobile MVP - Phase 1", quantity: 1, unitPrice: 200000 },
+      ],
+      status: "overdue" as const,
+      issueDate: "2026-02-01",
+      dueDate: "2026-03-01",
+      notes: "กรุณาชำระภายใน 7 วัน",
+      createdAt: "2026-02-01T00:00:00.000Z",
+    },
+  ];
+
+  // Demo Recurring
+  const demoRecurring: RecurringTransaction[] = [
+    {
+      id: "demo-rec-1",
+      type: "expense",
+      amount: 15000,
+      description: "ค่าเช่า Co-working Space",
+      category: "ค่าเช่าสำนักงาน",
+      frequency: "monthly",
+      startDate: "2026-01-01",
+      endDate: null,
+      active: true,
+      lastGenerated: "2026-03-01",
+      projectId: null,
+      clientId: null,
+      currency: "THB",
+    },
+    {
+      id: "demo-rec-2",
+      type: "expense",
+      amount: 990,
+      description: "ค่า Figma Pro",
+      category: "ค่าซอฟต์แวร์",
+      frequency: "monthly",
+      startDate: "2026-01-01",
+      endDate: null,
+      active: true,
+      lastGenerated: "2026-03-01",
+      projectId: null,
+      clientId: null,
+      currency: "THB",
+    },
+  ];
+
+  const existingInvoices = getItem<typeof demoInvoices>("ff_invoices", []).filter((i) => !i.id.startsWith("demo-"));
+  const existingRecurring = getRecurringTransactions().filter((r) => !r.id.startsWith("demo-"));
+
   setItem(STORAGE_KEYS.clients, [...existingClients, ...demoClients]);
   setItem(STORAGE_KEYS.projects, [...existingProjects, ...demoProjects]);
   setItem(STORAGE_KEYS.transactions, [...existingTx, ...transactions]);
+  setItem("ff_invoices", [...existingInvoices, ...demoInvoices]);
+  setItem(STORAGE_KEYS.recurring, [...existingRecurring, ...demoRecurring]);
   return true;
 }
 
@@ -404,6 +491,8 @@ export function clearDemoData() {
   setItem(STORAGE_KEYS.transactions, getTransactions().filter((t) => !t.id.startsWith("demo-")));
   setItem(STORAGE_KEYS.clients, getClients().filter((c) => !c.id.startsWith("demo-")));
   setItem(STORAGE_KEYS.projects, getProjects().filter((p) => !p.id.startsWith("demo-")));
+  setItem("ff_invoices", getItem<{ id: string }[]>("ff_invoices", []).filter((i) => !i.id.startsWith("demo-")));
+  setItem(STORAGE_KEYS.recurring, getRecurringTransactions().filter((r) => !r.id.startsWith("demo-")));
 }
 
 // ─── Categories ──────────────────────────────────────────────────────────
@@ -508,4 +597,20 @@ export function setUserPlan(plan: PlanType) {
     activatedAt: now.toISOString(),
     expiresAt,
   });
+}
+
+export function startTrialPlan() {
+  const now = new Date();
+  const expiresAt = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000).toISOString();
+  setItem<UserPlan>(STORAGE_KEYS.userPlan, {
+    plan: "pro",
+    activatedAt: now.toISOString(),
+    expiresAt,
+  });
+  localStorage.setItem("ff_trial_used", "true");
+}
+
+export function hasUsedTrial(): boolean {
+  if (typeof window === "undefined") return false;
+  return localStorage.getItem("ff_trial_used") === "true";
 }

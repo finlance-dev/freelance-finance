@@ -10,6 +10,8 @@ import {
   Users,
   Tag,
   DollarSign,
+  Download,
+  FileText,
 } from "lucide-react";
 import {
   BarChart,
@@ -27,6 +29,7 @@ import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Transaction, Client } from "@/lib/types";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
+import { exportTransactionsCSV, exportTransactionsPDF } from "@/lib/export";
 
 const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#14b8a6", "#f97316"];
 
@@ -198,7 +201,7 @@ export default function ReportsPage() {
           <h1 className="text-2xl font-bold">รายงานรายเดือน</h1>
           <p className="text-muted text-sm mt-1">สรุปรายรับ-รายจ่ายและกำไรแต่ละเดือน</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Calendar className="w-4 h-4 text-muted" />
           <select
             value={selectedIdx}
@@ -209,6 +212,26 @@ export default function ReportsPage() {
               <option key={i} value={i}>{opt.label}</option>
             ))}
           </select>
+          {monthTx.length > 0 && (
+            <>
+              <button
+                onClick={() => exportTransactionsCSV(monthTx)}
+                className="bg-secondary hover:bg-border text-foreground px-3 py-2 rounded-xl font-medium transition flex items-center gap-1.5 text-sm"
+                title="ส่งออก CSV"
+              >
+                <Download className="w-4 h-4" />
+                CSV
+              </button>
+              <button
+                onClick={() => exportTransactionsPDF(monthTx)}
+                className="bg-secondary hover:bg-border text-foreground px-3 py-2 rounded-xl font-medium transition flex items-center gap-1.5 text-sm"
+                title="ส่งออก PDF"
+              >
+                <FileText className="w-4 h-4" />
+                PDF
+              </button>
+            </>
+          )}
         </div>
       </div>
 

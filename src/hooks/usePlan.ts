@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { getUserPlan, setUserPlan, getClients, getTransactions } from "@/lib/store";
+import { getUserPlan, setUserPlan, getClients, getTransactions, startTrialPlan, hasUsedTrial } from "@/lib/store";
 import { PLAN_LIMITS, PlanType } from "@/lib/types";
 
 export function usePlan() {
   const [plan, setPlan] = useState<PlanType>("free");
   const [mounted, setMounted] = useState(false);
+  const [trialDaysLeft, setTrialDaysLeft] = useState(0);
+  const [isTrial, setIsTrial] = useState(false);
 
   useEffect(() => {
     const userPlan = getUserPlan();
@@ -14,8 +16,21 @@ export function usePlan() {
     if (userPlan.expiresAt && new Date(userPlan.expiresAt) < new Date()) {
       setUserPlan("free");
       setPlan("free");
+      setIsTrial(false);
+      setTrialDaysLeft(0);
     } else {
       setPlan(userPlan.plan);
+      // Check if this is a trial (pro with short expiry)
+      if (userPlan.plan === "pro" && userPlan.expiresAt) {
+        const activatedMs = new Date(userPlan.activatedAt).getTime();
+        const expiresMs = new Date(userPlan.expiresAt).getTime();
+        const durationDays = (expiresMs - activatedMs) / (1000 * 60 * 60 * 24);
+        if (durationDays <= 4) {
+          setIsTrial(true);
+          const daysLeft = Math.max(0, Math.ceil((expiresMs - Date.now()) / (1000 * 60 * 60 * 24)));
+          setTrialDaysLeft(daysLeft);
+        }
+      }
     }
     setMounted(true);
 
@@ -34,7 +49,16 @@ export function usePlan() {
   const upgrade = useCallback((newPlan: PlanType) => {
     setUserPlan(newPlan);
     setPlan(newPlan);
+    setIsTrial(false);
     window.dispatchEvent(new CustomEvent("ff_plan_changed", { detail: { plan: newPlan } }));
+  }, []);
+
+  const startTrial = useCallback(() => {
+    startTrialPlan();
+    setPlan("pro");
+    setIsTrial(true);
+    setTrialDaysLeft(3);
+    window.dispatchEvent(new CustomEvent("ff_plan_changed", { detail: { plan: "pro" } }));
   }, []);
 
   const canAddClient = useCallback(() => {
@@ -59,16 +83,30 @@ export function usePlan() {
     return remaining === Infinity ? Infinity : Math.max(0, remaining);
   }, [limits.maxTransactions]);
 
+  const trialAvailable = !hasUsedTrial() && plan === "free";
+
+  const planLabel = isTrial
+    ? `ทดลองโปร (${trialDaysLeft} วัน)`
+    : plan === "free"
+    ? "แพลนฟรี"
+    : plan === "pro"
+    ? "แพลนโปร"
+    : "แพลนโปรรายปี";
+
   return {
     plan,
     isPro,
     limits,
     mounted,
     upgrade,
+    startTrial,
+    isTrial,
+    trialDaysLeft,
+    trialAvailable,
     canAddClient,
     canAddTransaction,
     clientsRemaining,
     transactionsRemaining,
-    planLabel: plan === "free" ? "แพลนฟรี" : plan === "pro" ? "แพลนโปร" : "แพลนโปรรายปี",
+    planLabel,
   };
 }

@@ -69,7 +69,7 @@ const plans = [
 const PROMPTPAY_MERCHANT = "0899999999"; // FreelanceFlow merchant PromptPay
 
 export default function PricingPage() {
-  const { plan: currentPlan, upgrade, mounted } = usePlan();
+  const { plan: currentPlan, upgrade, mounted, trialAvailable, startTrial } = usePlan();
   const [qrModal, setQrModal] = useState<{ plan: PlanType; price: number; name: string } | null>(null);
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
   const [qrLoading, setQrLoading] = useState(false);
@@ -114,6 +114,24 @@ export default function PricingPage() {
         <h1 className="text-2xl font-bold">เลือกแพลนของคุณ</h1>
         <p className="text-muted text-sm mt-1">อัปเกรดเพื่อปลดล็อคฟีเจอร์ทั้งหมด</p>
       </div>
+
+      {trialAvailable && (
+        <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 border border-primary/20 rounded-2xl p-5 text-center max-w-lg mx-auto">
+          <Sparkles className="w-8 h-8 text-primary mx-auto mb-2" />
+          <h3 className="font-bold mb-1">ยังไม่แน่ใจ? ทดลองใช้โปรฟรี 3 วัน!</h3>
+          <p className="text-sm text-muted mb-3">ใช้ทุกฟีเจอร์ได้เต็มที่ ไม่ต้องผูกบัตร หมดแล้วกลับเป็นฟรีอัตโนมัติ</p>
+          <button
+            onClick={() => {
+              startTrial();
+              setCelebration({ planName: "ทดลองโปร 3 วัน" });
+            }}
+            className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-xl font-semibold transition inline-flex items-center gap-2"
+          >
+            <Crown className="w-4 h-4" />
+            เริ่มทดลองใช้ฟรี 3 วัน
+          </button>
+        </div>
+      )}
 
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {plans.map((p) => {
