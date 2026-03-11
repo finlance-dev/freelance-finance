@@ -268,7 +268,7 @@ export default function ReportsPage() {
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={expenseByCategory} layout="vertical">
                 <XAxis type="number" tick={{ fontSize: 11 }} />
-                <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={120} />
+                <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={80} />
                 <Tooltip formatter={(value) => formatCurrency(Number(value))} contentStyle={tooltipStyle} />
                 <Bar dataKey="value" radius={[0, 4, 4, 0]} name="จำนวน">
                   {expenseByCategory.map((_, i) => (
@@ -291,18 +291,20 @@ export default function ReportsPage() {
             <h3 className="font-semibold">สัดส่วนรายจ่าย</h3>
           </div>
           {expenseByCategory.length > 0 ? (
-            <div className="flex items-center gap-4">
-              <ResponsiveContainer width="50%" height={220}>
-                <PieChart>
-                  <Pie data={expenseByCategory} cx="50%" cy="50%" innerRadius={50} outerRadius={85} dataKey="value">
-                    {expenseByCategory.map((_, i) => (
-                      <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip formatter={(value) => formatCurrency(Number(value))} />
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="space-y-2 flex-1">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="w-full sm:w-1/2">
+                <ResponsiveContainer width="100%" height={200}>
+                  <PieChart>
+                    <Pie data={expenseByCategory} cx="50%" cy="50%" innerRadius={40} outerRadius={70} dataKey="value">
+                      {expenseByCategory.map((_, i) => (
+                        <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip formatter={(value) => formatCurrency(Number(value))} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="space-y-2 w-full sm:flex-1">
                 {expenseByCategory.map((item, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm">
                     <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: COLORS[i % COLORS.length] }} />

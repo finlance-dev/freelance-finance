@@ -440,25 +440,27 @@ export default function DashboardPage() {
             <div className="bg-card border border-border rounded-2xl p-5">
               <h3 className="font-semibold mb-4">ค่าใช้จ่ายตามหมวดหมู่</h3>
               {expenseData.length > 0 ? (
-                <div className="flex items-center gap-6">
-                  <ResponsiveContainer width="50%" height={200}>
-                    <PieChart>
-                      <Pie
-                        data={expenseData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={50}
-                        outerRadius={80}
-                        dataKey="value"
-                      >
-                        {expenseData.map((_, i) => (
-                          <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                        ))}
-                      </Pie>
-                      <Tooltip formatter={(value) => formatCurrency(Number(value))} />
-                    </PieChart>
-                  </ResponsiveContainer>
-                  <div className="space-y-2">
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <div className="w-full sm:w-1/2">
+                    <ResponsiveContainer width="100%" height={180}>
+                      <PieChart>
+                        <Pie
+                          data={expenseData}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={40}
+                          outerRadius={70}
+                          dataKey="value"
+                        >
+                          {expenseData.map((_, i) => (
+                            <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                          ))}
+                        </Pie>
+                        <Tooltip formatter={(value) => formatCurrency(Number(value))} />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </div>
+                  <div className="space-y-2 w-full sm:flex-1">
                     {expenseData.map((item, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm">
                         <div
@@ -466,7 +468,7 @@ export default function DashboardPage() {
                           style={{ backgroundColor: COLORS[i % COLORS.length] }}
                         />
                         <span className="text-muted truncate">{item.name}</span>
-                        <span className="font-medium whitespace-nowrap">{formatCurrency(item.value)}</span>
+                        <span className="font-medium ml-auto whitespace-nowrap">{formatCurrency(item.value)}</span>
                       </div>
                     ))}
                   </div>
