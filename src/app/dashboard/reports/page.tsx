@@ -58,21 +58,6 @@ export default function ReportsPage() {
     setMounted(true);
   }, []);
 
-  if (mounted && !isPro) {
-    return (
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-2xl font-bold">รายงาน</h1>
-          <p className="text-muted text-sm mt-1">สรุปรายงานรายเดือนอย่างละเอียด</p>
-        </div>
-        <UpgradePrompt
-          feature="รายงานรายเดือน"
-          description="ดูสรุปรายรับ-รายจ่าย กราฟหมวดหมู่ และวิเคราะห์รายได้ตามลูกค้า อัปเกรดเป็นโปรเพื่อปลดล็อค"
-        />
-      </div>
-    );
-  }
-
   const selected = monthOptions[selectedIdx];
   const prevMonth = monthOptions[selectedIdx + 1];
 
@@ -135,6 +120,21 @@ export default function ReportsPage() {
   }, [monthTx]);
 
   if (!mounted) return null;
+
+  if (!isPro) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold">รายงาน</h1>
+          <p className="text-muted text-sm mt-1">สรุปรายงานรายเดือนอย่างละเอียด</p>
+        </div>
+        <UpgradePrompt
+          feature="รายงานรายเดือน"
+          description="ดูสรุปรายรับ-รายจ่าย กราฟหมวดหมู่ และวิเคราะห์รายได้ตามลูกค้า อัปเกรดเป็นโปรเพื่อปลดล็อค"
+        />
+      </div>
+    );
+  }
 
   const tooltipStyle = {
     backgroundColor: "var(--card)",
