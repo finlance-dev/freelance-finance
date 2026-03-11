@@ -34,6 +34,8 @@ import { formatCurrency } from "@/lib/utils";
 import type { Transaction } from "@/lib/types";
 import { EmptyChartIllustration } from "@/components/illustrations";
 import { useToast } from "@/components/toast";
+import { usePlan } from "@/hooks/usePlan";
+import { UpgradePrompt } from "@/components/upgrade-prompt";
 
 const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"];
 
@@ -96,6 +98,7 @@ export default function DashboardPage() {
   const [goalInput, setGoalInput] = useState(0);
   const [editingGoal, setEditingGoal] = useState(false);
   const { toast } = useToast();
+  const { isPro } = usePlan();
 
   useEffect(() => {
     setTransactions(getTransactions());
@@ -186,13 +189,13 @@ export default function DashboardPage() {
       color: stats.netProfit >= 0 ? "text-accent" : "text-danger",
       bg: stats.netProfit >= 0 ? "bg-accent/10" : "bg-danger/10",
     },
-    {
+    ...(isPro ? [{
       label: "ภาษีรายไตรมาส (ประมาณ)",
       value: formatCurrency(stats.estimatedTax / 4),
       icon: Calendar,
       color: "text-warning",
       bg: "bg-warning/10",
-    },
+    }] : []),
   ];
 
   const tooltipStyle = {
@@ -237,7 +240,7 @@ export default function DashboardPage() {
       </div>
 
       {/* This Month + Income Goal */}
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className={`grid ${isPro ? "lg:grid-cols-2" : ""} gap-6`}>
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center justify-between mb-1">
             <h3 className="font-semibold">เดือนนี้</h3>
@@ -262,7 +265,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Income Goal */}
-        <div className="bg-card border border-border rounded-2xl p-5">
+        {isPro && <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Target className="w-5 h-5 text-primary" />
@@ -343,166 +346,176 @@ export default function DashboardPage() {
               </button>
             </div>
           )}
-        </div>
+        </div>}
       </div>
 
-      {/* Charts */}
-      <div className="grid lg:grid-cols-2 gap-6">
-        {/* Income Trend Area Chart */}
-        <div className="bg-card border border-border rounded-2xl p-5">
-          <h3 className="font-semibold mb-4">แนวโน้มกำไร (6 เดือน)</h3>
-          {transactions.length > 0 ? (
-            <ResponsiveContainer width="100%" height={250}>
-              <AreaChart data={monthlyData}>
-                <defs>
-                  <linearGradient id="profitGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-                <YAxis tick={{ fontSize: 12 }} />
-                <Tooltip
-                  formatter={(value) => formatCurrency(Number(value))}
-                  contentStyle={tooltipStyle}
-                  labelStyle={{ fontWeight: "bold" }}
-                />
-                <Area
-                  type="monotone"
-                  dataKey="profit"
-                  stroke="#6366f1"
-                  strokeWidth={2}
-                  fill="url(#profitGradient)"
-                  name="กำไร"
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          ) : (
-            <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
-              <EmptyChartIllustration className="w-40 h-auto" />
-              <p>เพิ่มรายการเพื่อดูกราฟ</p>
-            </div>
-          )}
-        </div>
-
-        {/* Monthly Income vs Expenses Bar Chart */}
-        <div className="bg-card border border-border rounded-2xl p-5">
-          <h3 className="font-semibold mb-4">รายรับ vs รายจ่าย (6 เดือน)</h3>
-          {transactions.length > 0 ? (
-            <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={monthlyData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-                <YAxis tick={{ fontSize: 12 }} />
-                <Tooltip
-                  formatter={(value) => formatCurrency(Number(value))}
-                  contentStyle={tooltipStyle}
-                  labelStyle={{ fontWeight: "bold" }}
-                />
-                <Bar dataKey="income" fill="#10b981" radius={[4, 4, 0, 0]} name="รายรับ" />
-                <Bar dataKey="expenses" fill="#ef4444" radius={[4, 4, 0, 0]} name="รายจ่าย" />
-              </BarChart>
-            </ResponsiveContainer>
-          ) : (
-            <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
-              <EmptyChartIllustration className="w-40 h-auto" />
-              <p>เพิ่มรายการเพื่อดูกราฟ</p>
-              <button
-                onClick={() => {
-                  seedDemoData();
-                  setTransactions(getTransactions());
-                }}
-                className="flex items-center gap-2 text-xs bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
-              >
-                <Database className="w-3.5 h-3.5" />
-                โหลดข้อมูลตัวอย่าง
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Expense Pie + Client Income */}
-      <div className="grid lg:grid-cols-2 gap-6">
-        {/* Expenses by Category */}
-        <div className="bg-card border border-border rounded-2xl p-5">
-          <h3 className="font-semibold mb-4">ค่าใช้จ่ายตามหมวดหมู่</h3>
-          {expenseData.length > 0 ? (
-            <div className="flex items-center gap-6">
-              <ResponsiveContainer width="50%" height={200}>
-                <PieChart>
-                  <Pie
-                    data={expenseData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={50}
-                    outerRadius={80}
-                    dataKey="value"
-                  >
-                    {expenseData.map((_, i) => (
-                      <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip formatter={(value) => formatCurrency(Number(value))} />
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="space-y-2">
-                {expenseData.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm">
-                    <div
-                      className="w-3 h-3 rounded-full shrink-0"
-                      style={{ backgroundColor: COLORS[i % COLORS.length] }}
+      {/* Charts — Pro only */}
+      {!isPro ? (
+        <UpgradePrompt
+          feature="กราฟและการวิเคราะห์"
+          description="ดูกราฟแนวโน้มกำไร รายรับ vs รายจ่าย สัดส่วนค่าใช้จ่าย และรายได้ตามลูกค้า อัปเกรดเป็นโปรเพื่อปลดล็อค"
+        />
+      ) : (
+        <>
+          {/* Charts */}
+          <div className="grid lg:grid-cols-2 gap-6">
+            {/* Income Trend Area Chart */}
+            <div className="bg-card border border-border rounded-2xl p-5">
+              <h3 className="font-semibold mb-4">แนวโน้มกำไร (6 เดือน)</h3>
+              {transactions.length > 0 ? (
+                <ResponsiveContainer width="100%" height={250}>
+                  <AreaChart data={monthlyData}>
+                    <defs>
+                      <linearGradient id="profitGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3} />
+                        <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                    <XAxis dataKey="month" tick={{ fontSize: 12 }} />
+                    <YAxis tick={{ fontSize: 12 }} />
+                    <Tooltip
+                      formatter={(value) => formatCurrency(Number(value))}
+                      contentStyle={tooltipStyle}
+                      labelStyle={{ fontWeight: "bold" }}
                     />
-                    <span className="text-muted truncate">{item.name}</span>
-                    <span className="font-medium whitespace-nowrap">{formatCurrency(item.value)}</span>
-                  </div>
-                ))}
-              </div>
+                    <Area
+                      type="monotone"
+                      dataKey="profit"
+                      stroke="#6366f1"
+                      strokeWidth={2}
+                      fill="url(#profitGradient)"
+                      name="กำไร"
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
+                  <EmptyChartIllustration className="w-40 h-auto" />
+                  <p>เพิ่มรายการเพื่อดูกราฟ</p>
+                </div>
+              )}
             </div>
-          ) : (
-            <div className="h-[200px] flex flex-col items-center justify-center text-muted text-sm">
-              <EmptyChartIllustration className="w-36 h-auto mb-3" />
-              เพิ่มค่าใช้จ่ายเพื่อดูสัดส่วน
-            </div>
-          )}
-        </div>
 
-        {/* Income by Client */}
-        {clientIncomeData.length > 0 && (
-          <div className="bg-card border border-border rounded-2xl p-5">
-            <h3 className="font-semibold mb-4">รายได้ตามลูกค้า</h3>
-            <div className="space-y-3">
-              {clientIncomeData.slice(0, 5).map((item, i) => {
-                const maxIncome = clientIncomeData[0].income;
-                const widthPercent = (item.income / maxIncome) * 100;
-                return (
-                  <div key={i}>
-                    <div className="flex items-center justify-between mb-1">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-medium shrink-0"
-                          style={{ backgroundColor: item.color }}
-                        >
-                          {item.name.charAt(0).toUpperCase()}
-                        </div>
-                        <span className="text-sm font-medium truncate">{item.name}</span>
-                      </div>
-                      <span className="text-sm font-semibold whitespace-nowrap">{formatCurrency(item.income)}</span>
-                    </div>
-                    <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all duration-500"
-                        style={{ width: `${widthPercent}%`, backgroundColor: item.color }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+            {/* Monthly Income vs Expenses Bar Chart */}
+            <div className="bg-card border border-border rounded-2xl p-5">
+              <h3 className="font-semibold mb-4">รายรับ vs รายจ่าย (6 เดือน)</h3>
+              {transactions.length > 0 ? (
+                <ResponsiveContainer width="100%" height={250}>
+                  <BarChart data={monthlyData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+                    <XAxis dataKey="month" tick={{ fontSize: 12 }} />
+                    <YAxis tick={{ fontSize: 12 }} />
+                    <Tooltip
+                      formatter={(value) => formatCurrency(Number(value))}
+                      contentStyle={tooltipStyle}
+                      labelStyle={{ fontWeight: "bold" }}
+                    />
+                    <Bar dataKey="income" fill="#10b981" radius={[4, 4, 0, 0]} name="รายรับ" />
+                    <Bar dataKey="expenses" fill="#ef4444" radius={[4, 4, 0, 0]} name="รายจ่าย" />
+                  </BarChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
+                  <EmptyChartIllustration className="w-40 h-auto" />
+                  <p>เพิ่มรายการเพื่อดูกราฟ</p>
+                  <button
+                    onClick={() => {
+                      seedDemoData();
+                      setTransactions(getTransactions());
+                    }}
+                    className="flex items-center gap-2 text-xs bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
+                  >
+                    <Database className="w-3.5 h-3.5" />
+                    โหลดข้อมูลตัวอย่าง
+                  </button>
+                </div>
+              )}
             </div>
           </div>
-        )}
-      </div>
+
+          {/* Expense Pie + Client Income */}
+          <div className="grid lg:grid-cols-2 gap-6">
+            {/* Expenses by Category */}
+            <div className="bg-card border border-border rounded-2xl p-5">
+              <h3 className="font-semibold mb-4">ค่าใช้จ่ายตามหมวดหมู่</h3>
+              {expenseData.length > 0 ? (
+                <div className="flex items-center gap-6">
+                  <ResponsiveContainer width="50%" height={200}>
+                    <PieChart>
+                      <Pie
+                        data={expenseData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={50}
+                        outerRadius={80}
+                        dataKey="value"
+                      >
+                        {expenseData.map((_, i) => (
+                          <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                        ))}
+                      </Pie>
+                      <Tooltip formatter={(value) => formatCurrency(Number(value))} />
+                    </PieChart>
+                  </ResponsiveContainer>
+                  <div className="space-y-2">
+                    {expenseData.map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm">
+                        <div
+                          className="w-3 h-3 rounded-full shrink-0"
+                          style={{ backgroundColor: COLORS[i % COLORS.length] }}
+                        />
+                        <span className="text-muted truncate">{item.name}</span>
+                        <span className="font-medium whitespace-nowrap">{formatCurrency(item.value)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="h-[200px] flex flex-col items-center justify-center text-muted text-sm">
+                  <EmptyChartIllustration className="w-36 h-auto mb-3" />
+                  เพิ่มค่าใช้จ่ายเพื่อดูสัดส่วน
+                </div>
+              )}
+            </div>
+
+            {/* Income by Client */}
+            {clientIncomeData.length > 0 && (
+              <div className="bg-card border border-border rounded-2xl p-5">
+                <h3 className="font-semibold mb-4">รายได้ตามลูกค้า</h3>
+                <div className="space-y-3">
+                  {clientIncomeData.slice(0, 5).map((item, i) => {
+                    const maxIncome = clientIncomeData[0].income;
+                    const widthPercent = (item.income / maxIncome) * 100;
+                    return (
+                      <div key={i}>
+                        <div className="flex items-center justify-between mb-1">
+                          <div className="flex items-center gap-2">
+                            <div
+                              className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-medium shrink-0"
+                              style={{ backgroundColor: item.color }}
+                            >
+                              {item.name.charAt(0).toUpperCase()}
+                            </div>
+                            <span className="text-sm font-medium truncate">{item.name}</span>
+                          </div>
+                          <span className="text-sm font-semibold whitespace-nowrap">{formatCurrency(item.income)}</span>
+                        </div>
+                        <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all duration-500"
+                            style={{ width: `${widthPercent}%`, backgroundColor: item.color }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }
