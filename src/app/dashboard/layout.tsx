@@ -20,6 +20,7 @@ import {
   Sun,
   Moon,
   Monitor,
+  UserCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePlan } from "@/hooks/usePlan";
@@ -35,6 +36,7 @@ const navItems = [
   { href: "/dashboard/reports", label: "รายงาน", icon: BarChart3 },
   { href: "/dashboard/recurring", label: "รายการประจำ", icon: RefreshCw },
   { href: "/dashboard/tax", label: "ประมาณภาษี", icon: Calculator },
+  { href: "/dashboard/profile", label: "โปรไฟล์", icon: UserCircle },
   { href: "/dashboard/settings", label: "ตั้งค่า", icon: Settings },
   { href: "/dashboard/pricing", label: "แพลน", icon: CreditCard },
 ];
@@ -151,10 +153,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         <div className="p-4 border-t border-border">
           <div className="flex items-center justify-between">
-            <div className="truncate">
+            <Link href="/dashboard/profile" className="truncate hover:opacity-80 transition">
               <p className="text-sm font-medium truncate">{userName}</p>
               <p className={`text-xs ${isPro ? "text-primary font-medium" : "text-muted"}`}>{planLabel}</p>
-            </div>
+            </Link>
             <button
               onClick={handleLogout}
               className="p-2 text-muted hover:text-danger rounded-lg hover:bg-secondary transition"
