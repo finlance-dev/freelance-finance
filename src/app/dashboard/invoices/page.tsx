@@ -276,7 +276,7 @@ export default function InvoicesPage() {
       <div class="brand-icon">$</div>
       <div>
         <div class="brand-name">${userName}</div>
-        <div class="brand-sub">${userEmail}${userPhone ? ` · ${userPhone}` : ""}</div>
+        <div class="brand-sub">ใบแจ้งหนี้ / Invoice</div>
       </div>
     </div>
     <div class="inv-meta">
