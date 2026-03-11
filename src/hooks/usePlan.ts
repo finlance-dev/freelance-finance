@@ -18,6 +18,14 @@ export function usePlan() {
       setPlan(userPlan.plan);
     }
     setMounted(true);
+
+    // Listen for plan changes from other components
+    const handlePlanChange = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (detail?.plan) setPlan(detail.plan);
+    };
+    window.addEventListener("ff_plan_changed", handlePlanChange);
+    return () => window.removeEventListener("ff_plan_changed", handlePlanChange);
   }, []);
 
   const limits = PLAN_LIMITS[plan];
@@ -26,6 +34,7 @@ export function usePlan() {
   const upgrade = useCallback((newPlan: PlanType) => {
     setUserPlan(newPlan);
     setPlan(newPlan);
+    window.dispatchEvent(new CustomEvent("ff_plan_changed", { detail: { plan: newPlan } }));
   }, []);
 
   const canAddClient = useCallback(() => {

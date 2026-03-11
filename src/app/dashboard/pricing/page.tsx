@@ -5,6 +5,7 @@ import { Check, Sparkles, Crown, QrCode, X } from "lucide-react";
 import { usePlan } from "@/hooks/usePlan";
 import type { PlanType } from "@/lib/types";
 import { generatePromptPayQRDataURL } from "@/lib/promptpay";
+import { CelebrationModal } from "@/components/celebration-modal";
 
 const plans = [
   {
@@ -72,6 +73,14 @@ export default function PricingPage() {
   const [qrModal, setQrModal] = useState<{ plan: PlanType; price: number; name: string } | null>(null);
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
   const [qrLoading, setQrLoading] = useState(false);
+  const [celebration, setCelebration] = useState<{ planName: string } | null>(null);
+
+  const doUpgrade = (planId: PlanType, name: string) => {
+    upgrade(planId);
+    if (planId !== "free") {
+      setCelebration({ planName: `แพลน${name}` });
+    }
+  };
 
   const handleUpgradeWithQR = async (planId: PlanType, price: number, name: string) => {
     if (planId === "free") {
@@ -91,7 +100,7 @@ export default function PricingPage() {
 
   const handleConfirmPayment = () => {
     if (qrModal) {
-      upgrade(qrModal.plan);
+      doUpgrade(qrModal.plan, qrModal.name);
       setQrModal(null);
       setQrDataUrl("");
     }
@@ -161,7 +170,7 @@ export default function PricingPage() {
               ) : (
                 <div className="space-y-2">
                   <button
-                    onClick={() => upgrade(p.id)}
+                    onClick={() => doUpgrade(p.id, p.name)}
                     className={`w-full py-2.5 rounded-xl font-semibold transition ${
                       p.highlighted
                         ? "bg-primary hover:bg-primary-dark text-white"
@@ -234,6 +243,12 @@ export default function PricingPage() {
       <p className="text-center text-xs text-muted">
         โหมดทดลอง: การเปลี่ยนแพลนมีผลทันที ยังไม่มีการเรียกเก็บเงินจริง
       </p>
+
+      <CelebrationModal
+        isOpen={!!celebration}
+        onClose={() => setCelebration(null)}
+        planName={celebration?.planName || ""}
+      />
     </div>
   );
 }
