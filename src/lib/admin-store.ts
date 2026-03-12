@@ -1,7 +1,5 @@
 import type { AdminUser, ActivityEvent } from "./types";
 
-const ADMIN_PASSWORD = "finlance2026";
-
 export interface AdminStats {
   totalUsers: number;
   activeToday: number;
@@ -23,11 +21,16 @@ interface StatsResponse {
   recentEvents: ActivityEvent[];
 }
 
+function getAdminPassword(): string {
+  if (typeof window === "undefined") return "";
+  return sessionStorage.getItem("ff_admin_password") || "";
+}
+
 // ─── Cloud-based admin data (fetches from Supabase via API routes) ────────
 
 export async function fetchAdminStats(): Promise<StatsResponse> {
   const res = await fetch("/api/admin/stats", {
-    headers: { "x-admin-password": ADMIN_PASSWORD },
+    headers: { "x-admin-password": getAdminPassword() },
   });
   if (!res.ok) throw new Error("Failed to fetch admin stats");
   return res.json();
@@ -35,7 +38,7 @@ export async function fetchAdminStats(): Promise<StatsResponse> {
 
 export async function fetchAllUsers(): Promise<AdminUser[]> {
   const res = await fetch("/api/admin/users", {
-    headers: { "x-admin-password": ADMIN_PASSWORD },
+    headers: { "x-admin-password": getAdminPassword() },
   });
   if (!res.ok) throw new Error("Failed to fetch admin users");
   const data = await res.json();

@@ -36,9 +36,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             {locale === "th" ? "กรุณาใส่รหัสผ่านผู้ดูแลระบบ" : "Enter admin password"}
           </p>
           <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              const ok = login(password);
+              const ok = await login(password);
               if (!ok) {
                 setError(true);
                 setTimeout(() => setError(false), 2000);

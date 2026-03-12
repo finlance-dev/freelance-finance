@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-const ADMIN_PASSWORD = "finlance2026";
-
 export function useAdmin() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -14,9 +12,14 @@ export function useAdmin() {
     if (stored === "true") setIsAdmin(true);
   }, []);
 
-  const login = (password: string): boolean => {
-    if (password === ADMIN_PASSWORD) {
+  const login = async (password: string): Promise<boolean> => {
+    // Validate password against server
+    const res = await fetch("/api/admin/stats", {
+      headers: { "x-admin-password": password },
+    });
+    if (res.ok) {
       sessionStorage.setItem("ff_admin_auth", "true");
+      sessionStorage.setItem("ff_admin_password", password);
       setIsAdmin(true);
       return true;
     }
@@ -25,6 +28,7 @@ export function useAdmin() {
 
   const logout = () => {
     sessionStorage.removeItem("ff_admin_auth");
+    sessionStorage.removeItem("ff_admin_password");
     setIsAdmin(false);
   };
 
