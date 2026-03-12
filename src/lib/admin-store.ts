@@ -81,7 +81,9 @@ export function getAllUsers(): AdminUser[] {
 export interface AdminStats {
   totalUsers: number;
   activeToday: number;
+  freeUsers: number;
   proUsers: number;
+  proYearlyUsers: number;
   totalRevenue: number;
   totalTransactions: number;
   totalClients: number;
@@ -103,7 +105,9 @@ export function getAdminStats(): AdminStats {
       .filter((e) => e.createdAt.startsWith(todayStr))
       .map((e) => e.userEmail)
       .filter((v, i, a) => a.indexOf(v) === i).length,
-    proUsers: users.filter((u) => u.plan === "pro" || u.plan === "pro_yearly").length,
+    freeUsers: users.filter((u) => u.plan === "free").length,
+    proUsers: users.filter((u) => u.plan === "pro").length,
+    proYearlyUsers: users.filter((u) => u.plan === "pro_yearly").length,
     totalRevenue: users.reduce((s, u) => s + u.totalIncome, 0),
     totalTransactions: users.reduce((s, u) => s + u.transactionCount, 0),
     totalClients: users.reduce((s, u) => s + u.clientCount, 0),
@@ -139,5 +143,5 @@ export function getPlanDistribution(): { name: string; value: number }[] {
     { name: "Free", value: free },
     { name: "Pro Monthly", value: pro },
     { name: "Pro Yearly", value: proYearly },
-  ].filter((d) => d.value > 0);
+  ];
 }

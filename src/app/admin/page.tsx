@@ -74,7 +74,9 @@ export default function AdminOverviewPage() {
   const statCards = [
     { label: locale === "th" ? "ผู้ใช้ทั้งหมด" : "Total Users", value: stats.totalUsers, icon: Users, color: "text-primary" },
     { label: locale === "th" ? "ใช้งานวันนี้" : "Active Today", value: stats.activeToday, icon: Activity, color: "text-accent" },
-    { label: locale === "th" ? "ผู้ใช้ Pro" : "Pro Users", value: stats.proUsers, icon: Crown, color: "text-warning" },
+    { label: locale === "th" ? "ผู้ใช้ Free" : "Free Users", value: stats.freeUsers, icon: Users, color: "text-muted" },
+    { label: locale === "th" ? "ผู้ใช้ Pro รายเดือน" : "Pro Monthly", value: stats.proUsers, icon: Crown, color: "text-warning" },
+    { label: locale === "th" ? "ผู้ใช้ Pro รายปี" : "Pro Yearly", value: stats.proYearlyUsers, icon: Crown, color: "text-purple-400" },
     { label: locale === "th" ? "รายได้รวม" : "Total Revenue", value: `฿${stats.totalRevenue.toLocaleString()}`, icon: DollarSign, color: "text-accent" },
   ];
 
@@ -94,7 +96,7 @@ export default function AdminOverviewPage() {
       </div>
 
       {/* Stat Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {statCards.map((card) => {
           const Icon = card.icon;
           return (
