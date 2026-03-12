@@ -812,6 +812,31 @@ export const translations = {
     ctaFree: { th: "เริ่มใช้ฟรี", en: "Start Free" },
     ctaPro: { th: "ทดลองใช้โปร", en: "Try Pro" },
     ctaYearly: { th: "สมัครแพลนรายปี", en: "Get Annual Plan" },
+    // Testimonials
+    testimonialsTitle: { th: "ฟรีแลนซ์พูดถึงเราว่าอย่างไร", en: "What freelancers are saying" },
+    testimonial1Name: { th: "ปิยะ ธ.", en: "Piya T." },
+    testimonial1Role: { th: "นักพัฒนาเว็บฟรีแลนซ์", en: "Freelance Web Developer" },
+    testimonial1Text: { th: "เมื่อก่อนใช้ Excel จัดการบัญชี ปวดหัวมาก ตั้งแต่ใช้ Finlance ทุกอย่างชัดเจนขึ้นเยอะ โดยเฉพาะเรื่องภาษี", en: "I used to manage my accounts in Excel — it was a headache. Since using Finlance, everything is so much clearer, especially taxes." },
+    testimonial2Name: { th: "แพร ส.", en: "Prae S." },
+    testimonial2Role: { th: "กราฟิกดีไซเนอร์ฟรีแลนซ์", en: "Freelance Graphic Designer" },
+    testimonial2Text: { th: "ชอบที่เห็นภาพรวมรายรับรายจ่ายได้ทันที รู้เลยว่าลูกค้าไหนทำกำไรจริง ลูกค้าไหนเสียเวลาเปล่า", en: "I love seeing my income vs expenses at a glance. I finally know which clients are profitable and which ones waste my time." },
+    testimonial3Name: { th: "ต้น ว.", en: "Ton W." },
+    testimonial3Role: { th: "ช่างภาพฟรีแลนซ์", en: "Freelance Photographer" },
+    testimonial3Text: { th: "พยากรณ์กระแสเงินสดช่วยได้มาก รู้ล่วงหน้าว่าเดือนไหนจะเงินขาด วางแผนรับงานได้ดีขึ้น", en: "The cash flow forecast is amazing. I know in advance which months will be tight, so I can plan my workload better." },
+    // FAQ
+    faqTitle: { th: "คำถามที่พบบ่อย", en: "Frequently Asked Questions" },
+    faq1Q: { th: "Finlance ใช้ฟรีได้จริงไหม?", en: "Is Finlance really free to use?" },
+    faq1A: { th: "ใช่ครับ แพลนฟรีสามารถจัดการลูกค้าได้สูงสุด 3 ราย ดูแดชบอร์ดพื้นฐาน และติดตามรายรับรายจ่ายได้ไม่จำกัด ไม่ต้องใช้บัตรเครดิต", en: "Yes! The free plan lets you manage up to 3 clients, view a basic dashboard, and track unlimited transactions. No credit card required." },
+    faq2Q: { th: "ข้อมูลของฉันปลอดภัยไหม?", en: "Is my data secure?" },
+    faq2A: { th: "ข้อมูลทั้งหมดเข้ารหัสด้วย SSL และเก็บบนเซิร์ฟเวอร์ที่ปลอดภัย เราไม่ขายหรือแชร์ข้อมูลของคุณกับบุคคลที่สาม", en: "All data is SSL-encrypted and stored on secure servers. We never sell or share your data with third parties." },
+    faq3Q: { th: "รองรับภาษีไทยไหม?", en: "Does it support Thai tax calculations?" },
+    faq3A: { th: "รองรับครับ คำนวณภาษีตามอัตราก้าวหน้าของไทย รวมค่าลดหย่อนส่วนตัว 60,000 บาท คำนวณภาษีรายไตรมาสให้อัตโนมัติ", en: "Yes! It calculates taxes using Thai progressive tax brackets, including the 60,000 THB personal deduction, with automatic quarterly estimates." },
+    faq4Q: { th: "ยกเลิกได้ตลอดเวลาไหม?", en: "Can I cancel anytime?" },
+    faq4A: { th: "ได้เลยครับ ไม่มีสัญญาผูกมัด ยกเลิกได้ตลอดเวลาผ่านหน้าตั้งค่า แพลนจะใช้ได้จนสิ้นสุดรอบบิล", en: "Absolutely. No contracts, cancel anytime from your settings. Your plan stays active until the end of your billing cycle." },
+    faq5Q: { th: "สามารถเชื่อมต่อกับธนาคารได้ไหม?", en: "Can it connect to my bank?" },
+    faq5A: { th: "ตอนนี้ยังไม่รองรับเชื่อมธนาคารโดยตรง แต่คุณสามารถเพิ่มรายการด้วยตัวเองได้ง่ายๆ และเรากำลังพัฒนาฟีเจอร์นี้อยู่", en: "Direct bank connection isn't available yet, but you can easily add transactions manually. We're actively developing this feature." },
+    // Nav
+    navFaq: { th: "คำถาม", en: "FAQ" },
   },
 } as const;
 

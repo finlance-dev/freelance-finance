@@ -16,6 +16,8 @@ import {
   Menu,
   X,
   Languages,
+  Quote,
+  ChevronDown,
 } from "lucide-react";
 import { HeroIllustration } from "@/components/illustrations";
 import { useLocale } from "@/hooks/useLocale";
@@ -33,10 +35,25 @@ const featureKeys: { title: TranslationKey<"landing">; desc: TranslationKey<"lan
 
 const painKeys: TranslationKey<"landing">[] = ["pain1", "pain2", "pain3", "pain4", "pain5"];
 
+const testimonialKeys = [
+  { name: "testimonial1Name" as const, role: "testimonial1Role" as const, text: "testimonial1Text" as const },
+  { name: "testimonial2Name" as const, role: "testimonial2Role" as const, text: "testimonial2Text" as const },
+  { name: "testimonial3Name" as const, role: "testimonial3Role" as const, text: "testimonial3Text" as const },
+];
+
+const faqKeys = [
+  { q: "faq1Q" as const, a: "faq1A" as const },
+  { q: "faq2Q" as const, a: "faq2A" as const },
+  { q: "faq3Q" as const, a: "faq3A" as const },
+  { q: "faq4Q" as const, a: "faq4A" as const },
+  { q: "faq5Q" as const, a: "faq5A" as const },
+];
+
 export default function LandingPage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { locale, setLocale, t } = useLocale();
 
   const handleWaitlist = (e: React.FormEvent) => {
@@ -111,6 +128,9 @@ export default function LandingPage() {
               <a href="#pricing" className="text-muted hover:text-foreground transition">
                 {t("landing", "navPricing")}
               </a>
+              <a href="#faq" className="text-muted hover:text-foreground transition">
+                {t("landing", "navFaq")}
+              </a>
               <Link href="/login" className="text-muted hover:text-foreground transition">
                 {t("auth", "login")}
               </Link>
@@ -139,6 +159,7 @@ export default function LandingPage() {
             <div className="md:hidden pb-4 flex flex-col gap-3">
               <a href="#features" className="text-muted hover:text-foreground py-2">{t("landing", "navFeatures")}</a>
               <a href="#pricing" className="text-muted hover:text-foreground py-2">{t("landing", "navPricing")}</a>
+              <a href="#faq" className="text-muted hover:text-foreground py-2">{t("landing", "navFaq")}</a>
               <Link href="/login" className="text-muted hover:text-foreground py-2">{t("auth", "login")}</Link>
               <button
                 onClick={() => setLocale(locale === "th" ? "en" : "th")}
@@ -304,6 +325,71 @@ export default function LandingPage() {
                 >
                   {plan.cta}
                 </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14">
+            {t("landing", "testimonialsTitle")}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonialKeys.map((tk, i) => (
+              <div
+                key={i}
+                className="bg-card border border-border rounded-2xl p-6 flex flex-col"
+              >
+                <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                <p className="text-foreground flex-1 mb-6 leading-relaxed">
+                  &ldquo;{t("landing", tk.text)}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                    {t("landing", tk.name).charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">{t("landing", tk.name)}</p>
+                    <p className="text-muted text-xs">{t("landing", tk.role)}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 bg-secondary/50 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14">
+            {t("landing", "faqTitle")}
+          </h2>
+          <div className="space-y-3">
+            {faqKeys.map((fk, i) => (
+              <div
+                key={i}
+                className="bg-card border border-border rounded-xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary/50 transition"
+                >
+                  <span className="font-medium pr-4">{t("landing", fk.q)}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-muted flex-shrink-0 transition-transform ${
+                      openFaq === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 text-muted leading-relaxed">
+                    {t("landing", fk.a)}
+                  </div>
+                )}
               </div>
             ))}
           </div>
