@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
 import { LoginIllustration } from "@/components/illustrations";
 import { signIn } from "@/lib/supabase-store";
@@ -10,9 +10,11 @@ import { syncFromCloud } from "@/lib/store";
 import { useLocale } from "@/hooks/useLocale";
 import { logActivity } from "@/lib/activity-logger";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { locale, setLocale, t } = useLocale();
+  const passwordUpdated = searchParams.get("message") === "password_updated";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -69,6 +71,11 @@ export default function LoginPage() {
         </div>
 
         <form onSubmit={handleLogin} className="bg-card border border-border rounded-2xl p-8 space-y-5">
+          {passwordUpdated && (
+            <div className="bg-accent/10 text-accent-dark border border-accent/30 px-4 py-3 rounded-xl text-sm">
+              {t("auth", "passwordUpdated")}
+            </div>
+          )}
           {error && (
             <div className="bg-danger/10 text-danger border border-danger/30 px-4 py-3 rounded-xl text-sm">
               {error}
@@ -106,6 +113,11 @@ export default function LoginPage() {
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
             </div>
+            <div className="flex justify-end mt-1.5">
+              <Link href="/forgot-password" className="text-xs text-primary hover:underline">
+                {t("auth", "forgotPassword")}
+              </Link>
+            </div>
           </div>
 
           <button
@@ -129,5 +141,13 @@ export default function LoginPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
   );
 }

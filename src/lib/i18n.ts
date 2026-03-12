@@ -143,6 +143,23 @@ export const translations = {
     errorLogin: { th: "เข้าสู่ระบบไม่สำเร็จ กรุณาลองอีกครั้ง", en: "Login failed. Please try again." },
     errorSignup: { th: "สมัครสมาชิกไม่สำเร็จ กรุณาลองอีกครั้ง", en: "Signup failed. Please try again." },
     loginDemo: { th: "โหมดทดลอง: ใส่อีเมลและรหัสผ่านใดก็ได้", en: "Demo: Enter any email and password" },
+    // Verify email
+    verifyTitle: { th: "ตรวจสอบอีเมลของคุณ", en: "Check your email" },
+    verifyDesc: { th: "เราได้ส่งลิงก์ยืนยันไปที่อีเมลของคุณแล้ว กรุณาคลิกลิงก์เพื่อเปิดใช้งานบัญชี", en: "We've sent a verification link to your email. Please click the link to activate your account." },
+    backToLogin: { th: "กลับไปหน้าเข้าสู่ระบบ", en: "Back to login" },
+    // Forgot / Reset password
+    forgotDesc: { th: "กรอกอีเมลเพื่อรับลิงก์รีเซ็ตรหัสผ่าน", en: "Enter your email to receive a password reset link" },
+    sendResetLink: { th: "ส่งลิงก์รีเซ็ต", en: "Send Reset Link" },
+    resetEmailSent: { th: "ส่งลิงก์รีเซ็ตรหัสผ่านแล้ว!", en: "Password reset link sent!" },
+    checkInbox: { th: "กรุณาตรวจสอบอีเมลของคุณและคลิกลิงก์เพื่อตั้งรหัสผ่านใหม่", en: "Please check your email and click the link to set a new password" },
+    resetTitle: { th: "ตั้งรหัสผ่านใหม่", en: "Set New Password" },
+    resetDesc: { th: "กรอกรหัสผ่านใหม่ของคุณ", en: "Enter your new password" },
+    newPassword: { th: "รหัสผ่านใหม่", en: "New Password" },
+    confirmPassword: { th: "ยืนยันรหัสผ่าน", en: "Confirm Password" },
+    confirmPasswordPlaceholder: { th: "กรอกรหัสผ่านอีกครั้ง", en: "Enter password again" },
+    resetPassword: { th: "ตั้งรหัสผ่านใหม่", en: "Reset Password" },
+    errorPasswordMismatch: { th: "รหัสผ่านไม่ตรงกัน", en: "Passwords do not match" },
+    passwordUpdated: { th: "เปลี่ยนรหัสผ่านสำเร็จ! กรุณาเข้าสู่ระบบใหม่", en: "Password updated! Please log in again." },
   },
 
   // Dashboard
