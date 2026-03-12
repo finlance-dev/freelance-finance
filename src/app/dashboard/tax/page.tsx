@@ -13,6 +13,7 @@ import type { Transaction } from "@/lib/types";
 import { TaxIllustration } from "@/components/illustrations";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
+import { useLocale } from "@/hooks/useLocale";
 
 // Thai personal income tax brackets (simplified)
 const TAX_BRACKETS = [
@@ -60,6 +61,7 @@ export default function TaxEstimatorPage() {
   const [selectedYear, setSelectedYear] = useState<number>(new Date().getFullYear());
   const [mounted, setMounted] = useState(false);
   const { isPro } = usePlan();
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     const txs = getTransactions();
@@ -91,6 +93,7 @@ export default function TaxEstimatorPage() {
   const now = new Date();
   const currentYear = now.getFullYear();
   const quarters = getQuarterDates(selectedYear);
+  const dateFmtLocale = locale === "th" ? "th-TH" : "en-US";
 
   // Get available years from data
   const availableYears = useMemo(() => {
@@ -195,13 +198,13 @@ export default function TaxEstimatorPage() {
     return (
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold">ประมาณภาษี</h1>
-          <p className="text-muted text-sm mt-1">ประมาณภาษีและวางแผนกระแสเงินสดของคุณ</p>
+          <h1 className="text-2xl font-bold">{t("tax", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("tax", "subtitle")}</p>
         </div>
 
         <UpgradePrompt
-          feature="ประมาณภาษี"
-          description="ปลดล็อคเครื่องมือวางแผนภาษีที่ออกแบบมาเพื่อฟรีแลนซ์ไทยโดยเฉพาะ ให้คุณรู้ล่วงหน้าว่าต้องเตรียมเงินจ่ายภาษีเท่าไหร่ ไม่ต้องกังวลตอนสิ้นปีอีกต่อไป"
+          feature={t("tax", "upgradeFeature")}
+          description={t("tax", "upgradeDesc")}
         />
 
         {/* Feature Preview */}
@@ -209,37 +212,37 @@ export default function TaxEstimatorPage() {
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Calculator className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-sm">คำนวณภาษีอัตโนมัติ</h3>
+              <h3 className="font-semibold text-sm">{t("tax", "previewAutoCalc")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ระบบคำนวณภาษีให้อัตโนมัติจากรายรับที่คุณบันทึก รองรับทั้งอัตราคงที่และขั้นบันไดตามกฎหมายไทย (0-35%) พร้อมหักค่าลดหย่อนส่วนตัว
+              {t("tax", "previewAutoCalcDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Calendar className="w-5 h-5 text-warning" />
-              <h3 className="font-semibold text-sm">แจ้งเตือนกำหนดจ่ายภาษี</h3>
+              <h3 className="font-semibold text-sm">{t("tax", "previewDeadline")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ไม่พลาดกำหนดยื่นภาษีรายไตรมาส ระบบแจ้งเตือนล่วงหน้า 30 วัน พร้อมบอกยอดที่ต้องเตรียมจ่ายในแต่ละไตรมาส
+              {t("tax", "previewDeadlineDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <TrendingUp className="w-5 h-5 text-accent" />
-              <h3 className="font-semibold text-sm">วิเคราะห์กระแสเงินสด</h3>
+              <h3 className="font-semibold text-sm">{t("tax", "previewCashFlow")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ดูว่าเงินที่มีอยู่ใช้ได้อีกกี่เดือน (Runway) เปรียบเทียบรายได้กับค่าใช้จ่ายรายเดือน ช่วยให้วางแผนการเงินได้มั่นใจขึ้น
+              {t("tax", "previewCashFlowDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <PiggyBank className="w-5 h-5 text-danger" />
-              <h3 className="font-semibold text-sm">คำแนะนำการเงิน</h3>
+              <h3 className="font-semibold text-sm">{t("tax", "previewAdvice")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              แนะนำเงินเดือนที่ควรจ่ายให้ตัวเอง (60% ของรายได้) บอกว่าควรเก็บเงินไว้จ่ายภาษีเท่าไหร่ และเตือนเมื่อเงินสำรองใกล้หมด
+              {t("tax", "previewAdviceDesc")}
             </p>
           </div>
         </div>
@@ -248,7 +251,7 @@ export default function TaxEstimatorPage() {
         <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
           <div className="flex items-center gap-2 mb-3">
             <Shield className="w-5 h-5 text-primary" />
-            <h3 className="font-semibold text-sm">อัตราภาษีขั้นบันไดไทยที่ใช้คำนวณ</h3>
+            <h3 className="font-semibold text-sm">{t("tax", "previewBrackets")}</h3>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {TAX_BRACKETS.slice(0, 4).map((b, i) => (
@@ -256,12 +259,12 @@ export default function TaxEstimatorPage() {
                 <p className="text-xs text-muted">
                   {b.max <= 150000 ? "≤150K" : b.max <= 300000 ? "150-300K" : b.max <= 500000 ? "300-500K" : "500-750K"}
                 </p>
-                <p className="text-lg font-bold text-primary">{b.rate === 0 ? "ยกเว้น" : `${b.rate}%`}</p>
+                <p className="text-lg font-bold text-primary">{b.rate === 0 ? t("tax", "exempt") : `${b.rate}%`}</p>
               </div>
             ))}
           </div>
           <p className="text-xs text-muted mt-2 text-center">
-            อัตรา 20-35% สำหรับรายได้ 750K ขึ้นไป • คำนวณตามอัตราจริงของกรมสรรพากร
+            {t("tax", "previewBracketsNote")}
           </p>
         </div>
       </div>
@@ -272,8 +275,8 @@ export default function TaxEstimatorPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">ประมาณภาษี</h1>
-          <p className="text-muted text-sm mt-1">ประมาณภาษีและวางแผนกระแสเงินสดของคุณ</p>
+          <h1 className="text-2xl font-bold">{t("tax", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("tax", "subtitle")}</p>
         </div>
         {availableYears.length > 1 && (
           <select
@@ -283,7 +286,7 @@ export default function TaxEstimatorPage() {
           >
             {availableYears.map((y) => (
               <option key={y} value={y}>
-                ปี {y} {y === currentYear ? "(ปีนี้)" : ""}
+                {t("tax", "yearLabel")} {y} {y === currentYear ? t("tax", "thisYear") : ""}
               </option>
             ))}
           </select>
@@ -296,12 +299,12 @@ export default function TaxEstimatorPage() {
           <div className="flex items-start gap-3">
             <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-sm mb-2">เริ่มต้นใช้งานประมาณภาษี</h3>
+              <h3 className="font-semibold text-sm mb-2">{t("tax", "gettingStarted")}</h3>
               <ol className="text-sm text-muted space-y-1.5 list-decimal list-inside">
-                <li>ไปที่หน้า <strong>รายรับ-รายจ่าย</strong> แล้วเพิ่มรายการเงินเข้า-ออกของคุณ</li>
-                <li>กลับมาที่หน้านี้ ระบบจะคำนวณภาษีให้อัตโนมัติจากข้อมูลที่บันทึก</li>
-                <li>ปรับ <strong>วิธีคำนวณ</strong> ได้ตามต้องการ — อัตราคงที่ (เหมาจ่าย) หรือขั้นบันไดตามกฎหมาย</li>
-                <li>ใส่ <strong>ค่าใช้จ่ายรายเดือน</strong> เพื่อดูว่าเงินเหลือใช้ได้อีกกี่เดือน</li>
+                <li>{t("tax", "step1")} <strong>{t("tax", "step1Page")}</strong> {t("tax", "step1Desc")}</li>
+                <li>{t("tax", "step2")}</li>
+                <li>{t("tax", "step3")} <strong>{t("tax", "step3Method")}</strong> {t("tax", "step3Desc")}</li>
+                <li>{t("tax", "step4")} <strong>{t("tax", "step4Expenses")}</strong> {t("tax", "step4Desc")}</li>
               </ol>
             </div>
           </div>
@@ -313,11 +316,11 @@ export default function TaxEstimatorPage() {
         <div className="bg-warning/10 border border-warning/30 rounded-2xl p-4 flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-semibold text-warning">ใกล้ถึงกำหนดจ่ายภาษีแล้ว</p>
+            <p className="font-semibold text-warning">{t("tax", "taxDeadlineAlert")}</p>
             <p className="text-sm text-muted mt-1">
-              ภาษี {quarters[currentQ].q} ครบกำหนดจ่ายวันที่{" "}
-              <strong>{new Date(nextDeadline!).toLocaleDateString("th-TH")}</strong> (อีก {daysUntilDeadline} วัน)
-              ยอดประมาณ: <strong>{formatCurrency(analysis.quarterlyTax)}</strong>
+              {t("tax", "taxQuarter")} {quarters[currentQ].q} {t("tax", "dueOn")}{" "}
+              <strong>{new Date(nextDeadline!).toLocaleDateString(dateFmtLocale)}</strong> ({t("tax", "moredays")} {daysUntilDeadline} {t("tax", "daysLeft")})
+              {" "}{t("tax", "estAmount")} <strong>{formatCurrency(analysis.quarterlyTax)}</strong>
             </p>
           </div>
         </div>
@@ -326,28 +329,28 @@ export default function TaxEstimatorPage() {
       {/* Summary Cards */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-card border border-border rounded-2xl p-5">
-          <p className="text-sm text-muted mb-1">รายได้สะสม{selectedYear === currentYear ? "ปีนี้" : `ปี ${selectedYear}`}</p>
+          <p className="text-sm text-muted mb-1">{t("tax", "accumulatedIncome")}{selectedYear === currentYear ? t("tax", "thisYear") : ` ${t("tax", "yearLabel")} ${selectedYear}`}</p>
           <p className="text-2xl font-bold text-accent">{formatCurrency(analysis.yearIncome)}</p>
-          <p className="text-xs text-muted mt-1">จากรายรับที่บันทึกไว้ในปี {selectedYear}</p>
+          <p className="text-xs text-muted mt-1">{t("tax", "fromRecorded")} {selectedYear}</p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-5">
-          <p className="text-sm text-muted mb-1">{selectedYear === currentYear ? "ประมาณรายได้ทั้งปี" : "รายได้ทั้งปี"}</p>
+          <p className="text-sm text-muted mb-1">{selectedYear === currentYear ? t("tax", "projectedAnnual") : t("tax", "actualAnnual")}</p>
           <p className="text-2xl font-bold">{formatCurrency(analysis.projectedAnnual)}</p>
           <p className="text-xs text-muted mt-1">
-            {selectedYear === currentYear ? `คาดการณ์จาก ${now.getMonth() + 1} เดือนที่ผ่านมา` : `ข้อมูลจริงทั้งปี ${selectedYear}`}
+            {selectedYear === currentYear ? `${t("tax", "projectedFrom")} ${now.getMonth() + 1} ${t("tax", "monthsPassed")}` : `${t("tax", "actualData")} ${selectedYear}`}
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-5">
-          <p className="text-sm text-muted mb-1">ภาษีทั้งปี (ประมาณ)</p>
+          <p className="text-sm text-muted mb-1">{t("tax", "annualTax")}</p>
           <p className="text-2xl font-bold text-warning">{formatCurrency(analysis.estimatedAnnualTax)}</p>
           <p className="text-xs text-muted mt-1">
-            อัตราขั้นบันได ~{analysis.effectiveRate.toFixed(1)}% • ขั้น {analysis.currentBracket.rate}%
+            {t("tax", "bracketRate")} ~{analysis.effectiveRate.toFixed(1)}% • {t("tax", "bracket")} {analysis.currentBracket.rate}%
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-5">
-          <p className="text-sm text-muted mb-1">ภาษีรายไตรมาส (ประมาณ)</p>
+          <p className="text-sm text-muted mb-1">{t("tax", "quarterlyTax")}</p>
           <p className="text-2xl font-bold text-danger">{formatCurrency(analysis.quarterlyTax)}</p>
-          <p className="text-xs text-muted mt-1">ยอดที่ควรเตรียมจ่ายทุก 3 เดือน</p>
+          <p className="text-xs text-muted mt-1">{t("tax", "prepareQuarterly")}</p>
         </div>
       </div>
 
@@ -356,45 +359,45 @@ export default function TaxEstimatorPage() {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <Calculator className="w-4 h-4 text-primary" />
-            <h3 className="font-semibold text-sm">วิธีการคำนวณ</h3>
+            <h3 className="font-semibold text-sm">{t("tax", "calculationMethod")}</h3>
           </div>
           <button
             onClick={() => setShowSettings(!showSettings)}
             className="flex items-center gap-1 text-xs text-muted hover:text-foreground transition"
           >
             <Settings className="w-3.5 h-3.5" />
-            ปรับแต่ง
+            {t("tax", "customize")}
             {showSettings ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
           </button>
         </div>
 
         <div className="bg-secondary/50 rounded-xl p-4 space-y-2 text-sm">
           <div className="flex justify-between">
-            <span className="text-muted">รายได้ที่คาดการณ์ต่อปี</span>
+            <span className="text-muted">{t("tax", "projectedIncome")}</span>
             <span className="font-medium">{formatCurrency(analysis.projectedAnnual)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-muted">หักค่าใช้จ่าย (60%)</span>
+            <span className="text-muted">{t("tax", "deduct60pct")}</span>
             <span className="font-medium text-accent">-{formatCurrency(60000)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-muted">หักค่าลดหย่อนส่วนตัว</span>
+            <span className="text-muted">{t("tax", "personalDeduction")}</span>
             <span className="font-medium text-accent">-{formatCurrency(deductions)}</span>
           </div>
           <div className="flex justify-between border-t border-border pt-2">
-            <span className="text-muted">รายได้สุทธิ (เสียภาษี)</span>
+            <span className="text-muted">{t("tax", "taxableIncome")}</span>
             <span className="font-semibold">{formatCurrency(analysis.taxableIncome)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-muted">อยู่ในขั้นภาษี</span>
+            <span className="text-muted">{t("tax", "inBracket")}</span>
             <span className="font-semibold text-primary">
-              {analysis.currentBracket.rate === 0 ? "ยกเว้นภาษี" : `${analysis.currentBracket.rate}%`}
+              {analysis.currentBracket.rate === 0 ? t("tax", "exempt") : `${analysis.currentBracket.rate}%`}
             </span>
           </div>
         </div>
 
         <p className="text-xs text-muted mt-2">
-          คำนวณอัตโนมัติตามอัตราภาษีขั้นบันไดของกรมสรรพากร จากรายรับที่คุณบันทึกไว้
+          {t("tax", "autoCalcNote")}
         </p>
 
         {/* Collapsible Settings */}
@@ -402,17 +405,17 @@ export default function TaxEstimatorPage() {
           <div className="mt-4 pt-4 border-t border-border space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium mb-1.5">ค่าลดหย่อน (บาท)</label>
+                <label className="block text-sm font-medium mb-1.5">{t("tax", "deductions")}</label>
                 <input
                   type="number"
                   value={deductions}
                   onChange={(e) => setDeductions(Number(e.target.value))}
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <p className="text-xs text-muted mt-1.5">เช่น ประกันสังคม, กองทุน, ประกันชีวิต (ค่าเริ่มต้น 100,000)</p>
+                <p className="text-xs text-muted mt-1.5">{t("tax", "deductionsHint")}</p>
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1.5">ค่าใช้จ่ายรายเดือน (บาท)</label>
+                <label className="block text-sm font-medium mb-1.5">{t("tax", "monthlyExpenses")}</label>
                 <input
                   type="number"
                   value={customMonthlyExpenses ? monthlyExpenses : Math.round(analysis.effectiveMonthlyExpenses)}
@@ -421,8 +424,8 @@ export default function TaxEstimatorPage() {
                 />
                 <p className="text-xs text-muted mt-1.5">
                   {customMonthlyExpenses
-                    ? "คุณกำหนดเอง — ใช้คำนวณ Runway"
-                    : `คำนวณจากรายจ่ายจริง (${formatCurrency(analysis.effectiveMonthlyExpenses)}/เดือน)`}
+                    ? t("tax", "customExpenses")
+                    : `${t("tax", "autoExpenses")} (${formatCurrency(analysis.effectiveMonthlyExpenses)}${t("tax", "perMonth")})`}
                 </p>
               </div>
             </div>
@@ -432,7 +435,7 @@ export default function TaxEstimatorPage() {
 
       {/* Quarterly Chart */}
       <div className="bg-card border border-border rounded-2xl p-5">
-        <h3 className="font-semibold mb-4">สรุปรายไตรมาส ({selectedYear})</h3>
+        <h3 className="font-semibold mb-4">{t("tax", "quarterlySummary")} ({selectedYear})</h3>
         {transactions.length > 0 ? (
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={analysis.quarterlyData}>
@@ -441,7 +444,7 @@ export default function TaxEstimatorPage() {
               <Tooltip
                 formatter={(value, name) => [
                   formatCurrency(Number(value)),
-                  name === "income" ? "รายรับ" : name === "expenses" ? "รายจ่าย" : "ภาษี (ประมาณ)",
+                  name === "income" ? t("tax", "tooltipIncome") : name === "expenses" ? t("tax", "tooltipExpenses") : t("tax", "tooltipTax"),
                 ]}
                 contentStyle={{
                   backgroundColor: "var(--card)",
@@ -457,7 +460,7 @@ export default function TaxEstimatorPage() {
         ) : (
           <div className="h-[300px] flex flex-col items-center justify-center text-muted text-sm">
             <TaxIllustration className="w-40 h-auto mb-3" />
-            เพิ่มรายการเพื่อดูสรุปรายไตรมาส
+            {t("tax", "addToSeeChart")}
           </div>
         )}
       </div>
@@ -467,13 +470,13 @@ export default function TaxEstimatorPage() {
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Runway */}
         <div className="bg-card border border-border rounded-2xl p-5">
-          <h3 className="font-semibold mb-4">สุขภาพกระแสเงินสด</h3>
+          <h3 className="font-semibold mb-4">{t("tax", "cashFlowHealth")}</h3>
           <div className="space-y-4">
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-muted">เงินเหลือใช้ได้อีก</span>
+                <span className="text-muted">{t("tax", "runwayLeft")}</span>
                 <span className={`font-semibold ${analysis.monthsOfRunway >= 6 ? "text-accent" : analysis.monthsOfRunway >= 3 ? "text-warning" : "text-danger"}`}>
-                  {analysis.monthsOfRunway} เดือน
+                  {analysis.monthsOfRunway} {t("common", "month")}
                 </span>
               </div>
               <div className="w-full bg-secondary rounded-full h-3">
@@ -488,15 +491,15 @@ export default function TaxEstimatorPage() {
 
             <div className="bg-secondary/50 rounded-xl p-4 space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-muted">รายได้เฉลี่ย/เดือน</span>
+                <span className="text-muted">{t("tax", "avgMonthlyIncome")}</span>
                 <span className="font-medium">{formatCurrency(analysis.avgMonthlyIncome)}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted">ค่าใช้จ่าย/เดือน</span>
+                <span className="text-muted">{t("tax", "monthlyExpensesLabel")}</span>
                 <span className="font-medium">{formatCurrency(analysis.effectiveMonthlyExpenses)}</span>
               </div>
               <div className="flex justify-between text-sm border-t border-border pt-2">
-                <span className="text-muted">เงินเหลือ/เดือน</span>
+                <span className="text-muted">{t("tax", "remaining")}</span>
                 <span className={`font-semibold ${analysis.avgMonthlyIncome - analysis.effectiveMonthlyExpenses >= 0 ? "text-accent" : "text-danger"}`}>
                   {formatCurrency(analysis.avgMonthlyIncome - analysis.effectiveMonthlyExpenses)}
                 </span>
@@ -507,15 +510,15 @@ export default function TaxEstimatorPage() {
 
         {/* Recommendations */}
         <div className="bg-card border border-border rounded-2xl p-5">
-          <h3 className="font-semibold mb-4">คำแนะนำ</h3>
+          <h3 className="font-semibold mb-4">{t("tax", "recommendations")}</h3>
           <div className="space-y-3">
             <div className="flex items-start gap-3 p-3 bg-primary/5 rounded-xl">
               <Info className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-medium">เงินเดือนที่แนะนำ</p>
+                <p className="text-sm font-medium">{t("tax", "recommendedSalary")}</p>
                 <p className="text-sm text-muted">
-                  จ่ายให้ตัวเอง <strong>{formatCurrency(analysis.recommendedSalary)}</strong>/เดือน
-                  (60% ของรายได้เฉลี่ย) เก็บส่วนที่เหลือไว้สำหรับภาษีและเหตุฉุกเฉิน
+                  {t("tax", "recommendedSalaryDesc")} <strong>{formatCurrency(analysis.recommendedSalary)}</strong>{t("tax", "perMonth")}
+                  {" "}{t("tax", "recommendedSalaryNote")}
                 </p>
               </div>
             </div>
@@ -523,10 +526,9 @@ export default function TaxEstimatorPage() {
             <div className="flex items-start gap-3 p-3 bg-warning/5 rounded-xl">
               <Calculator className="w-5 h-5 text-warning flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-medium">เตรียมเงินจ่ายภาษี</p>
+                <p className="text-sm font-medium">{t("tax", "prepareTax")}</p>
                 <p className="text-sm text-muted">
-                  เก็บเงิน <strong>{formatCurrency(analysis.quarterlyTax)}</strong> ไว้ทุกไตรมาส
-                  สำหรับจ่ายภาษี
+                  {t("tax", "prepareTaxDesc")} <strong>{formatCurrency(analysis.quarterlyTax)}</strong> {t("tax", "prepareTaxNote")}
                 </p>
               </div>
             </div>
@@ -535,9 +537,9 @@ export default function TaxEstimatorPage() {
               <div className="flex items-start gap-3 p-3 bg-danger/5 rounded-xl">
                 <AlertTriangle className="w-5 h-5 text-danger flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-medium">เงินสำรองใกล้หมด</p>
+                  <p className="text-sm font-medium">{t("tax", "lowRunway")}</p>
                   <p className="text-sm text-muted">
-                    คุณมีเงินสำรองเหลือไม่ถึง 3 เดือน ควรพิจารณาลดค่าใช้จ่ายหรือหาทางเพิ่มรายได้
+                    {t("tax", "lowRunwayDesc")}
                   </p>
                 </div>
               </div>
@@ -547,10 +549,9 @@ export default function TaxEstimatorPage() {
               <div className="flex items-start gap-3 p-3 bg-accent/5 rounded-xl">
                 <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-medium">การเงินแข็งแรง</p>
+                  <p className="text-sm font-medium">{t("tax", "healthyFinances")}</p>
                   <p className="text-sm text-muted">
-                    คุณมีเงินสำรองมากกว่า {analysis.monthsOfRunway} เดือน เยี่ยมมาก!
-                    การเงินของคุณมั่นคงดี
+                    {t("tax", "healthyFinancesDesc1")} {analysis.monthsOfRunway} {t("tax", "healthyFinancesDesc2")}
                   </p>
                 </div>
               </div>
@@ -560,8 +561,8 @@ export default function TaxEstimatorPage() {
       </div>
       ) : (
         <div className="bg-card border border-border rounded-2xl p-5 text-center">
-          <h3 className="font-semibold mb-2">กระแสเงินสดและคำแนะนำ</h3>
-          <UpgradePrompt feature="พยากรณ์กระแสเงินสด" compact />
+          <h3 className="font-semibold mb-2">{t("tax", "cashFlowUpgrade")}</h3>
+          <UpgradePrompt feature={t("tax", "cashFlowUpgradeFeature")} compact />
         </div>
       )}
 
@@ -577,55 +578,55 @@ export default function TaxEstimatorPage() {
           <div className="bg-card border border-border rounded-2xl p-5">
             <div className="flex items-center gap-2 mb-4">
               <Shield className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold">หัก ณ ที่จ่าย (WHT) สะสม</h3>
+              <h3 className="font-semibold">{t("tax", "whtSummary")}</h3>
             </div>
             <div className="grid sm:grid-cols-3 gap-4 mb-4">
               <div className="bg-secondary/50 rounded-xl p-4 text-center">
-                <p className="text-xs text-muted mb-1">WHT ที่ถูกหักทั้งหมด</p>
+                <p className="text-xs text-muted mb-1">{t("tax", "totalWHT")}</p>
                 <p className="text-xl font-bold text-primary">{formatCurrency(totalWHT)}</p>
               </div>
               <div className="bg-secondary/50 rounded-xl p-4 text-center">
-                <p className="text-xs text-muted mb-1">ภาษีที่ต้องจ่าย (ประมาณ)</p>
+                <p className="text-xs text-muted mb-1">{t("tax", "taxToPay")}</p>
                 <p className="text-xl font-bold text-warning">{formatCurrency(analysis.estimatedAnnualTax)}</p>
               </div>
               <div className="bg-secondary/50 rounded-xl p-4 text-center">
-                <p className="text-xs text-muted mb-1">ภาษีคงเหลือ / ได้คืน</p>
+                <p className="text-xs text-muted mb-1">{t("tax", "taxRemaining")}</p>
                 <p className={`text-xl font-bold ${analysis.estimatedAnnualTax - totalWHT <= 0 ? "text-accent" : "text-danger"}`}>
-                  {analysis.estimatedAnnualTax - totalWHT <= 0 ? "ได้คืน " : "จ่ายเพิ่ม "}
+                  {analysis.estimatedAnnualTax - totalWHT <= 0 ? `${t("tax", "refund")} ` : `${t("tax", "payMore")} `}
                   {formatCurrency(Math.abs(analysis.estimatedAnnualTax - totalWHT))}
                 </p>
               </div>
             </div>
-            <p className="text-xs text-muted">จากรายการรายรับที่มี WHT {txWithWHT.length} รายการ</p>
+            <p className="text-xs text-muted">{t("tax", "fromWHTEntries")} {txWithWHT.length} {t("tax", "entries")}</p>
           </div>
         );
       })()}
 
-      {/* ภ.ง.ด.90 Annual Tax Summary */}
+      {/* Annual Tax Summary (PND 90) */}
       <div className="bg-card border border-border rounded-2xl p-5">
         <div className="flex items-center gap-2 mb-4">
           <Calculator className="w-5 h-5 text-warning" />
-          <h3 className="font-semibold">สรุปภาษีประจำปี (แบบ ภ.ง.ด.90)</h3>
+          <h3 className="font-semibold">{t("tax", "annualSummary")}</h3>
         </div>
         <div className="bg-secondary/50 rounded-xl p-4 space-y-2 text-sm">
           <div className="flex justify-between">
-            <span className="text-muted">1. เงินได้พึงประเมิน (รายได้รวมปี {selectedYear})</span>
+            <span className="text-muted">1. {t("tax", "assessableIncome")} {selectedYear})</span>
             <span className="font-medium">{formatCurrency(analysis.yearIncome)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-muted">2. หักค่าใช้จ่าย (60% ไม่เกิน 60,000)</span>
+            <span className="text-muted">2. {t("tax", "deductExpense60")}</span>
             <span className="font-medium text-accent">-{formatCurrency(60000)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-muted">3. หักค่าลดหย่อน (ส่วนตัว + อื่นๆ)</span>
+            <span className="text-muted">3. {t("tax", "deductPersonal")}</span>
             <span className="font-medium text-accent">-{formatCurrency(deductions)}</span>
           </div>
           <div className="flex justify-between border-t border-border pt-2">
-            <span className="font-medium">4. เงินได้สุทธิ</span>
+            <span className="font-medium">4. {t("tax", "netTaxableIncome")}</span>
             <span className="font-bold">{formatCurrency(analysis.taxableIncome)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="font-medium">5. ภาษีที่คำนวณได้ (ขั้นบันได)</span>
+            <span className="font-medium">5. {t("tax", "calculatedTax")}</span>
             <span className="font-bold text-warning">{formatCurrency(analysis.estimatedAnnualTax)}</span>
           </div>
           {(() => {
@@ -636,11 +637,11 @@ export default function TaxEstimatorPage() {
             return (
               <>
                 <div className="flex justify-between">
-                  <span className="text-muted">6. หัก ณ ที่จ่ายที่ถูกหักไว้</span>
+                  <span className="text-muted">6. {t("tax", "whtDeducted")}</span>
                   <span className="font-medium text-accent">-{formatCurrency(totalWHT)}</span>
                 </div>
                 <div className="flex justify-between border-t border-border pt-2">
-                  <span className="font-bold">{remaining <= 0 ? "7. ภาษีที่ชำระไว้เกิน (ขอคืน)" : "7. ภาษีที่ต้องชำระเพิ่ม"}</span>
+                  <span className="font-bold">{remaining <= 0 ? `7. ${t("tax", "overpaid")}` : `7. ${t("tax", "underpaid")}`}</span>
                   <span className={`font-bold text-lg ${remaining <= 0 ? "text-accent" : "text-danger"}`}>
                     {formatCurrency(Math.abs(remaining))}
                   </span>
@@ -650,19 +651,19 @@ export default function TaxEstimatorPage() {
           })()}
         </div>
         <p className="text-xs text-muted mt-3">
-          * ตัวเลขเป็นการประมาณ ใช้เป็นแนวทางเตรียมยื่น ภ.ง.ด.90 • ค่าใช้จ่ายหักเหมา 60% (สำหรับฟรีแลนซ์ ม.40(2))
+          {t("tax", "disclaimer")}
         </p>
       </div>
 
       {/* Thai Tax Brackets Reference */}
       <div className="bg-card border border-border rounded-2xl p-5">
-        <h3 className="font-semibold mb-4">อัตราภาษีเงินได้บุคคลธรรมดา (ขั้นบันได)</h3>
+        <h3 className="font-semibold mb-4">{t("tax", "bracketTable")}</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-2 pr-4 text-muted font-medium">รายได้สุทธิ (บาท)</th>
-                <th className="text-right py-2 text-muted font-medium">อัตราภาษี</th>
+                <th className="text-left py-2 pr-4 text-muted font-medium">{t("tax", "bracketIncome")}</th>
+                <th className="text-right py-2 text-muted font-medium">{t("tax", "bracketRateCol")}</th>
               </tr>
             </thead>
             <tbody>
@@ -671,11 +672,11 @@ export default function TaxEstimatorPage() {
                 return (
                   <tr key={i} className={`border-b border-border/50 ${isCurrentBracket ? "bg-primary/5" : ""}`}>
                     <td className="py-2 pr-4">
-                      {formatCurrency(bracket.min)} - {bracket.max === Infinity ? "ขึ้นไป" : formatCurrency(bracket.max)}
-                      {isCurrentBracket && <span className="ml-2 text-xs text-primary font-medium">← คุณอยู่ขั้นนี้</span>}
+                      {formatCurrency(bracket.min)} - {bracket.max === Infinity ? t("tax", "andAbove") : formatCurrency(bracket.max)}
+                      {isCurrentBracket && <span className="ml-2 text-xs text-primary font-medium">{t("tax", "yourBracket")}</span>}
                     </td>
                     <td className="text-right py-2 font-medium">
-                      {bracket.rate === 0 ? "ยกเว้น" : `${bracket.rate}%`}
+                      {bracket.rate === 0 ? t("tax", "exempt") : `${bracket.rate}%`}
                     </td>
                   </tr>
                 );

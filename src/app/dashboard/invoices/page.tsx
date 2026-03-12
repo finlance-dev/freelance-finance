@@ -20,6 +20,7 @@ import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
+import { useLocale } from "@/hooks/useLocale";
 
 interface InvoiceItem {
   description: string;
@@ -60,13 +61,6 @@ function generateInvoiceNumber(): string {
   return `INV-${y}${m}-${seq}`;
 }
 
-const statusConfig = {
-  draft: { label: "แบบร่าง", color: "text-muted bg-secondary", icon: FileText },
-  sent: { label: "ส่งแล้ว", color: "text-primary bg-primary/10", icon: Clock },
-  paid: { label: "ชำระแล้ว", color: "text-accent bg-accent/10", icon: CheckCircle2 },
-  overdue: { label: "เลยกำหนด", color: "text-danger bg-danger/10", icon: AlertCircle },
-};
-
 const emptyItem: InvoiceItem = { description: "", quantity: 1, unitPrice: 0 };
 
 export default function InvoicesPage() {
@@ -92,6 +86,14 @@ export default function InvoicesPage() {
   const { toast } = useToast();
   const { confirm } = useConfirm();
   const { isPro, mounted: planMounted } = usePlan();
+  const { locale, t } = useLocale();
+
+  const statusConfig = {
+    draft: { label: t("invoices", "draft"), color: "text-muted bg-secondary", icon: FileText },
+    sent: { label: t("invoices", "sent"), color: "text-primary bg-primary/10", icon: Clock },
+    paid: { label: t("invoices", "paid"), color: "text-accent bg-accent/10", icon: CheckCircle2 },
+    overdue: { label: t("invoices", "overdue"), color: "text-danger bg-danger/10", icon: AlertCircle },
+  };
 
   useEffect(() => {
     setInvoices(getInvoices());
@@ -107,11 +109,11 @@ export default function InvoicesPage() {
 
   const validate = (): boolean => {
     const errs: Record<string, string> = {};
-    if (!form.clientId) errs.clientId = "กรุณาเลือกลูกค้า";
-    if (!form.issueDate) errs.issueDate = "กรุณาระบุวันที่ออก";
-    if (!form.dueDate) errs.dueDate = "กรุณาระบุวันครบกำหนด";
+    if (!form.clientId) errs.clientId = t("invoices", "errClient");
+    if (!form.issueDate) errs.issueDate = t("invoices", "errIssueDate");
+    if (!form.dueDate) errs.dueDate = t("invoices", "errDueDate");
     if (form.items.length === 0 || form.items.every((i) => !i.description.trim()))
-      errs.items = "กรุณาเพิ่มรายการอย่างน้อย 1 รายการ";
+      errs.items = t("invoices", "errItems");
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -143,28 +145,28 @@ export default function InvoicesPage() {
     saveInvoices(updated);
     setInvoices(updated);
     resetForm();
-    toast(editingId ? "แก้ไขใบแจ้งหนี้สำเร็จ" : "สร้างใบแจ้งหนี้สำเร็จ");
+    toast(editingId ? t("invoices", "editedSuccess") : t("invoices", "createdSuccess"));
   };
 
   const handleDelete = async (id: string) => {
     const ok = await confirm({
-      title: "ลบใบแจ้งหนี้",
-      message: "คุณแน่ใจหรือไม่ว่าต้องการลบใบแจ้งหนี้นี้?",
-      confirmText: "ลบ",
+      title: t("invoices", "deleteInvoice"),
+      message: t("invoices", "deleteConfirm"),
+      confirmText: t("common", "delete"),
       variant: "danger",
     });
     if (!ok) return;
     const updated = invoices.filter((i) => i.id !== id);
     saveInvoices(updated);
     setInvoices(updated);
-    toast("ลบใบแจ้งหนี้สำเร็จ");
+    toast(t("invoices", "deletedSuccess"));
   };
 
   const handleStatusChange = (id: string, status: Invoice["status"]) => {
     const updated = invoices.map((i) => (i.id === id ? { ...i, status } : i));
     saveInvoices(updated);
     setInvoices(updated);
-    toast(`เปลี่ยนสถานะเป็น "${statusConfig[status].label}"`);
+    toast(`${t("invoices", "statusChanged")} "${statusConfig[status].label}"`);
   };
 
   const resetForm = () => {
@@ -375,7 +377,7 @@ export default function InvoicesPage() {
     a.download = `${inv.invoiceNumber}.html`;
     a.click();
     URL.revokeObjectURL(url);
-    toast("ดาวน์โหลดใบแจ้งหนี้สำเร็จ");
+    toast(t("invoices", "downloadSuccess"));
   };
 
   const previewInvoice = previewId ? invoices.find((i) => i.id === previewId) : null;
@@ -400,48 +402,48 @@ export default function InvoicesPage() {
     return (
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold">ใบแจ้งหนี้</h1>
-          <p className="text-muted text-sm mt-1">สร้างและจัดการใบแจ้งหนี้</p>
+          <h1 className="text-2xl font-bold">{t("invoices", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("invoices", "subtitle")}</p>
         </div>
         <UpgradePrompt
-          feature="ใบแจ้งหนี้"
-          description="สร้างใบแจ้งหนี้แบบมืออาชีพพร้อม PromptPay QR ส่งให้ลูกค้าได้ทันที อัปเกรดเป็นโปรเพื่อปลดล็อค"
+          feature={t("invoices", "upgradeFeature")}
+          description={t("invoices", "upgradeDesc")}
         />
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <FileText className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-sm">สร้างใบแจ้งหนี้</h3>
+              <h3 className="font-semibold text-sm">{t("invoices", "previewCreateInvoice")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              สร้างใบแจ้งหนี้แบบมืออาชีพ กรอกรายการสินค้า/บริการ ระบบคำนวณยอดรวมให้อัตโนมัติ พร้อมเลขที่ใบแจ้งหนี้ที่เรียงลำดับ
+              {t("invoices", "previewCreateDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Download className="w-5 h-5 text-accent" />
-              <h3 className="font-semibold text-sm">ดาวน์โหลด PDF</h3>
+              <h3 className="font-semibold text-sm">{t("invoices", "previewDownloadPDF")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ดาวน์โหลดใบแจ้งหนี้เป็น PDF พร้อม PromptPay QR Code ส่งให้ลูกค้าชำระเงินได้สะดวก รวดเร็ว
+              {t("invoices", "previewDownloadDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Clock className="w-5 h-5 text-warning" />
-              <h3 className="font-semibold text-sm">ติดตามสถานะ</h3>
+              <h3 className="font-semibold text-sm">{t("invoices", "previewTrackStatus")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ติดตามสถานะใบแจ้งหนี้ทุกใบ ตั้งแต่แบบร่าง ส่งแล้ว ชำระแล้ว จนถึงเลยกำหนด พร้อมแจ้งเตือนอัตโนมัติ
+              {t("invoices", "previewTrackDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Eye className="w-5 h-5 text-danger" />
-              <h3 className="font-semibold text-sm">ดูตัวอย่างก่อนส่ง</h3>
+              <h3 className="font-semibold text-sm">{t("invoices", "previewPreview")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ดูตัวอย่างใบแจ้งหนี้ก่อนส่งให้ลูกค้า มีข้อมูลธุรกิจ ที่อยู่ และรายละเอียดครบถ้วน
+              {t("invoices", "previewPreviewDesc")}
             </p>
           </div>
         </div>
@@ -453,15 +455,15 @@ export default function InvoicesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">ใบแจ้งหนี้</h1>
-          <p className="text-muted text-sm mt-1">สร้างและจัดการใบแจ้งหนี้</p>
+          <h1 className="text-2xl font-bold">{t("invoices", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("invoices", "subtitle")}</p>
         </div>
         <button
           onClick={() => { resetForm(); setShowForm(true); }}
           className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition flex items-center gap-2"
         >
           <Plus className="w-4 h-4" />
-          สร้างใบแจ้งหนี้
+          {t("invoices", "create")}
         </button>
       </div>
 
@@ -489,7 +491,7 @@ export default function InvoicesPage() {
           <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-lg max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-5">
               <h2 className="text-lg font-bold">
-                {editingId ? "แก้ไขใบแจ้งหนี้" : "สร้างใบแจ้งหนี้ใหม่"}
+                {editingId ? t("invoices", "edit") : t("invoices", "createNew")}
               </h2>
               <button onClick={resetForm} className="text-muted hover:text-foreground">
                 <X className="w-5 h-5" />
@@ -499,13 +501,13 @@ export default function InvoicesPage() {
             <div className="space-y-4">
               {/* Client */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">ลูกค้า</label>
+                <label className="block text-sm font-medium mb-1.5">{t("invoices", "client")}</label>
                 <select
                   value={form.clientId}
                   onChange={(e) => { setForm({ ...form, clientId: e.target.value }); setErrors({ ...errors, clientId: "" }); }}
                   className={`w-full px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary ${errors.clientId ? "border-danger" : "border-border"}`}
                 >
-                  <option value="">เลือกลูกค้า</option>
+                  <option value="">{t("invoices", "selectClient")}</option>
                   {clients.map((c) => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                   ))}
@@ -515,13 +517,13 @@ export default function InvoicesPage() {
 
               {/* Project */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">โปรเจกต์ (ไม่บังคับ)</label>
+                <label className="block text-sm font-medium mb-1.5">{t("invoices", "project")}</label>
                 <select
                   value={form.projectId || ""}
                   onChange={(e) => setForm({ ...form, projectId: e.target.value || null })}
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <option value="">ไม่ระบุโปรเจกต์</option>
+                  <option value="">{t("invoices", "noProject")}</option>
                   {projects.filter((p) => !form.clientId || p.clientId === form.clientId).map((p) => (
                     <option key={p.id} value={p.id}>{p.name}</option>
                   ))}
@@ -531,7 +533,7 @@ export default function InvoicesPage() {
               {/* Dates */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">วันที่ออก</label>
+                  <label className="block text-sm font-medium mb-1.5">{t("invoices", "issueDate")}</label>
                   <input
                     type="date"
                     value={form.issueDate}
@@ -540,7 +542,7 @@ export default function InvoicesPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">วันครบกำหนด</label>
+                  <label className="block text-sm font-medium mb-1.5">{t("invoices", "dueDate")}</label>
                   <input
                     type="date"
                     value={form.dueDate}
@@ -552,7 +554,7 @@ export default function InvoicesPage() {
 
               {/* Items */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">รายการ</label>
+                <label className="block text-sm font-medium mb-1.5">{t("invoices", "items")}</label>
                 {errors.items && <p className="text-danger text-xs mb-2">{errors.items}</p>}
                 <div className="space-y-2">
                   {form.items.map((item, idx) => (
@@ -561,21 +563,21 @@ export default function InvoicesPage() {
                         type="text"
                         value={item.description}
                         onChange={(e) => updateItem(idx, "description", e.target.value)}
-                        placeholder="รายละเอียด"
+                        placeholder={t("invoices", "itemDesc")}
                         className="flex-1 px-3 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                       <input
                         type="number"
                         value={item.quantity || ""}
                         onChange={(e) => updateItem(idx, "quantity", Number(e.target.value))}
-                        placeholder="จำนวน"
+                        placeholder={t("invoices", "quantity")}
                         className="w-20 px-3 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                       <input
                         type="number"
                         value={item.unitPrice || ""}
                         onChange={(e) => updateItem(idx, "unitPrice", Number(e.target.value))}
-                        placeholder="ราคา"
+                        placeholder={t("invoices", "unitPrice")}
                         className="w-28 px-3 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                       {form.items.length > 1 && (
@@ -587,10 +589,10 @@ export default function InvoicesPage() {
                   ))}
                 </div>
                 <button onClick={addItem} className="mt-2 text-sm text-primary hover:text-primary-dark font-medium">
-                  + เพิ่มรายการ
+                  {t("invoices", "addItem")}
                 </button>
                 <div className="mt-3 text-right">
-                  <span className="text-sm text-muted">ยอดรวม: </span>
+                  <span className="text-sm text-muted">{t("invoices", "total")} </span>
                   <span className="text-lg font-bold">{formatCurrency(getTotal(form.items))}</span>
                 </div>
               </div>
@@ -598,27 +600,27 @@ export default function InvoicesPage() {
               {/* Status */}
               {editingId && (
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">สถานะ</label>
+                  <label className="block text-sm font-medium mb-1.5">{t("invoices", "status")}</label>
                   <select
                     value={form.status}
                     onChange={(e) => setForm({ ...form, status: e.target.value as Invoice["status"] })}
                     className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   >
-                    <option value="draft">แบบร่าง</option>
-                    <option value="sent">ส่งแล้ว</option>
-                    <option value="paid">ชำระแล้ว</option>
-                    <option value="overdue">เลยกำหนด</option>
+                    <option value="draft">{t("invoices", "draft")}</option>
+                    <option value="sent">{t("invoices", "sent")}</option>
+                    <option value="paid">{t("invoices", "paid")}</option>
+                    <option value="overdue">{t("invoices", "overdue")}</option>
                   </select>
                 </div>
               )}
 
               {/* Notes */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">หมายเหตุ (ไม่บังคับ)</label>
+                <label className="block text-sm font-medium mb-1.5">{t("invoices", "notes")}</label>
                 <textarea
                   value={form.notes}
                   onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                  placeholder="ข้อมูลเพิ่มเติม เช่น เงื่อนไขการชำระ"
+                  placeholder={t("invoices", "notesPlaceholder")}
                   rows={2}
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                 />
@@ -628,7 +630,7 @@ export default function InvoicesPage() {
                 onClick={handleSave}
                 className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition"
               >
-                {editingId ? "บันทึกการเปลี่ยนแปลง" : "สร้างใบแจ้งหนี้"}
+                {editingId ? t("invoices", "saveChanges") : t("invoices", "create")}
               </button>
             </div>
           </div>
@@ -649,11 +651,11 @@ export default function InvoicesPage() {
             <div className="space-y-4">
               <div className="flex justify-between text-sm">
                 <div>
-                  <p className="text-muted">ลูกค้า</p>
+                  <p className="text-muted">{t("invoices", "client")}</p>
                   <p className="font-medium">{getClientName(previewInvoice.clientId)}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-muted">วันที่</p>
+                  <p className="text-muted">{t("common", "date")}</p>
                   <p className="font-medium">{formatDate(previewInvoice.issueDate)}</p>
                 </div>
               </div>
@@ -662,10 +664,10 @@ export default function InvoicesPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-secondary">
-                      <th className="text-left px-3 py-2 font-medium text-muted">รายการ</th>
-                      <th className="text-right px-3 py-2 font-medium text-muted">จำนวน</th>
-                      <th className="text-right px-3 py-2 font-medium text-muted">ราคา</th>
-                      <th className="text-right px-3 py-2 font-medium text-muted">รวม</th>
+                      <th className="text-left px-3 py-2 font-medium text-muted">{t("invoices", "items")}</th>
+                      <th className="text-right px-3 py-2 font-medium text-muted">{t("invoices", "quantity")}</th>
+                      <th className="text-right px-3 py-2 font-medium text-muted">{t("invoices", "unitPrice")}</th>
+                      <th className="text-right px-3 py-2 font-medium text-muted">{t("common", "total")}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
@@ -682,13 +684,13 @@ export default function InvoicesPage() {
               </div>
 
               <div className="flex justify-between items-center bg-secondary rounded-xl px-4 py-3">
-                <span className="font-medium">ยอดรวมทั้งสิ้น</span>
+                <span className="font-medium">{t("invoices", "totalAmount")}</span>
                 <span className="text-xl font-bold">{formatCurrency(getTotal(previewInvoice.items))}</span>
               </div>
 
               {previewInvoice.notes && (
                 <div className="text-sm text-muted bg-secondary/50 rounded-xl p-3">
-                  <strong>หมายเหตุ:</strong> {previewInvoice.notes}
+                  <strong>{t("invoices", "notes").replace(/ \(.*\)/, "")}:</strong> {previewInvoice.notes}
                 </div>
               )}
 
@@ -697,7 +699,7 @@ export default function InvoicesPage() {
                 className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition flex items-center justify-center gap-2"
               >
                 <Download className="w-4 h-4" />
-                ดาวน์โหลด
+                {t("invoices", "download")}
               </button>
             </div>
           </div>
@@ -708,8 +710,8 @@ export default function InvoicesPage() {
       {invoices.length === 0 ? (
         <div className="bg-card border border-border rounded-2xl p-12 text-center">
           <FileText className="w-16 h-16 mx-auto mb-4 text-muted/30" />
-          <p className="text-lg font-medium mb-1">ยังไม่มีใบแจ้งหนี้</p>
-          <p className="text-sm text-muted">สร้างใบแจ้งหนี้แรกเพื่อเริ่มเรียกเก็บเงินลูกค้า</p>
+          <p className="text-lg font-medium mb-1">{t("invoices", "noInvoices")}</p>
+          <p className="text-sm text-muted">{t("invoices", "addFirstInvoice")}</p>
         </div>
       ) : (
         <div className="bg-card border border-border rounded-2xl overflow-hidden divide-y divide-border">
@@ -727,7 +729,7 @@ export default function InvoicesPage() {
                     <div className="min-w-0">
                       <p className="font-medium">{inv.invoiceNumber}</p>
                       <p className="text-xs text-muted">
-                        {getClientName(inv.clientId)} · {formatDate(inv.issueDate)} · ครบกำหนด {formatDate(inv.dueDate)}
+                        {getClientName(inv.clientId)} · {formatDate(inv.issueDate)} · {t("invoices", "dueDatePrefix")} {formatDate(inv.dueDate)}
                       </p>
                     </div>
                   </div>
@@ -740,10 +742,10 @@ export default function InvoicesPage() {
                         onClick={(e) => e.stopPropagation()}
                         className={`text-xs px-2 py-0.5 rounded-full border-0 ${cfg.color} cursor-pointer`}
                       >
-                        <option value="draft">แบบร่าง</option>
-                        <option value="sent">ส่งแล้ว</option>
-                        <option value="paid">ชำระแล้ว</option>
-                        <option value="overdue">เลยกำหนด</option>
+                        <option value="draft">{t("invoices", "draft")}</option>
+                        <option value="sent">{t("invoices", "sent")}</option>
+                        <option value="paid">{t("invoices", "paid")}</option>
+                        <option value="overdue">{t("invoices", "overdue")}</option>
                       </select>
                     </div>
                     <div className="flex gap-1">

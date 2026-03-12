@@ -14,6 +14,7 @@ import {
 import { useToast } from "@/components/toast";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
+import { useLocale } from "@/hooks/useLocale";
 
 const STORAGE_KEY = "ff_user_profile";
 
@@ -90,7 +91,8 @@ export default function ProfilePage() {
   const [editing, setEditing] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
-  const { planLabel, isPro } = usePlan();
+  const { getPlanLabel, isPro } = usePlan();
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     setProfile(getProfile());
@@ -110,15 +112,15 @@ export default function ProfilePage() {
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!profile.name.trim()) errs.name = "กรุณากรอกชื่อ";
+    if (!profile.name.trim()) errs.name = t("profile", "errName");
     if (profile.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(profile.email)) {
-      errs.email = "รูปแบบอีเมลไม่ถูกต้อง";
+      errs.email = t("profile", "errEmail");
     }
     if (profile.phone && !/^[\d-]{9,13}$/.test(profile.phone.replace(/\s/g, ""))) {
-      errs.phone = "รูปแบบเบอร์โทรไม่ถูกต้อง";
+      errs.phone = t("profile", "errPhone");
     }
     if (profile.taxId && !/^\d{13}$/.test(profile.taxId.replace(/[-\s]/g, ""))) {
-      errs.taxId = "เลข Tax ID ต้องมี 13 หลัก";
+      errs.taxId = t("profile", "errTaxId");
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -128,14 +130,14 @@ export default function ProfilePage() {
     if (!validate()) return;
     saveProfile(profile);
     setEditing(false);
-    toast("บันทึกโปรไฟล์สำเร็จ");
+    toast(t("profile", "savedSuccess"));
   };
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     if (file.size > 500000) {
-      toast("รูปภาพต้องไม่เกิน 500KB", "error");
+      toast(t("profile", "avatarTooLarge"), "error");
       return;
     }
     const reader = new FileReader();
@@ -152,48 +154,48 @@ export default function ProfilePage() {
     return (
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold">โปรไฟล์</h1>
-          <p className="text-muted text-sm mt-1">ข้อมูลส่วนตัวและธุรกิจของคุณ</p>
+          <h1 className="text-2xl font-bold">{t("profile", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("profile", "subtitle")}</p>
         </div>
         <UpgradePrompt
-          feature="โปรไฟล์"
-          description="จัดการข้อมูลส่วนตัว ธุรกิจ และบัญชีธนาคาร เพื่อใช้ในใบแจ้งหนี้และเอกสารต่างๆ อัปเกรดเป็นโปรเพื่อปลดล็อค"
+          feature={t("profile", "upgradeFeature")}
+          description={t("profile", "upgradeDesc")}
         />
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <User className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-sm">ข้อมูลส่วนตัว</h3>
+              <h3 className="font-semibold text-sm">{t("profile", "previewPersonal")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              กรอกชื่อ อีเมล เบอร์โทร เว็บไซต์ และแนะนำตัว พร้อมอัปโหลดรูปโปรไฟล์ แสดงในใบแจ้งหนี้อัตโนมัติ
+              {t("profile", "previewPersonalDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Building2 className="w-5 h-5 text-accent" />
-              <h3 className="font-semibold text-sm">ข้อมูลธุรกิจ</h3>
+              <h3 className="font-semibold text-sm">{t("profile", "previewBusiness")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ใส่ชื่อธุรกิจ เลข Tax ID และที่อยู่ เพื่อใช้ในใบแจ้งหนี้และเอกสารภาษี ภ.ง.ด.90
+              {t("profile", "previewBusinessDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <FileText className="w-5 h-5 text-warning" />
-              <h3 className="font-semibold text-sm">บัญชีธนาคาร</h3>
+              <h3 className="font-semibold text-sm">{t("profile", "previewBank")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              บันทึกข้อมูลบัญชีธนาคาร เพื่อแสดงในใบแจ้งหนี้ ลูกค้าโอนเงินได้สะดวกขึ้น
+              {t("profile", "previewBankDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Camera className="w-5 h-5 text-danger" />
-              <h3 className="font-semibold text-sm">รูปโปรไฟล์</h3>
+              <h3 className="font-semibold text-sm">{t("profile", "previewAvatar")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              อัปโหลดรูปโปรไฟล์เพื่อแสดงใน Sidebar และใบแจ้งหนี้ ช่วยสร้างความน่าเชื่อถือกับลูกค้า
+              {t("profile", "previewAvatarDesc")}
             </p>
           </div>
         </div>
@@ -214,15 +216,15 @@ export default function ProfilePage() {
     <div className="space-y-6 max-w-2xl">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">โปรไฟล์</h1>
-          <p className="text-muted text-sm mt-1">ข้อมูลส่วนตัวและธุรกิจของคุณ</p>
+          <h1 className="text-2xl font-bold">{t("profile", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("profile", "subtitle")}</p>
         </div>
         {!editing ? (
           <button
             onClick={() => setEditing(true)}
             className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition text-sm"
           >
-            แก้ไขโปรไฟล์
+            {t("profile", "editProfile")}
           </button>
         ) : (
           <div className="flex gap-2">
@@ -234,14 +236,14 @@ export default function ProfilePage() {
               }}
               className="bg-secondary hover:bg-border text-foreground px-4 py-2 rounded-xl font-medium transition text-sm"
             >
-              ยกเลิก
+              {t("profile", "cancel")}
             </button>
             <button
               onClick={handleSave}
               className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition text-sm"
             >
               <Save className="w-4 h-4" />
-              บันทึก
+              {t("profile", "save")}
             </button>
           </div>
         )}
@@ -275,8 +277,8 @@ export default function ProfilePage() {
             )}
           </div>
           <div>
-            <h2 className="text-xl font-bold">{profile.name || "ยังไม่ได้ตั้งชื่อ"}</h2>
-            <p className="text-muted text-sm">{profile.email || "ยังไม่ได้ใส่อีเมล"}</p>
+            <h2 className="text-xl font-bold">{profile.name || t("profile", "noName")}</h2>
+            <p className="text-muted text-sm">{profile.email || t("profile", "noEmail")}</p>
             <span
               className={`inline-block mt-1 text-xs font-medium px-2.5 py-0.5 rounded-full ${
                 isPro
@@ -284,7 +286,7 @@ export default function ProfilePage() {
                   : "bg-secondary text-muted"
               }`}
             >
-              {planLabel}
+              {getPlanLabel(locale)}
             </span>
           </div>
         </div>
@@ -294,20 +296,21 @@ export default function ProfilePage() {
       <div className="bg-card border border-border rounded-2xl p-6">
         <h3 className="font-semibold mb-4 flex items-center gap-2">
           <User className="w-5 h-5 text-primary" />
-          ข้อมูลส่วนตัว
+          {t("profile", "personalInfo")}
         </h3>
         <div className="grid sm:grid-cols-2 gap-4">
           <Field
-            label="ชื่อ-นามสกุล"
+            label={t("profile", "fullName")}
             icon={<User className="w-4 h-4" />}
             value={profile.name}
             editing={editing}
             error={errors.name}
             onChange={(v) => handleChange("name", v)}
-            placeholder="ชื่อจริง นามสกุล"
+            placeholder={t("profile", "fullNamePlaceholder")}
+            notSet={t("profile", "notSet")}
           />
           <Field
-            label="อีเมล"
+            label={t("profile", "email")}
             icon={<Mail className="w-4 h-4" />}
             value={profile.email}
             editing={editing}
@@ -315,9 +318,10 @@ export default function ProfilePage() {
             onChange={(v) => handleChange("email", v)}
             placeholder="email@example.com"
             type="email"
+            notSet={t("profile", "notSet")}
           />
           <Field
-            label="เบอร์โทร"
+            label={t("profile", "phone")}
             icon={<Phone className="w-4 h-4" />}
             value={profile.phone}
             editing={editing}
@@ -325,24 +329,26 @@ export default function ProfilePage() {
             onChange={(v) => handleChange("phone", v)}
             placeholder="0812345678"
             type="tel"
+            notSet={t("profile", "notSet")}
           />
           <Field
-            label="เว็บไซต์"
+            label={t("profile", "website")}
             icon={<FileText className="w-4 h-4" />}
             value={profile.website}
             editing={editing}
             onChange={(v) => handleChange("website", v)}
             placeholder="https://yoursite.com"
+            notSet={t("profile", "notSet")}
           />
         </div>
         {(editing || profile.bio) && (
           <div className="mt-4">
-            <label className="block text-sm font-medium text-muted mb-1.5">แนะนำตัว</label>
+            <label className="block text-sm font-medium text-muted mb-1.5">{t("profile", "bio")}</label>
             {editing ? (
               <textarea
                 value={profile.bio}
                 onChange={(e) => handleChange("bio", e.target.value)}
-                placeholder="เล่าเกี่ยวกับตัวเองสั้นๆ..."
+                placeholder={t("profile", "bioPlaceholder")}
                 rows={3}
                 className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm resize-none"
               />
@@ -357,44 +363,46 @@ export default function ProfilePage() {
       <div className="bg-card border border-border rounded-2xl p-6">
         <h3 className="font-semibold mb-4 flex items-center gap-2">
           <Building2 className="w-5 h-5 text-accent" />
-          ข้อมูลธุรกิจ
+          {t("profile", "businessInfo")}
         </h3>
         <div className="grid sm:grid-cols-2 gap-4">
           <Field
-            label="ชื่อธุรกิจ / ชื่อที่ใช้ในใบแจ้งหนี้"
+            label={t("profile", "businessName")}
             icon={<Building2 className="w-4 h-4" />}
             value={profile.businessName}
             editing={editing}
             onChange={(v) => handleChange("businessName", v)}
-            placeholder="เช่น บริษัท ABC จำกัด"
+            placeholder={t("profile", "businessNamePlaceholder")}
+            notSet={t("profile", "notSet")}
           />
           <Field
-            label="เลขประจำตัวผู้เสียภาษี (Tax ID)"
+            label={t("profile", "taxId")}
             icon={<FileText className="w-4 h-4" />}
             value={profile.taxId}
             editing={editing}
             error={errors.taxId}
             onChange={(v) => handleChange("taxId", v)}
             placeholder="1234567890123"
+            notSet={t("profile", "notSet")}
           />
         </div>
         <div className="mt-4">
           <label className="block text-sm font-medium text-muted mb-1.5">
             <div className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4" />
-              ที่อยู่ (แสดงในใบแจ้งหนี้)
+              {t("profile", "address")}
             </div>
           </label>
           {editing ? (
             <textarea
               value={profile.address}
               onChange={(e) => handleChange("address", e.target.value)}
-              placeholder="123/45 ถ.สุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพฯ 10110"
+              placeholder={t("profile", "addressPlaceholder")}
               rows={2}
               className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm resize-none"
             />
           ) : (
-            <p className="text-sm">{profile.address || <span className="text-muted">ยังไม่ได้ใส่</span>}</p>
+            <p className="text-sm">{profile.address || <span className="text-muted">{t("profile", "notSet")}</span>}</p>
           )}
         </div>
       </div>
@@ -403,18 +411,18 @@ export default function ProfilePage() {
       <div className="bg-card border border-border rounded-2xl p-6">
         <h3 className="font-semibold mb-4 flex items-center gap-2">
           <Building2 className="w-5 h-5 text-warning" />
-          บัญชีธนาคาร
+          {t("profile", "bankInfo")}
         </h3>
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-muted mb-1.5">ธนาคาร</label>
+            <label className="block text-sm font-medium text-muted mb-1.5">{t("profile", "bank")}</label>
             {editing ? (
               <select
                 value={profile.bankName}
                 onChange={(e) => handleChange("bankName", e.target.value)}
                 className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm"
               >
-                <option value="">เลือกธนาคาร</option>
+                <option value="">{t("profile", "selectBank")}</option>
                 {BANK_OPTIONS.map((bank) => (
                   <option key={bank} value={bank}>
                     {bank}
@@ -422,15 +430,16 @@ export default function ProfilePage() {
                 ))}
               </select>
             ) : (
-              <p className="text-sm">{profile.bankName || <span className="text-muted">ยังไม่ได้เลือก</span>}</p>
+              <p className="text-sm">{profile.bankName || <span className="text-muted">{t("profile", "bankNotSelected")}</span>}</p>
             )}
           </div>
           <Field
-            label="เลขบัญชี"
+            label={t("profile", "accountNumber")}
             value={profile.bankAccount}
             editing={editing}
             onChange={(v) => handleChange("bankAccount", v)}
             placeholder="xxx-x-xxxxx-x"
+            notSet={t("profile", "notSet")}
           />
         </div>
       </div>
@@ -447,6 +456,7 @@ function Field({
   onChange,
   placeholder,
   type = "text",
+  notSet,
 }: {
   label: string;
   icon?: React.ReactNode;
@@ -456,6 +466,7 @@ function Field({
   onChange: (v: string) => void;
   placeholder?: string;
   type?: string;
+  notSet?: string;
 }) {
   return (
     <div>
@@ -483,7 +494,7 @@ function Field({
           {error && <p className="text-danger text-xs mt-1">{error}</p>}
         </>
       ) : (
-        <p className="text-sm">{value || <span className="text-muted">ยังไม่ได้ใส่</span>}</p>
+        <p className="text-sm">{value || <span className="text-muted">{notSet}</span>}</p>
       )}
     </div>
   );

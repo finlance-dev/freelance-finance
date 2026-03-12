@@ -36,6 +36,7 @@ import { usePlan } from "@/hooks/usePlan";
 import { exportTransactionsCSV, exportTransactionsPDF } from "@/lib/export";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
+import { useLocale } from "@/hooks/useLocale";
 
 const DEFAULT_CATEGORIES: string[] = [];
 
@@ -92,6 +93,7 @@ export default function TransactionsPage() {
   const { isPro, canAddTransaction, transactionsRemaining } = usePlan();
   const { toast } = useToast();
   const { confirm } = useConfirm();
+  const { t } = useLocale();
 
   useEffect(() => {
     setTransactions(getTransactions());
@@ -105,24 +107,24 @@ export default function TransactionsPage() {
     const name = newCategoryName.trim();
     if (!name) return;
     if (categories.includes(name)) {
-      toast("หมวดหมู่นี้มีอยู่แล้ว", "warning");
+      toast(t("transactions", "catExists"), "warning");
       return;
     }
     saveCategory(name);
     setCategories([...categories, name]);
     setNewCategoryName("");
     setShowCategoryForm(false);
-    toast("เพิ่มหมวดหมู่สำเร็จ");
+    toast(t("transactions", "catAdded"));
   };
 
   const handleDeleteCategory = async (name: string) => {
     if (DEFAULT_CATEGORIES.includes(name)) return;
-    const ok = await confirm({ title: "ลบหมวดหมู่", message: `ต้องการลบหมวดหมู่ "${name}" หรือไม่?`, variant: "danger" });
+    const ok = await confirm({ title: t("transactions", "deleteCategory"), message: `${t("transactions", "deleteCategoryConfirm")} "${name}"?`, variant: "danger" });
     if (!ok) return;
     removeCategory(name);
     setCategories(categories.filter((c) => c !== name));
     if (form.category === name) setForm({ ...form, category: "" });
-    toast("ลบหมวดหมู่สำเร็จ");
+    toast(t("transactions", "catDeleted"));
   };
 
   const handleEditCategory = (name: string) => {
@@ -135,7 +137,7 @@ export default function TransactionsPage() {
     if (!newName || !editingCat) return;
     if (newName === editingCat) { setEditingCat(null); return; }
     if (categories.includes(newName)) {
-      toast("หมวดหมู่นี้มีอยู่แล้ว", "warning");
+      toast(t("transactions", "catExists"), "warning");
       return;
     }
     renameCategory(editingCat, newName);
@@ -143,7 +145,7 @@ export default function TransactionsPage() {
     if (form.category === editingCat) setForm({ ...form, category: newName });
     setTransactions(getTransactions());
     setEditingCat(null);
-    toast("แก้ไขหมวดหมู่สำเร็จ");
+    toast(t("transactions", "catEdited"));
   };
 
   const filtered = useMemo(() => {
@@ -173,10 +175,10 @@ export default function TransactionsPage() {
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
-    if (!form.amount || form.amount <= 0) newErrors.amount = "กรุณาระบุจำนวนเงินที่มากกว่า 0";
-    if (!form.description.trim()) newErrors.description = "กรุณาระบุรายละเอียด";
-    if (!form.date) newErrors.date = "กรุณาระบุวันที่";
-    if (form.type === "expense" && !form.category) newErrors.category = "กรุณาเลือกหมวดหมู่";
+    if (!form.amount || form.amount <= 0) newErrors.amount = t("transactions", "errAmount");
+    if (!form.description.trim()) newErrors.description = t("transactions", "errDescription");
+    if (!form.date) newErrors.date = t("transactions", "errDate");
+    if (form.type === "expense" && !form.category) newErrors.category = t("transactions", "errCategory");
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -184,9 +186,8 @@ export default function TransactionsPage() {
   const handleSave = () => {
     if (!validateForm()) return;
 
-    // Check free plan limit (only for new transactions)
     if (!editingId && !canAddTransaction()) {
-      toast("แพลนฟรีจำกัด 30 รายการ กรุณาอัปเกรดเป็นโปร", "warning");
+      toast(t("transactions", "freeLimitWarning"), "warning");
       return;
     }
 
@@ -198,7 +199,7 @@ export default function TransactionsPage() {
     saveTransaction(tx);
     setTransactions(getTransactions());
     resetForm();
-    toast(editingId ? "แก้ไขรายการสำเร็จ" : "เพิ่มรายการสำเร็จ");
+    toast(editingId ? t("transactions", "editedSuccess") : t("transactions", "addedSuccess"));
   };
 
   const handleEdit = (tx: Transaction) => {
@@ -210,15 +211,15 @@ export default function TransactionsPage() {
 
   const handleDelete = async (id: string) => {
     const ok = await confirm({
-      title: "ลบรายการ",
-      message: "คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้? การกระทำนี้ไม่สามารถย้อนกลับได้",
-      confirmText: "ลบ",
+      title: t("transactions", "deleteEntry"),
+      message: t("transactions", "deleteEntryConfirm"),
+      confirmText: t("common", "delete"),
       variant: "danger",
     });
     if (!ok) return;
     deleteTransaction(id);
     setTransactions(getTransactions());
-    toast("ลบรายการสำเร็จ");
+    toast(t("transactions", "deletedSuccess"));
   };
 
   const resetForm = () => {
@@ -261,8 +262,8 @@ export default function TransactionsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">รายการเงิน</h1>
-          <p className="text-muted text-sm mt-1">ติดตามรายรับและรายจ่ายของคุณ</p>
+          <h1 className="text-2xl font-bold">{t("transactions", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("transactions", "subtitle")}</p>
         </div>
         <div className="flex gap-2">
           {isPro && filtered.length > 0 && (
@@ -270,7 +271,7 @@ export default function TransactionsPage() {
               <button
                 onClick={() => exportTransactionsCSV(filtered)}
                 className="bg-secondary hover:bg-border text-foreground px-3 py-2 rounded-xl font-medium transition flex items-center gap-1.5 text-sm"
-                title="ส่งออก CSV"
+                title={t("transactions", "exportCSV")}
               >
                 <Download className="w-4 h-4" />
                 CSV
@@ -278,7 +279,7 @@ export default function TransactionsPage() {
               <button
                 onClick={() => exportTransactionsPDF(filtered)}
                 className="bg-secondary hover:bg-border text-foreground px-3 py-2 rounded-xl font-medium transition flex items-center gap-1.5 text-sm"
-                title="ส่งออก PDF"
+                title={t("transactions", "exportPDF")}
               >
                 <FileText className="w-4 h-4" />
                 PDF
@@ -289,16 +290,16 @@ export default function TransactionsPage() {
             <button
               disabled
               className="bg-secondary text-muted px-3 py-2 rounded-xl font-medium flex items-center gap-1.5 text-sm cursor-not-allowed opacity-60"
-              title="อัปเกรดเป็นโปรเพื่อส่งออก"
+              title={t("transactions", "upgradeToExport")}
             >
               <Lock className="w-3.5 h-3.5" />
-              ส่งออก
+              {t("transactions", "export")}
             </button>
           )}
           <button
             onClick={() => {
               if (!canAddTransaction()) {
-                toast("แพลนฟรีจำกัด 30 รายการ กรุณาอัปเกรดเป็นโปร", "warning");
+                toast(t("transactions", "freeLimitWarning"), "warning");
                 return;
               }
               setShowForm(true);
@@ -309,7 +310,7 @@ export default function TransactionsPage() {
             className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition flex items-center gap-2"
           >
             <Plus className="w-4 h-4" />
-            เพิ่มรายการ
+            {t("transactions", "addEntry")}
           </button>
         </div>
       </div>
@@ -318,7 +319,7 @@ export default function TransactionsPage() {
       {!isPro && remaining !== Infinity && remaining <= 10 && remaining > 0 && (
         <div className="flex items-center gap-2 bg-warning/10 border border-warning/30 text-warning px-4 py-3 rounded-xl text-sm">
           <AlertTriangle className="w-4 h-4 shrink-0" />
-          <span>เหลือเพิ่มได้อีก {remaining} รายการ (แพลนฟรีจำกัด 30 รายการ)</span>
+          <span>{t("transactions", "remainingEntries")} {remaining} {t("transactions", "freeLimitNote")}</span>
         </div>
       )}
 
@@ -328,7 +329,7 @@ export default function TransactionsPage() {
           <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-5">
               <h2 className="text-lg font-bold">
-                {editingId ? "แก้ไขรายการ" : "เพิ่มรายการ"}
+                {editingId ? t("transactions", "editEntry") : t("transactions", "addEntry")}
               </h2>
               <button onClick={resetForm} className="text-muted hover:text-foreground">
                 <X className="w-5 h-5" />
@@ -350,7 +351,7 @@ export default function TransactionsPage() {
                         : "bg-secondary text-muted border border-border"
                     }`}
                   >
-                    {type === "income" ? "รายรับ" : "รายจ่าย"}
+                    {type === "income" ? t("transactions", "income") : t("transactions", "expense")}
                   </button>
                 ))}
               </div>
@@ -358,7 +359,7 @@ export default function TransactionsPage() {
               {/* Amount + Currency */}
               <div className="flex gap-2">
                 <div className="flex-1">
-                  <label className="block text-sm font-medium mb-1.5">จำนวนเงิน</label>
+                  <label className="block text-sm font-medium mb-1.5">{t("transactions", "amount")}</label>
                   <input
                     type="number"
                     value={form.amount || ""}
@@ -369,7 +370,7 @@ export default function TransactionsPage() {
                   {errors.amount && <p className="text-danger text-xs mt-1">{errors.amount}</p>}
                 </div>
                 <div className="w-24">
-                  <label className="block text-sm font-medium mb-1.5">สกุลเงิน</label>
+                  <label className="block text-sm font-medium mb-1.5">{t("transactions", "currency")}</label>
                   <select
                     value={form.currency || "THB"}
                     onChange={(e) => setForm({ ...form, currency: e.target.value })}
@@ -386,7 +387,7 @@ export default function TransactionsPage() {
               {form.type === "income" && (
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
-                    <label className="block text-sm font-medium">หัก ณ ที่จ่าย (WHT)</label>
+                    <label className="block text-sm font-medium">{t("transactions", "wht")}</label>
                     <button
                       type="button"
                       onClick={() => {
@@ -395,7 +396,7 @@ export default function TransactionsPage() {
                       }}
                       className="text-xs text-primary hover:underline"
                     >
-                      คำนวณ 3%
+                      {t("transactions", "calc3pct")}
                     </button>
                   </div>
                   <div className="flex gap-2 items-center">
@@ -406,11 +407,11 @@ export default function TransactionsPage() {
                       placeholder="0"
                       className="flex-1 px-4 py-2.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                     />
-                    <span className="text-sm text-muted whitespace-nowrap">บาท</span>
+                    <span className="text-sm text-muted whitespace-nowrap">{t("transactions", "baht")}</span>
                   </div>
                   {form.withholdingTax ? (
                     <p className="text-xs text-muted mt-1">
-                      รายได้สุทธิ: {formatCurrency(form.amount - (form.withholdingTax || 0))} (หลังหัก WHT)
+                      {t("transactions", "netIncome")} {formatCurrency(form.amount - (form.withholdingTax || 0))} {t("transactions", "afterWHT")}
                     </p>
                   ) : null}
                 </div>
@@ -418,12 +419,12 @@ export default function TransactionsPage() {
 
               {/* Description */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">รายละเอียด</label>
+                <label className="block text-sm font-medium mb-1.5">{t("transactions", "description")}</label>
                 <input
                   type="text"
                   value={form.description}
                   onChange={(e) => { setForm({ ...form, description: e.target.value }); setErrors({ ...errors, description: "" }); }}
-                  placeholder="เช่น ออกแบบเว็บไซต์ให้ลูกค้า A"
+                  placeholder={t("transactions", "descPlaceholder")}
                   className={`w-full px-4 py-2.5 rounded-xl border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${errors.description ? "border-danger" : "border-border"}`}
                 />
                 {errors.description && <p className="text-danger text-xs mt-1">{errors.description}</p>}
@@ -431,7 +432,7 @@ export default function TransactionsPage() {
 
               {/* Date */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">วันที่</label>
+                <label className="block text-sm font-medium mb-1.5">{t("transactions", "date")}</label>
                 <input
                   type="date"
                   value={form.date}
@@ -443,13 +444,13 @@ export default function TransactionsPage() {
 
               {/* Client */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">ลูกค้า (ไม่บังคับ)</label>
+                <label className="block text-sm font-medium mb-1.5">{t("transactions", "client")}</label>
                 <select
                   value={form.clientId || ""}
                   onChange={(e) => setForm({ ...form, clientId: e.target.value || null })}
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <option value="">ไม่ระบุลูกค้า</option>
+                  <option value="">{t("transactions", "noClient")}</option>
                   {clients.map((c) => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                   ))}
@@ -458,13 +459,13 @@ export default function TransactionsPage() {
 
               {/* Project */}
               <div>
-                <label className="block text-sm font-medium mb-1.5">โปรเจกต์ (ไม่บังคับ)</label>
+                <label className="block text-sm font-medium mb-1.5">{t("transactions", "project")}</label>
                 <select
                   value={form.projectId || ""}
                   onChange={(e) => setForm({ ...form, projectId: e.target.value || null })}
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <option value="">ไม่ระบุโปรเจกต์</option>
+                  <option value="">{t("transactions", "noProject")}</option>
                   {projects
                     .filter((p) => !form.clientId || p.clientId === form.clientId)
                     .map((p) => (
@@ -477,7 +478,7 @@ export default function TransactionsPage() {
               {(form.type === "expense" || form.type === "income") && (
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
-                    <label className="block text-sm font-medium">หมวดหมู่</label>
+                    <label className="block text-sm font-medium">{t("transactions", "category")}</label>
                     <div className="flex items-center gap-2">
                       {categories.length > 0 && (
                         <button
@@ -485,7 +486,7 @@ export default function TransactionsPage() {
                           onClick={() => setShowCategoryManager(!showCategoryManager)}
                           className="text-xs text-muted hover:text-foreground"
                         >
-                          {showCategoryManager ? "ซ่อน" : "จัดการ"}
+                          {showCategoryManager ? t("transactions", "hide") : t("transactions", "manage")}
                         </button>
                       )}
                       <button
@@ -493,7 +494,7 @@ export default function TransactionsPage() {
                         onClick={() => setShowCategoryForm(!showCategoryForm)}
                         className="text-xs text-primary hover:underline"
                       >
-                        + เพิ่มหมวดหมู่
+                        {t("transactions", "addCategory")}
                       </button>
                     </div>
                   </div>
@@ -503,7 +504,7 @@ export default function TransactionsPage() {
                         type="text"
                         value={newCategoryName}
                         onChange={(e) => setNewCategoryName(e.target.value)}
-                        placeholder="ชื่อหมวดหมู่ใหม่"
+                        placeholder={t("transactions", "newCatPlaceholder")}
                         className="flex-1 px-3 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                         onKeyDown={(e) => e.key === "Enter" && handleAddCategory()}
                       />
@@ -512,7 +513,7 @@ export default function TransactionsPage() {
                         onClick={handleAddCategory}
                         className="px-3 py-2 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary-dark transition"
                       >
-                        เพิ่ม
+                        {t("common", "add")}
                       </button>
                     </div>
                   )}
@@ -530,10 +531,10 @@ export default function TransactionsPage() {
                                 className="flex-1 px-2 py-1 rounded-lg border border-primary bg-background text-sm focus:outline-none"
                                 autoFocus
                               />
-                              <button type="button" onClick={handleSaveEditCategory} className="text-accent hover:text-accent/80 p-1" title="บันทึก">
+                              <button type="button" onClick={handleSaveEditCategory} className="text-accent hover:text-accent/80 p-1">
                                 <ArrowUpRight className="w-3.5 h-3.5" />
                               </button>
-                              <button type="button" onClick={() => setEditingCat(null)} className="text-muted hover:text-foreground p-1" title="ยกเลิก">
+                              <button type="button" onClick={() => setEditingCat(null)} className="text-muted hover:text-foreground p-1">
                                 <X className="w-3.5 h-3.5" />
                               </button>
                             </>
@@ -542,10 +543,10 @@ export default function TransactionsPage() {
                               <span className="flex-1 truncate">{cat}</span>
                               {!DEFAULT_CATEGORIES.includes(cat) && (
                                 <div className="flex items-center gap-1">
-                                  <button type="button" onClick={() => handleEditCategory(cat)} className="text-muted hover:text-primary p-1" title="แก้ไข">
+                                  <button type="button" onClick={() => handleEditCategory(cat)} className="text-muted hover:text-primary p-1">
                                     <Pencil className="w-3.5 h-3.5" />
                                   </button>
-                                  <button type="button" onClick={() => handleDeleteCategory(cat)} className="text-muted hover:text-danger p-1" title="ลบ">
+                                  <button type="button" onClick={() => handleDeleteCategory(cat)} className="text-muted hover:text-danger p-1">
                                     <Trash2 className="w-3.5 h-3.5" />
                                   </button>
                                 </div>
@@ -561,7 +562,7 @@ export default function TransactionsPage() {
                     onChange={(e) => { setForm({ ...form, category: e.target.value }); setErrors({ ...errors, category: "" }); }}
                     className={`w-full px-4 py-2.5 rounded-xl border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${errors.category ? "border-danger" : "border-border"}`}
                   >
-                    <option value="">เลือกหมวดหมู่</option>
+                    <option value="">{t("transactions", "selectCategory")}</option>
                     {categories.map((cat) => (
                       <option key={cat} value={cat}>{cat}</option>
                     ))}
@@ -574,7 +575,7 @@ export default function TransactionsPage() {
                 onClick={handleSave}
                 className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition"
               >
-                {editingId ? "บันทึกการเปลี่ยนแปลง" : "เพิ่มรายการ"}
+                {editingId ? t("transactions", "saveChanges") : t("transactions", "addEntry")}
               </button>
             </div>
           </div>
@@ -590,7 +591,7 @@ export default function TransactionsPage() {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="ค้นหารายการ..."
+              placeholder={t("transactions", "search")}
               className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
@@ -605,7 +606,7 @@ export default function TransactionsPage() {
                     : "bg-card border border-border text-muted hover:text-foreground"
                 }`}
               >
-                {type === "all" ? "ทั้งหมด" : type === "income" ? "รายรับ" : "รายจ่าย"}
+                {type === "all" ? t("transactions", "all") : type === "income" ? t("transactions", "income") : t("transactions", "expense")}
               </button>
             ))}
           </div>
@@ -620,9 +621,8 @@ export default function TransactionsPage() {
               value={dateFrom}
               onChange={(e) => setDateFrom(e.target.value)}
               className="flex-1 px-3 py-2 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="จากวันที่"
             />
-            <span className="text-muted text-sm">ถึง</span>
+            <span className="text-muted text-sm">{t("transactions", "toDate")}</span>
             <input
               type="date"
               value={dateTo}
@@ -635,7 +635,7 @@ export default function TransactionsPage() {
             onChange={(e) => setFilterClient(e.target.value)}
             className="px-3 py-2 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
           >
-            <option value="">ลูกค้าทั้งหมด</option>
+            <option value="">{t("transactions", "allClients")}</option>
             {clients.map((c) => (
               <option key={c.id} value={c.id}>{c.name}</option>
             ))}
@@ -645,7 +645,7 @@ export default function TransactionsPage() {
             onChange={(e) => setFilterCategory(e.target.value)}
             className="px-3 py-2 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
           >
-            <option value="">หมวดหมู่ทั้งหมด</option>
+            <option value="">{t("transactions", "allCategories")}</option>
             {categories.map((cat) => (
               <option key={cat} value={cat}>{cat}</option>
             ))}
@@ -656,7 +656,7 @@ export default function TransactionsPage() {
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium text-danger bg-danger/10 hover:bg-danger/20 transition whitespace-nowrap"
             >
               <Filter className="w-3.5 h-3.5" />
-              ล้างตัวกรอง
+              {t("transactions", "clearFilters")}
             </button>
           )}
         </div>
@@ -665,7 +665,7 @@ export default function TransactionsPage() {
       {/* Summary */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div className="bg-card border border-border rounded-2xl p-4">
-          <p className="text-sm text-muted">รายรับรวม</p>
+          <p className="text-sm text-muted">{t("transactions", "totalIncome")}</p>
           <p className="text-xl font-bold text-accent">
             {formatCurrency(
               filtered.filter((t) => t.type === "income").reduce((s, t) => s + t.amount, 0)
@@ -673,7 +673,7 @@ export default function TransactionsPage() {
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-4">
-          <p className="text-sm text-muted">รายจ่ายรวม</p>
+          <p className="text-sm text-muted">{t("transactions", "totalExpenses")}</p>
           <p className="text-xl font-bold text-danger">
             {formatCurrency(
               filtered.filter((t) => t.type === "expense").reduce((s, t) => s + t.amount, 0)
@@ -681,7 +681,7 @@ export default function TransactionsPage() {
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-4 col-span-2 sm:col-span-1">
-          <p className="text-sm text-muted">จำนวนรายการ</p>
+          <p className="text-sm text-muted">{t("transactions", "entryCount")}</p>
           <p className="text-xl font-bold">{filtered.length}</p>
         </div>
       </div>
@@ -691,8 +691,8 @@ export default function TransactionsPage() {
         {filtered.length === 0 ? (
           <div className="p-12 text-center text-muted">
             <EmptyTransactionsIllustration className="w-44 h-auto mx-auto mb-4" />
-            <p className="text-lg mb-2">ยังไม่มีรายการ</p>
-            <p className="text-sm">กด &quot;เพิ่ม&quot; เพื่อบันทึกรายรับหรือรายจ่ายแรกของคุณ</p>
+            <p className="text-lg mb-2">{t("transactions", "noEntries")}</p>
+            <p className="text-sm">{t("transactions", "addFirstEntry")}</p>
           </div>
         ) : (
           <div className="divide-y divide-border">

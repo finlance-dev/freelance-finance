@@ -36,22 +36,23 @@ import { EmptyChartIllustration } from "@/components/illustrations";
 import { useToast } from "@/components/toast";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
+import { useLocale } from "@/hooks/useLocale";
 
 const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"];
 
-function getMonthlyData(transactions: Transaction[]) {
+function getMonthlyData(transactions: Transaction[], locale: "th" | "en") {
   const months: Record<string, { income: number; expenses: number }> = {};
   const now = new Date();
 
   for (let i = 5; i >= 0; i--) {
     const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-    const key = d.toLocaleDateString("th-TH", { month: "short" });
+    const key = d.toLocaleDateString(locale === "th" ? "th-TH" : "en-US", { month: "short" });
     months[key] = { income: 0, expenses: 0 };
   }
 
   transactions.forEach((tx) => {
     const d = new Date(tx.date);
-    const key = d.toLocaleDateString("th-TH", { month: "short" });
+    const key = d.toLocaleDateString(locale === "th" ? "th-TH" : "en-US", { month: "short" });
     if (months[key]) {
       if (tx.type === "income") months[key].income += tx.amount;
       else months[key].expenses += tx.amount;
@@ -99,6 +100,7 @@ export default function DashboardPage() {
   const [editingGoal, setEditingGoal] = useState(false);
   const { toast } = useToast();
   const { isPro } = usePlan();
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     setTransactions(getTransactions());
@@ -149,7 +151,7 @@ export default function DashboardPage() {
     };
   }, [transactions]);
 
-  const monthlyData = useMemo(() => getMonthlyData(transactions), [transactions]);
+  const monthlyData = useMemo(() => getMonthlyData(transactions, locale), [transactions, locale]);
   const expenseData = useMemo(() => getExpensesByCategory(transactions), [transactions]);
   const clients = useMemo(() => getClients(), []);
   const clientIncomeData = useMemo(() => getIncomeByClient(transactions, clients), [transactions, clients]);
@@ -162,35 +164,35 @@ export default function DashboardPage() {
   const handleSaveGoal = () => {
     saveIncomeGoal({ monthlyTarget: goalInput, yearlyTarget: goalInput * 12 });
     setEditingGoal(false);
-    toast("บันทึกเป้าหมายสำเร็จ");
+    toast(t("dashboard", "goalSaved"));
   };
 
   if (!mounted) return null;
 
   const statCards = [
     {
-      label: "รายได้รวม",
+      label: t("dashboard", "totalIncome"),
       value: formatCurrency(stats.totalIncome),
       icon: TrendingUp,
       color: "text-accent",
       bg: "bg-accent/10",
     },
     {
-      label: "ค่าใช้จ่ายรวม",
+      label: t("dashboard", "totalExpenses"),
       value: formatCurrency(stats.totalExpenses),
       icon: TrendingDown,
       color: "text-danger",
       bg: "bg-danger/10",
     },
     {
-      label: "กำไรสุทธิ",
+      label: t("dashboard", "netProfit"),
       value: formatCurrency(stats.netProfit),
       icon: DollarSign,
       color: stats.netProfit >= 0 ? "text-accent" : "text-danger",
       bg: stats.netProfit >= 0 ? "bg-accent/10" : "bg-danger/10",
     },
     ...(isPro ? [{
-      label: "ภาษีรายไตรมาส (ประมาณ)",
+      label: t("dashboard", "quarterlyTax"),
       value: formatCurrency(stats.estimatedTax / 4),
       icon: Calendar,
       color: "text-warning",
@@ -209,8 +211,8 @@ export default function DashboardPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">แดชบอร์ด</h1>
-          <p className="text-muted text-sm mt-1">ภาพรวมการเงินของคุณ</p>
+          <h1 className="text-2xl font-bold">{t("dashboard", "pageTitle")}</h1>
+          <p className="text-muted text-sm mt-1">{t("dashboard", "pageSubtitle")}</p>
         </div>
         <button
           onClick={() => {
@@ -220,7 +222,7 @@ export default function DashboardPage() {
           className="flex items-center gap-2 text-xs bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
         >
           <Database className="w-3.5 h-3.5" />
-          โหลดข้อมูลตัวอย่าง
+          {t("dashboard", "loadDemo")}
         </button>
       </div>
 
@@ -243,7 +245,7 @@ export default function DashboardPage() {
       <div className={`grid ${isPro ? "lg:grid-cols-2" : ""} gap-6`}>
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center justify-between mb-1">
-            <h3 className="font-semibold">เดือนนี้</h3>
+            <h3 className="font-semibold">{t("dashboard", "thisMonth")}</h3>
             {stats.incomeChange !== 0 && (
               <div className={`flex items-center gap-1 text-sm ${stats.incomeChange > 0 ? "text-accent" : "text-danger"}`}>
                 {stats.incomeChange > 0 ? (
@@ -251,7 +253,7 @@ export default function DashboardPage() {
                 ) : (
                   <ArrowDownRight className="w-4 h-4" />
                 )}
-                {Math.abs(stats.incomeChange).toFixed(0)}% เทียบเดือนที่แล้ว
+                {Math.abs(stats.incomeChange).toFixed(0)}% {t("dashboard", "vsLastMonth")}
               </div>
             )}
           </div>
@@ -259,7 +261,7 @@ export default function DashboardPage() {
           {stats.monthsOfRunway > 0 && stats.monthsOfRunway < 3 && (
             <div className="mt-3 flex items-center gap-2 text-warning text-sm">
               <AlertTriangle className="w-4 h-4" />
-              <span>เงินเหลือใช้ได้อีก ~{stats.monthsOfRunway} เดือน</span>
+              <span>{t("dashboard", "runwayWarning")}{stats.monthsOfRunway} {t("dashboard", "months")}</span>
             </div>
           )}
         </div>
@@ -269,7 +271,7 @@ export default function DashboardPage() {
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Target className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold">เป้าหมายรายได้เดือนนี้</h3>
+              <h3 className="font-semibold">{t("dashboard", "incomeGoal")}</h3>
             </div>
             {!editingGoal ? (
               <button
@@ -293,12 +295,12 @@ export default function DashboardPage() {
           {editingGoal ? (
             <div className="space-y-3">
               <div>
-                <label className="text-sm text-muted">เป้าหมายรายเดือน (฿)</label>
+                <label className="text-sm text-muted">{t("dashboard", "goalMonthly")}</label>
                 <input
                   type="number"
                   value={goalInput || ""}
                   onChange={(e) => setGoalInput(Number(e.target.value))}
-                  placeholder="เช่น 100000"
+                  placeholder={t("dashboard", "goalPlaceholder")}
                   className="w-full mt-1 px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -328,21 +330,21 @@ export default function DashboardPage() {
                 />
               </div>
               {goalProgress >= 100 ? (
-                <p className="text-sm text-accent font-medium">ถึงเป้าหมายแล้ว!</p>
+                <p className="text-sm text-accent font-medium">{t("dashboard", "goalReached")}</p>
               ) : (
                 <p className="text-sm text-muted">
-                  เหลืออีก {formatCurrency(incomeGoal.monthlyTarget - stats.thisMonth)}
+                  {t("dashboard", "goalRemaining")} {formatCurrency(incomeGoal.monthlyTarget - stats.thisMonth)}
                 </p>
               )}
             </div>
           ) : (
             <div className="text-center py-4">
-              <p className="text-sm text-muted mb-2">ยังไม่ได้ตั้งเป้าหมาย</p>
+              <p className="text-sm text-muted mb-2">{t("dashboard", "goalNotSet")}</p>
               <button
                 onClick={() => setEditingGoal(true)}
                 className="text-sm bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
               >
-                ตั้งเป้าหมาย
+                {t("dashboard", "setGoal")}
               </button>
             </div>
           )}
@@ -352,8 +354,8 @@ export default function DashboardPage() {
       {/* Charts — Pro only */}
       {!isPro ? (
         <UpgradePrompt
-          feature="กราฟและการวิเคราะห์"
-          description="ดูกราฟแนวโน้มกำไร รายรับ vs รายจ่าย สัดส่วนค่าใช้จ่าย และรายได้ตามลูกค้า อัปเกรดเป็นโปรเพื่อปลดล็อค"
+          feature={t("dashboard", "chartsUpgrade")}
+          description={t("dashboard", "chartsUpgradeDesc")}
         />
       ) : (
         <>
@@ -361,7 +363,7 @@ export default function DashboardPage() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Income Trend Area Chart */}
             <div className="bg-card border border-border rounded-2xl p-5">
-              <h3 className="font-semibold mb-4">แนวโน้มกำไร (6 เดือน)</h3>
+              <h3 className="font-semibold mb-4">{t("dashboard", "profitTrend")}</h3>
               {transactions.length > 0 ? (
                 <ResponsiveContainer width="100%" height={250}>
                   <AreaChart data={monthlyData}>
@@ -385,21 +387,21 @@ export default function DashboardPage() {
                       stroke="#6366f1"
                       strokeWidth={2}
                       fill="url(#profitGradient)"
-                      name="กำไร"
+                      name={t("dashboard", "profit")}
                     />
                   </AreaChart>
                 </ResponsiveContainer>
               ) : (
                 <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
                   <EmptyChartIllustration className="w-40 h-auto" />
-                  <p>เพิ่มรายการเพื่อดูกราฟ</p>
+                  <p>{t("dashboard", "addToSeeChart")}</p>
                 </div>
               )}
             </div>
 
             {/* Monthly Income vs Expenses Bar Chart */}
             <div className="bg-card border border-border rounded-2xl p-5">
-              <h3 className="font-semibold mb-4">รายรับ vs รายจ่าย (6 เดือน)</h3>
+              <h3 className="font-semibold mb-4">{t("dashboard", "incomeVsExpense")}</h3>
               {transactions.length > 0 ? (
                 <ResponsiveContainer width="100%" height={250}>
                   <BarChart data={monthlyData}>
@@ -411,14 +413,14 @@ export default function DashboardPage() {
                       contentStyle={tooltipStyle}
                       labelStyle={{ fontWeight: "bold" }}
                     />
-                    <Bar dataKey="income" fill="#10b981" radius={[4, 4, 0, 0]} name="รายรับ" />
-                    <Bar dataKey="expenses" fill="#ef4444" radius={[4, 4, 0, 0]} name="รายจ่าย" />
+                    <Bar dataKey="income" fill="#10b981" radius={[4, 4, 0, 0]} name={t("common", "income")} />
+                    <Bar dataKey="expenses" fill="#ef4444" radius={[4, 4, 0, 0]} name={t("common", "expense")} />
                   </BarChart>
                 </ResponsiveContainer>
               ) : (
                 <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
                   <EmptyChartIllustration className="w-40 h-auto" />
-                  <p>เพิ่มรายการเพื่อดูกราฟ</p>
+                  <p>{t("dashboard", "addToSeeChart")}</p>
                   <button
                     onClick={() => {
                       seedDemoData();
@@ -427,7 +429,7 @@ export default function DashboardPage() {
                     className="flex items-center gap-2 text-xs bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
                   >
                     <Database className="w-3.5 h-3.5" />
-                    โหลดข้อมูลตัวอย่าง
+                    {t("dashboard", "loadDemo")}
                   </button>
                 </div>
               )}
@@ -438,7 +440,7 @@ export default function DashboardPage() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Expenses by Category */}
             <div className="bg-card border border-border rounded-2xl p-5">
-              <h3 className="font-semibold mb-4">ค่าใช้จ่ายตามหมวดหมู่</h3>
+              <h3 className="font-semibold mb-4">{t("dashboard", "expenseByCategory")}</h3>
               {expenseData.length > 0 ? (
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <div className="w-full sm:w-1/2">
@@ -476,7 +478,7 @@ export default function DashboardPage() {
               ) : (
                 <div className="h-[200px] flex flex-col items-center justify-center text-muted text-sm">
                   <EmptyChartIllustration className="w-36 h-auto mb-3" />
-                  เพิ่มค่าใช้จ่ายเพื่อดูสัดส่วน
+                  {t("dashboard", "addExpenseToSee")}
                 </div>
               )}
             </div>
@@ -484,7 +486,7 @@ export default function DashboardPage() {
             {/* Income by Client */}
             {clientIncomeData.length > 0 && (
               <div className="bg-card border border-border rounded-2xl p-5">
-                <h3 className="font-semibold mb-4">รายได้ตามลูกค้า</h3>
+                <h3 className="font-semibold mb-4">{t("dashboard", "incomeByClient")}</h3>
                 <div className="space-y-3">
                   {clientIncomeData.slice(0, 5).map((item, i) => {
                     const maxIncome = clientIncomeData[0].income;

@@ -26,6 +26,7 @@ import { usePlan } from "@/hooks/usePlan";
 import { UpgradeBanner } from "@/components/upgrade-prompt";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
+import { useLocale } from "@/hooks/useLocale";
 
 const CLIENT_COLORS = [
   "#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6",
@@ -76,6 +77,7 @@ export default function ClientsPage() {
   const { canAddClient, clientsRemaining, isPro } = usePlan();
   const { toast } = useToast();
   const { confirm } = useConfirm();
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     reload();
@@ -106,8 +108,8 @@ export default function ClientsPage() {
   // Client CRUD
   const validateClient = (): boolean => {
     const errs: Record<string, string> = {};
-    if (!clientForm.name.trim()) errs.name = "กรุณาระบุชื่อลูกค้า";
-    if (clientForm.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clientForm.email)) errs.email = "รูปแบบอีเมลไม่ถูกต้อง";
+    if (!clientForm.name.trim()) errs.name = t("clients", "errName");
+    if (clientForm.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clientForm.email)) errs.email = t("clients", "errEmail");
     setClientErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -127,7 +129,7 @@ export default function ClientsPage() {
     setEditingClientId(null);
     setClientForm({ name: "", email: "", color: CLIENT_COLORS[0] });
     setClientErrors({});
-    toast(editingClientId ? "แก้ไขลูกค้าสำเร็จ" : "เพิ่มลูกค้าสำเร็จ");
+    toast(editingClientId ? t("clients", "clientEdited") : t("clients", "clientAdded"));
   };
 
   const handleEditClient = (c: Client) => {
@@ -139,22 +141,22 @@ export default function ClientsPage() {
 
   const handleDeleteClient = async (id: string) => {
     const ok = await confirm({
-      title: "ลบลูกค้า",
-      message: "ลบลูกค้ารายนี้? โปรเจกต์ที่เกี่ยวข้องจะยังอยู่แต่จะไม่ผูกกับลูกค้า",
-      confirmText: "ลบ",
+      title: t("clients", "deleteClient"),
+      message: t("clients", "deleteClientConfirm"),
+      confirmText: t("common", "delete"),
       variant: "danger",
     });
     if (!ok) return;
     deleteClient(id);
     reload();
-    toast("ลบลูกค้าสำเร็จ");
+    toast(t("clients", "clientDeleted"));
   };
 
   // Project CRUD
   const validateProject = (): boolean => {
     const errs: Record<string, string> = {};
-    if (!projectForm.name.trim()) errs.name = "กรุณาระบุชื่อโปรเจกต์";
-    if (!projectForm.clientId) errs.clientId = "กรุณาเลือกลูกค้า";
+    if (!projectForm.name.trim()) errs.name = t("clients", "errProjectName");
+    if (!projectForm.clientId) errs.clientId = t("clients", "errSelectClient");
     setProjectErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -175,7 +177,7 @@ export default function ClientsPage() {
     setEditingProjectId(null);
     setProjectForm({ name: "", clientId: "", hourlyRate: 0, status: "active" });
     setProjectErrors({});
-    toast(editingProjectId ? "แก้ไขโปรเจกต์สำเร็จ" : "เพิ่มโปรเจกต์สำเร็จ");
+    toast(editingProjectId ? t("clients", "projectEdited") : t("clients", "projectAdded"));
   };
 
   const handleEditProject = (p: Project) => {
@@ -192,15 +194,15 @@ export default function ClientsPage() {
 
   const handleDeleteProject = async (id: string) => {
     const ok = await confirm({
-      title: "ลบโปรเจกต์",
-      message: "คุณแน่ใจหรือไม่ว่าต้องการลบโปรเจกต์นี้?",
-      confirmText: "ลบ",
+      title: t("clients", "deleteProject"),
+      message: t("clients", "deleteProjectConfirm"),
+      confirmText: t("common", "delete"),
       variant: "danger",
     });
     if (!ok) return;
     deleteProject(id);
     reload();
-    toast("ลบโปรเจกต์สำเร็จ");
+    toast(t("clients", "projectDeleted"));
   };
 
   const toggleExpand = (id: string) => {
@@ -230,8 +232,8 @@ export default function ClientsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">ลูกค้าและโปรเจกต์</h1>
-          <p className="text-muted text-sm mt-1">จัดการลูกค้าและติดตามกำไรรายโปรเจกต์</p>
+          <h1 className="text-2xl font-bold">{t("clients", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("clients", "subtitle")}</p>
         </div>
         <div className="flex gap-2">
           <button
@@ -244,12 +246,12 @@ export default function ClientsPage() {
             className="bg-secondary hover:bg-border text-foreground px-4 py-2 rounded-xl font-medium transition flex items-center gap-2 text-sm"
           >
             <FolderOpen className="w-4 h-4" />
-            เพิ่มโปรเจกต์
+            {t("clients", "addProject")}
           </button>
           <button
             onClick={() => {
               if (!canAddClient()) {
-                toast("แพลนฟรีจำกัด 3 ลูกค้า กรุณาอัปเกรดเป็นโปร", "warning");
+                toast(t("clients", "freeLimitWarning"), "warning");
                 return;
               }
               setShowClientForm(true);
@@ -260,7 +262,7 @@ export default function ClientsPage() {
             className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition flex items-center gap-2 text-sm"
           >
             <Plus className="w-4 h-4" />
-            เพิ่มลูกค้า
+            {t("clients", "addClient")}
           </button>
         </div>
       </div>
@@ -273,7 +275,7 @@ export default function ClientsPage() {
           <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-md">
             <div className="flex items-center justify-between mb-5">
               <h2 className="text-lg font-bold">
-                {editingClientId ? "แก้ไขลูกค้า" : "เพิ่มลูกค้า"}
+                {editingClientId ? t("clients", "editClient") : t("clients", "addClient")}
               </h2>
               <button onClick={() => { setShowClientForm(false); setClientErrors({}); }} className="text-muted hover:text-foreground">
                 <X className="w-5 h-5" />
@@ -281,29 +283,29 @@ export default function ClientsPage() {
             </div>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1.5">ชื่อ</label>
+                <label className="block text-sm font-medium mb-1.5">{t("clients", "clientName")}</label>
                 <input
                   type="text"
                   value={clientForm.name}
                   onChange={(e) => { setClientForm({ ...clientForm, name: e.target.value }); setClientErrors({ ...clientErrors, name: "" }); }}
-                  placeholder="ชื่อลูกค้า"
+                  placeholder={t("clients", "clientNamePlaceholder")}
                   className={`w-full px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary ${clientErrors.name ? "border-danger" : "border-border"}`}
                 />
                 {clientErrors.name && <p className="text-danger text-xs mt-1">{clientErrors.name}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1.5">อีเมล</label>
+                <label className="block text-sm font-medium mb-1.5">{t("clients", "email")}</label>
                 <input
                   type="email"
                   value={clientForm.email}
                   onChange={(e) => { setClientForm({ ...clientForm, email: e.target.value }); setClientErrors({ ...clientErrors, email: "" }); }}
-                  placeholder="อีเมลลูกค้า"
+                  placeholder={t("clients", "emailPlaceholder")}
                   className={`w-full px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary ${clientErrors.email ? "border-danger" : "border-border"}`}
                 />
                 {clientErrors.email && <p className="text-danger text-xs mt-1">{clientErrors.email}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1.5">สี</label>
+                <label className="block text-sm font-medium mb-1.5">{t("clients", "color")}</label>
                 <div className="flex gap-2 flex-wrap">
                   {CLIENT_COLORS.map((color) => (
                     <button
@@ -321,7 +323,7 @@ export default function ClientsPage() {
                 onClick={handleSaveClient}
                 className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition"
               >
-                {editingClientId ? "บันทึกการเปลี่ยนแปลง" : "เพิ่มลูกค้า"}
+                {editingClientId ? t("clients", "saveChanges") : t("clients", "addClient")}
               </button>
             </div>
           </div>
@@ -334,7 +336,7 @@ export default function ClientsPage() {
           <div className="bg-card border border-border rounded-2xl p-6 w-full max-w-md">
             <div className="flex items-center justify-between mb-5">
               <h2 className="text-lg font-bold">
-                {editingProjectId ? "แก้ไขโปรเจกต์" : "เพิ่มโปรเจกต์"}
+                {editingProjectId ? t("clients", "editProject") : t("clients", "addProject")}
               </h2>
               <button onClick={() => { setShowProjectForm(false); setProjectErrors({}); }} className="text-muted hover:text-foreground">
                 <X className="w-5 h-5" />
@@ -342,24 +344,24 @@ export default function ClientsPage() {
             </div>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1.5">ชื่อโปรเจกต์</label>
+                <label className="block text-sm font-medium mb-1.5">{t("clients", "projectName")}</label>
                 <input
                   type="text"
                   value={projectForm.name}
                   onChange={(e) => { setProjectForm({ ...projectForm, name: e.target.value }); setProjectErrors({ ...projectErrors, name: "" }); }}
-                  placeholder="เช่น ออกแบบเว็บไซต์ใหม่"
+                  placeholder={t("clients", "projectNamePlaceholder")}
                   className={`w-full px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary ${projectErrors.name ? "border-danger" : "border-border"}`}
                 />
                 {projectErrors.name && <p className="text-danger text-xs mt-1">{projectErrors.name}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1.5">ลูกค้า</label>
+                <label className="block text-sm font-medium mb-1.5">{t("clients", "selectClient")}</label>
                 <select
                   value={projectForm.clientId}
                   onChange={(e) => { setProjectForm({ ...projectForm, clientId: e.target.value }); setProjectErrors({ ...projectErrors, clientId: "" }); }}
                   className={`w-full px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary ${projectErrors.clientId ? "border-danger" : "border-border"}`}
                 >
-                  <option value="">เลือกลูกค้า</option>
+                  <option value="">{t("clients", "selectClient")}</option>
                   {clients.map((c) => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                   ))}
@@ -367,7 +369,7 @@ export default function ClientsPage() {
                 {projectErrors.clientId && <p className="text-danger text-xs mt-1">{projectErrors.clientId}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1.5">ค่าบริการรายชั่วโมง (บาท)</label>
+                <label className="block text-sm font-medium mb-1.5">{t("clients", "hourlyRate")}</label>
                 <input
                   type="number"
                   value={projectForm.hourlyRate || ""}
@@ -377,22 +379,22 @@ export default function ClientsPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1.5">สถานะ</label>
+                <label className="block text-sm font-medium mb-1.5">{t("clients", "status")}</label>
                 <select
                   value={projectForm.status}
                   onChange={(e) => setProjectForm({ ...projectForm, status: e.target.value as Project["status"] })}
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 >
-                  <option value="active">กำลังดำเนินการ</option>
-                  <option value="paused">หยุดชั่วคราว</option>
-                  <option value="completed">เสร็จแล้ว</option>
+                  <option value="active">{t("clients", "active")}</option>
+                  <option value="paused">{t("clients", "paused")}</option>
+                  <option value="completed">{t("clients", "completed")}</option>
                 </select>
               </div>
               <button
                 onClick={handleSaveProject}
                 className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition"
               >
-                {editingProjectId ? "บันทึกการเปลี่ยนแปลง" : "เพิ่มโปรเจกต์"}
+                {editingProjectId ? t("clients", "saveChanges") : t("clients", "addProject")}
               </button>
             </div>
           </div>
@@ -403,8 +405,8 @@ export default function ClientsPage() {
       {clients.length === 0 ? (
         <div className="bg-card border border-border rounded-2xl p-12 text-center">
           <EmptyClientsIllustration className="w-44 h-auto mx-auto mb-4" />
-          <p className="text-lg font-medium mb-1">ยังไม่มีลูกค้า</p>
-          <p className="text-sm text-muted">เพิ่มลูกค้าคนแรกเพื่อเริ่มติดตามรายได้</p>
+          <p className="text-lg font-medium mb-1">{t("clients", "noClients")}</p>
+          <p className="text-sm text-muted">{t("clients", "addFirstClient")}</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -434,7 +436,7 @@ export default function ClientsPage() {
                     <div>
                       <p className="font-semibold">{client.name}</p>
                       <p className="text-xs text-muted">
-                        {clientProjects.length} โปรเจกต์ · {client.email || "ไม่มีอีเมล"}
+                        {clientProjects.length} {t("clients", "projects")} · {client.email || t("clients", "noEmail")}
                       </p>
                     </div>
                   </div>
@@ -480,7 +482,7 @@ export default function ClientsPage() {
                                       : "text-warning"
                                   }
                                 >
-                                  {project.status === "active" ? "กำลังดำเนินการ" : project.status === "completed" ? "เสร็จแล้ว" : "หยุดชั่วคราว"}
+                                  {project.status === "active" ? t("clients", "active") : project.status === "completed" ? t("clients", "completed") : t("clients", "paused")}
                                 </span>
                               </p>
                             </div>
@@ -490,10 +492,10 @@ export default function ClientsPage() {
                               <p className="text-sm font-medium">{formatCurrency(rev)}</p>
                               {isPro ? (
                                 <p className={`text-xs ${profit >= 0 ? "text-accent" : "text-danger"}`}>
-                                  กำไร: {formatCurrency(profit)}
+                                  {t("clients", "profit")} {formatCurrency(profit)}
                                 </p>
                               ) : (
-                                <p className="text-xs text-muted">อัปเกรดเพื่อดูกำไร</p>
+                                <p className="text-xs text-muted">{t("clients", "upgradeToSeeProfit")}</p>
                               )}
                             </div>
                             <div className="flex gap-1">
@@ -519,7 +521,7 @@ export default function ClientsPage() {
 
                 {isExpanded && clientProjects.length === 0 && (
                   <div className="border-t border-border p-4 pl-16 text-sm text-muted">
-                    ยังไม่มีโปรเจกต์สำหรับลูกค้ารายนี้
+                    {t("clients", "noProjectsForClient")}
                   </div>
                 )}
               </div>

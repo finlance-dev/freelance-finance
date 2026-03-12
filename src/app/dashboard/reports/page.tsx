@@ -30,16 +30,17 @@ import type { Transaction, Client } from "@/lib/types";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
 import { exportTransactionsCSV, exportTransactionsPDF } from "@/lib/export";
+import { useLocale } from "@/hooks/useLocale";
 
 const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#14b8a6", "#f97316"];
 
-function getMonthOptions() {
+function getMonthOptions(locale: string) {
   const options: { label: string; year: number; month: number }[] = [];
   const now = new Date();
   for (let i = 0; i < 12; i++) {
     const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
     options.push({
-      label: d.toLocaleDateString("th-TH", { month: "long", year: "numeric" }),
+      label: d.toLocaleDateString(locale === "th" ? "th-TH" : "en-US", { month: "long", year: "numeric" }),
       year: d.getFullYear(),
       month: d.getMonth(),
     });
@@ -52,7 +53,8 @@ export default function ReportsPage() {
   const [clients, setClients] = useState<Client[]>([]);
   const [mounted, setMounted] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(0);
-  const monthOptions = useMemo(() => getMonthOptions(), []);
+  const { locale, t } = useLocale();
+  const monthOptions = useMemo(() => getMonthOptions(locale), [locale]);
   const { isPro } = usePlan();
 
   useEffect(() => {
@@ -128,48 +130,48 @@ export default function ReportsPage() {
     return (
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold">รายงาน</h1>
-          <p className="text-muted text-sm mt-1">สรุปรายงานรายเดือนอย่างละเอียด</p>
+          <h1 className="text-2xl font-bold">{t("reports", "title")}</h1>
+          <p className="text-muted text-sm mt-1">{t("reports", "subtitle")}</p>
         </div>
         <UpgradePrompt
-          feature="รายงานรายเดือน"
-          description="ดูสรุปรายรับ-รายจ่าย กราฟหมวดหมู่ และวิเคราะห์รายได้ตามลูกค้า อัปเกรดเป็นโปรเพื่อปลดล็อค"
+          feature={t("reports", "upgradeFeature")}
+          description={t("reports", "upgradeDesc")}
         />
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <TrendingUp className="w-5 h-5 text-accent" />
-              <h3 className="font-semibold text-sm">สรุปรายรับ-รายจ่าย</h3>
+              <h3 className="font-semibold text-sm">{t("reports", "previewSummary")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ดูยอดรายรับ รายจ่าย และกำไรสุทธิของแต่ละเดือน พร้อมเปรียบเทียบกับเดือนก่อนหน้าเป็นเปอร์เซ็นต์
+              {t("reports", "previewSummaryDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Tag className="w-5 h-5 text-warning" />
-              <h3 className="font-semibold text-sm">กราฟหมวดหมู่ค่าใช้จ่าย</h3>
+              <h3 className="font-semibold text-sm">{t("reports", "previewCategoryChart")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              วิเคราะห์ค่าใช้จ่ายตามหมวดหมู่ ทั้งแบบแท่งและแบบวงกลม ให้เห็นสัดส่วนชัดเจนว่าเงินหมดไปกับอะไร
+              {t("reports", "previewCategoryDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <Users className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-sm">รายได้ตามลูกค้า</h3>
+              <h3 className="font-semibold text-sm">{t("reports", "previewClientIncome")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              ดูว่าลูกค้าคนไหนสร้างรายได้มากที่สุด ช่วยตัดสินใจว่าควรโฟกัสงานจากลูกค้าไหน
+              {t("reports", "previewClientDesc")}
             </p>
           </div>
           <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
             <div className="flex items-center gap-2 mb-2">
               <DollarSign className="w-5 h-5 text-danger" />
-              <h3 className="font-semibold text-sm">รายการใหญ่สุด</h3>
+              <h3 className="font-semibold text-sm">{t("reports", "previewTopEntries")}</h3>
             </div>
             <p className="text-xs text-muted leading-relaxed">
-              แสดง 10 รายการที่มียอดสูงสุดในเดือน ช่วยให้ตรวจสอบและวิเคราะห์รายการสำคัญได้ง่าย
+              {t("reports", "previewTopDesc")}
             </p>
           </div>
         </div>
@@ -198,8 +200,8 @@ export default function ReportsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
-          <h1 className="text-2xl font-bold">รายงานรายเดือน</h1>
-          <p className="text-muted text-sm mt-1">สรุปรายรับ-รายจ่ายและกำไรแต่ละเดือน</p>
+          <h1 className="text-2xl font-bold">{t("reports", "titleMonthly")}</h1>
+          <p className="text-muted text-sm mt-1">{t("reports", "subtitlePro")}</p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           <Calendar className="w-4 h-4 text-muted" />
@@ -217,7 +219,7 @@ export default function ReportsPage() {
               <button
                 onClick={() => exportTransactionsCSV(monthTx)}
                 className="bg-secondary hover:bg-border text-foreground px-3 py-2 rounded-xl font-medium transition flex items-center gap-1.5 text-sm"
-                title="ส่งออก CSV"
+                title={t("transactions", "exportCSV")}
               >
                 <Download className="w-4 h-4" />
                 CSV
@@ -225,7 +227,7 @@ export default function ReportsPage() {
               <button
                 onClick={() => exportTransactionsPDF(monthTx)}
                 className="bg-secondary hover:bg-border text-foreground px-3 py-2 rounded-xl font-medium transition flex items-center gap-1.5 text-sm"
-                title="ส่งออก PDF"
+                title={t("transactions", "exportPDF")}
               >
                 <FileText className="w-4 h-4" />
                 PDF
@@ -243,7 +245,7 @@ export default function ReportsPage() {
               <div className="w-8 h-8 bg-accent/10 rounded-xl flex items-center justify-center">
                 <TrendingUp className="w-4 h-4 text-accent" />
               </div>
-              <span className="text-sm text-muted">รายรับ</span>
+              <span className="text-sm text-muted">{t("reports", "income")}</span>
             </div>
             <ChangeIndicator value={stats.incomeChange} />
           </div>
@@ -256,7 +258,7 @@ export default function ReportsPage() {
               <div className="w-8 h-8 bg-danger/10 rounded-xl flex items-center justify-center">
                 <TrendingDown className="w-4 h-4 text-danger" />
               </div>
-              <span className="text-sm text-muted">รายจ่าย</span>
+              <span className="text-sm text-muted">{t("reports", "expenses")}</span>
             </div>
             <ChangeIndicator value={stats.expenseChange} />
           </div>
@@ -269,7 +271,7 @@ export default function ReportsPage() {
               <div className={`w-8 h-8 ${stats.profit >= 0 ? "bg-accent/10" : "bg-danger/10"} rounded-xl flex items-center justify-center`}>
                 <DollarSign className={`w-4 h-4 ${stats.profit >= 0 ? "text-accent" : "text-danger"}`} />
               </div>
-              <span className="text-sm text-muted">กำไรสุทธิ</span>
+              <span className="text-sm text-muted">{t("reports", "netProfit")}</span>
             </div>
             <ChangeIndicator value={stats.profitChange} />
           </div>
@@ -285,7 +287,7 @@ export default function ReportsPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-2 mb-4">
             <Tag className="w-4 h-4 text-primary" />
-            <h3 className="font-semibold">รายจ่ายตามหมวดหมู่</h3>
+            <h3 className="font-semibold">{t("reports", "expenseByCategory")}</h3>
           </div>
           {expenseByCategory.length > 0 ? (
             <ResponsiveContainer width="100%" height={250}>
@@ -293,7 +295,7 @@ export default function ReportsPage() {
                 <XAxis type="number" tick={{ fontSize: 11 }} />
                 <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={80} />
                 <Tooltip formatter={(value) => formatCurrency(Number(value))} contentStyle={tooltipStyle} />
-                <Bar dataKey="value" radius={[0, 4, 4, 0]} name="จำนวน">
+                <Bar dataKey="value" radius={[0, 4, 4, 0]} name={t("reports", "amount")}>
                   {expenseByCategory.map((_, i) => (
                     <Cell key={i} fill={COLORS[i % COLORS.length]} />
                   ))}
@@ -302,7 +304,7 @@ export default function ReportsPage() {
             </ResponsiveContainer>
           ) : (
             <div className="h-[250px] flex items-center justify-center text-muted text-sm">
-              ไม่มีรายจ่ายในเดือนนี้
+              {t("reports", "noExpenses")}
             </div>
           )}
         </div>
@@ -311,7 +313,7 @@ export default function ReportsPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-2 mb-4">
             <Tag className="w-4 h-4 text-warning" />
-            <h3 className="font-semibold">สัดส่วนรายจ่าย</h3>
+            <h3 className="font-semibold">{t("reports", "expenseProportion")}</h3>
           </div>
           {expenseByCategory.length > 0 ? (
             <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -339,7 +341,7 @@ export default function ReportsPage() {
             </div>
           ) : (
             <div className="h-[220px] flex items-center justify-center text-muted text-sm">
-              ไม่มีข้อมูล
+              {t("reports", "noData")}
             </div>
           )}
         </div>
@@ -350,7 +352,7 @@ export default function ReportsPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-2 mb-4">
             <Users className="w-4 h-4 text-primary" />
-            <h3 className="font-semibold">รายได้ตามลูกค้า</h3>
+            <h3 className="font-semibold">{t("reports", "incomeByClient")}</h3>
           </div>
           <div className="space-y-3">
             {incomeByClient.map((item, i) => {
@@ -386,7 +388,7 @@ export default function ReportsPage() {
       {/* Top Transactions */}
       <div className="bg-card border border-border rounded-2xl overflow-hidden">
         <div className="p-5 border-b border-border">
-          <h3 className="font-semibold">รายการใหญ่สุดในเดือนนี้</h3>
+          <h3 className="font-semibold">{t("reports", "topTransactions")}</h3>
         </div>
         {topTransactions.length > 0 ? (
           <div className="divide-y divide-border">
@@ -416,7 +418,7 @@ export default function ReportsPage() {
           </div>
         ) : (
           <div className="p-8 text-center text-muted text-sm">
-            ไม่มีรายการในเดือนนี้
+            {t("reports", "noEntriesThisMonth")}
           </div>
         )}
       </div>
