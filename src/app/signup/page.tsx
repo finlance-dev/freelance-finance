@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
 import { SignupIllustration } from "@/components/illustrations";
-import { signUp } from "@/lib/supabase-store";
+import { signUp, isCloudEnabled } from "@/lib/supabase-store";
 import { syncFromCloud } from "@/lib/store";
 import { useLocale } from "@/hooks/useLocale";
 import { logActivity } from "@/lib/activity-logger";
@@ -41,8 +41,14 @@ export default function SignupPage() {
         setError(authError.message || t("auth", "errorSignup"));
       } else {
         logActivity("signup", `${name} signed up`, { email, name });
-        await syncFromCloud();
-        router.push("/dashboard");
+        if (isCloudEnabled()) {
+          // Supabase requires email verification
+          router.push("/auth/verify");
+        } else {
+          // Demo mode: go straight to dashboard
+          await syncFromCloud();
+          router.push("/dashboard");
+        }
       }
     } catch {
       setError(t("auth", "errorGeneric"));
