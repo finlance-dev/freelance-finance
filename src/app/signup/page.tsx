@@ -7,6 +7,7 @@ import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
 import { SignupIllustration } from "@/components/illustrations";
 import { signUp } from "@/lib/supabase-store";
 import { useLocale } from "@/hooks/useLocale";
+import { logActivity } from "@/lib/activity-logger";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -38,6 +39,7 @@ export default function SignupPage() {
       if (authError) {
         setError(authError.message || t("auth", "errorSignup"));
       } else {
+        logActivity("signup", `${name} signed up`, { email, name });
         router.push("/dashboard");
       }
     } catch {

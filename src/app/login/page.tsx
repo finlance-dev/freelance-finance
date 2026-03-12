@@ -7,6 +7,7 @@ import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
 import { LoginIllustration } from "@/components/illustrations";
 import { signIn } from "@/lib/supabase-store";
 import { useLocale } from "@/hooks/useLocale";
+import { logActivity } from "@/lib/activity-logger";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -32,6 +33,7 @@ export default function LoginPage() {
       if (authError) {
         setError(authError.message || t("auth", "errorLogin"));
       } else {
+        logActivity("login", `${email} logged in`, { email });
         router.push("/dashboard");
       }
     } catch {

@@ -124,3 +124,39 @@ export interface Invoice {
   notes: string;
   createdAt: string;
 }
+
+// ─── Activity Log ────────────────────────────────────────────────────────
+
+export type ActivityEventType =
+  | "signup" | "login" | "logout"
+  | "plan_change"
+  | "transaction_create" | "transaction_delete"
+  | "client_create" | "client_delete"
+  | "invoice_create" | "invoice_update"
+  | "recurring_create" | "recurring_delete"
+  | "data_export" | "data_import"
+  | "settings_change" | "page_view";
+
+export interface ActivityEvent {
+  id: string;
+  type: ActivityEventType;
+  userId: string;
+  userEmail: string;
+  userName: string;
+  detail: string;
+  metadata?: Record<string, unknown>;
+  createdAt: string;
+}
+
+export interface AdminUser {
+  email: string;
+  name: string;
+  plan: PlanType;
+  signupDate: string;
+  lastActive: string;
+  transactionCount: number;
+  clientCount: number;
+  invoiceCount: number;
+  totalIncome: number;
+  totalExpenses: number;
+}

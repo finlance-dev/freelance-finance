@@ -1,6 +1,7 @@
 import { Client, Project, Transaction, UserPlan, PlanType, IncomeGoal, Invoice } from "./types";
 import type { RecurringTransaction } from "./types";
 import { supabase } from "./supabase";
+import { logActivity } from "./activity-logger";
 
 const STORAGE_KEYS = {
   clients: "ff_clients",
@@ -55,9 +56,11 @@ export function getClients(): Client[] {
 export function saveClient(client: Client) {
   const clients = getClients();
   const idx = clients.findIndex((c) => c.id === client.id);
+  const isNew = idx < 0;
   if (idx >= 0) clients[idx] = client;
   else clients.push(client);
   setItem(STORAGE_KEYS.clients, clients);
+  if (isNew) logActivity("client_create", client.name, { clientId: client.id });
 
   // Background sync to Supabase
   getSupabaseUserId().then((userId) => {
@@ -70,7 +73,9 @@ export function saveClient(client: Client) {
 }
 
 export function deleteClient(id: string) {
+  const client = getClients().find((c) => c.id === id);
   setItem(STORAGE_KEYS.clients, getClients().filter((c) => c.id !== id));
+  if (client) logActivity("client_delete", client.name, { clientId: id });
   if (isSupabaseConfigured()) {
     supabase.from("clients").delete().eq("id", id).then(() => {});
   }
@@ -115,9 +120,11 @@ export function getTransactions(): Transaction[] {
 export function saveTransaction(tx: Transaction) {
   const transactions = getTransactions();
   const idx = transactions.findIndex((t) => t.id === tx.id);
+  const isNew = idx < 0;
   if (idx >= 0) transactions[idx] = tx;
   else transactions.push(tx);
   setItem(STORAGE_KEYS.transactions, transactions);
+  if (isNew && !tx.id.startsWith("rec-")) logActivity("transaction_create", tx.description, { type: tx.type, amount: tx.amount });
 
   getSupabaseUserId().then((userId) => {
     if (!userId) return;
@@ -132,7 +139,9 @@ export function saveTransaction(tx: Transaction) {
 }
 
 export function deleteTransaction(id: string) {
+  const tx = getTransactions().find((t) => t.id === id);
   setItem(STORAGE_KEYS.transactions, getTransactions().filter((t) => t.id !== id));
+  if (tx) logActivity("transaction_delete", tx.description, { type: tx.type, amount: tx.amount });
   if (isSupabaseConfigured()) {
     supabase.from("transactions").delete().eq("id", id).then(() => {});
   }
@@ -597,6 +606,7 @@ export function setUserPlan(plan: PlanType) {
     activatedAt: now.toISOString(),
     expiresAt,
   });
+  logActivity("plan_change", `Changed to ${plan}`, { plan });
 }
 
 export function startTrialPlan() {

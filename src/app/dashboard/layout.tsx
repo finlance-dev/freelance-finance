@@ -23,6 +23,7 @@ import {
   UserCircle,
   BookOpen,
   Languages,
+  Shield,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePlan } from "@/hooks/usePlan";
@@ -146,6 +147,17 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </Link>
           </div>
         )}
+
+        {/* Admin Link */}
+        <div className="px-3 pb-2">
+          <Link
+            href="/admin"
+            className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-muted hover:text-foreground hover:bg-secondary transition"
+          >
+            <Shield className="w-4 h-4" />
+            Admin
+          </Link>
+        </div>
 
         {/* Language Toggle */}
         <div className="px-3 pb-2">
