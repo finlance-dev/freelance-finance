@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
 import { LoginIllustration } from "@/components/illustrations";
 import { signIn } from "@/lib/supabase-store";
+import { syncFromCloud } from "@/lib/store";
 import { useLocale } from "@/hooks/useLocale";
 import { logActivity } from "@/lib/activity-logger";
 
@@ -34,6 +35,7 @@ export default function LoginPage() {
         setError(authError.message || t("auth", "errorLogin"));
       } else {
         logActivity("login", `${email} logged in`, { email });
+        await syncFromCloud();
         router.push("/dashboard");
       }
     } catch {

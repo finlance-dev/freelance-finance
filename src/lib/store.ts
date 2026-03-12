@@ -184,13 +184,32 @@ export function getRecurringTransactions(): RecurringTransaction[] {
 export function saveRecurringTransaction(rt: RecurringTransaction) {
   const list = getRecurringTransactions();
   const idx = list.findIndex((r) => r.id === rt.id);
+  const isNew = idx < 0;
   if (idx >= 0) list[idx] = rt;
   else list.push(rt);
   setItem(STORAGE_KEYS.recurring, list);
+  if (isNew) logActivity("recurring_create", rt.description, { type: rt.type, amount: rt.amount });
+
+  getSupabaseUserId().then((userId) => {
+    if (!userId) return;
+    supabase.from("recurring_transactions").upsert({
+      id: rt.id, user_id: userId, type: rt.type, amount: rt.amount,
+      description: rt.description, category: rt.category,
+      client_id: rt.clientId, project_id: rt.projectId,
+      frequency: rt.frequency, start_date: rt.startDate,
+      end_date: rt.endDate, active: rt.active,
+      last_generated: rt.lastGenerated, currency: rt.currency || "THB",
+    }).then(() => {});
+  });
 }
 
 export function deleteRecurringTransaction(id: string) {
+  const rt = getRecurringTransactions().find((r) => r.id === id);
   setItem(STORAGE_KEYS.recurring, getRecurringTransactions().filter((r) => r.id !== id));
+  if (rt) logActivity("recurring_delete", rt.description, { type: rt.type, amount: rt.amount });
+  if (isSupabaseConfigured()) {
+    supabase.from("recurring_transactions").delete().eq("id", id).then(() => {});
+  }
 }
 
 export function processRecurringTransactions() {
@@ -252,13 +271,16 @@ export async function syncFromCloud(): Promise<boolean> {
   if (!userId) return false;
 
   try {
-    const [clientsRes, projectsRes, txRes] = await Promise.all([
+    const [clientsRes, projectsRes, txRes, recurringRes, invoicesRes, profileRes] = await Promise.all([
       supabase.from("clients").select("*").eq("user_id", userId),
       supabase.from("projects").select("*").eq("user_id", userId),
       supabase.from("transactions").select("*").eq("user_id", userId),
+      supabase.from("recurring_transactions").select("*").eq("user_id", userId),
+      supabase.from("invoices").select("*").eq("user_id", userId),
+      supabase.from("user_profiles").select("*").eq("id", userId).single(),
     ]);
 
-    if (clientsRes.data) {
+    if (clientsRes.data?.length) {
       const clients: Client[] = clientsRes.data.map((c) => ({
         id: c.id, name: c.name, email: c.email || "",
         color: c.color || "#6366f1", createdAt: c.created_at,
@@ -266,7 +288,7 @@ export async function syncFromCloud(): Promise<boolean> {
       setItem(STORAGE_KEYS.clients, clients);
     }
 
-    if (projectsRes.data) {
+    if (projectsRes.data?.length) {
       const projects: Project[] = projectsRes.data.map((p) => ({
         id: p.id, clientId: p.client_id, name: p.name,
         status: p.status, hourlyRate: Number(p.hourly_rate) || 0,
@@ -275,7 +297,7 @@ export async function syncFromCloud(): Promise<boolean> {
       setItem(STORAGE_KEYS.projects, projects);
     }
 
-    if (txRes.data) {
+    if (txRes.data?.length) {
       const transactions: Transaction[] = txRes.data.map((t) => ({
         id: t.id, projectId: t.project_id, clientId: t.client_id,
         type: t.type, amount: Number(t.amount), date: t.date,
@@ -283,6 +305,39 @@ export async function syncFromCloud(): Promise<boolean> {
         currency: t.currency || "THB",
       }));
       setItem(STORAGE_KEYS.transactions, transactions);
+    }
+
+    if (recurringRes.data?.length) {
+      const recurring: RecurringTransaction[] = recurringRes.data.map((r) => ({
+        id: r.id, type: r.type, amount: Number(r.amount),
+        description: r.description || "", category: r.category || "",
+        clientId: r.client_id, projectId: r.project_id,
+        frequency: r.frequency, startDate: r.start_date,
+        endDate: r.end_date, active: r.active,
+        lastGenerated: r.last_generated, currency: r.currency || "THB",
+      }));
+      setItem(STORAGE_KEYS.recurring, recurring);
+    }
+
+    if (invoicesRes.data?.length) {
+      const invoices: Invoice[] = invoicesRes.data.map((i) => ({
+        id: i.id, invoiceNumber: i.invoice_number,
+        clientId: i.client_id, projectId: i.project_id,
+        items: i.items || [], status: i.status,
+        issueDate: i.issue_date, dueDate: i.due_date,
+        notes: i.notes || "", createdAt: i.created_at,
+      }));
+      setItem(STORAGE_KEYS.invoices, invoices);
+    }
+
+    if (profileRes.data) {
+      const p = profileRes.data;
+      if (p.plan) setItem(STORAGE_KEYS.userPlan, { plan: p.plan, activatedAt: p.created_at, expiresAt: null });
+      if (p.currency) setItem(STORAGE_KEYS.currency, p.currency);
+      if (p.tax_rate != null) setItem(STORAGE_KEYS.taxRate, Number(p.tax_rate));
+      if (p.monthly_expenses != null) setItem(STORAGE_KEYS.monthlyExpenses, Number(p.monthly_expenses));
+      if (p.promptpay_id) setItem(STORAGE_KEYS.promptpayId, p.promptpay_id);
+      if (p.income_goal && Object.keys(p.income_goal).length) setItem(STORAGE_KEYS.incomeGoal, p.income_goal);
     }
 
     return true;
@@ -576,6 +631,36 @@ export function getInvoices(): Invoice[] {
   return getItem<Invoice[]>(STORAGE_KEYS.invoices, []);
 }
 
+export function saveInvoice(invoice: Invoice) {
+  const invoices = getInvoices();
+  const idx = invoices.findIndex((i) => i.id === invoice.id);
+  const isNew = idx < 0;
+  if (idx >= 0) invoices[idx] = invoice;
+  else invoices.push(invoice);
+  setItem(STORAGE_KEYS.invoices, invoices);
+  if (isNew) logActivity("invoice_create", invoice.invoiceNumber, { clientId: invoice.clientId });
+  else logActivity("invoice_update", invoice.invoiceNumber, { status: invoice.status });
+
+  getSupabaseUserId().then((userId) => {
+    if (!userId) return;
+    supabase.from("invoices").upsert({
+      id: invoice.id, user_id: userId,
+      invoice_number: invoice.invoiceNumber,
+      client_id: invoice.clientId, project_id: invoice.projectId,
+      items: invoice.items, status: invoice.status,
+      issue_date: invoice.issueDate, due_date: invoice.dueDate,
+      notes: invoice.notes,
+    }).then(() => {});
+  });
+}
+
+export function deleteInvoice(id: string) {
+  setItem(STORAGE_KEYS.invoices, getInvoices().filter((i) => i.id !== id));
+  if (isSupabaseConfigured()) {
+    supabase.from("invoices").delete().eq("id", id).then(() => {});
+  }
+}
+
 export function getOverdueInvoiceCount(): number {
   const invoices = getInvoices();
   const today = new Date().toISOString().split("T")[0];
@@ -607,6 +692,11 @@ export function setUserPlan(plan: PlanType) {
     expiresAt,
   });
   logActivity("plan_change", `Changed to ${plan}`, { plan });
+
+  getSupabaseUserId().then((userId) => {
+    if (!userId) return;
+    supabase.from("user_profiles").update({ plan, updated_at: new Date().toISOString() }).eq("id", userId).then(() => {});
+  });
 }
 
 export function startTrialPlan() {

@@ -30,6 +30,7 @@ import { usePlan } from "@/hooks/usePlan";
 import { useLocale } from "@/hooks/useLocale";
 import { useTheme } from "@/components/theme-provider";
 import { processRecurringTransactions, syncFromCloud, isCloudEnabled, getOverdueInvoiceCount } from "@/lib/store";
+import { signOut, getCurrentUser } from "@/lib/supabase-store";
 import { BarChart3 } from "lucide-react";
 import { OnboardingModal } from "@/components/onboarding";
 import type { TranslationKey } from "@/lib/i18n";
@@ -66,33 +67,47 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   ];
 
   useEffect(() => {
-    const user = localStorage.getItem("ff_user");
-    if (!user) {
-      router.push("/login");
-      return;
-    }
-    const parsed = JSON.parse(user);
-    setUserName(parsed.name || parsed.email || "User");
+    const init = async () => {
+      // Check Supabase auth first, then fallback to localStorage
+      const user = await getCurrentUser();
+      const localUser = localStorage.getItem("ff_user");
 
-    // Process recurring transactions on app load
-    processRecurringTransactions();
+      if (!user && !localUser) {
+        router.push("/login");
+        return;
+      }
 
-    // Check overdue invoices
-    setOverdueCount(getOverdueInvoiceCount());
+      if (user) {
+        const name = user.user_metadata?.name || user.email || "User";
+        setUserName(name);
+        localStorage.setItem("ff_user", JSON.stringify({ email: user.email, name, id: user.id }));
+      } else if (localUser) {
+        const parsed = JSON.parse(localUser);
+        setUserName(parsed.name || parsed.email || "User");
+      }
 
-    // Sync from cloud if Supabase is configured
-    if (isCloudEnabled()) {
-      syncFromCloud();
-    }
+      // Process recurring transactions on app load
+      processRecurringTransactions();
 
-    // Show onboarding for new users
-    if (!localStorage.getItem("ff_onboarding_done")) {
-      setShowOnboarding(true);
-    }
+      // Check overdue invoices
+      setOverdueCount(getOverdueInvoiceCount());
+
+      // Sync from cloud if Supabase is configured
+      if (isCloudEnabled()) {
+        syncFromCloud();
+      }
+
+      // Show onboarding for new users
+      if (!localStorage.getItem("ff_onboarding_done")) {
+        setShowOnboarding(true);
+      }
+    };
+
+    init();
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("ff_user");
+  const handleLogout = async () => {
+    await signOut();
     localStorage.removeItem("ff_onboarding_done");
     router.push("/");
   };
