@@ -20,7 +20,7 @@ export function exportTransactionsCSV(transactions: Transaction[]) {
   ]);
 
   const csv = "\uFEFF" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
-  downloadFile(csv, "freelanceflow-transactions.csv", "text/csv;charset=utf-8");
+  downloadFile(csv, "finlance-transactions.csv", "text/csv;charset=utf-8");
 }
 
 export function exportTransactionsPDF(transactions: Transaction[]) {
@@ -44,7 +44,7 @@ export function exportTransactionsPDF(transactions: Transaction[]) {
 <html lang="th">
 <head>
 <meta charset="utf-8" />
-<title>FreelanceFlow - รายงานการเงิน</title>
+<title>Finlance - รายงานการเงิน</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -73,7 +73,7 @@ export function exportTransactionsPDF(transactions: Transaction[]) {
 </head>
 <body>
 <div class="header">
-  <h1>FreelanceFlow</h1>
+  <h1>Finlance</h1>
   <div class="date">สร้างเมื่อ ${dateStr}</div>
 </div>
 
@@ -122,7 +122,7 @@ export function exportTransactionsPDF(transactions: Transaction[]) {
   html += `
   </tbody>
 </table>
-<div class="footer">สร้างโดย FreelanceFlow — ผู้ช่วยการเงินสำหรับฟรีแลนซ์</div>
+<div class="footer">สร้างโดย Finlance — ผู้ช่วยการเงินสำหรับฟรีแลนซ์</div>
 </body>
 </html>`;
 

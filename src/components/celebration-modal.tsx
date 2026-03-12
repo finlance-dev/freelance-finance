@@ -219,8 +219,8 @@ export function CelebrationModal({ isOpen, onClose, planName }: CelebrationModal
 
           <p className="text-muted text-sm leading-relaxed mb-4">
             {locale === "th"
-              ? `ขอบคุณที่เลือกใช้ FreelanceFlow ${planName} คุณได้ปลดล็อคฟีเจอร์ทั้งหมดแล้ว ใช้งานได้เต็มที่ทุกฟังก์ชัน ไม่ว่าจะเป็นใบแจ้งหนี้ รายงาน ประมาณภาษี และอีกมากมาย`
-              : `Thank you for choosing FreelanceFlow ${planName}! You've unlocked all features — invoices, reports, tax estimation, and much more.`}
+              ? `ขอบคุณที่เลือกใช้ Finlance ${planName} คุณได้ปลดล็อคฟีเจอร์ทั้งหมดแล้ว ใช้งานได้เต็มที่ทุกฟังก์ชัน ไม่ว่าจะเป็นใบแจ้งหนี้ รายงาน ประมาณภาษี และอีกมากมาย`
+              : `Thank you for choosing Finlance ${planName}! You've unlocked all features — invoices, reports, tax estimation, and much more.`}
           </p>
 
           {/* Feature highlights */}

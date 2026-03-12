@@ -3,7 +3,7 @@ export type Locale = "th" | "en";
 export const translations = {
   // Common
   common: {
-    appName: { th: "FreelanceFlow", en: "FreelanceFlow" },
+    appName: { th: "Finlance", en: "Finlance" },
     save: { th: "บันทึก", en: "Save" },
     cancel: { th: "ยกเลิก", en: "Cancel" },
     delete: { th: "ลบ", en: "Delete" },
@@ -595,7 +595,7 @@ export const translations = {
   // Guide
   guide: {
     title: { th: "คู่มือใช้งาน", en: "User Guide" },
-    subtitle: { th: "เรียนรู้ฟีเจอร์ทั้งหมดของ FreelanceFlow กดที่แต่ละฟีเจอร์เพื่อดูรายละเอียด", en: "Learn all FreelanceFlow features. Click each feature for details." },
+    subtitle: { th: "เรียนรู้ฟีเจอร์ทั้งหมดของ Finlance กดที่แต่ละฟีเจอร์เพื่อดูรายละเอียด", en: "Learn all Finlance features. Click each feature for details." },
     freePlan: { th: "แพลนฟรี", en: "Free Plan" },
     proPlan: { th: "แพลนโปร", en: "Pro Plan" },
     freeSummaryTitle: { th: "แพลนฟรี — เริ่มต้นใช้งานได้เลย", en: "Free Plan — Get started right away" },
@@ -705,9 +705,9 @@ export const translations = {
 
   // Onboarding
   onboarding: {
-    welcomeTitle: { th: "ยินดีต้อนรับสู่ FreelanceFlow!", en: "Welcome to FreelanceFlow!" },
+    welcomeTitle: { th: "ยินดีต้อนรับสู่ Finlance!", en: "Welcome to Finlance!" },
     welcomeSubtitle: { th: "เครื่องมือจัดการการเงินสำหรับฟรีแลนซ์ไทย", en: "Finance management tool for freelancers" },
-    welcomeDesc1: { th: "FreelanceFlow ช่วยให้คุณติดตามรายรับ-รายจ่าย จัดการลูกค้าและโปรเจกต์ สร้างใบแจ้งหนี้ และวิเคราะห์การเงินได้ง่ายๆ ในที่เดียว", en: "FreelanceFlow helps you track income & expenses, manage clients & projects, create invoices, and analyze your finances — all in one place." },
+    welcomeDesc1: { th: "Finlance ช่วยให้คุณติดตามรายรับ-รายจ่าย จัดการลูกค้าและโปรเจกต์ สร้างใบแจ้งหนี้ และวิเคราะห์การเงินได้ง่ายๆ ในที่เดียว", en: "Finlance helps you track income & expenses, manage clients & projects, create invoices, and analyze your finances — all in one place." },
     welcomeDesc2: { th: "ข้อมูลทั้งหมดถูกเก็บในเบราว์เซอร์ของคุณ ปลอดภัย ไม่ส่งไปที่ไหน", en: "All data is stored in your browser. Safe and private — never sent anywhere." },
     quickstartTitle: { th: "เริ่มต้นใช้งาน", en: "Getting Started" },
     quickstartSubtitle: { th: "3 ขั้นตอนง่ายๆ เพื่อเริ่มติดตามการเงิน", en: "3 easy steps to start tracking your finances" },
@@ -776,7 +776,7 @@ export const translations = {
     navFeatures: { th: "ฟีเจอร์", en: "Features" },
     navPricing: { th: "ราคา", en: "Pricing" },
     painTitle: { th: "ฟังดูคุ้นไหม?", en: "Sound familiar?" },
-    painSolution: { th: "FreelanceFlow แก้ปัญหาทั้งหมดนี้ได้", en: "FreelanceFlow solves all of this" },
+    painSolution: { th: "Finlance แก้ปัญหาทั้งหมดนี้ได้", en: "Finlance solves all of this" },
     painSolutionHighlight: { th: "ในไม่กี่นาที ไม่ใช่หลายชั่วโมง", en: "in minutes, not hours" },
     featuresTitle: { th: "ทุกอย่างที่คุณต้องการ ไม่มีส่วนเกิน", en: "Everything you need, nothing you don't" },
     featuresDesc: { th: "ไม่ใช่ซอฟต์แวร์บัญชีที่ซับซ้อน ไม่ต้องตั้งค่ายุ่งยาก แค่ความชัดเจนทางการเงินที่ฟรีแลนซ์ต้องการจริงๆ", en: "Not complex accounting software. No complicated setup. Just the financial clarity freelancers actually need." },

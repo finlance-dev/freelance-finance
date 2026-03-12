@@ -213,7 +213,7 @@ export default function InvoicesPage() {
 
     const user = JSON.parse(localStorage.getItem("ff_user") || "{}");
     const profile = JSON.parse(localStorage.getItem("ff_user_profile") || "{}");
-    const userName = profile.businessName || profile.name || user.name || "FreelanceFlow";
+    const userName = profile.businessName || profile.name || user.name || "Finlance";
     const userEmail = profile.email || user.email || "";
     const userPhone = profile.phone || "";
     const userAddress = profile.address || "";
@@ -365,7 +365,7 @@ export default function InvoicesPage() {
   </div>` : ""}
 
   <div class="footer">
-    สร้างโดย <strong>FreelanceFlow</strong> · ขอบคุณที่ใช้บริการ
+    สร้างโดย <strong>Finlance</strong> · ขอบคุณที่ใช้บริการ
   </div>
 </div>
 </body></html>`;

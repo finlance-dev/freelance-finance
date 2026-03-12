@@ -19,12 +19,12 @@ export async function sendLineNotify(message: string): Promise<boolean> {
 export async function notifyOverdueInvoices(count: number): Promise<boolean> {
   if (count <= 0) return false;
   return sendLineNotify(
-    `\n🔴 FreelanceFlow แจ้งเตือน\nคุณมีใบแจ้งหนี้เลยกำหนด ${count} รายการ\nกรุณาตรวจสอบและติดตามลูกค้า`
+    `\n🔴 Finlance แจ้งเตือน\nคุณมีใบแจ้งหนี้เลยกำหนด ${count} รายการ\nกรุณาตรวจสอบและติดตามลูกค้า`
   );
 }
 
 export async function notifyTaxDeadline(quarter: string, amount: number, daysLeft: number): Promise<boolean> {
   return sendLineNotify(
-    `\n📋 FreelanceFlow แจ้งเตือนภาษี\nภาษี ${quarter} ครบกำหนดอีก ${daysLeft} วัน\nยอดประมาณ: ฿${amount.toLocaleString()}\nเตรียมเงินจ่ายภาษีให้พร้อม`
+    `\n📋 Finlance แจ้งเตือนภาษี\nภาษี ${quarter} ครบกำหนดอีก ${daysLeft} วัน\nยอดประมาณ: ฿${amount.toLocaleString()}\nเตรียมเงินจ่ายภาษีให้พร้อม`
   );
 }

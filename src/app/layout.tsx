@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FreelanceFlow - ผู้ช่วยการเงินสำหรับฟรีแลนซ์",
+  title: "Finlance - ผู้ช่วยการเงินอัจฉริยะสำหรับฟรีแลนซ์",
   description: "ติดตามรายได้ ประมาณภาษี และพยากรณ์กระแสเงินสด — ออกแบบมาเพื่อฟรีแลนซ์โดยเฉพาะ",
 };
 

@@ -102,7 +102,7 @@ export default function LandingPage() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
               <DollarSign className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold">FreelanceFlow</span>
+              <span className="text-xl font-bold">Finlance</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-muted hover:text-foreground transition">
@@ -353,10 +353,10 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <DollarSign className="w-5 h-5 text-primary" />
-            <span className="font-semibold">FreelanceFlow</span>
+            <span className="font-semibold">Finlance</span>
           </div>
           <p className="text-sm text-muted">
-            &copy; 2026 FreelanceFlow — {t("landing", "footer")}
+            &copy; 2026 Finlance — {t("landing", "footer")}
           </p>
         </div>
       </footer>

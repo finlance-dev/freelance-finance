@@ -65,7 +65,7 @@ export default function SettingsPage() {
 
   const handleTestLineNotify = async () => {
     setLineTesting(true);
-    const ok = await sendLineNotify("\n✅ ทดสอบจาก FreelanceFlow\nระบบแจ้งเตือน Line ทำงานปกติ!");
+    const ok = await sendLineNotify("\n✅ ทดสอบจาก Finlance\nระบบแจ้งเตือน Line ทำงานปกติ!");
     setLineTesting(false);
     toast(
       ok

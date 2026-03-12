@@ -126,7 +126,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <aside className="hidden lg:flex flex-col w-64 border-r border-border bg-card fixed h-full">
         <div className="flex items-center gap-2 px-6 py-5 border-b border-border">
           <DollarSign className="w-7 h-7 text-primary" />
-          <span className="text-lg font-bold">FreelanceFlow</span>
+          <span className="text-lg font-bold">Finlance</span>
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1">
@@ -215,7 +215,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="flex items-center justify-between px-4 h-14">
           <div className="flex items-center gap-2">
             <DollarSign className="w-6 h-6 text-primary" />
-            <span className="font-bold">FreelanceFlow</span>
+            <span className="font-bold">Finlance</span>
           </div>
           <div className="flex items-center gap-1">
             {/* Mobile language toggle */}

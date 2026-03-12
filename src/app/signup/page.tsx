@@ -56,7 +56,7 @@ export default function SignupPage() {
           <div className="flex items-center justify-center gap-4 mb-6">
             <Link href="/" className="inline-flex items-center gap-2">
               <DollarSign className="w-8 h-8 text-primary" />
-              <span className="text-2xl font-bold">FreelanceFlow</span>
+              <span className="text-2xl font-bold">Finlance</span>
             </Link>
             <button
               onClick={() => setLocale(locale === "th" ? "en" : "th")}
