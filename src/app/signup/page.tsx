@@ -3,12 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { DollarSign, Eye, EyeOff } from "lucide-react";
+import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
 import { SignupIllustration } from "@/components/illustrations";
 import { signUp } from "@/lib/supabase-store";
+import { useLocale } from "@/hooks/useLocale";
 
 export default function SignupPage() {
   const router = useRouter();
+  const { locale, setLocale, t } = useLocale();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,12 +23,12 @@ export default function SignupPage() {
     setError("");
 
     if (!name || !email || !password) {
-      setError("กรุณากรอกข้อมูลให้ครบทุกช่อง");
+      setError(t("auth", "errorFillAll"));
       return;
     }
 
     if (password.length < 6) {
-      setError("รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร");
+      setError(t("auth", "errorPassword6"));
       return;
     }
 
@@ -34,12 +36,12 @@ export default function SignupPage() {
     try {
       const { error: authError } = await signUp(email, password, name);
       if (authError) {
-        setError(authError.message || "สมัครสมาชิกไม่สำเร็จ กรุณาลองอีกครั้ง");
+        setError(authError.message || t("auth", "errorSignup"));
       } else {
         router.push("/dashboard");
       }
     } catch {
-      setError("เกิดข้อผิดพลาด กรุณาลองอีกครั้ง");
+      setError(t("auth", "errorGeneric"));
     }
     setLoading(false);
   };
@@ -51,12 +53,21 @@ export default function SignupPage() {
       </div>
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-6">
-            <DollarSign className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold">FreelanceFlow</span>
-          </Link>
-          <h1 className="text-2xl font-bold mb-2">สร้างบัญชีของคุณ</h1>
-          <p className="text-muted">เริ่มติดตามการเงินฟรีแลนซ์ของคุณ</p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <DollarSign className="w-8 h-8 text-primary" />
+              <span className="text-2xl font-bold">FreelanceFlow</span>
+            </Link>
+            <button
+              onClick={() => setLocale(locale === "th" ? "en" : "th")}
+              className="text-muted hover:text-foreground transition flex items-center gap-1 text-xs"
+            >
+              <Languages className="w-3.5 h-3.5" />
+              {locale === "th" ? "EN" : "TH"}
+            </button>
+          </div>
+          <h1 className="text-2xl font-bold mb-2">{t("auth", "signupTitle")}</h1>
+          <p className="text-muted">{t("auth", "signupSubtitle")}</p>
         </div>
 
         <form onSubmit={handleSignup} className="bg-card border border-border rounded-2xl p-8 space-y-5">
@@ -67,37 +78,37 @@ export default function SignupPage() {
           )}
 
           <div>
-            <label className="block text-sm font-medium mb-1.5">ชื่อ</label>
+            <label className="block text-sm font-medium mb-1.5">{t("auth", "name")}</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="ชื่อของคุณ"
+              placeholder={t("auth", "namePlaceholder")}
               required
               className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5">อีเมล</label>
+            <label className="block text-sm font-medium mb-1.5">{t("auth", "email")}</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="อีเมลของคุณ"
+              placeholder={t("auth", "emailPlaceholder")}
               required
               className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5">รหัสผ่าน</label>
+            <label className="block text-sm font-medium mb-1.5">{t("auth", "password")}</label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="อย่างน้อย 6 ตัวอักษร"
+                placeholder={t("auth", "passwordPlaceholder")}
                 required
                 minLength={6}
                 className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary pr-10"
@@ -117,19 +128,19 @@ export default function SignupPage() {
             disabled={loading}
             className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition disabled:opacity-50"
           >
-            {loading ? "กำลังสร้างบัญชี..." : "สร้างบัญชี"}
+            {loading ? t("auth", "signingUp") : t("auth", "signup")}
           </button>
 
           <p className="text-center text-sm text-muted">
-            มีบัญชีอยู่แล้ว?{" "}
+            {t("auth", "hasAccount")}{" "}
             <Link href="/login" className="text-primary hover:underline font-medium">
-              เข้าสู่ระบบ
+              {t("auth", "login")}
             </Link>
           </p>
         </form>
 
         <p className="text-center text-xs text-muted mt-4">
-          โหมดทดลอง: ไม่มีการสร้างบัญชีจริง ข้อมูลจะถูกเก็บในเบราว์เซอร์ของคุณ
+          {t("auth", "demoDisclaimer")}
         </p>
       </div>
     </div>

@@ -11,6 +11,7 @@ import {
   QrCode,
   MessageCircle,
   Send,
+  Languages,
 } from "lucide-react";
 import {
   exportAllData,
@@ -31,6 +32,7 @@ import { SUPPORTED_CURRENCIES } from "@/lib/types";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
 import { usePlan } from "@/hooks/usePlan";
+import { useLocale } from "@/hooks/useLocale";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
 
 export default function SettingsPage() {
@@ -45,6 +47,7 @@ export default function SettingsPage() {
   const { toast } = useToast();
   const { confirm } = useConfirm();
   const { isPro } = usePlan();
+  const { locale, setLocale, t } = useLocale();
 
   useEffect(() => {
     setCurrency(getDefaultCurrency());
@@ -55,14 +58,21 @@ export default function SettingsPage() {
 
   const handleSaveLineToken = () => {
     storeSetLineToken(lineToken.trim());
-    toast(lineToken.trim() ? "บันทึก Line Notify Token สำเร็จ" : "ลบ Line Notify Token สำเร็จ");
+    toast(lineToken.trim()
+      ? (locale === "th" ? "บันทึก Line Notify Token สำเร็จ" : "Line Notify Token saved")
+      : (locale === "th" ? "ลบ Line Notify Token สำเร็จ" : "Line Notify Token removed"));
   };
 
   const handleTestLineNotify = async () => {
     setLineTesting(true);
     const ok = await sendLineNotify("\n✅ ทดสอบจาก FreelanceFlow\nระบบแจ้งเตือน Line ทำงานปกติ!");
     setLineTesting(false);
-    toast(ok ? "ส่งข้อความทดสอบสำเร็จ ตรวจสอบ Line ของคุณ" : "ส่งไม่สำเร็จ ตรวจสอบ Token อีกครั้ง", ok ? "success" : "error");
+    toast(
+      ok
+        ? (locale === "th" ? "ส่งข้อความทดสอบสำเร็จ ตรวจสอบ Line ของคุณ" : "Test message sent! Check your Line.")
+        : (locale === "th" ? "ส่งไม่สำเร็จ ตรวจสอบ Token อีกครั้ง" : "Send failed. Check your Token."),
+      ok ? "success" : "error"
+    );
   };
 
   const handleExport = () => {
@@ -74,7 +84,7 @@ export default function SettingsPage() {
     a.download = `freelanceflow-backup-${new Date().toISOString().split("T")[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
-    toast("ส่งออกข้อมูลสำเร็จ");
+    toast(locale === "th" ? "ส่งออกข้อมูลสำเร็จ" : "Data exported successfully");
   };
 
   const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,19 +95,19 @@ export default function SettingsPage() {
     reader.onload = async (ev) => {
       const text = ev.target?.result as string;
       const ok = await confirm({
-        title: "นำเข้าข้อมูล",
-        message: "ข้อมูลปัจจุบันจะถูกแทนที่ด้วยข้อมูลจากไฟล์ คุณแน่ใจหรือไม่?",
-        confirmText: "นำเข้า",
+        title: t("settings", "importConfirmTitle"),
+        message: t("settings", "importConfirmMsg"),
+        confirmText: t("settings", "import"),
         variant: "warning",
       });
       if (!ok) return;
 
       const result = importAllData(text);
       if (result.success) {
-        toast("นำเข้าข้อมูลสำเร็จ รีเฟรชหน้าเพื่อดูข้อมูลใหม่");
+        toast(locale === "th" ? "นำเข้าข้อมูลสำเร็จ รีเฟรชหน้าเพื่อดูข้อมูลใหม่" : "Data imported. Refreshing...");
         setTimeout(() => window.location.reload(), 1500);
       } else {
-        toast(result.error || "นำเข้าไม่สำเร็จ", "error");
+        toast(result.error || (locale === "th" ? "นำเข้าไม่สำเร็จ" : "Import failed"), "error");
       }
     };
     reader.readAsText(file);
@@ -109,40 +119,42 @@ export default function SettingsPage() {
     const ok = await syncFromCloud();
     setSyncing(false);
     if (ok) {
-      toast("ซิงค์ข้อมูลจากคลาวด์สำเร็จ");
+      toast(locale === "th" ? "ซิงค์ข้อมูลจากคลาวด์สำเร็จ" : "Synced from cloud");
       setTimeout(() => window.location.reload(), 1000);
     } else {
-      toast("ซิงค์ไม่สำเร็จ ตรวจสอบการเชื่อมต่อ Supabase", "error");
+      toast(locale === "th" ? "ซิงค์ไม่สำเร็จ ตรวจสอบการเชื่อมต่อ Supabase" : "Sync failed. Check Supabase connection.", "error");
     }
   };
 
   const handleSavePromptPay = () => {
     const clean = promptpayId.replace(/[-\s]/g, "");
     if (clean && !isValidPromptPayId(clean)) {
-      setPromptpayError("กรุณาใส่เบอร์โทร (10 หลัก) หรือเลขบัตรประชาชน/Tax ID (13 หลัก)");
+      setPromptpayError(t("settings", "promptpayError"));
       return;
     }
     setPromptpayError("");
     storeSetPromptPayId(clean);
-    toast(clean ? "บันทึก PromptPay ID สำเร็จ" : "ลบ PromptPay ID สำเร็จ");
+    toast(clean
+      ? (locale === "th" ? "บันทึก PromptPay ID สำเร็จ" : "PromptPay ID saved")
+      : (locale === "th" ? "ลบ PromptPay ID สำเร็จ" : "PromptPay ID removed"));
   };
 
   const handleCurrencyChange = (code: string) => {
     setCurrency(code);
     setDefaultCurrency(code);
-    toast(`เปลี่ยนสกุลเงินเป็น ${code}`);
+    toast(locale === "th" ? `เปลี่ยนสกุลเงินเป็น ${code}` : `Currency changed to ${code}`);
   };
 
   const handleClearDemo = async () => {
     const ok = await confirm({
-      title: "ลบข้อมูลตัวอย่าง",
-      message: "ลบข้อมูลตัวอย่างทั้งหมด (demo-) ข้อมูลจริงจะไม่ถูกลบ",
-      confirmText: "ลบ",
+      title: t("settings", "clearDemoTitle"),
+      message: t("settings", "clearDemoMsg"),
+      confirmText: t("common", "delete"),
       variant: "danger",
     });
     if (!ok) return;
     clearDemoData();
-    toast("ลบข้อมูลตัวอย่างสำเร็จ");
+    toast(locale === "th" ? "ลบข้อมูลตัวอย่างสำเร็จ" : "Demo data cleared");
     setTimeout(() => window.location.reload(), 1000);
   };
 
@@ -153,25 +165,56 @@ export default function SettingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">ตั้งค่า</h1>
-        <p className="text-muted text-sm mt-1">จัดการข้อมูลและการตั้งค่าระบบ</p>
+        <h1 className="text-2xl font-bold">{t("settings", "title")}</h1>
+        <p className="text-muted text-sm mt-1">{t("settings", "subtitle")}</p>
       </div>
 
-      {/* Cloud Status — show only when connected */}
+      {/* Language */}
+      <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-center gap-3 mb-3">
+          <Languages className="w-5 h-5 text-primary" />
+          <h3 className="font-semibold">{t("settings", "language")}</h3>
+        </div>
+        <p className="text-sm text-muted mb-3">{t("settings", "languageDesc")}</p>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setLocale("th")}
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition border ${
+              locale === "th"
+                ? "bg-primary/10 text-primary border-primary/30"
+                : "bg-secondary text-muted border-border hover:text-foreground"
+            }`}
+          >
+            {t("settings", "thai")}
+          </button>
+          <button
+            onClick={() => setLocale("en")}
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition border ${
+              locale === "en"
+                ? "bg-primary/10 text-primary border-primary/30"
+                : "bg-secondary text-muted border-border hover:text-foreground"
+            }`}
+          >
+            {t("settings", "english")}
+          </button>
+        </div>
+      </div>
+
+      {/* Cloud Status */}
       {cloud && (
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <Cloud className="w-5 h-5 text-accent" />
-            <h3 className="font-semibold">การเชื่อมต่อคลาวด์</h3>
+            <h3 className="font-semibold">{t("settings", "cloudTitle")}</h3>
           </div>
           <div className="space-y-3">
-            <p className="text-sm text-accent">เชื่อมต่อ Supabase แล้ว — ข้อมูลจะซิงค์อัตโนมัติ</p>
+            <p className="text-sm text-accent">{t("settings", "cloudConnected")}</p>
             <button
               onClick={handleSync}
               disabled={syncing}
               className="text-sm bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition disabled:opacity-50"
             >
-              {syncing ? "กำลังซิงค์..." : "ซิงค์จากคลาวด์"}
+              {syncing ? t("settings", "syncing") : t("settings", "syncFromCloud")}
             </button>
           </div>
         </div>
@@ -181,7 +224,7 @@ export default function SettingsPage() {
       <div className="bg-card border border-border rounded-2xl p-5">
         <div className="flex items-center gap-3 mb-3">
           <Globe className="w-5 h-5 text-primary" />
-          <h3 className="font-semibold">สกุลเงินเริ่มต้น</h3>
+          <h3 className="font-semibold">{t("settings", "currencyTitle")}</h3>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
           {SUPPORTED_CURRENCIES.map((c) => (
@@ -199,7 +242,7 @@ export default function SettingsPage() {
             </button>
           ))}
         </div>
-        <p className="text-xs text-muted mt-2">สกุลเงินเริ่มต้นสำหรับรายการใหม่</p>
+        <p className="text-xs text-muted mt-2">{t("settings", "currencyDesc")}</p>
       </div>
 
       {/* PromptPay */}
@@ -207,36 +250,36 @@ export default function SettingsPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <QrCode className="w-5 h-5 text-primary" />
-            <h3 className="font-semibold">PromptPay QR</h3>
+            <h3 className="font-semibold">{t("settings", "promptpayTitle")}</h3>
           </div>
-          <p className="text-sm text-muted mb-3">ใส่เบอร์โทรหรือเลขบัตรประชาชน เพื่อแสดง QR Code ในใบแจ้งหนี้</p>
+          <p className="text-sm text-muted mb-3">{t("settings", "promptpayDesc")}</p>
           <div className="flex gap-2">
             <input
               type="text"
               value={promptpayId}
               onChange={(e) => { setPromptpayId(e.target.value); setPromptpayError(""); }}
-              placeholder="เช่น 0812345678 หรือ 1234567890123"
+              placeholder={t("settings", "promptpayPlaceholder")}
               className={`flex-1 px-4 py-2.5 rounded-xl border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm ${promptpayError ? "border-danger" : "border-border"}`}
             />
             <button
               onClick={handleSavePromptPay}
               className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
             >
-              บันทึก
+              {t("common", "save")}
             </button>
           </div>
           {promptpayError && <p className="text-danger text-xs mt-1.5">{promptpayError}</p>}
           {!promptpayError && promptpayId && isValidPromptPayId(promptpayId) && (
-            <p className="text-accent text-xs mt-1.5">PromptPay QR จะแสดงในใบแจ้งหนี้อัตโนมัติ</p>
+            <p className="text-accent text-xs mt-1.5">{t("settings", "promptpayActive")}</p>
           )}
         </div>
       ) : (
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <QrCode className="w-5 h-5 text-primary" />
-            <h3 className="font-semibold">PromptPay QR</h3>
+            <h3 className="font-semibold">{t("settings", "promptpayTitle")}</h3>
           </div>
-          <UpgradePrompt feature="PromptPay QR" description="ตั้งค่า PromptPay ID เพื่อแสดง QR Code ในใบแจ้งหนี้อัตโนมัติ อัปเกรดเป็นโปรเพื่อปลดล็อค" />
+          <UpgradePrompt feature="PromptPay QR" description={t("settings", "promptpayDesc")} />
         </div>
       )}
 
@@ -245,24 +288,22 @@ export default function SettingsPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <MessageCircle className="w-5 h-5 text-accent" />
-            <h3 className="font-semibold">Line Notify</h3>
+            <h3 className="font-semibold">{t("settings", "lineTitle")}</h3>
           </div>
-          <p className="text-sm text-muted mb-3">
-            เชื่อมต่อ Line เพื่อรับแจ้งเตือนใบแจ้งหนี้เลยกำหนดและกำหนดจ่ายภาษี
-          </p>
+          <p className="text-sm text-muted mb-3">{t("settings", "lineDesc")}</p>
           <div className="flex gap-2 mb-2">
             <input
               type="text"
               value={lineToken}
               onChange={(e) => setLineToken(e.target.value)}
-              placeholder="วาง Line Notify Token ที่นี่"
+              placeholder={t("settings", "linePlaceholder")}
               className="flex-1 px-4 py-2.5 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm font-mono"
             />
             <button
               onClick={handleSaveLineToken}
               className="px-4 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-sm font-medium transition"
             >
-              บันทึก
+              {t("common", "save")}
             </button>
           </div>
           {lineToken && (
@@ -272,24 +313,24 @@ export default function SettingsPage() {
               className="flex items-center gap-1.5 text-sm text-accent hover:text-accent/80 transition disabled:opacity-50"
             >
               <Send className="w-3.5 h-3.5" />
-              {lineTesting ? "กำลังส่ง..." : "ทดสอบส่งข้อความ"}
+              {lineTesting ? t("settings", "lineTesting") : t("settings", "lineTest")}
             </button>
           )}
           <p className="text-xs text-muted mt-2">
-            สร้าง Token ได้ที่{" "}
+            {t("settings", "lineHelp")}{" "}
             <a href="https://notify-bot.line.me/my/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
               notify-bot.line.me
             </a>
-            {" "}→ Generate Token → เลือกห้องแชท
+            {" "}{t("settings", "lineHelpSuffix")}
           </p>
         </div>
       ) : (
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <MessageCircle className="w-5 h-5 text-accent" />
-            <h3 className="font-semibold">Line Notify</h3>
+            <h3 className="font-semibold">{t("settings", "lineTitle")}</h3>
           </div>
-          <UpgradePrompt feature="Line Notify" description="เชื่อมต่อ Line เพื่อรับแจ้งเตือนใบแจ้งหนี้เลยกำหนดและกำหนดจ่ายภาษี อัปเกรดเป็นโปรเพื่อปลดล็อค" />
+          <UpgradePrompt feature="Line Notify" description={t("settings", "lineDesc")} />
         </div>
       )}
 
@@ -298,23 +339,23 @@ export default function SettingsPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <Shield className="w-5 h-5 text-warning" />
-            <h3 className="font-semibold">สำรองและกู้คืนข้อมูล</h3>
+            <h3 className="font-semibold">{t("settings", "backupTitle")}</h3>
           </div>
-          <p className="text-sm text-muted mb-4">ส่งออกข้อมูลทั้งหมดเป็น JSON หรือนำเข้าจากไฟล์สำรอง</p>
+          <p className="text-sm text-muted mb-4">{t("settings", "backupDesc")}</p>
           <div className="flex flex-wrap gap-3">
             <button
               onClick={handleExport}
               className="flex items-center gap-2 bg-accent/10 text-accent hover:bg-accent/20 px-4 py-2.5 rounded-xl text-sm font-medium transition"
             >
               <Download className="w-4 h-4" />
-              ส่งออกข้อมูล
+              {t("settings", "export")}
             </button>
             <button
               onClick={() => fileInputRef.current?.click()}
               className="flex items-center gap-2 bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2.5 rounded-xl text-sm font-medium transition"
             >
               <Upload className="w-4 h-4" />
-              นำเข้าข้อมูล
+              {t("settings", "import")}
             </button>
             <input
               ref={fileInputRef}
@@ -329,9 +370,9 @@ export default function SettingsPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center gap-3 mb-3">
             <Shield className="w-5 h-5 text-warning" />
-            <h3 className="font-semibold">สำรองและกู้คืนข้อมูล</h3>
+            <h3 className="font-semibold">{t("settings", "backupTitle")}</h3>
           </div>
-          <UpgradePrompt feature="สำรองและกู้คืนข้อมูล" description="ส่งออกและนำเข้าข้อมูลทั้งหมดเป็น JSON อัปเกรดเป็นโปรเพื่อปลดล็อค" />
+          <UpgradePrompt feature={t("settings", "backupTitle")} description={t("settings", "backupDesc")} />
         </div>
       )}
 
@@ -339,7 +380,7 @@ export default function SettingsPage() {
       <div className="bg-card border border-danger/30 rounded-2xl p-5">
         <div className="flex items-center gap-3 mb-3">
           <Trash2 className="w-5 h-5 text-danger" />
-          <h3 className="font-semibold text-danger">พื้นที่อันตราย</h3>
+          <h3 className="font-semibold text-danger">{t("settings", "dangerZone")}</h3>
         </div>
         <div className="flex flex-wrap gap-3">
           <button
@@ -347,7 +388,7 @@ export default function SettingsPage() {
             className="flex items-center gap-2 bg-danger/10 text-danger hover:bg-danger/20 px-4 py-2.5 rounded-xl text-sm font-medium transition"
           >
             <Trash2 className="w-4 h-4" />
-            ลบข้อมูลตัวอย่าง
+            {t("settings", "clearDemo")}
           </button>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { X, Crown, PartyPopper } from "lucide-react";
 import Link from "next/link";
+import { useLocale } from "@/hooks/useLocale";
 
 interface CelebrationModalProps {
   isOpen: boolean;
@@ -157,6 +158,7 @@ function ConfettiCanvas() {
 
 export function CelebrationModal({ isOpen, onClose, planName }: CelebrationModalProps) {
   const [show, setShow] = useState(false);
+  const { locale, t } = useLocale();
 
   useEffect(() => {
     if (isOpen) {
@@ -165,6 +167,17 @@ export function CelebrationModal({ isOpen, onClose, planName }: CelebrationModal
   }, [isOpen]);
 
   if (!show) return null;
+
+  const features = [
+    t("celebration", "feat1"),
+    t("celebration", "feat2"),
+    t("celebration", "feat3"),
+    t("celebration", "feat4"),
+    t("celebration", "feat5"),
+    t("celebration", "feat6"),
+    t("celebration", "feat7"),
+    t("celebration", "feat8"),
+  ];
 
   return (
     <>
@@ -195,34 +208,26 @@ export function CelebrationModal({ isOpen, onClose, planName }: CelebrationModal
           {/* Party icon */}
           <div className="flex items-center justify-center gap-2 mb-3">
             <PartyPopper className="w-5 h-5 text-primary" />
-            <span className="text-sm font-medium text-primary">ยินดีด้วย!</span>
+            <span className="text-sm font-medium text-primary">{t("celebration", "congratulations")}</span>
             <PartyPopper className="w-5 h-5 text-primary scale-x-[-1]" />
           </div>
 
           {/* Main text */}
           <h2 className="text-xl font-bold mb-2">
-            อัปเกรดเป็น{planName}สำเร็จ!
+            {locale === "th" ? `อัปเกรดเป็น${planName}สำเร็จ!` : `${planName} ${t("celebration", "activated")}`}
           </h2>
 
           <p className="text-muted text-sm leading-relaxed mb-4">
-            ขอบคุณที่เลือกใช้ FreelanceFlow {planName} คุณได้ปลดล็อคฟีเจอร์ทั้งหมดแล้ว
-            ใช้งานได้เต็มที่ทุกฟังก์ชัน ไม่ว่าจะเป็นใบแจ้งหนี้ รายงาน ประมาณภาษี และอีกมากมาย
+            {locale === "th"
+              ? `ขอบคุณที่เลือกใช้ FreelanceFlow ${planName} คุณได้ปลดล็อคฟีเจอร์ทั้งหมดแล้ว ใช้งานได้เต็มที่ทุกฟังก์ชัน ไม่ว่าจะเป็นใบแจ้งหนี้ รายงาน ประมาณภาษี และอีกมากมาย`
+              : `Thank you for choosing FreelanceFlow ${planName}! You've unlocked all features — invoices, reports, tax estimation, and much more.`}
           </p>
 
           {/* Feature highlights */}
           <div className="bg-secondary/50 rounded-xl p-4 mb-5 text-left">
-            <p className="text-xs font-semibold text-primary mb-2.5">ฟีเจอร์ที่คุณปลดล็อค:</p>
+            <p className="text-xs font-semibold text-primary mb-2.5">{t("celebration", "unlocked")}:</p>
             <div className="grid grid-cols-2 gap-2">
-              {[
-                "ใบแจ้งหนี้",
-                "รายงานวิเคราะห์",
-                "ประมาณภาษี",
-                "รายการประจำ",
-                "โปรไฟล์ธุรกิจ",
-                "ลูกค้าไม่จำกัด",
-                "PromptPay QR",
-                "Line แจ้งเตือน",
-              ].map((f) => (
+              {features.map((f) => (
                 <div key={f} className="flex items-center gap-1.5 text-xs text-foreground">
                   <div className="w-1.5 h-1.5 bg-accent rounded-full shrink-0" />
                   {f}
@@ -238,18 +243,18 @@ export function CelebrationModal({ isOpen, onClose, planName }: CelebrationModal
               onClick={() => { setShow(false); onClose(); }}
               className="block w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition"
             >
-              เริ่มใช้งานเลย
+              {t("celebration", "startUsing")}
             </Link>
             <button
               onClick={() => { setShow(false); onClose(); }}
               className="w-full py-2 text-sm text-muted hover:text-foreground transition"
             >
-              ปิด
+              {t("common", "close")}
             </button>
           </div>
 
           <p className="text-xs text-muted mt-3">
-            หากมีคำถามหรือข้อเสนอแนะ ติดต่อเราได้ตลอดเวลา
+            {locale === "th" ? "หากมีคำถามหรือข้อเสนอแนะ ติดต่อเราได้ตลอดเวลา" : "Questions or feedback? Contact us anytime."}
           </p>
         </div>
       </div>

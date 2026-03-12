@@ -22,32 +22,29 @@ import {
   Monitor,
   UserCircle,
   BookOpen,
+  Languages,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePlan } from "@/hooks/usePlan";
+import { useLocale } from "@/hooks/useLocale";
 import { useTheme } from "@/components/theme-provider";
 import { processRecurringTransactions, syncFromCloud, isCloudEnabled, getOverdueInvoiceCount } from "@/lib/store";
 import { BarChart3 } from "lucide-react";
 import { OnboardingModal } from "@/components/onboarding";
+import type { TranslationKey } from "@/lib/i18n";
 
-const navItems = [
-  { href: "/dashboard", label: "ภาพรวม", icon: LayoutDashboard },
-  { href: "/dashboard/transactions", label: "รายการเงิน", icon: ArrowLeftRight },
-  { href: "/dashboard/clients", label: "ลูกค้าและโปรเจกต์", icon: Users },
-  { href: "/dashboard/invoices", label: "ใบแจ้งหนี้", icon: FileText, badge: "overdue" as const },
-  { href: "/dashboard/reports", label: "รายงาน", icon: BarChart3 },
-  { href: "/dashboard/recurring", label: "รายการประจำ", icon: RefreshCw },
-  { href: "/dashboard/tax", label: "ประมาณภาษี", icon: Calculator },
-  { href: "/dashboard/profile", label: "โปรไฟล์", icon: UserCircle },
-  { href: "/dashboard/settings", label: "ตั้งค่า", icon: Settings },
-  { href: "/dashboard/pricing", label: "แพลน", icon: CreditCard },
-  { href: "/dashboard/guide", label: "คู่มือใช้งาน", icon: BookOpen },
-];
-
-const themeOptions = [
-  { value: "light" as const, icon: Sun, label: "สว่าง" },
-  { value: "dark" as const, icon: Moon, label: "มืด" },
-  { value: "system" as const, icon: Monitor, label: "ระบบ" },
+const navItems: { href: string; labelKey: TranslationKey<"nav">; icon: typeof LayoutDashboard; badge?: "overdue" }[] = [
+  { href: "/dashboard", labelKey: "overview", icon: LayoutDashboard },
+  { href: "/dashboard/transactions", labelKey: "transactions", icon: ArrowLeftRight },
+  { href: "/dashboard/clients", labelKey: "clients", icon: Users },
+  { href: "/dashboard/invoices", labelKey: "invoices", icon: FileText, badge: "overdue" },
+  { href: "/dashboard/reports", labelKey: "reports", icon: BarChart3 },
+  { href: "/dashboard/recurring", labelKey: "recurring", icon: RefreshCw },
+  { href: "/dashboard/tax", labelKey: "tax", icon: Calculator },
+  { href: "/dashboard/profile", labelKey: "profile", icon: UserCircle },
+  { href: "/dashboard/settings", labelKey: "settings", icon: Settings },
+  { href: "/dashboard/pricing", labelKey: "plan", icon: CreditCard },
+  { href: "/dashboard/guide", labelKey: "guide", icon: BookOpen },
 ];
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -57,8 +54,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [userName, setUserName] = useState("");
   const [overdueCount, setOverdueCount] = useState(0);
   const [showOnboarding, setShowOnboarding] = useState(false);
-  const { planLabel, isPro, isTrial, trialDaysLeft, startTrial } = usePlan();
+  const { getPlanLabel, isPro, isTrial, trialDaysLeft, startTrial } = usePlan();
   const { theme, setTheme } = useTheme();
+  const { locale, setLocale, t } = useLocale();
+
+  const themeOptions = [
+    { value: "light" as const, icon: Sun, label: t("theme", "light") },
+    { value: "dark" as const, icon: Moon, label: t("theme", "dark") },
+    { value: "system" as const, icon: Monitor, label: t("theme", "system") },
+  ];
 
   useEffect(() => {
     const user = localStorage.getItem("ff_user");
@@ -92,6 +96,30 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     router.push("/");
   };
 
+  const NavLink = ({ item, onClick }: { item: typeof navItems[0]; onClick?: () => void }) => {
+    const isActive = pathname === item.href;
+    return (
+      <Link
+        href={item.href}
+        onClick={onClick}
+        className={cn(
+          "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition",
+          isActive
+            ? "bg-primary/10 text-primary"
+            : "text-muted hover:bg-secondary hover:text-foreground"
+        )}
+      >
+        <item.icon className="w-5 h-5" />
+        {t("nav", item.labelKey)}
+        {item.badge === "overdue" && overdueCount > 0 && (
+          <span className="ml-auto bg-danger text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
+            {overdueCount}
+          </span>
+        )}
+      </Link>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-background flex">
       {/* Sidebar - Desktop */}
@@ -102,29 +130,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition",
-                  isActive
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted hover:bg-secondary hover:text-foreground"
-                )}
-              >
-                <item.icon className="w-5 h-5" />
-                {item.label}
-                {"badge" in item && item.badge === "overdue" && overdueCount > 0 && (
-                  <span className="ml-auto bg-danger text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
-                    {overdueCount}
-                  </span>
-                )}
-              </Link>
-            );
-          })}
+          {navItems.map((item) => (
+            <NavLink key={item.href} item={item} />
+          ))}
         </nav>
 
         {!isPro && (
@@ -134,10 +142,34 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               className="flex items-center gap-2 px-3 py-2.5 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl text-sm font-medium text-primary hover:from-primary/15 hover:to-primary/10 transition"
             >
               <Sparkles className="w-4 h-4" />
-              อัปเกรดเป็นโปร
+              {t("nav", "upgradeToPro")}
             </Link>
           </div>
         )}
+
+        {/* Language Toggle */}
+        <div className="px-3 pb-2">
+          <div className="flex bg-secondary rounded-xl p-1">
+            <button
+              onClick={() => setLocale("th")}
+              className={cn(
+                "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-medium transition",
+                locale === "th" ? "bg-card text-foreground shadow-sm" : "text-muted hover:text-foreground"
+              )}
+            >
+              TH
+            </button>
+            <button
+              onClick={() => setLocale("en")}
+              className={cn(
+                "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-medium transition",
+                locale === "en" ? "bg-card text-foreground shadow-sm" : "text-muted hover:text-foreground"
+              )}
+            >
+              EN
+            </button>
+          </div>
+        </div>
 
         {/* Theme Toggle */}
         <div className="px-3 pb-2">
@@ -165,12 +197,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div className="flex items-center justify-between">
             <Link href="/dashboard/profile" className="truncate hover:opacity-80 transition">
               <p className="text-sm font-medium truncate">{userName}</p>
-              <p className={`text-xs ${isPro ? "text-primary font-medium" : "text-muted"}`}>{planLabel}</p>
+              <p className={`text-xs ${isPro ? "text-primary font-medium" : "text-muted"}`}>{getPlanLabel(locale)}</p>
             </Link>
             <button
               onClick={handleLogout}
               className="p-2 text-muted hover:text-danger rounded-lg hover:bg-secondary transition"
-              title="Logout"
+              title={t("nav", "logout")}
             >
               <LogOut className="w-4 h-4" />
             </button>
@@ -186,6 +218,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <span className="font-bold">FreelanceFlow</span>
           </div>
           <div className="flex items-center gap-1">
+            {/* Mobile language toggle */}
+            <button
+              onClick={() => setLocale(locale === "th" ? "en" : "th")}
+              className="p-1.5 rounded-lg transition text-muted hover:text-foreground"
+              title={locale === "th" ? "Switch to English" : "เปลี่ยนเป็นภาษาไทย"}
+            >
+              <Languages className="w-4 h-4" />
+            </button>
             {/* Mobile theme toggle */}
             {themeOptions.map((opt) => (
               <button
@@ -207,36 +247,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         {sidebarOpen && (
           <div className="px-4 pb-4 space-y-1 bg-card border-b border-border">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setSidebarOpen(false)}
-                  className={cn(
-                    "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition",
-                    isActive
-                      ? "bg-primary/10 text-primary"
-                      : "text-muted hover:bg-secondary"
-                  )}
-                >
-                  <item.icon className="w-5 h-5" />
-                  {item.label}
-                  {"badge" in item && item.badge === "overdue" && overdueCount > 0 && (
-                    <span className="ml-auto bg-danger text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">
-                      {overdueCount}
-                    </span>
-                  )}
-                </Link>
-              );
-            })}
+            {navItems.map((item) => (
+              <NavLink key={item.href} item={item} onClick={() => setSidebarOpen(false)} />
+            ))}
             <button
               onClick={handleLogout}
               className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-danger hover:bg-secondary transition w-full"
             >
               <LogOut className="w-5 h-5" />
-              ออกจากระบบ
+              {t("nav", "logout")}
             </button>
           </div>
         )}
@@ -248,10 +267,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {isTrial && (
           <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 border-b border-primary/20 px-4 py-2 text-center text-sm">
             <span className="text-primary font-medium">
-              ทดลองใช้โปร — เหลืออีก {trialDaysLeft} วัน
+              {t("plan", "trialBanner")} {trialDaysLeft} {t("plan", "daysLeft")}
             </span>
             <Link href="/dashboard/pricing" className="ml-2 text-xs text-primary underline hover:no-underline">
-              อัปเกรดเลย
+              {t("plan", "upgradeNow")}
             </Link>
           </div>
         )}

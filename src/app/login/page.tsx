@@ -3,12 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { DollarSign, Eye, EyeOff } from "lucide-react";
+import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
 import { LoginIllustration } from "@/components/illustrations";
 import { signIn } from "@/lib/supabase-store";
+import { useLocale } from "@/hooks/useLocale";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { locale, setLocale, t } = useLocale();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +22,7 @@ export default function LoginPage() {
     setError("");
 
     if (!email || !password) {
-      setError("กรุณากรอกอีเมลและรหัสผ่าน");
+      setError(t("auth", "errorFillAll"));
       return;
     }
 
@@ -28,12 +30,12 @@ export default function LoginPage() {
     try {
       const { error: authError } = await signIn(email, password);
       if (authError) {
-        setError(authError.message || "เข้าสู่ระบบไม่สำเร็จ กรุณาตรวจสอบข้อมูลอีกครั้ง");
+        setError(authError.message || t("auth", "errorLogin"));
       } else {
         router.push("/dashboard");
       }
     } catch {
-      setError("เกิดข้อผิดพลาด กรุณาลองอีกครั้ง");
+      setError(t("auth", "errorGeneric"));
     }
     setLoading(false);
   };
@@ -45,12 +47,21 @@ export default function LoginPage() {
       </div>
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-6">
-            <DollarSign className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold">FreelanceFlow</span>
-          </Link>
-          <h1 className="text-2xl font-bold mb-2">ยินดีต้อนรับกลับ</h1>
-          <p className="text-muted">เข้าสู่ระบบบัญชีของคุณ</p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <DollarSign className="w-8 h-8 text-primary" />
+              <span className="text-2xl font-bold">FreelanceFlow</span>
+            </Link>
+            <button
+              onClick={() => setLocale(locale === "th" ? "en" : "th")}
+              className="text-muted hover:text-foreground transition flex items-center gap-1 text-xs"
+            >
+              <Languages className="w-3.5 h-3.5" />
+              {locale === "th" ? "EN" : "TH"}
+            </button>
+          </div>
+          <h1 className="text-2xl font-bold mb-2">{t("auth", "loginTitle")}</h1>
+          <p className="text-muted">{t("auth", "loginSubtitle")}</p>
         </div>
 
         <form onSubmit={handleLogin} className="bg-card border border-border rounded-2xl p-8 space-y-5">
@@ -61,25 +72,25 @@ export default function LoginPage() {
           )}
 
           <div>
-            <label className="block text-sm font-medium mb-1.5">อีเมล</label>
+            <label className="block text-sm font-medium mb-1.5">{t("auth", "email")}</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="อีเมลของคุณ"
+              placeholder={t("auth", "emailPlaceholder")}
               required
               className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5">รหัสผ่าน</label>
+            <label className="block text-sm font-medium mb-1.5">{t("auth", "password")}</label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="กรอกรหัสผ่าน"
+                placeholder={t("auth", "passwordPlaceholder")}
                 required
                 className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary pr-10"
               />
@@ -98,19 +109,19 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full bg-primary hover:bg-primary-dark text-white py-2.5 rounded-xl font-semibold transition disabled:opacity-50"
           >
-            {loading ? "กำลังเข้าสู่ระบบ..." : "เข้าสู่ระบบ"}
+            {loading ? t("auth", "loggingIn") : t("auth", "login")}
           </button>
 
           <p className="text-center text-sm text-muted">
-            ยังไม่มีบัญชี?{" "}
+            {t("auth", "noAccount")}{" "}
             <Link href="/signup" className="text-primary hover:underline font-medium">
-              สมัครฟรี
+              {t("auth", "signup")}
             </Link>
           </p>
         </form>
 
         <p className="text-center text-xs text-muted mt-4">
-          โหมดทดลอง: ใช้อีเมลและรหัสผ่านอะไรก็ได้เพื่อเข้าสู่ระบบ
+          {t("auth", "demoDisclaimer")}
         </p>
       </div>
     </div>

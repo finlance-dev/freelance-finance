@@ -85,13 +85,23 @@ export function usePlan() {
 
   const trialAvailable = !hasUsedTrial() && plan === "free";
 
-  const planLabel = isTrial
-    ? `ทดลองโปร (${trialDaysLeft} วัน)`
-    : plan === "free"
-    ? "แพลนฟรี"
-    : plan === "pro"
-    ? "แพลนโปร"
-    : "แพลนโปรรายปี";
+  // Returns a locale-aware label. Accepts optional locale parameter.
+  const getPlanLabel = (locale: "th" | "en" = "th") => {
+    if (isTrial) {
+      return locale === "th"
+        ? `ทดลองโปร (${trialDaysLeft} วัน)`
+        : `Pro Trial (${trialDaysLeft} days)`;
+    }
+    const labels: Record<string, Record<string, string>> = {
+      free: { th: "แพลนฟรี", en: "Free Plan" },
+      pro: { th: "แพลนโปร", en: "Pro Plan" },
+      pro_yearly: { th: "แพลนโปรรายปี", en: "Pro Yearly" },
+    };
+    return labels[plan]?.[locale] || labels[plan]?.th || plan;
+  };
+
+  // Default Thai for backward compat
+  const planLabel = getPlanLabel("th");
 
   return {
     plan,
@@ -108,5 +118,6 @@ export function usePlan() {
     clientsRemaining,
     transactionsRemaining,
     planLabel,
+    getPlanLabel,
   };
 }

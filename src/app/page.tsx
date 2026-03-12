@@ -15,107 +15,29 @@ import {
   Zap,
   Menu,
   X,
+  Languages,
 } from "lucide-react";
 import { HeroIllustration } from "@/components/illustrations";
+import { useLocale } from "@/hooks/useLocale";
+import type { TranslationKey } from "@/lib/i18n";
 
-const features = [
-  {
-    icon: TrendingUp,
-    title: "ติดตามรายได้",
-    description:
-      "ติดตามทุกบาทจากทุกลูกค้าและโปรเจกต์ ดูแนวโน้มรายได้ได้ทันทีผ่านกราฟที่เข้าใจง่าย",
-  },
-  {
-    icon: Calculator,
-    title: "ประมาณภาษี",
-    description:
-      "คำนวณภาษีรายไตรมาสอัตโนมัติ ไม่ต้องตกใจกับยอดภาษีอีกต่อไป",
-  },
-  {
-    icon: BarChart3,
-    title: "พยากรณ์กระแสเงินสด",
-    description:
-      "รู้ว่าเงินจะพอใช้อีกกี่เดือน วางแผนล่วงหน้าได้อย่างมั่นใจแม้รายได้ไม่สม่ำเสมอ",
-  },
-  {
-    icon: Users,
-    title: "จัดการลูกค้าและโปรเจกต์",
-    description:
-      "ดูว่าลูกค้าและโปรเจกต์ไหนทำกำไรมากที่สุด หยุดแลกเวลากับเงินที่น้อยเกินไป",
-  },
-  {
-    icon: PieChart,
-    title: "หมวดหมู่ค่าใช้จ่าย",
-    description:
-      "จัดหมวดหมู่ค่าใช้จ่ายอัตโนมัติ ใช้สิทธิ์ลดหย่อนภาษีได้เต็มที่ และรู้ว่าเงินหายไปไหน",
-  },
-  {
-    icon: Shield,
-    title: "คะแนนสุขภาพการเงิน",
-    description:
-      "รับคะแนนง่ายๆ ที่บอกว่าการเงินฟรีแลนซ์ของคุณแข็งแรงแค่ไหน พร้อมคำแนะนำที่ทำได้จริง",
-  },
+const featureIcons = [TrendingUp, Calculator, BarChart3, Users, PieChart, Shield];
+const featureKeys: { title: TranslationKey<"landing">; desc: TranslationKey<"landing"> }[] = [
+  { title: "feat1Title", desc: "feat1Desc" },
+  { title: "feat2Title", desc: "feat2Desc" },
+  { title: "feat3Title", desc: "feat3Desc" },
+  { title: "feat4Title", desc: "feat4Desc" },
+  { title: "feat5Title", desc: "feat5Desc" },
+  { title: "feat6Title", desc: "feat6Desc" },
 ];
 
-const painPoints = [
-  "ไม่รู้ว่าต้องจ่ายภาษีเท่าไหร่ในแต่ละไตรมาส",
-  "รายได้ขึ้นลงไม่แน่นอนในแต่ละเดือน",
-  "ไม่รู้ว่าโปรเจกต์ไหนทำกำไรจริง",
-  "ปนเงินส่วนตัวกับเงินธุรกิจ",
-  "เสียเวลาหลายชั่วโมงกับ spreadsheet แทนที่จะทำงาน",
-];
-
-const pricingPlans = [
-  {
-    name: "ฟรี",
-    price: "0",
-    period: "",
-    description: "เริ่มต้นใช้งานพื้นฐาน",
-    features: [
-      "ติดตามรายรับ-รายจ่าย",
-      "แดชบอร์ดพื้นฐาน",
-      "ลูกค้าได้สูงสุด 3 ราย",
-      "สรุปรายเดือน",
-    ],
-    cta: "เริ่มใช้ฟรี",
-    highlighted: false,
-  },
-  {
-    name: "โปร",
-    price: "299",
-    period: "/เดือน",
-    description: "ทุกอย่างที่คุณต้องการจัดการการเงิน",
-    features: [
-      "ทุกฟีเจอร์ในแพลนฟรี",
-      "ลูกค้าและโปรเจกต์ไม่จำกัด",
-      "ประมาณภาษีและแจ้งเตือน",
-      "พยากรณ์กระแสเงินสด",
-      "วิเคราะห์กำไรรายโปรเจกต์",
-      "ส่งออกรายงาน (CSV/PDF)",
-    ],
-    cta: "ทดลองใช้โปร",
-    highlighted: true,
-  },
-  {
-    name: "โปรรายปี",
-    price: "2,499",
-    period: "/ปี",
-    description: "ประหยัด 30% เมื่อจ่ายรายปี",
-    features: [
-      "ทุกฟีเจอร์ในแพลนโปร",
-      "ซัพพอร์ตเร่งด่วน",
-      "เข้าถึงฟีเจอร์ใหม่ก่อนใคร",
-      "ประหยัดกว่า 1,000 บาท/ปี",
-    ],
-    cta: "สมัครแพลนรายปี",
-    highlighted: false,
-  },
-];
+const painKeys: TranslationKey<"landing">[] = ["pain1", "pain2", "pain3", "pain4", "pain5"];
 
 export default function LandingPage() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { locale, setLocale, t } = useLocale();
 
   const handleWaitlist = (e: React.FormEvent) => {
     e.preventDefault();
@@ -124,6 +46,53 @@ export default function LandingPage() {
       setEmail("");
     }
   };
+
+  const pricingPlans = [
+    {
+      name: t("pricing", "planFree"),
+      price: "0",
+      period: "",
+      description: t("pricing", "planFreeDesc"),
+      features: [
+        t("pricing", "feat_trackBasic"),
+        t("pricing", "feat_basicDashboard"),
+        t("pricing", "feat_maxClients3"),
+        t("pricing", "feat_monthlySummary"),
+      ],
+      cta: t("landing", "ctaFree"),
+      highlighted: false,
+    },
+    {
+      name: t("pricing", "planPro"),
+      price: "299",
+      period: t("pricing", "perMonth"),
+      description: t("pricing", "planProDesc"),
+      features: [
+        t("pricing", "feat_allFree"),
+        t("pricing", "feat_unlimitedClients"),
+        t("pricing", "feat_taxEstimate"),
+        t("pricing", "feat_cashFlow"),
+        t("pricing", "feat_projectProfit"),
+        t("pricing", "feat_export"),
+      ],
+      cta: t("landing", "ctaPro"),
+      highlighted: true,
+    },
+    {
+      name: t("pricing", "planProYearly"),
+      price: "2,499",
+      period: t("pricing", "perYear"),
+      description: t("pricing", "planProYearlyDesc"),
+      features: [
+        t("pricing", "feat_allPro"),
+        t("pricing", "feat_prioritySupport"),
+        t("pricing", "feat_earlyAccess"),
+        t("pricing", "feat_save1000"),
+      ],
+      cta: t("landing", "ctaYearly"),
+      highlighted: false,
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -137,22 +106,26 @@ export default function LandingPage() {
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-muted hover:text-foreground transition">
-                ฟีเจอร์
+                {t("landing", "navFeatures")}
               </a>
               <a href="#pricing" className="text-muted hover:text-foreground transition">
-                ราคา
+                {t("landing", "navPricing")}
               </a>
-              <Link
-                href="/login"
-                className="text-muted hover:text-foreground transition"
-              >
-                เข้าสู่ระบบ
+              <Link href="/login" className="text-muted hover:text-foreground transition">
+                {t("auth", "login")}
               </Link>
+              <button
+                onClick={() => setLocale(locale === "th" ? "en" : "th")}
+                className="text-muted hover:text-foreground transition flex items-center gap-1 text-sm"
+              >
+                <Languages className="w-4 h-4" />
+                {locale === "th" ? "EN" : "TH"}
+              </button>
               <Link
                 href="/signup"
                 className="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg font-medium transition"
               >
-                เริ่มใช้ฟรี
+                {t("landing", "startFree")}
               </Link>
             </div>
             <button
@@ -164,11 +137,18 @@ export default function LandingPage() {
           </div>
           {mobileMenuOpen && (
             <div className="md:hidden pb-4 flex flex-col gap-3">
-              <a href="#features" className="text-muted hover:text-foreground py-2">ฟีเจอร์</a>
-              <a href="#pricing" className="text-muted hover:text-foreground py-2">ราคา</a>
-              <Link href="/login" className="text-muted hover:text-foreground py-2">เข้าสู่ระบบ</Link>
+              <a href="#features" className="text-muted hover:text-foreground py-2">{t("landing", "navFeatures")}</a>
+              <a href="#pricing" className="text-muted hover:text-foreground py-2">{t("landing", "navPricing")}</a>
+              <Link href="/login" className="text-muted hover:text-foreground py-2">{t("auth", "login")}</Link>
+              <button
+                onClick={() => setLocale(locale === "th" ? "en" : "th")}
+                className="text-muted hover:text-foreground py-2 text-left flex items-center gap-1"
+              >
+                <Languages className="w-4 h-4" />
+                {locale === "th" ? "English" : "ภาษาไทย"}
+              </button>
               <Link href="/signup" className="bg-primary text-white px-5 py-2 rounded-lg font-medium text-center">
-                เริ่มใช้ฟรี
+                {t("landing", "startFree")}
               </Link>
             </div>
           )}
@@ -180,35 +160,34 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
             <Zap className="w-4 h-4" />
-            สร้างโดยฟรีแลนซ์ เพื่อฟรีแลนซ์
+            {t("landing", "badge")}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            ผู้ช่วยการเงิน
-            <span className="text-primary"> อัจฉริยะ</span>
+            {t("landing", "heroTitle1")}
+            <span className="text-primary"> {t("landing", "heroTitle2")}</span>
             <br />
-            สำหรับฟรีแลนซ์
+            {t("landing", "heroTitle3")}
           </h1>
           <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10">
-            หยุดเดา เริ่มรู้จริง ติดตามรายได้ ประมาณภาษี
-            และพยากรณ์กระแสเงินสด — ทั้งหมดในแดชบอร์ดเดียวที่ออกแบบมาสำหรับรายได้ไม่สม่ำเสมอ
+            {t("landing", "heroDesc")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               href="/signup"
               className="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl font-semibold text-lg transition flex items-center justify-center gap-2"
             >
-              เริ่มใช้ฟรี — ไม่ต้องใช้บัตรเครดิต
+              {t("landing", "startFreeNoCc")}
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
               href="#features"
               className="border border-border hover:bg-secondary text-foreground px-8 py-3.5 rounded-xl font-semibold text-lg transition text-center"
             >
-              ดูว่าทำอะไรได้บ้าง
+              {t("landing", "seeFeatures")}
             </a>
           </div>
           <p className="text-sm text-muted">
-            เข้าร่วมกับฟรีแลนซ์กว่า 1,000 คนที่ควบคุมการเงินได้แล้ว
+            {t("landing", "socialProof")}
           </p>
           <div className="mt-12 max-w-2xl mx-auto">
             <HeroIllustration className="w-full h-auto drop-shadow-xl" />
@@ -220,22 +199,22 @@ export default function LandingPage() {
       <section className="py-16 bg-secondary/50 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">
-            ฟังดูคุ้นไหม?
+            {t("landing", "painTitle")}
           </h2>
           <div className="grid gap-4 max-w-2xl mx-auto">
-            {painPoints.map((point, i) => (
+            {painKeys.map((key, i) => (
               <div
                 key={i}
                 className="flex items-start gap-3 bg-card p-4 rounded-xl border border-border"
               >
                 <span className="text-danger text-xl mt-0.5">&#10005;</span>
-                <p className="text-lg">{point}</p>
+                <p className="text-lg">{t("landing", key)}</p>
               </div>
             ))}
           </div>
           <p className="text-center mt-8 text-lg text-muted">
-            FreelanceFlow แก้ปัญหาทั้งหมดนี้ได้{" "}
-            <span className="text-accent font-semibold">ในไม่กี่นาที ไม่ใช่หลายชั่วโมง</span>
+            {t("landing", "painSolution")}{" "}
+            <span className="text-accent font-semibold">{t("landing", "painSolutionHighlight")}</span>
           </p>
         </div>
       </section>
@@ -245,26 +224,28 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              ทุกอย่างที่คุณต้องการ ไม่มีส่วนเกิน
+              {t("landing", "featuresTitle")}
             </h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              ไม่ใช่ซอฟต์แวร์บัญชีที่ซับซ้อน ไม่ต้องตั้งค่ายุ่งยาก
-              แค่ความชัดเจนทางการเงินที่ฟรีแลนซ์ต้องการจริงๆ
+              {t("landing", "featuresDesc")}
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, i) => (
-              <div
-                key={i}
-                className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-primary" />
+            {featureKeys.map((fk, i) => {
+              const Icon = featureIcons[i];
+              return (
+                <div
+                  key={i}
+                  className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all"
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{t("landing", fk.title)}</h3>
+                  <p className="text-muted">{t("landing", fk.desc)}</p>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted">{feature.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -274,10 +255,10 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              ราคาเรียบง่าย โปร่งใส
+              {t("landing", "pricingTitle")}
             </h2>
             <p className="text-lg text-muted">
-              เริ่มใช้ฟรี อัปเกรดเมื่อพร้อม
+              {t("landing", "pricingDesc")}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -292,14 +273,14 @@ export default function LandingPage() {
               >
                 {plan.highlighted && (
                   <div className="text-sm font-semibold text-primary mb-2">
-                    ยอดนิยม
+                    {t("landing", "popular")}
                   </div>
                 )}
                 <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
                 <p className="text-muted text-sm mb-4">{plan.description}</p>
                 <div className="mb-6">
                   <span className="text-4xl font-bold">
-                    {plan.price === "0" ? "ฟรี" : `฿${plan.price}`}
+                    {plan.price === "0" ? t("common", "free") : `฿${plan.price}`}
                   </span>
                   {plan.period && (
                     <span className="text-muted">{plan.period}</span>
@@ -333,15 +314,15 @@ export default function LandingPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            พร้อมควบคุมการเงินแล้วหรือยัง?
+            {t("landing", "ctaTitle")}
           </h2>
           <p className="text-lg text-muted mb-8">
-            สมัคร waitlist เพื่อเข้าถึงก่อนใคร และรับสิทธิพิเศษสำหรับผู้ใช้งานกลุ่มแรก
+            {t("landing", "ctaDesc")}
           </p>
           {submitted ? (
             <div className="bg-accent/10 text-accent-dark border border-accent/30 px-6 py-4 rounded-xl font-medium">
               <Check className="w-5 h-5 inline mr-2" />
-              ลงทะเบียนสำเร็จ! เราจะติดต่อกลับเร็วๆ นี้
+              {t("landing", "ctaSuccess")}
             </div>
           ) : (
             <form
@@ -352,7 +333,7 @@ export default function LandingPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="อีเมลของคุณ"
+                placeholder={t("landing", "emailPlaceholder")}
                 required
                 className="flex-1 px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary"
               />
@@ -360,7 +341,7 @@ export default function LandingPage() {
                 type="submit"
                 className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition whitespace-nowrap"
               >
-                สมัคร Waitlist
+                {t("landing", "joinWaitlist")}
               </button>
             </form>
           )}
@@ -375,7 +356,7 @@ export default function LandingPage() {
             <span className="font-semibold">FreelanceFlow</span>
           </div>
           <p className="text-sm text-muted">
-            &copy; 2026 FreelanceFlow สร้างมาเพื่อฟรีแลนซ์ที่มีรายได้ไม่สม่ำเสมอ
+            &copy; 2026 FreelanceFlow — {t("landing", "footer")}
           </p>
         </div>
       </footer>
