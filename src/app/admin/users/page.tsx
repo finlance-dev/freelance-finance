@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Users, Search, Crown, ArrowLeftRight, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/hooks/useLocale";
-import { getAllUsers } from "@/lib/admin-store";
+import { fetchAllUsers } from "@/lib/admin-store";
 import type { AdminUser } from "@/lib/types";
 
 const planBadge: Record<string, { label: string; labelEn: string; cls: string }> = {
@@ -17,19 +17,30 @@ export default function AdminUsersPage() {
   const { locale } = useLocale();
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [search, setSearch] = useState("");
-  const [mounted, setMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    setMounted(true);
-    setUsers(getAllUsers());
+    fetchAllUsers()
+      .then((data) => setUsers(data))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
-  if (!mounted) {
+  if (loading) {
     return (
       <div className="space-y-4">
         {[1, 2, 3].map((i) => (
           <div key={i} className="h-20 bg-secondary rounded-2xl animate-pulse" />
         ))}
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="py-16 text-center text-danger">
+        <p className="text-sm">{error}</p>
       </div>
     );
   }
@@ -45,7 +56,7 @@ export default function AdminUsersPage() {
       <div>
         <h1 className="text-2xl font-bold">{locale === "th" ? "ผู้ใช้งานทั้งหมด" : "All Users"}</h1>
         <p className="text-sm text-muted mt-1">
-          {locale === "th" ? `${users.length} ผู้ใช้` : `${users.length} users`}
+          {locale === "th" ? `${users.length} ผู้ใช้ (Supabase)` : `${users.length} users (Supabase)`}
         </p>
       </div>
 
@@ -69,7 +80,6 @@ export default function AdminUsersPage() {
             return (
               <div key={user.email} className="bg-card border border-border rounded-2xl p-5">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  {/* Avatar + Info */}
                   <div className="flex items-center gap-3 flex-1 min-w-0">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm shrink-0">
                       {user.name.charAt(0).toUpperCase()}
@@ -85,7 +95,6 @@ export default function AdminUsersPage() {
                     </div>
                   </div>
 
-                  {/* Stats */}
                   <div className="flex flex-wrap gap-4 text-xs">
                     <div className="flex items-center gap-1.5">
                       <ArrowLeftRight className="w-3.5 h-3.5 text-muted" />
@@ -110,7 +119,6 @@ export default function AdminUsersPage() {
                   </div>
                 </div>
 
-                {/* Dates */}
                 <div className="flex gap-6 mt-3 pt-3 border-t border-border text-xs text-muted">
                   <span>
                     {locale === "th" ? "สมัคร" : "Joined"}: {new Date(user.signupDate).toLocaleDateString(locale === "th" ? "th-TH" : "en-US", { year: "numeric", month: "short", day: "numeric" })}

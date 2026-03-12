@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 import {
   Activity, UserPlus, LogIn, LogOut, Crown, Plus, Trash2, FileText,
-  Download, Upload, Settings, Eye, Filter,
+  Download, Upload, Settings, Eye,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/hooks/useLocale";
-import { getActivityLog } from "@/lib/activity-logger";
-import type { ActivityEvent, ActivityEventType } from "@/lib/types";
+import { fetchAdminStats } from "@/lib/admin-store";
+import type { ActivityEvent } from "@/lib/types";
 
 const eventConfig: Record<string, { icon: React.ElementType; color: string; th: string; en: string }> = {
   signup: { icon: UserPlus, color: "text-accent", th: "สมัครสมาชิก", en: "Signed up" },
@@ -29,16 +29,6 @@ const eventConfig: Record<string, { icon: React.ElementType; color: string; th: 
   recurring_delete: { icon: Trash2, color: "text-danger", th: "ลบรายการประจำ", en: "Deleted recurring" },
 };
 
-const filterOptions: { value: string; th: string; en: string }[] = [
-  { value: "all", th: "ทั้งหมด", en: "All" },
-  { value: "signup", th: "สมัครสมาชิก", en: "Signups" },
-  { value: "login", th: "เข้าสู่ระบบ", en: "Logins" },
-  { value: "transaction_create", th: "สร้างรายการ", en: "Transactions" },
-  { value: "client_create", th: "เพิ่มลูกค้า", en: "Clients" },
-  { value: "invoice_create", th: "ใบแจ้งหนี้", en: "Invoices" },
-  { value: "plan_change", th: "เปลี่ยนแพลน", en: "Plan Changes" },
-];
-
 function relativeTime(dateStr: string, locale: string): string {
   const now = Date.now();
   const diff = now - new Date(dateStr).getTime();
@@ -55,21 +45,20 @@ function relativeTime(dateStr: string, locale: string): string {
   });
 }
 
-const PAGE_SIZE = 50;
-
 export default function AdminActivityPage() {
   const { locale } = useLocale();
   const [allEvents, setAllEvents] = useState<ActivityEvent[]>([]);
-  const [filter, setFilter] = useState("all");
-  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [mounted, setMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    setMounted(true);
-    setAllEvents(getActivityLog());
+    fetchAdminStats()
+      .then((data) => setAllEvents(data.recentEvents))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
-  if (!mounted) {
+  if (loading) {
     return (
       <div className="space-y-3">
         {[1, 2, 3, 4, 5].map((i) => (
@@ -79,44 +68,27 @@ export default function AdminActivityPage() {
     );
   }
 
-  const filtered = filter === "all" ? allEvents : allEvents.filter((e) => e.type === filter);
-  const visible = filtered.slice(0, visibleCount);
-  const hasMore = visibleCount < filtered.length;
+  if (error) {
+    return (
+      <div className="py-16 text-center text-danger">
+        <p className="text-sm">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold">{locale === "th" ? "บันทึกกิจกรรม" : "Activity Log"}</h1>
         <p className="text-sm text-muted mt-1">
-          {locale === "th" ? `${filtered.length} กิจกรรม` : `${filtered.length} events`}
+          {locale === "th" ? `${allEvents.length} กิจกรรม (จาก Supabase)` : `${allEvents.length} events (from Supabase)`}
         </p>
       </div>
 
-      {/* Filter */}
-      <div className="flex items-center gap-2">
-        <Filter className="w-4 h-4 text-muted" />
-        <div className="flex flex-wrap gap-1.5">
-          {filterOptions.map((opt) => (
-            <button
-              key={opt.value}
-              onClick={() => { setFilter(opt.value); setVisibleCount(PAGE_SIZE); }}
-              className={cn(
-                "px-3 py-1.5 rounded-lg text-xs font-medium transition",
-                filter === opt.value
-                  ? "bg-primary text-white"
-                  : "bg-secondary text-muted hover:text-foreground"
-              )}
-            >
-              {locale === "th" ? opt.th : opt.en}
-            </button>
-          ))}
-        </div>
-      </div>
-
       {/* Event List */}
-      {visible.length > 0 ? (
+      {allEvents.length > 0 ? (
         <div className="bg-card border border-border rounded-2xl divide-y divide-border">
-          {visible.map((evt) => {
+          {allEvents.map((evt) => {
             const config = eventConfig[evt.type] || { icon: Activity, color: "text-muted", th: evt.type, en: evt.type };
             const Icon = config.icon;
             return (
@@ -149,18 +121,6 @@ export default function AdminActivityPage() {
           <p className="text-xs mt-1">
             {locale === "th" ? "กิจกรรมจะปรากฏเมื่อผู้ใช้เริ่มใช้งานระบบ" : "Activity will appear when users start using the system"}
           </p>
-        </div>
-      )}
-
-      {/* Load More */}
-      {hasMore && (
-        <div className="text-center">
-          <button
-            onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-            className="text-sm text-primary hover:underline font-medium"
-          >
-            {locale === "th" ? `โหลดเพิ่ม (${filtered.length - visibleCount} เหลืออยู่)` : `Load more (${filtered.length - visibleCount} remaining)`}
-          </button>
         </div>
       )}
     </div>

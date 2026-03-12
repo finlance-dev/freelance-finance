@@ -8,9 +8,8 @@ import {
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/hooks/useLocale";
-import { getAdminStats, getActivityByDay, getPlanDistribution, type AdminStats } from "@/lib/admin-store";
-import { getActivityLog } from "@/lib/activity-logger";
-import type { ActivityEvent, ActivityEventType } from "@/lib/types";
+import { fetchAdminStats, type AdminStats } from "@/lib/admin-store";
+import type { ActivityEvent } from "@/lib/types";
 
 const PIE_COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444"];
 
@@ -53,13 +52,26 @@ export default function AdminOverviewPage() {
   const [activityData, setActivityData] = useState<{ date: string; count: number }[]>([]);
   const [planData, setPlanData] = useState<{ name: string; value: number }[]>([]);
   const [recentEvents, setRecentEvents] = useState<ActivityEvent[]>([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    setStats(getAdminStats());
-    setActivityData(getActivityByDay(14));
-    setPlanData(getPlanDistribution());
-    setRecentEvents(getActivityLog().slice(0, 20));
+    fetchAdminStats()
+      .then((data) => {
+        setStats(data.stats);
+        setActivityData(data.activityByDay);
+        setPlanData(data.planDistribution);
+        setRecentEvents(data.recentEvents);
+      })
+      .catch((err) => setError(err.message));
   }, []);
+
+  if (error) {
+    return (
+      <div className="py-16 text-center text-danger">
+        <p className="text-sm">{error}</p>
+      </div>
+    );
+  }
 
   if (!stats) {
     return (
@@ -92,7 +104,7 @@ export default function AdminOverviewPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold">{locale === "th" ? "ภาพรวมระบบ" : "System Overview"}</h1>
-        <p className="text-sm text-muted mt-1">{locale === "th" ? "ข้อมูลผู้ใช้งานและกิจกรรมทั้งหมด" : "All user data and activity"}</p>
+        <p className="text-sm text-muted mt-1">{locale === "th" ? "ข้อมูลผู้ใช้งานและกิจกรรมทั้งหมด (Supabase)" : "All user data and activity (Supabase)"}</p>
       </div>
 
       {/* Stat Cards */}
@@ -127,7 +139,7 @@ export default function AdminOverviewPage() {
         <div className="bg-card border border-border rounded-2xl p-5">
           <h3 className="text-sm font-semibold mb-4 flex items-center gap-2">
             <TrendingUp className="w-4 h-4 text-primary" />
-            {locale === "th" ? "กิจกรรม 14 วันล่าสุด" : "Activity (Last 14 Days)"}
+            {locale === "th" ? "สมัครสมาชิก 14 วันล่าสุด" : "Signups (Last 14 Days)"}
           </h3>
           {activityData.some((d) => d.count > 0) ? (
             <ResponsiveContainer width="100%" height={200}>
@@ -143,7 +155,7 @@ export default function AdminOverviewPage() {
                 <Tooltip
                   contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: 12, fontSize: 12 }}
                   labelFormatter={(v) => v}
-                  formatter={(v) => [String(v), locale === "th" ? "กิจกรรม" : "Events"]}
+                  formatter={(v) => [String(v), locale === "th" ? "สมัคร" : "Signups"]}
                 />
                 <Area type="monotone" dataKey="count" stroke="#6366f1" fill="url(#actGrad)" strokeWidth={2} />
               </AreaChart>
@@ -194,7 +206,7 @@ export default function AdminOverviewPage() {
       <div className="bg-card border border-border rounded-2xl p-5">
         <h3 className="text-sm font-semibold mb-4 flex items-center gap-2">
           <Activity className="w-4 h-4 text-primary" />
-          {locale === "th" ? "กิจกรรมล่าสุด" : "Recent Activity"}
+          {locale === "th" ? "ผู้สมัครล่าสุด" : "Recent Signups"}
         </h3>
         {recentEvents.length > 0 ? (
           <div className="space-y-1">
