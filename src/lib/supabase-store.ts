@@ -192,6 +192,20 @@ export async function removeTransaction(id: string) {
   await supabase.from("transactions").delete().eq("id", id);
 }
 
+// ─── Google OAuth ────────────────────────────────────────────────────────
+
+export async function signInWithGoogle() {
+  if (!isSupabaseConfigured()) return { error: { message: "Supabase not configured" } };
+
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${window.location.origin}/auth/callback`,
+    },
+  });
+  return { error };
+}
+
 // ─── Sync Helper ────────────────────────────────────────────────────────
 
 export function isCloudEnabled() {

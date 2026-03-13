@@ -251,7 +251,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <DollarSign className="w-6 h-6 text-primary" />
             <span className="font-bold">Finlance</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5 sm:gap-1">
             {/* Mobile notifications */}
             <NotificationBell />
             {/* Mobile language toggle */}
@@ -262,27 +262,38 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             >
               <Languages className="w-4 h-4" />
             </button>
-            {/* Mobile theme toggle */}
-            {themeOptions.map((opt) => (
-              <button
-                key={opt.value}
-                onClick={() => setTheme(opt.value)}
-                className={cn(
-                  "p-1.5 rounded-lg transition",
-                  theme === opt.value ? "text-primary bg-primary/10" : "text-muted"
-                )}
-              >
-                <opt.icon className="w-4 h-4" />
-              </button>
-            ))}
-            <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 ml-1">
+            {/* Mobile theme toggle - single cycle button on xs, all 3 on sm+ */}
+            <div className="hidden sm:flex items-center">
+              {themeOptions.map((opt) => (
+                <button
+                  key={opt.value}
+                  onClick={() => setTheme(opt.value)}
+                  className={cn(
+                    "p-1.5 rounded-lg transition",
+                    theme === opt.value ? "text-primary bg-primary/10" : "text-muted"
+                  )}
+                >
+                  <opt.icon className="w-4 h-4" />
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={() => {
+                const next = theme === "light" ? "dark" : theme === "dark" ? "system" : "light";
+                setTheme(next);
+              }}
+              className="sm:hidden p-1.5 rounded-lg transition text-primary bg-primary/10"
+            >
+              {(() => { const Icon = themeOptions.find(o => o.value === theme)?.icon || Sun; return <Icon className="w-4 h-4" />; })()}
+            </button>
+            <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 ml-0.5">
               {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
         {sidebarOpen && (
-          <div className="px-4 pb-4 space-y-1 bg-card border-b border-border">
+          <div className="px-4 pb-4 space-y-1 bg-card border-b border-border max-h-[calc(100vh-56px)] overflow-y-auto">
             {navItems.map((item) => (
               <NavLink key={item.href} item={item} onClick={() => setSidebarOpen(false)} />
             ))}

@@ -699,11 +699,11 @@ export default function TransactionsPage() {
             {filtered.map((tx) => (
               <div
                 key={tx.id}
-                className="flex items-center justify-between p-4 hover:bg-card-hover transition"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 hover:bg-card-hover transition gap-2 sm:gap-0"
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <div
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                    className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
                       tx.type === "income" ? "bg-accent/10" : "bg-danger/10"
                     }`}
                   >
@@ -715,7 +715,7 @@ export default function TransactionsPage() {
                   </div>
                   <div className="min-w-0">
                     <p className="font-medium truncate">{tx.description}</p>
-                    <p className="text-xs text-muted">
+                    <p className="text-xs text-muted truncate">
                       {formatDate(tx.date)}
                       {tx.clientId && ` · ${getClientName(tx.clientId)}`}
                       {tx.projectId && ` · ${getProjectName(tx.projectId)}`}
@@ -724,7 +724,7 @@ export default function TransactionsPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-between sm:justify-end gap-3 pl-12 sm:pl-0">
                   <span
                     className={`font-semibold whitespace-nowrap ${
                       tx.type === "income" ? "text-accent" : "text-danger"

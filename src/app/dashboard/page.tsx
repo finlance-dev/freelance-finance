@@ -14,6 +14,9 @@ import {
   Pencil,
   Check,
   X,
+  Wallet,
+  FileText,
+  RefreshCw,
 } from "lucide-react";
 import {
   BarChart,
@@ -29,14 +32,16 @@ import {
   Area,
   CartesianGrid,
 } from "recharts";
-import { getTransactions, getClients, getMonthlyExpenses, getTaxRate, seedDemoData, getIncomeGoal, setIncomeGoal as saveIncomeGoal } from "@/lib/store";
-import { formatCurrency } from "@/lib/utils";
+import { getTransactions, getClients, getMonthlyExpenses, getTaxRate, seedDemoData, getIncomeGoal, setIncomeGoal as saveIncomeGoal, getInvoices, getOverdueInvoiceCount } from "@/lib/store";
+import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Transaction } from "@/lib/types";
 import { EmptyChartIllustration } from "@/components/illustrations";
 import { useToast } from "@/components/toast";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
 import { useLocale } from "@/hooks/useLocale";
+import Link from "next/link";
+import { CurrencyConverter } from "@/components/currency-converter";
 
 const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"];
 
@@ -160,6 +165,27 @@ export default function DashboardPage() {
   const goalProgress = incomeGoal.monthlyTarget > 0
     ? Math.min(100, (stats.thisMonth / incomeGoal.monthlyTarget) * 100)
     : 0;
+
+  const savingsRate = stats.totalIncome > 0
+    ? ((stats.totalIncome - stats.totalExpenses) / stats.totalIncome * 100)
+    : 0;
+
+  const recentTx = useMemo(() => {
+    return [...transactions]
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 5);
+  }, [transactions]);
+
+  const invoiceStats = useMemo(() => {
+    const invoices = getInvoices();
+    const overdueCount = getOverdueInvoiceCount();
+    const paidCount = invoices.filter(i => i.status === "paid").length;
+    const pendingCount = invoices.filter(i => i.status === "sent").length;
+    const totalValue = invoices
+      .filter(i => i.status === "sent" || i.status === "overdue")
+      .reduce((sum, inv) => sum + inv.items.reduce((s, item) => s + item.quantity * item.unitPrice, 0), 0);
+    return { total: invoices.length, overdueCount, paidCount, pendingCount, totalValue };
+  }, []);
 
   const handleSaveGoal = () => {
     saveIncomeGoal({ monthlyTarget: goalInput, yearlyTarget: goalInput * 12 });
@@ -360,7 +386,7 @@ export default function DashboardPage() {
       ) : (
         <>
           {/* Charts */}
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Income Trend Area Chart */}
             <div className="bg-card border border-border rounded-2xl p-5">
               <h3 className="font-semibold mb-4">{t("dashboard", "profitTrend")}</h3>
@@ -437,7 +463,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Expense Pie + Client Income */}
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Expenses by Category */}
             <div className="bg-card border border-border rounded-2xl p-5">
               <h3 className="font-semibold mb-4">{t("dashboard", "expenseByCategory")}</h3>
@@ -520,6 +546,115 @@ export default function DashboardPage() {
           </div>
         </>
       )}
+
+      {/* Recent Transactions + Quick Stats + Currency */}
+      <div className="grid lg:grid-cols-3 gap-6">
+        {/* Recent Transactions */}
+        <div className="lg:col-span-2 bg-card border border-border rounded-2xl p-5">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="font-semibold flex items-center gap-2">
+              <FileText className="w-5 h-5 text-primary" />
+              {t("dashboard", "recentTransactions")}
+            </h3>
+            <Link href="/dashboard/transactions" className="text-xs text-primary hover:underline">
+              {t("dashboard", "viewAll")} →
+            </Link>
+          </div>
+          {recentTx.length > 0 ? (
+            <div className="space-y-2">
+              {recentTx.map((tx) => (
+                <div key={tx.id} className="flex items-center justify-between py-2 border-b border-border last:border-0">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${tx.type === "income" ? "bg-accent/10" : "bg-danger/10"}`}>
+                      {tx.type === "income" ? <ArrowUpRight className="w-4 h-4 text-accent" /> : <ArrowDownRight className="w-4 h-4 text-danger" />}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium truncate">{tx.description}</p>
+                      <p className="text-xs text-muted">{formatDate(tx.date)}</p>
+                    </div>
+                  </div>
+                  <span className={`text-sm font-semibold whitespace-nowrap ml-2 ${tx.type === "income" ? "text-accent" : "text-danger"}`}>
+                    {tx.type === "income" ? "+" : "-"}{formatCurrency(tx.amount)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8 text-muted text-sm">
+              <p>{t("dashboard", "noTransactions")}</p>
+            </div>
+          )}
+        </div>
+
+        {/* Right column: Savings Rate + Invoice Overview */}
+        <div className="space-y-6">
+          {/* Savings Rate */}
+          <div className="bg-card border border-border rounded-2xl p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <Wallet className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold">{t("dashboard", "savingsRate")}</h3>
+            </div>
+            <div className="flex items-center justify-center py-3">
+              <div className="relative w-28 h-28">
+                <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="var(--secondary)" strokeWidth="10" />
+                  <circle
+                    cx="50" cy="50" r="42" fill="none"
+                    stroke={savingsRate >= 30 ? "var(--accent)" : savingsRate >= 10 ? "var(--warning)" : "var(--danger)"}
+                    strokeWidth="10"
+                    strokeLinecap="round"
+                    strokeDasharray={`${Math.max(0, Math.min(100, savingsRate)) * 2.64} 264`}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className={`text-2xl font-bold ${savingsRate >= 30 ? "text-accent" : savingsRate >= 10 ? "text-warning" : "text-danger"}`}>
+                    {savingsRate.toFixed(0)}%
+                  </span>
+                </div>
+              </div>
+            </div>
+            <p className="text-center text-xs text-muted mt-1">
+              {savingsRate >= 30 ? t("dashboard", "savingsGood") : savingsRate >= 10 ? t("dashboard", "savingsOk") : t("dashboard", "savingsLow")}
+            </p>
+          </div>
+
+          {/* Invoice Overview */}
+          <div className="bg-card border border-border rounded-2xl p-5">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <RefreshCw className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">{t("dashboard", "invoiceOverview")}</h3>
+              </div>
+              <Link href="/dashboard/invoices" className="text-xs text-primary hover:underline">
+                {t("dashboard", "viewAll")}
+              </Link>
+            </div>
+            <div className="space-y-2.5">
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted">{t("dashboard", "invoicePaid")}</span>
+                <span className="font-medium text-accent">{invoiceStats.paidCount}</span>
+              </div>
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted">{t("dashboard", "invoicePending")}</span>
+                <span className="font-medium text-warning">{invoiceStats.pendingCount}</span>
+              </div>
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted">{t("dashboard", "invoiceOverdue")}</span>
+                <span className="font-medium text-danger">{invoiceStats.overdueCount}</span>
+              </div>
+              {invoiceStats.totalValue > 0 && (
+                <div className="pt-2 border-t border-border flex justify-between items-center text-sm">
+                  <span className="text-muted">{t("dashboard", "invoiceOutstanding")}</span>
+                  <span className="font-semibold">{formatCurrency(invoiceStats.totalValue)}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Currency Converter */}
+      <CurrencyConverter />
     </div>
   );
 }

@@ -466,7 +466,7 @@ export default function ClientsPage() {
                       const exp = getProjectExpenses(project.id);
                       const profit = rev - exp;
                       return (
-                        <div key={project.id} className="flex items-center justify-between px-4 py-3 pl-16">
+                        <div key={project.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-3 pl-10 sm:pl-16 gap-2 sm:gap-0">
                           <div className="flex items-center gap-3">
                             <FolderOpen className="w-4 h-4 text-muted" />
                             <div>

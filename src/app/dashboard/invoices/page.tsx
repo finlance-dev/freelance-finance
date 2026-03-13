@@ -370,13 +370,15 @@ export default function InvoicesPage() {
 </div>
 </body></html>`;
 
-    const blob = new Blob([html], { type: "text/html" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${inv.invoiceNumber}.html`;
-    a.click();
-    URL.revokeObjectURL(url);
+    // Open in new window and trigger print (Save as PDF)
+    const printWindow = window.open("", "_blank");
+    if (printWindow) {
+      printWindow.document.write(html);
+      printWindow.document.close();
+      printWindow.onload = () => {
+        setTimeout(() => printWindow.print(), 300);
+      };
+    }
     toast(t("invoices", "downloadSuccess"));
   };
 
@@ -468,7 +470,7 @@ export default function InvoicesPage() {
       </div>
 
       {/* Summary */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {(["draft", "sent", "paid", "overdue"] as const).map((status) => {
           const cfg = statusConfig[status];
           const count = invoices.filter((i) => i.status === status).length;
