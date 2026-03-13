@@ -148,6 +148,31 @@ export interface ActivityEvent {
   createdAt: string;
 }
 
+// ─── Notifications ──────────────────────────────────────────────────────
+
+export type NotificationType =
+  | "invoice_overdue"
+  | "low_runway"
+  | "tax_deadline"
+  | "income_goal_reached"
+  | "invoice_paid"
+  | "system";
+
+export type NotificationPriority = "critical" | "warning" | "info";
+
+export interface AppNotification {
+  id: string;
+  type: NotificationType;
+  priority: NotificationPriority;
+  titleKey: string;
+  messageKey: string;
+  messageParams?: Record<string, string | number>;
+  actionUrl?: string;
+  read: boolean;
+  createdAt: string;
+  expiresAt?: string;
+}
+
 export interface AdminUser {
   email: string;
   name: string;

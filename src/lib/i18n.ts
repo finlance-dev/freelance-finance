@@ -855,6 +855,28 @@ export const translations = {
     // Nav
     navFaq: { th: "คำถาม", en: "FAQ" },
   },
+  // ─── Notifications ──────────────────────────────────────────────────────
+  notifications: {
+    title: { th: "การแจ้งเตือน", en: "Notifications" },
+    empty: { th: "ไม่มีการแจ้งเตือน", en: "No notifications" },
+    markAllRead: { th: "อ่านทั้งหมด", en: "Mark all read" },
+    justNow: { th: "เมื่อกี้", en: "Just now" },
+    minsAgo: { th: "นาทีที่แล้ว", en: "min ago" },
+    hoursAgo: { th: "ชั่วโมงที่แล้ว", en: "hr ago" },
+    daysAgo: { th: "วันที่แล้ว", en: "days ago" },
+    // Invoice overdue
+    notifInvoiceOverdueTitle: { th: "ใบแจ้งหนี้เลยกำหนด", en: "Overdue Invoices" },
+    notifInvoiceOverdueMsg: { th: "คุณมี {count} ใบแจ้งหนี้ที่เลยกำหนดชำระ", en: "You have {count} overdue invoice(s)" },
+    // Low runway
+    notifLowRunwayTitle: { th: "เงินสำรองเหลือน้อย", en: "Low Cash Runway" },
+    notifLowRunwayMsg: { th: "เงินสำรองเหลือประมาณ {months} เดือน ควรวางแผนเพิ่มรายได้", en: "Only {months} months of runway left. Consider increasing income" },
+    // Income goal reached
+    notifGoalReachedTitle: { th: "ถึงเป้ารายได้แล้ว!", en: "Income Goal Reached!" },
+    notifGoalReachedMsg: { th: "รายได้เดือนนี้ ฿{amount} ถึงเป้าหมายแล้ว", en: "This month's income ฿{amount} has reached your goal" },
+    // Tax deadline
+    notifTaxDeadlineTitle: { th: "ใกล้กำหนดภาษี", en: "Tax Deadline Approaching" },
+    notifTaxDeadlineMsg: { th: "ภาษีไตรมาส {quarter} ครบกำหนดอีก {daysLeft} วัน", en: "Quarter {quarter} tax due in {daysLeft} days" },
+  },
 } as const;
 
 export type TranslationSection = keyof typeof translations;
