@@ -155,9 +155,6 @@ function LoginForm() {
           </p>
         </form>
 
-        <p className="text-center text-xs text-muted mt-4">
-          {t("auth", "demoDisclaimer")}
-        </p>
       </div>
     </div>
   );
