@@ -34,6 +34,7 @@ import { signOut, getCurrentUser } from "@/lib/supabase-store";
 import { BarChart3 } from "lucide-react";
 import { OnboardingModal } from "@/components/onboarding";
 import { NotificationBell } from "@/components/notification-bell";
+import { FeedbackButton } from "@/components/feedback-button";
 import type { TranslationKey } from "@/lib/i18n";
 
 const navItems: { href: string; labelKey: TranslationKey<"nav">; icon: typeof LayoutDashboard; badge?: "overdue" }[] = [
@@ -313,6 +314,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           {children}
         </div>
       </main>
+
+      {/* Feedback Button */}
+      <FeedbackButton />
 
       {/* Onboarding */}
       <OnboardingModal

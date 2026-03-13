@@ -12,6 +12,8 @@ import {
   MessageCircle,
   Send,
   Languages,
+  Mail,
+  HeadphonesIcon,
 } from "lucide-react";
 import {
   exportAllData,
@@ -375,6 +377,22 @@ export default function SettingsPage() {
           <UpgradePrompt feature={t("settings", "backupTitle")} description={t("settings", "backupDesc")} />
         </div>
       )}
+
+      {/* Contact Us */}
+      <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-center gap-3 mb-3">
+          <HeadphonesIcon className="w-5 h-5 text-primary" />
+          <h3 className="font-semibold">{t("settings", "contactTitle")}</h3>
+        </div>
+        <p className="text-sm text-muted mb-4">{t("settings", "contactDesc")}</p>
+        <a
+          href="mailto:finlanceco@gmail.com"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary/10 text-primary hover:bg-primary/20 rounded-xl text-sm font-medium transition"
+        >
+          <Mail className="w-4 h-4" />
+          finlanceco@gmail.com
+        </a>
+      </div>
 
       {/* Danger Zone */}
       <div className="bg-card border border-danger/30 rounded-2xl p-5">

@@ -718,6 +718,8 @@ export const translations = {
     clearDemo: { th: "ลบข้อมูลตัวอย่าง", en: "Clear Demo Data" },
     clearDemoTitle: { th: "ลบข้อมูลตัวอย่าง", en: "Clear Demo Data" },
     clearDemoMsg: { th: "ลบข้อมูลตัวอย่างทั้งหมด (demo-) ข้อมูลจริงจะไม่ถูกลบ", en: "Delete all demo data (demo-). Real data will not be affected." },
+    contactTitle: { th: "ติดต่อเรา", en: "Contact Us" },
+    contactDesc: { th: "มีปัญหา คำถาม หรือข้อเสนอแนะ? ติดต่อทีมผู้พัฒนาได้ที่", en: "Have issues, questions, or suggestions? Contact the dev team at" },
   },
 
   // Onboarding
@@ -881,6 +883,14 @@ export const translations = {
     notifPlanExpiringMsg: { th: "แพลน Pro ของคุณจะหมดอายุใน {daysLeft} วัน ต่ออายุเพื่อใช้ฟีเจอร์ Pro ต่อ", en: "Your Pro plan expires in {daysLeft} days. Renew to keep Pro features" },
     notifPlanExpiredTitle: { th: "แพลนหมดอายุแล้ว", en: "Plan Expired" },
     notifPlanExpiredMsg: { th: "แพลน Pro หมดอายุแล้ว อัปเกรดเพื่อใช้ฟีเจอร์ทั้งหมดต่อ", en: "Your Pro plan has expired. Upgrade to continue using all features" },
+  },
+  // ─── Feedback ──────────────────────────────────────────────────────────
+  feedback: {
+    title: { th: "ส่งความคิดเห็น", en: "Send Feedback" },
+    description: { th: "แจ้งปัญหา เสนอฟีเจอร์ หรือส่งข้อความถึงทีมผู้พัฒนา", en: "Report issues, suggest features, or send a message to the dev team" },
+    placeholder: { th: "พิมพ์ข้อความของคุณที่นี่...", en: "Type your message here..." },
+    send: { th: "ส่ง", en: "Send" },
+    thankYou: { th: "ขอบคุณสำหรับความคิดเห็น!", en: "Thanks for your feedback!" },
   },
 } as const;
 
