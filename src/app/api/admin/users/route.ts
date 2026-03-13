@@ -15,51 +15,60 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Fetch all auth users
-    const { data: { users }, error } = await supabaseAdmin.auth.admin.listUsers({
-      perPage: 1000,
-    });
+    // Fetch all data in parallel (batch — no N+1)
+    const [usersRes, txRes, clientRes, invoiceRes] = await Promise.all([
+      supabaseAdmin.auth.admin.listUsers({ perPage: 1000 }),
+      supabaseAdmin.from("transactions").select("user_id, type, amount"),
+      supabaseAdmin.from("clients").select("user_id"),
+      supabaseAdmin.from("invoices").select("user_id"),
+    ]);
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (usersRes.error) {
+      return NextResponse.json({ error: usersRes.error.message }, { status: 500 });
     }
 
-    // Map to AdminUser format
-    const adminUsers = await Promise.all(
-      users.map(async (user) => {
-        const userId = user.id;
-        const email = user.email || "";
-        const name = user.user_metadata?.name || email.split("@")[0];
+    const { users } = usersRes.data;
+    const transactions = txRes.data || [];
+    const clients = clientRes.data || [];
+    const invoices = invoiceRes.data || [];
 
-        // Count user's data
-        const [txRes, clientRes, invoiceRes] = await Promise.all([
-          supabaseAdmin.from("transactions").select("type, amount", { count: "exact" }).eq("user_id", userId),
-          supabaseAdmin.from("clients").select("id", { count: "exact" }).eq("user_id", userId),
-          supabaseAdmin.from("invoices").select("id", { count: "exact" }).eq("user_id", userId),
-        ]);
+    // Group by user_id in memory
+    const txByUser = new Map<string, { count: number; income: number; expenses: number }>();
+    for (const t of transactions) {
+      const uid = t.user_id;
+      if (!txByUser.has(uid)) txByUser.set(uid, { count: 0, income: 0, expenses: 0 });
+      const entry = txByUser.get(uid)!;
+      entry.count++;
+      if (t.type === "income") entry.income += Number(t.amount);
+      else entry.expenses += Number(t.amount);
+    }
 
-        const transactions = txRes.data || [];
-        const totalIncome = transactions
-          .filter((t) => t.type === "income")
-          .reduce((s, t) => s + Number(t.amount), 0);
-        const totalExpenses = transactions
-          .filter((t) => t.type === "expense")
-          .reduce((s, t) => s + Number(t.amount), 0);
+    const clientByUser = new Map<string, number>();
+    for (const c of clients) {
+      clientByUser.set(c.user_id, (clientByUser.get(c.user_id) || 0) + 1);
+    }
 
-        return {
-          email,
-          name,
-          plan: "free" as const,
-          signupDate: user.created_at,
-          lastActive: user.last_sign_in_at || user.created_at,
-          transactionCount: txRes.count || 0,
-          clientCount: clientRes.count || 0,
-          invoiceCount: invoiceRes.count || 0,
-          totalIncome,
-          totalExpenses,
-        };
-      })
-    );
+    const invoiceByUser = new Map<string, number>();
+    for (const i of invoices) {
+      invoiceByUser.set(i.user_id, (invoiceByUser.get(i.user_id) || 0) + 1);
+    }
+
+    const adminUsers = users.map((user) => {
+      const uid = user.id;
+      const tx = txByUser.get(uid) || { count: 0, income: 0, expenses: 0 };
+      return {
+        email: user.email || "",
+        name: user.user_metadata?.name || (user.email || "").split("@")[0],
+        plan: "free" as const,
+        signupDate: user.created_at,
+        lastActive: user.last_sign_in_at || user.created_at,
+        transactionCount: tx.count,
+        clientCount: clientByUser.get(uid) || 0,
+        invoiceCount: invoiceByUser.get(uid) || 0,
+        totalIncome: tx.income,
+        totalExpenses: tx.expenses,
+      };
+    });
 
     return NextResponse.json({ users: adminUsers });
   } catch (err) {
