@@ -160,7 +160,12 @@ export default function SettingsPage() {
     setTimeout(() => window.location.reload(), 1000);
   };
 
-  if (!mounted) return null;
+  if (!mounted) return (
+    <div className="space-y-6 animate-pulse">
+      <div className="h-8 w-32 bg-secondary rounded-xl" />
+      {[...Array(3)].map((_, i) => <div key={i} className="h-36 bg-secondary rounded-2xl" />)}
+    </div>
+  );
 
   const cloud = isCloudEnabled();
 

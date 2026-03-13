@@ -192,7 +192,15 @@ export default function TaxEstimatorPage() {
     ? Math.ceil((new Date(nextDeadline).getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
     : 0;
 
-  if (!mounted) return null;
+  if (!mounted) return (
+    <div className="space-y-6 animate-pulse">
+      <div className="h-8 w-48 bg-secondary rounded-xl" />
+      <div className="grid md:grid-cols-2 gap-4">
+        {[...Array(2)].map((_, i) => <div key={i} className="h-48 bg-secondary rounded-2xl" />)}
+      </div>
+      <div className="h-64 bg-secondary rounded-2xl" />
+    </div>
+  );
 
   if (!isPro) {
     return (

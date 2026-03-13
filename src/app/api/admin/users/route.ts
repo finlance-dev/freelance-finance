@@ -8,7 +8,10 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
 
-  const adminPassword = process.env.ADMIN_PASSWORD || "finlance2026";
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  if (!adminPassword) {
+    return NextResponse.json({ error: "Admin not configured" }, { status: 500 });
+  }
   const auth = request.headers.get("x-admin-password");
   if (auth !== adminPassword) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

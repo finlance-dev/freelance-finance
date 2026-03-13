@@ -148,7 +148,12 @@ export default function ProfilePage() {
     reader.readAsDataURL(file);
   };
 
-  if (!mounted) return null;
+  if (!mounted) return (
+    <div className="space-y-6 animate-pulse">
+      <div className="h-8 w-32 bg-secondary rounded-xl" />
+      <div className="h-96 bg-secondary rounded-2xl" />
+    </div>
+  );
 
   if (!isPro) {
     return (

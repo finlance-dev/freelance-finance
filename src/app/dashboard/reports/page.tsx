@@ -124,7 +124,17 @@ export default function ReportsPage() {
     return [...monthTx].sort((a, b) => b.amount - a.amount).slice(0, 10);
   }, [monthTx]);
 
-  if (!mounted) return null;
+  if (!mounted) return (
+    <div className="space-y-6 animate-pulse">
+      <div className="h-8 w-40 bg-secondary rounded-xl" />
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {[...Array(4)].map((_, i) => <div key={i} className="h-28 bg-secondary rounded-2xl" />)}
+      </div>
+      <div className="grid md:grid-cols-2 gap-4">
+        {[...Array(2)].map((_, i) => <div key={i} className="h-64 bg-secondary rounded-2xl" />)}
+      </div>
+    </div>
+  );
 
   if (!isPro) {
     return (

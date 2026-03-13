@@ -42,6 +42,7 @@ import { UpgradePrompt } from "@/components/upgrade-prompt";
 import { useLocale } from "@/hooks/useLocale";
 import Link from "next/link";
 import { CurrencyConverter } from "@/components/currency-converter";
+import { DashboardSkeleton } from "@/components/skeleton";
 
 const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"];
 
@@ -193,7 +194,7 @@ export default function DashboardPage() {
     toast(t("dashboard", "goalSaved"));
   };
 
-  if (!mounted) return null;
+  if (!mounted) return <DashboardSkeleton />;
 
   const statCards = [
     {

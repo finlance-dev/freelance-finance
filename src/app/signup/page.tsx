@@ -29,6 +29,11 @@ export default function SignupPage() {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError(t("auth", "errorInvalidEmail"));
+      return;
+    }
+
     if (password.length < 6) {
       setError(t("auth", "errorPassword6"));
       return;
@@ -168,9 +173,6 @@ export default function SignupPage() {
           </p>
         </form>
 
-        <p className="text-center text-xs text-muted mt-4">
-          {t("auth", "demoDisclaimer")}
-        </p>
       </div>
     </div>
   );

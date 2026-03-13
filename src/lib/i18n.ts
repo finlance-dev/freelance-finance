@@ -140,6 +140,7 @@ export const translations = {
     continueWithGoogle: { th: "ดำเนินการด้วย Google", en: "Continue with Google" },
     demoDisclaimer: { th: "โหมดทดลอง: ไม่มีการสร้างบัญชีจริง ข้อมูลจะถูกเก็บในเบราว์เซอร์ของคุณ", en: "Demo mode: No real account is created. Data is stored in your browser." },
     errorFillAll: { th: "กรุณากรอกข้อมูลให้ครบทุกช่อง", en: "Please fill in all fields" },
+    errorInvalidEmail: { th: "รูปแบบอีเมลไม่ถูกต้อง", en: "Invalid email format" },
     errorPassword6: { th: "รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร", en: "Password must be at least 6 characters" },
     errorGeneric: { th: "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง", en: "An error occurred. Please try again." },
     errorLogin: { th: "เข้าสู่ระบบไม่สำเร็จ กรุณาลองอีกครั้ง", en: "Login failed. Please try again." },

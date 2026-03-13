@@ -40,6 +40,11 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   metadataBase: new URL("https://finlance.co"),
+  manifest: "/manifest.json",
+  alternates: { canonical: "https://finlance.co" },
+  other: {
+    "google-site-verification": "",
+  },
 };
 
 export default function RootLayout({

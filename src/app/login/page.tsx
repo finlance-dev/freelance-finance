@@ -30,6 +30,11 @@ function LoginForm() {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError(t("auth", "errorInvalidEmail"));
+      return;
+    }
+
     setLoading(true);
     try {
       const { error: authError } = await signIn(email, password);

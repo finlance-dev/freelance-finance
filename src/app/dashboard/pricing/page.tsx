@@ -98,7 +98,14 @@ export default function PricingPage() {
     }
   };
 
-  if (!mounted) return null;
+  if (!mounted) return (
+    <div className="space-y-6 animate-pulse">
+      <div className="h-8 w-40 bg-secondary rounded-xl mx-auto" />
+      <div className="grid md:grid-cols-3 gap-6">
+        {[...Array(3)].map((_, i) => <div key={i} className="h-72 bg-secondary rounded-2xl" />)}
+      </div>
+    </div>
+  );
 
   return (
     <div className="space-y-6">

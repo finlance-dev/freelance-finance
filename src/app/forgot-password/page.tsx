@@ -22,6 +22,11 @@ export default function ForgotPasswordPage() {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError(t("auth", "errorInvalidEmail"));
+      return;
+    }
+
     setLoading(true);
     try {
       const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
