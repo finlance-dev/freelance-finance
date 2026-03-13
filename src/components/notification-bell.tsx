@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Bell, X, Check, CheckCheck, AlertTriangle, AlertCircle, Info, FileText, TrendingDown, Target, Calculator } from "lucide-react";
+import { Bell, X, Check, CheckCheck, AlertTriangle, AlertCircle, Info, FileText, TrendingDown, Target, Calculator, CreditCard } from "lucide-react";
 import { useLocale } from "@/hooks/useLocale";
 import {
   getNotifications,
@@ -26,6 +26,8 @@ const typeIcons = {
   tax_deadline: Calculator,
   income_goal_reached: Target,
   invoice_paid: FileText,
+  plan_expiring: CreditCard,
+  plan_expired: CreditCard,
   system: Info,
 };
 

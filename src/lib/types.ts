@@ -156,6 +156,8 @@ export type NotificationType =
   | "tax_deadline"
   | "income_goal_reached"
   | "invoice_paid"
+  | "plan_expiring"
+  | "plan_expired"
   | "system";
 
 export type NotificationPriority = "critical" | "warning" | "info";

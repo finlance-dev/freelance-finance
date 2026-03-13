@@ -1,5 +1,5 @@
 import type { AppNotification, NotificationType, NotificationPriority } from "./types";
-import { getInvoices, getTransactions, getMonthlyExpenses, getIncomeGoal } from "./store";
+import { getInvoices, getTransactions, getMonthlyExpenses, getIncomeGoal, getUserPlan } from "./store";
 
 const STORAGE_KEY = "ff_notifications";
 const MAX_NOTIFICATIONS = 50;
@@ -155,6 +155,31 @@ export function checkAndGenerateNotifications() {
         actionUrl: "/dashboard/tax",
         expiresAt: new Date(now.getFullYear(), month + 1, 1).toISOString(),
       });
+    }
+  }
+
+  // 5. Plan expiring / expired
+  if (!hasToday("plan_expiring") && !hasToday("plan_expired")) {
+    const plan = getUserPlan();
+    if (plan.plan !== "free" && plan.expiresAt) {
+      const expiresAt = new Date(plan.expiresAt);
+      const now = new Date();
+      const daysLeft = Math.ceil((expiresAt.getTime() - now.getTime()) / (24 * 60 * 60 * 1000));
+
+      if (daysLeft <= 0) {
+        // Already expired
+        addNotification("plan_expired", "critical", "notifPlanExpiredTitle", "notifPlanExpiredMsg", {
+          actionUrl: "/dashboard/pricing",
+          expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+        });
+      } else if (daysLeft <= 7) {
+        // Expiring soon
+        addNotification("plan_expiring", "warning", "notifPlanExpiringTitle", "notifPlanExpiringMsg", {
+          messageParams: { daysLeft },
+          actionUrl: "/dashboard/pricing",
+          expiresAt: plan.expiresAt,
+        });
+      }
     }
   }
 }

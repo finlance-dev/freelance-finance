@@ -876,6 +876,11 @@ export const translations = {
     // Tax deadline
     notifTaxDeadlineTitle: { th: "ใกล้กำหนดภาษี", en: "Tax Deadline Approaching" },
     notifTaxDeadlineMsg: { th: "ภาษีไตรมาส {quarter} ครบกำหนดอีก {daysLeft} วัน", en: "Quarter {quarter} tax due in {daysLeft} days" },
+    // Plan expiring/expired
+    notifPlanExpiringTitle: { th: "แพลนใกล้หมดอายุ", en: "Plan Expiring Soon" },
+    notifPlanExpiringMsg: { th: "แพลน Pro ของคุณจะหมดอายุใน {daysLeft} วัน ต่ออายุเพื่อใช้ฟีเจอร์ Pro ต่อ", en: "Your Pro plan expires in {daysLeft} days. Renew to keep Pro features" },
+    notifPlanExpiredTitle: { th: "แพลนหมดอายุแล้ว", en: "Plan Expired" },
+    notifPlanExpiredMsg: { th: "แพลน Pro หมดอายุแล้ว อัปเกรดเพื่อใช้ฟีเจอร์ทั้งหมดต่อ", en: "Your Pro plan has expired. Upgrade to continue using all features" },
   },
 } as const;
 
