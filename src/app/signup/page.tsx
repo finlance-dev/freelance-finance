@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { DollarSign, Eye, EyeOff, Languages } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { DollarSign, Eye, EyeOff, Languages, Gift } from "lucide-react";
 import { SignupIllustration } from "@/components/illustrations";
 import { signUp, isCloudEnabled, signInWithGoogle } from "@/lib/supabase-store";
 import { syncFromCloud } from "@/lib/store";
@@ -11,7 +11,16 @@ import { useLocale } from "@/hooks/useLocale";
 import { logActivity } from "@/lib/activity-logger";
 
 export default function SignupPage() {
+  return (
+    <Suspense fallback={null}>
+      <SignupContent />
+    </Suspense>
+  );
+}
+
+function SignupContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { locale, setLocale, t } = useLocale();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,6 +28,22 @@ export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [refCode, setRefCode] = useState("");
+  const [refValid, setRefValid] = useState(false);
+
+  // Check referral code from URL
+  useEffect(() => {
+    const ref = searchParams.get("ref");
+    if (ref) {
+      setRefCode(ref.toUpperCase());
+      fetch(`/api/referral/verify?code=${ref}`)
+        .then(r => r.json())
+        .then(data => {
+          if (data.valid) setRefValid(true);
+        })
+        .catch(() => {});
+    }
+  }, [searchParams]);
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +71,10 @@ export default function SignupPage() {
         setError(authError.message || t("auth", "errorSignup"));
       } else {
         logActivity("signup", `${name} signed up`, { email, name });
+        // Save referral code for post-verification tracking
+        if (refCode && refValid) {
+          sessionStorage.setItem("ff_ref_code", refCode);
+        }
         if (isCloudEnabled()) {
           // Supabase requires email verification
           router.push("/auth/verify");
@@ -84,6 +113,13 @@ export default function SignupPage() {
           <h1 className="text-2xl font-bold mb-2">{t("auth", "signupTitle")}</h1>
           <p className="text-muted">{t("auth", "signupSubtitle")}</p>
         </div>
+
+        {refValid && (
+          <div className="bg-accent/10 border border-accent/30 rounded-xl px-4 py-3 flex items-center gap-2 text-sm text-accent">
+            <Gift className="w-4 h-4 flex-shrink-0" />
+            <span>คุณได้รับคำเชิญ! สมัครแล้วรับส่วนลดเมื่ออัพเกรด Pro</span>
+          </div>
+        )}
 
         <form onSubmit={handleSignup} className="bg-card border border-border rounded-2xl p-8 space-y-5">
           {error && (

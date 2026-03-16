@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { CheckCircle2, XCircle, Clock, Image, RefreshCw, ExternalLink } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { CheckCircle2, XCircle, Clock, Image, RefreshCw, ExternalLink, BellRing } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface PaymentOrder {
@@ -17,34 +17,83 @@ interface PaymentOrder {
   updated_at: string;
 }
 
+function playNotificationSound() {
+  try {
+    const ctx = new AudioContext();
+    // Play a pleasant two-tone notification
+    [660, 880].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.frequency.value = freq;
+      osc.type = "sine";
+      gain.gain.setValueAtTime(0.3, ctx.currentTime + i * 0.15);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + i * 0.15 + 0.3);
+      osc.start(ctx.currentTime + i * 0.15);
+      osc.stop(ctx.currentTime + i * 0.15 + 0.3);
+    });
+  } catch {
+    // AudioContext not available
+  }
+}
+
 export default function AdminPaymentsPage() {
   const [orders, setOrders] = useState<PaymentOrder[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<"pending" | "approved" | "rejected">("pending");
   const [processing, setProcessing] = useState<string | null>(null);
   const [slipModal, setSlipModal] = useState<string | null>(null);
+  const [newCount, setNewCount] = useState(0);
+  const [lastRefresh, setLastRefresh] = useState<string>("");
+  const knownOrderIds = useRef<Set<string>>(new Set());
 
   const getPassword = () => sessionStorage.getItem("ff_admin_password") || "";
 
-  const fetchOrders = async () => {
-    setLoading(true);
+  const fetchOrders = useCallback(async (silent = false) => {
+    if (!silent) setLoading(true);
     try {
       const res = await fetch(`/api/payment/approve?status=${filter}`, {
         headers: { "x-admin-password": getPassword() },
       });
       if (res.ok) {
         const data = await res.json();
-        setOrders(data.orders || []);
+        const fetched: PaymentOrder[] = data.orders || [];
+        setOrders(fetched);
+        setLastRefresh(new Date().toLocaleTimeString("th-TH", { hour: "2-digit", minute: "2-digit", second: "2-digit" }));
+
+        // On pending tab: notify for any new orders not yet seen
+        if (filter === "pending") {
+          const newOrders = fetched.filter((o) => !knownOrderIds.current.has(o.id));
+          if (newOrders.length > 0) {
+            setNewCount((prev) => prev + newOrders.length);
+            playNotificationSound();
+            document.title = `(${fetched.length}) Payment Pending — Finlance Admin`;
+            setTimeout(() => { document.title = "Finlance Admin — Payments"; }, 5000);
+          }
+          // Update known IDs
+          knownOrderIds.current = new Set(fetched.map((o) => o.id));
+        }
       }
     } catch {
       // ignore
     }
-    setLoading(false);
-  };
+    if (!silent) setLoading(false);
+  }, [filter]);
 
   useEffect(() => {
+    // Reset known IDs when switching tabs so first load on pending triggers sound
+    knownOrderIds.current = new Set();
+    setNewCount(0);
     fetchOrders();
-  }, [filter]);
+  }, [filter, fetchOrders]);
+
+  // Auto-poll every 15 seconds for new pending orders
+  useEffect(() => {
+    if (filter !== "pending") return;
+    const interval = setInterval(() => fetchOrders(true), 15000);
+    return () => clearInterval(interval);
+  }, [filter, fetchOrders]);
 
   const handleAction = async (orderId: string, action: "approve" | "reject") => {
     setProcessing(orderId);
@@ -74,14 +123,28 @@ export default function AdminPaymentsPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Payment Orders</h1>
-        <button
-          onClick={fetchOrders}
-          className="flex items-center gap-2 text-sm text-muted hover:text-foreground transition"
-        >
-          <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
-          Refresh
-        </button>
+        <div className="flex items-center gap-3">
+          <h1 className="text-2xl font-bold">Payment Orders</h1>
+          {newCount > 0 && (
+            <button
+              onClick={() => setNewCount(0)}
+              className="flex items-center gap-1.5 text-xs bg-primary text-white px-2.5 py-1 rounded-full animate-pulse"
+            >
+              <BellRing className="w-3.5 h-3.5" />
+              {newCount} ใหม่
+            </button>
+          )}
+        </div>
+        <div className="flex items-center gap-3">
+          {lastRefresh && <span className="text-xs text-muted">อัพเดท {lastRefresh}</span>}
+          <button
+            onClick={() => fetchOrders()}
+            className="flex items-center gap-2 text-sm text-muted hover:text-foreground transition"
+          >
+            <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+            Refresh
+          </button>
+        </div>
       </div>
 
       {/* Filter tabs */}

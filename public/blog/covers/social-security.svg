@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="0" fill="url(#bg)"/>
+  <rect x="60" y="60" width="500" height="510" rx="24" fill="white" opacity="0.12"/>
+  <text x="310" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="white">เปรียบเทียบ</text>
+  <rect x="90" y="160" width="200" height="180" rx="16" fill="white" opacity="0.2"/>
+  <text x="190" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">ม.39</text>
+  <text x="190" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.9">เคยเป็นพนักงาน</text>
+  <text x="190" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.9">สมทบ 432 ฿/เดือน</text>
+  <text x="190" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.9">สิทธิ์ 6 กรณี</text>
+  <rect x="330" y="160" width="200" height="180" rx="16" fill="white" opacity="0.2"/>
+  <text x="430" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">ม.40</text>
+  <text x="430" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.9">สมัครใหม่ได้เลย</text>
+  <text x="430" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.9">สมทบ 100-300 ฿</text>
+  <text x="430" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.9">สิทธิ์ 3-5 กรณี</text>
+  <text x="310" y="400" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.9">เลือกแบบไหนคุ้มกว่า?</text>
+  <text x="310" y="440" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.7">อัปเดต 2026</text>
+  <rect x="640" y="80" width="480" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="880" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="white">ประกันสังคม</text>
+  <text x="880" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="white">ฟรีแลนซ์</text>
+  <text x="880" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">คู่มือเลือกมาตราที่เหมาะกับคุณ</text>
+  <rect x="780" y="340" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="880" y="372" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">องค์ประกอบสำคัญของสัญญาจ้างงานฟรีแลนซ์</text>
+  <g transform="translate(30,50)">
+    <rect x="0" y="0" width="235" height="100" rx="14" fill="#6366f1" opacity="0.08" stroke="#6366f1"/>
+    <text x="118" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#6366f1">📋</text>
+    <text x="118" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#6366f1">ขอบเขตงาน (Scope)</text>
+    <text x="118" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">รายละเอียดงาน จำนวนแก้ไข</text>
+    <text x="118" y="90" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Deliverables ที่ต้องส่ง</text>
+    <rect x="250" y="0" width="235" height="100" rx="14" fill="#10b981" opacity="0.08" stroke="#10b981"/>
+    <text x="368" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#10b981">💰</text>
+    <text x="368" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#10b981">ค่าตอบแทน</text>
+    <text x="368" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">จำนวนเงิน วิธีชำระ</text>
+    <text x="368" y="90" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">กำหนดจ่าย มัดจำ</text>
+    <rect x="500" y="0" width="235" height="100" rx="14" fill="#f59e0b" opacity="0.08" stroke="#f59e0b"/>
+    <text x="618" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#f59e0b">📅</text>
+    <text x="618" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">กำหนดเวลา</text>
+    <text x="618" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">วันเริ่มงาน วันส่งงาน</text>
+    <text x="618" y="90" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Milestones สำคัญ</text>
+    <rect x="0" y="115" width="235" height="100" rx="14" fill="#ef4444" opacity="0.08" stroke="#ef4444"/>
+    <text x="118" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#ef4444">⚖️</text>
+    <text x="118" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ef4444">ทรัพย์สินทางปัญญา</text>
+    <text x="118" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ใครเป็นเจ้าของผลงาน</text>
+    <text x="118" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">สิทธิ์ใช้ Portfolio</text>
+    <rect x="250" y="115" width="235" height="100" rx="14" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6"/>
+    <text x="368" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#8b5cf6">🔒</text>
+    <text x="368" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6">การรักษาความลับ</text>
+    <text x="368" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">NDA ข้อมูลลับลูกค้า</text>
+    <text x="368" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ระยะเวลาห้ามเปิดเผย</text>
+    <rect x="500" y="115" width="235" height="100" rx="14" fill="#ec4899" opacity="0.08" stroke="#ec4899"/>
+    <text x="618" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#ec4899">❌</text>
+    <text x="618" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ec4899">การยกเลิก</text>
+    <text x="618" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เงื่อนไขยกเลิก</text>
+    <text x="618" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Kill Fee ค่ายกเลิกงาน</text>
+  </g>
+  <rect x="30" y="285" width="740" height="90" rx="14" fill="#10b981" opacity="0.06" stroke="#10b981" stroke-dasharray="6,4"/>
+  <text x="400" y="315" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#10b981">เพิ่มเติมสำหรับฟรีแลนซ์ไทย</text>
+  <text x="200" y="345" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">อากรแสตมป์ (ถ้ามี)</text>
+  <text x="400" y="345" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ภาษีหัก ณ ที่จ่าย</text>
+  <text x="600" y="345" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">กฎหมายไทยที่เกี่ยวข้อง</text>
+</svg>

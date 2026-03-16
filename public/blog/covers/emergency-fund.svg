@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="300" cy="280" r="180" fill="white" opacity="0.08"/>
+  <circle cx="300" cy="280" r="130" fill="white" opacity="0.08"/>
+  <ellipse cx="300" cy="320" rx="90" ry="70" fill="white" opacity="0.15"/>
+  <ellipse cx="300" cy="290" rx="90" ry="20" fill="white" opacity="0.2"/>
+  <rect x="265" y="220" width="70" height="70" rx="8" fill="#fbbf24" opacity="0.8"/>
+  <text x="300" y="262" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" fill="white">฿</text>
+  <text x="300" y="430" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.7">เงินสำรองฉุกเฉิน</text>
+  <g transform="translate(600,80)">
+    <rect x="0" y="0" width="500" height="90" rx="14" fill="white" opacity="0.1"/>
+    <text x="30" y="35" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">เดือนที่ 1-2</text>
+    <rect x="30" y="50" width="440" height="12" rx="6" fill="white" opacity="0.15"/>
+    <rect x="30" y="50" width="80" height="12" rx="6" fill="#fbbf24"/>
+    <text x="440" y="35" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.7">17%</text>
+    <rect x="0" y="110" width="500" height="90" rx="14" fill="white" opacity="0.1"/>
+    <text x="30" y="145" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">เดือนที่ 3-4</text>
+    <rect x="30" y="160" width="440" height="12" rx="6" fill="white" opacity="0.15"/>
+    <rect x="30" y="160" width="220" height="12" rx="6" fill="#fbbf24"/>
+    <text x="440" y="145" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.7">50%</text>
+    <rect x="0" y="220" width="500" height="90" rx="14" fill="white" opacity="0.1"/>
+    <text x="30" y="255" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">เดือนที่ 5-6</text>
+    <rect x="30" y="270" width="440" height="12" rx="6" fill="white" opacity="0.15"/>
+    <rect x="30" y="270" width="360" height="12" rx="6" fill="#fbbf24"/>
+    <text x="440" y="255" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.7">83%</text>
+    <rect x="0" y="330" width="500" height="90" rx="14" fill="white" opacity="0.1"/>
+    <text x="30" y="365" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#10b981">ครบ 6 เดือน!</text>
+    <rect x="30" y="380" width="440" height="12" rx="6" fill="white" opacity="0.15"/>
+    <rect x="30" y="380" width="440" height="12" rx="6" fill="#10b981"/>
+    <text x="440" y="365" font-family="system-ui,sans-serif" font-size="14" fill="#10b981" font-weight="bold">100%</text>
+  </g>
+  <text x="600" y="565" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">สร้าง Emergency Fund 6 เดือน</text>
+  <text x="600" y="600" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.7">Finlance.co</text>
+</svg>

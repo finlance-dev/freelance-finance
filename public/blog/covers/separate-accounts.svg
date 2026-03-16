@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="460" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="290" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">บัญชีส่วนตัว</text>
+  <rect x="100" y="170" width="380" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="290" y="202" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white">🏠 ค่าเช่า ค่ากิน ค่าเที่ยว</text>
+  <rect x="100" y="235" width="380" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="290" y="267" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white">💳 บัตรเครดิตส่วนตัว</text>
+  <rect x="100" y="300" width="380" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="290" y="332" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white">📱 PromptPay ส่วนตัว</text>
+  <text x="290" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="60" fill="white" opacity="0.3">≠</text>
+  <rect x="680" y="80" width="460" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="910" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#fbbf24">บัญชีธุรกิจ</text>
+  <rect x="720" y="170" width="380" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="910" y="202" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white">💼 รายรับจากลูกค้า</text>
+  <rect x="720" y="235" width="380" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="910" y="267" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white">🔧 ค่า tools &amp; ซอฟต์แวร์</text>
+  <rect x="720" y="300" width="380" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="910" y="332" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white">📊 ค่าใช้จ่ายธุรกิจ</text>
+  <text x="600" y="590" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">แยกบัญชีส่วนตัว vs ธุรกิจ</text>
+  <rect x="450" y="600" width="300" height="3" rx="2" fill="#fbbf24"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#0e7490"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Skills ที่ต้องเรียน</text>
+  <rect x="100" y="165" width="200" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="200" y="196" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">AI / Prompt</text>
+  <rect x="310" y="165" width="200" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="410" y="196" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">UX/UI Design</text>
+  <rect x="100" y="225" width="200" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="200" y="256" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">No-Code Tools</text>
+  <rect x="310" y="225" width="200" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="410" y="256" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">Data Analytics</text>
+  <rect x="100" y="285" width="200" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="200" y="316" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">Content Marketing</text>
+  <rect x="310" y="285" width="200" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="410" y="316" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">Financial Literacy</text>
+  <rect x="640" y="80" width="500" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="890" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">ลงทุนกับตัวเอง</text>
+  <text x="890" y="235" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">คอร์สที่ควรเรียน</text>
+  <text x="890" y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">สำหรับฟรีแลนซ์ 2569</text>
+  <rect x="790" y="420" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="890" y="452" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

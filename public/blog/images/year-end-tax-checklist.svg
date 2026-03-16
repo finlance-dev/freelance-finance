@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Checklist วางแผนภาษีก่อนสิ้นปี (ต.ค. - ธ.ค.)</text>
+  <rect x="30" y="50" width="360" height="320" rx="12" fill="#fffbeb" stroke="#fde68a"/>
+  <text x="210" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#d97706">ตุลาคม — สำรวจสถานะ</text>
+  <text x="50" y="110" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ รวมรายได้ ม.ค.-ก.ย. ประมาณรายได้ทั้งปี</text>
+  <text x="50" y="135" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ คำนวณภาษีเบื้องต้นด้วย Finlance</text>
+  <text x="50" y="160" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ ตรวจสอบ 50 ทวิ ที่ได้รับครบมั้ย</text>
+  <text x="210" y="195" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#d97706">พฤศจิกายน — ลงมือทำ</text>
+  <text x="50" y="220" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ ซื้อ SSF / RMF / ThaiESG</text>
+  <text x="50" y="245" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ ต่อประกันชีวิต + ประกันสุขภาพ</text>
+  <text x="50" y="270" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ บริจาคเงิน (ลดหย่อน 2 เท่า)</text>
+  <text x="210" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#d97706">ธันวาคม — ปิดบัญชี</text>
+  <text x="50" y="330" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ สรุปรายได้ทั้งปี + ตรวจสอบเอกสาร</text>
+  <text x="50" y="355" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">☐ เตรียมเงินจ่ายภาษี (หรือขอคืน)</text>
+  <rect x="410" y="50" width="360" height="320" rx="12" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="590" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#16a34a">ตัวอย่างประหยัดภาษีได้จริง</text>
+  <text x="430" y="115" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">รายได้ทั้งปี:</text>
+  <text x="680" y="115" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#1e293b">800,000 บาท</text>
+  <text x="430" y="145" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">หักเหมา 60%:</text>
+  <text x="680" y="145" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-480,000</text>
+  <text x="430" y="175" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่าลดหย่อนส่วนตัว:</text>
+  <text x="680" y="175" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-60,000</text>
+  <text x="430" y="205" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">SSF + RMF:</text>
+  <text x="680" y="205" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-200,000</text>
+  <text x="430" y="235" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ประกันชีวิต+สุขภาพ:</text>
+  <text x="680" y="235" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-100,000</text>
+  <rect x="430" y="255" width="320" height="2" fill="#e2e8f0"/>
+  <text x="430" y="280" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#16a34a">เงินได้สุทธิ:</text>
+  <text x="680" y="280" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#16a34a">0 บาท → ภาษี 0!</text>
+  <text x="590" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ถ้าไม่วางแผน ภาษีอาจสูงถึง</text>
+  <text x="590" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#dc2626">฿11,000+</text>
+</svg>

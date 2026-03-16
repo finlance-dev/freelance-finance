@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">ตัวอย่างคำนวณภาษีครึ่งปี ภ.ง.ด.94</text>
+  <rect x="30" y="50" width="740" height="170" rx="10" fill="white" stroke="#e2e8f0"/>
+  <text x="400" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#be185d">คำนวณจากรายได้ มิ.ย. - ธ.ค. (ครึ่งปีหลัง)</text>
+  <text x="60" y="110" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">รายได้ครึ่งปีหลัง (ก.ค.-ธ.ค.):</text>
+  <text x="500" y="110" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">400,000 บาท</text>
+  <text x="60" y="135" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">หักค่าใช้จ่ายเหมา 60%:</text>
+  <text x="500" y="135" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-240,000 บาท</text>
+  <text x="60" y="160" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">หักค่าลดหย่อนส่วนตัว (ครึ่งหนึ่ง):</text>
+  <text x="500" y="160" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-30,000 บาท</text>
+  <text x="60" y="190" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">เงินได้สุทธิ:</text>
+  <text x="500" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#be185d">130,000 บาท = ภาษี 1,000 บาท</text>
+  <rect x="30" y="240" width="740" height="130" rx="10" fill="#fdf4ff" stroke="#e9d5ff"/>
+  <text x="400" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#7c3aed">ใครต้องยื่น ภ.ง.ด.94?</text>
+  <text x="200" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ฟรีแลนซ์ที่มีรายได้ 40(5)-40(8)</text>
+  <text x="600" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">รายได้ก.ค.-ธ.ค. เกิน 60,000 บาท</text>
+  <text x="200" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ยื่นภายใน ก.ค.-ก.ย.</text>
+  <text x="600" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ไม่ยื่น = ค่าปรับ 2,000 บาท</text>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#7c3aed">ภาษีที่จ่าย ภ.ง.ด.94 จะนำไปหักจาก ภ.ง.ด.90 ตอนสิ้นปีได้</text>
+</svg>

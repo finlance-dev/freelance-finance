@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">เปรียบเทียบแอปบันทึกรายรับรายจ่าย</text>
+  <g transform="translate(20,45)">
+    <rect x="0" y="0" width="760" height="35" rx="6" fill="#6366f1" opacity="0.1"/>
+    <text x="100" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#6366f1">แอป</text>
+    <text x="240" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#6366f1">ราคา</text>
+    <text x="360" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#6366f1">ภาษาไทย</text>
+    <text x="470" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#6366f1">Invoice</text>
+    <text x="570" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#6366f1">ภาษี</text>
+    <text x="680" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#6366f1">เหมาะกับ</text>
+    <rect x="0" y="42" width="760" height="40" rx="6" fill="#10b981" opacity="0.05" stroke="#10b981"/>
+    <text x="100" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#10b981">Finlance</text>
+    <text x="240" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ฟรี/299฿</text>
+    <text x="360" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="470" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="570" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="680" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ฟรีแลนซ์</text>
+    <rect x="0" y="88" width="760" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="100" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">Money Lover</text>
+    <text x="240" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ฟรี/Pro</text>
+    <text x="360" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="470" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ef4444">✗</text>
+    <text x="570" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ef4444">✗</text>
+    <text x="680" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ทั่วไป</text>
+    <rect x="0" y="134" width="760" height="40" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="100" y="159" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">PEAK</text>
+    <text x="240" y="159" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">499฿/เดือน</text>
+    <text x="360" y="159" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="470" y="159" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="570" y="159" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="680" y="159" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">SME/บัญชี</text>
+    <rect x="0" y="180" width="760" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="100" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">Google Sheets</text>
+    <text x="240" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ฟรี</text>
+    <text x="360" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="470" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ef4444">✗</text>
+    <text x="570" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ef4444">✗</text>
+    <text x="680" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">DIY</text>
+    <rect x="0" y="226" width="760" height="40" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="100" y="251" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">Wave</text>
+    <text x="240" y="251" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ฟรี</text>
+    <text x="360" y="251" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ef4444">EN</text>
+    <text x="470" y="251" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="570" y="251" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ef4444">✗</text>
+    <text x="680" y="251" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ต่างประเทศ</text>
+    <rect x="0" y="272" width="760" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="100" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">FreshBooks</text>
+    <text x="240" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">$17/เดือน</text>
+    <text x="360" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ef4444">EN</text>
+    <text x="470" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="570" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#10b981">✓</text>
+    <text x="680" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ต่างประเทศ</text>
+  </g>
+  <text x="400" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">* ข้อมูล ณ เดือนมีนาคม 2026</text>
+</svg>

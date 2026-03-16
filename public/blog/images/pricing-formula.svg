@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#1e293b">สูตรคำนวณค่าบริการรายชั่วโมง</text>
+  <rect x="60" y="65" width="180" height="80" rx="12" fill="#6366f1" opacity="0.1" stroke="#6366f1"/>
+  <text x="150" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">ค่าใช้จ่ายส่วนตัว</text>
+  <text x="150" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#6366f1">360,000</text>
+  <text x="260" y="105" font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8">+</text>
+  <rect x="280" y="65" width="130" height="80" rx="12" fill="#ef4444" opacity="0.1" stroke="#ef4444"/>
+  <text x="345" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#ef4444">ภาษี</text>
+  <text x="345" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#ef4444">50,000</text>
+  <text x="425" y="105" font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8">+</text>
+  <rect x="445" y="65" width="130" height="80" rx="12" fill="#10b981" opacity="0.1" stroke="#10b981"/>
+  <text x="510" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#10b981">เงินออม</text>
+  <text x="510" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#10b981">82,000</text>
+  <text x="590" y="105" font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8">+</text>
+  <rect x="610" y="65" width="130" height="80" rx="12" fill="#f59e0b" opacity="0.1" stroke="#f59e0b"/>
+  <text x="675" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#f59e0b">ค่าใช้จ่ายธุรกิจ</text>
+  <text x="675" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#f59e0b">60,000</text>
+  <line x1="100" y1="170" x2="700" y2="170" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="200" y="185" width="400" height="60" rx="14" fill="#6366f1" opacity="0.08" stroke="#6366f1" stroke-width="2"/>
+  <text x="400" y="215" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#6366f1">รายได้ขั้นต่ำต่อปี = 552,000 บาท</text>
+  <text x="400" y="235" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">÷</text>
+  <rect x="200" y="260" width="400" height="50" rx="14" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6"/>
+  <text x="400" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#8b5cf6">ชั่วโมงทำงานจริง = 1,344 ชม./ปี (48 สัปดาห์ × 70%)</text>
+  <text x="400" y="328" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">=</text>
+  <rect x="250" y="340" width="300" height="45" rx="14" fill="#10b981"/>
+  <text x="400" y="368" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">ค่าบริการ ≈ 500 บาท/ชม.</text>
+</svg>

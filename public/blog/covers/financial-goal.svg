@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <rect x="80" y="120" width="400" height="400" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <circle cx="280" cy="320" r="120" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="8 4"/>
+  <circle cx="280" cy="320" r="80" fill="none" stroke="#f59e0b" stroke-width="3" opacity="0.6"/>
+  <circle cx="280" cy="320" r="40" fill="#f59e0b" opacity="0.2"/>
+  <text x="280" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="30" fill="#f59e0b">🎯</text>
+  <line x1="280" y1="200" x2="370" y2="250" stroke="#10b981" stroke-width="2"/>
+  <circle cx="370" cy="250" r="5" fill="#10b981"/>
+  <text x="850" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="white">ตั้งเป้าหมาย</text>
+  <text x="850" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="#f59e0b">การเงินฟรีแลนซ์</text>
+  <text x="850" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8">วางแผนรายได้ การออม การลงทุน</text>
+  <text x="850" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8">ให้ชีวิตฟรีแลนซ์มั่นคงระยะยาว</text>
+  <rect x="700" y="420" width="100" height="8" rx="4" fill="#10b981"/>
+  <rect x="700" y="440" width="160" height="8" rx="4" fill="#f59e0b"/>
+  <rect x="700" y="460" width="220" height="8" rx="4" fill="#3b82f6"/>
+  <rect x="60" y="590" width="120" height="6" rx="3" fill="#f59e0b"/>
+</svg>

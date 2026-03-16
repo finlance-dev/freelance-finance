@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#1e293b">องค์ประกอบใบแจ้งหนี้ที่สมบูรณ์</text>
+  <rect x="200" y="55" width="400" height="320" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="220" y="70" width="120" height="15" rx="3" fill="#6366f1" opacity="0.3"/><text x="225" y="80" font-family="system-ui,sans-serif" font-size="9" fill="#6366f1">ข้อมูลผู้ออก</text>
+  <rect x="460" y="70" width="120" height="15" rx="3" fill="#10b981" opacity="0.3"/><text x="465" y="80" font-family="system-ui,sans-serif" font-size="9" fill="#10b981">ข้อมูลลูกค้า</text>
+  <rect x="220" y="95" width="360" height="25" rx="5" fill="#f59e0b" opacity="0.1" stroke="#f59e0b"/><text x="230" y="112" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">INV-2026-001</text><text x="430" y="112" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">วันที่: 1 มี.ค. 2026 | ครบกำหนด: 15 มี.ค.</text>
+  <rect x="220" y="130" width="360" height="20" rx="4" fill="#e2e8f0"/><text x="230" y="144" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#475569">รายการ</text><text x="420" y="144" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#475569">จำนวน</text><text x="500" y="144" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#475569">ราคา/หน่วย</text><text x="560" y="144" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#475569">รวม</text>
+  <text x="230" y="168" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ออกแบบเว็บไซต์</text><text x="430" y="168" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">1</text><text x="500" y="168" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">25,000</text><text x="560" y="168" font-family="system-ui,sans-serif" font-size="10" fill="#1e293b">25,000</text>
+  <text x="230" y="188" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">พัฒนา Frontend</text><text x="430" y="188" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">40 ชม.</text><text x="500" y="188" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">500</text><text x="560" y="188" font-family="system-ui,sans-serif" font-size="10" fill="#1e293b">20,000</text>
+  <line x1="220" y1="200" x2="580" y2="200" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="460" y="218" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ยอดรวม</text><text x="560" y="218" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">45,000</text>
+  <text x="460" y="236" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">หัก ณ ที่จ่าย 3%</text><text x="560" y="236" font-family="system-ui,sans-serif" font-size="11" fill="#ef4444">-1,350</text>
+  <rect x="440" y="242" width="140" height="25" rx="5" fill="#6366f1" opacity="0.1"/><text x="460" y="259" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#6366f1">ยอดสุทธิ</text><text x="560" y="259" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">43,650</text>
+  <rect x="220" y="280" width="170" height="80" rx="8" fill="#10b981" opacity="0.08" stroke="#10b981"/>
+  <text x="305" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#10b981">วิธีชำระเงิน</text>
+  <text x="230" y="318" font-family="system-ui,sans-serif" font-size="9" fill="#64748b">ธ.กสิกรไทย 123-4-56789-0</text>
+  <text x="230" y="333" font-family="system-ui,sans-serif" font-size="9" fill="#64748b">PromptPay: 0812345678</text>
+  <rect x="310" y="340" width="50" height="15" rx="3" fill="#10b981" opacity="0.3"/><text x="318" y="350" font-family="system-ui,sans-serif" font-size="8" fill="#10b981">QR Code</text>
+  <rect x="420" y="300" width="160" height="50" rx="8" fill="#f59e0b" opacity="0.08" stroke="#f59e0b"/>
+  <text x="500" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#f59e0b">หมายเหตุ</text>
+  <text x="430" y="338" font-family="system-ui,sans-serif" font-size="9" fill="#64748b">กรุณาชำระภายในวันที่กำหนด</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Framework ตั้งเป้าหมายการเงินฟรีแลนซ์</text>
+  <rect x="30" y="55" width="230" height="150" rx="10" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="145" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#92400e">ระยะสั้น (0-1 ปี)</text>
+  <text x="50" y="110" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• Emergency Fund 6 เดือน</text>
+  <text x="50" y="130" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• รายได้ขั้นต่ำ/เดือน: _____ บาท</text>
+  <text x="50" y="150" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• ลูกค้า retainer 2-3 ราย</text>
+  <text x="50" y="170" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• ปลดหนี้ (ถ้ามี)</text>
+  <rect x="285" y="55" width="230" height="150" rx="10" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="400" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e40af">ระยะกลาง (1-3 ปี)</text>
+  <text x="305" y="110" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• รายได้เพิ่ม 30-50%</text>
+  <text x="305" y="130" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• เริ่มลงทุน SSF/RMF</text>
+  <text x="305" y="150" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• Passive income 10%+</text>
+  <text x="305" y="170" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• ประกันชีวิต+สุขภาพ</text>
+  <rect x="540" y="55" width="230" height="150" rx="10" fill="#dcfce7" stroke="#86efac"/>
+  <text x="655" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">ระยะยาว (3-10 ปี)</text>
+  <text x="560" y="110" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• Financial Freedom</text>
+  <text x="560" y="130" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• พอร์ตลงทุน 2M+ บาท</text>
+  <text x="560" y="150" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• ทำงานเลือกได้ ไม่ใช่ต้องทำ</text>
+  <text x="560" y="170" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">• Passive > ค่าใช้จ่ายพื้นฐาน</text>
+  <rect x="30" y="225" width="740" height="145" rx="10" fill="white" stroke="#e2e8f0"/>
+  <text x="400" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">สูตรคำนวณเป้าหมายรายได้</text>
+  <text x="400" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">รายได้เป้าหมาย = (ค่าใช้จ่ายรายเดือน × 12) + ภาษี + เงินออม 20% + กันสำรอง 10%</text>
+  <text x="200" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#0d9488">ตัวอย่าง: ค่าใช้จ่าย 30,000/เดือน</text>
+  <text x="200" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">= 360,000 + 36,000 + 72,000 + 36,000</text>
+  <text x="600" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#0d9488">= 504,000 บาท/ปี</text>
+  <text x="600" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">= 42,000 บาท/เดือน (minimum)</text>
+</svg>

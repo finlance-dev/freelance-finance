@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">คิดค่าบริการรายชั่วโมง vs รายโปรเจกต์</text>
+  <rect x="30" y="55" width="360" height="310" rx="16" fill="#6366f1" opacity="0.05" stroke="#6366f1" stroke-width="2"/>
+  <text x="210" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#6366f1">รายชั่วโมง ⏰</text>
+  <text x="50" y="120" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#10b981">ข้อดี</text>
+  <text x="50" y="142" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✓ ยุติธรรม จ่ายตามเวลาจริง</text>
+  <text x="50" y="162" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✓ Scope เปลี่ยนก็ไม่เสียเปรียบ</text>
+  <text x="50" y="182" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✓ เหมาะกับงานที่ขอบเขตไม่ชัด</text>
+  <text x="50" y="215" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ef4444">ข้อเสีย</text>
+  <text x="50" y="237" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✗ ลูกค้ากังวลเรื่องงบ</text>
+  <text x="50" y="257" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✗ ยิ่งเก่ง ยิ่งทำเร็ว ยิ่งได้น้อย</text>
+  <text x="50" y="277" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✗ ต้อง track เวลาตลอด</text>
+  <rect x="50" y="300" width="320" height="45" rx="10" fill="#6366f1" opacity="0.1"/>
+  <text x="210" y="328" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">เหมาะ: งาน maintenance, ที่ปรึกษา</text>
+  <rect x="410" y="55" width="360" height="310" rx="16" fill="#10b981" opacity="0.05" stroke="#10b981" stroke-width="2"/>
+  <text x="590" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#10b981">รายโปรเจกต์ 📋</text>
+  <text x="430" y="120" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#10b981">ข้อดี</text>
+  <text x="430" y="142" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✓ ลูกค้ารู้งบชัดเจน</text>
+  <text x="430" y="162" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✓ ทำเร็วได้กำไรมากขึ้น</text>
+  <text x="430" y="182" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✓ โฟกัสที่ผลลัพธ์ ไม่ใช่เวลา</text>
+  <text x="430" y="215" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ef4444">ข้อเสีย</text>
+  <text x="430" y="237" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✗ เสี่ยง Scope Creep</text>
+  <text x="430" y="257" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✗ ประเมินเวลาผิดได้</text>
+  <text x="430" y="277" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">✗ ต้องมีสัญญาชัดเจน</text>
+  <rect x="430" y="300" width="320" height="45" rx="10" fill="#10b981" opacity="0.1"/>
+  <text x="590" y="328" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#10b981">เหมาะ: เว็บไซต์, แอป, ดีไซน์</text>
+</svg>

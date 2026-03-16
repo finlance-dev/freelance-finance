@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="200" r="80" fill="white" opacity="0.15"/>
+  <circle cx="600" cy="200" r="60" fill="white" opacity="0.1"/>
+  <rect x="575" y="160" width="50" height="60" rx="25" fill="white" opacity="0.3"/>
+  <rect x="565" y="220" width="70" height="10" rx="5" fill="white" opacity="0.3"/>
+  <circle cx="520" cy="280" r="15" fill="#10b981" opacity="0.6"/>
+  <circle cx="560" cy="300" r="12" fill="#10b981" opacity="0.5"/>
+  <circle cx="640" cy="300" r="12" fill="#10b981" opacity="0.5"/>
+  <circle cx="680" cy="280" r="15" fill="#10b981" opacity="0.6"/>
+  <text x="600" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="48" font-weight="bold" fill="white">ประหยัดภาษีถูกกฎหมาย</text>
+  <text x="600" y="470" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="white" opacity="0.8">Finlance Blog</text>
+</svg>

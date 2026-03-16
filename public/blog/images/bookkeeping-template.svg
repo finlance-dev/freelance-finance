@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">ตัวอย่างสมุดบัญชีรายรับรายจ่ายฟรีแลนซ์</text>
+  <g transform="translate(20,50)">
+    <rect x="0" y="0" width="760" height="35" rx="6" fill="#14b8a6" opacity="0.15"/>
+    <text x="60" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#0d9488">วันที่</text>
+    <text x="200" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#0d9488">รายการ</text>
+    <text x="370" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#0d9488">หมวด</text>
+    <text x="490" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#0d9488">รายรับ</text>
+    <text x="590" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#0d9488">รายจ่าย</text>
+    <text x="700" y="23" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#0d9488">คงเหลือ</text>
+    <rect x="0" y="40" width="760" height="32" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="60" y="61" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">1 มี.ค.</text>
+    <text x="200" y="61" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">ค่าออกแบบเว็บ บ.ABC</text>
+    <text x="370" y="61" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">งานดีไซน์</text>
+    <text x="490" y="61" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">+25,000</text>
+    <text x="590" y="61" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">-</text>
+    <text x="700" y="61" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">25,000</text>
+    <rect x="0" y="76" width="760" height="32" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="60" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">3 มี.ค.</text>
+    <text x="200" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">ค่า Adobe CC รายเดือน</text>
+    <text x="370" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">tools</text>
+    <text x="490" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">-</text>
+    <text x="590" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#ef4444">-1,700</text>
+    <text x="700" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">23,300</text>
+    <rect x="0" y="112" width="760" height="32" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="60" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">5 มี.ค.</text>
+    <text x="200" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">ค่าเขียนบทความ 3 ชิ้น</text>
+    <text x="370" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">งานเขียน</text>
+    <text x="490" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">+8,000</text>
+    <text x="590" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">-</text>
+    <text x="700" y="133" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">31,300</text>
+    <rect x="0" y="148" width="760" height="32" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="60" y="169" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">10 มี.ค.</text>
+    <text x="200" y="169" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">ค่าอินเทอร์เน็ต</text>
+    <text x="370" y="169" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">สำนักงาน</text>
+    <text x="490" y="169" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">-</text>
+    <text x="590" y="169" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#ef4444">-899</text>
+    <text x="700" y="169" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">30,401</text>
+    <rect x="0" y="184" width="760" height="32" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="60" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">15 มี.ค.</text>
+    <text x="200" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">ค่า Hosting รายปี</text>
+    <text x="370" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">tools</text>
+    <text x="490" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">-</text>
+    <text x="590" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#ef4444">-3,200</text>
+    <text x="700" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#1e293b">27,201</text>
+    <rect x="0" y="225" width="760" height="35" rx="6" fill="#14b8a6" opacity="0.08"/>
+    <text x="370" y="248" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#0d9488">รวมเดือน มี.ค.</text>
+    <text x="490" y="248" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#10b981">+33,000</text>
+    <text x="590" y="248" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#ef4444">-5,799</text>
+    <text x="700" y="248" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#1e293b">27,201</text>
+  </g>
+  <text x="400" y="345" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">สิ่งสำคัญ: แยกบัญชีส่วนตัวกับบัญชีธุรกิจเสมอ</text>
+  <text x="400" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">ใช้ Finlance บันทึกอัตโนมัติ ไม่ต้องทำ spreadsheet เอง</text>
+</svg>

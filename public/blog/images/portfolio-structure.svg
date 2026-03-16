@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">โครงสร้าง Portfolio ที่ดึงดูดลูกค้า</text>
+  <rect x="30" y="50" width="740" height="55" rx="10" fill="#ec4899" opacity="0.1" stroke="#f9a8d4"/>
+  <text x="60" y="72" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#be185d">1. Hero Section</text>
+  <text x="60" y="92" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ชื่อ + Tagline + สิ่งที่ทำ + CTA ปุ่มติดต่อ (ต้องเห็นภายใน 3 วินาที)</text>
+  <rect x="30" y="115" width="360" height="80" rx="10" fill="#ec4899" opacity="0.08" stroke="#f9a8d4"/>
+  <text x="60" y="140" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#be185d">2. ผลงานเด่น (5-8 ชิ้น)</text>
+  <text x="60" y="160" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ภาพ + ชื่อโปรเจกต์ + ผลลัพธ์</text>
+  <text x="60" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Case study: ปัญหา → วิธีแก้ → ผลลัพธ์</text>
+  <rect x="410" y="115" width="360" height="80" rx="10" fill="#ec4899" opacity="0.08" stroke="#f9a8d4"/>
+  <text x="440" y="140" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#be185d">3. Testimonials</text>
+  <text x="440" y="160" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">คำพูดจากลูกค้าจริง 3-5 คน</text>
+  <text x="440" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ระบุชื่อ ตำแหน่ง บริษัท</text>
+  <rect x="30" y="205" width="360" height="80" rx="10" fill="#ec4899" opacity="0.08" stroke="#f9a8d4"/>
+  <text x="60" y="230" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#be185d">4. บริการ + ราคา</text>
+  <text x="60" y="250" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Package ชัดเจน พร้อมราคาเริ่มต้น</text>
+  <text x="60" y="270" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ระบุ process ทำงาน + timeline</text>
+  <rect x="410" y="205" width="360" height="80" rx="10" fill="#ec4899" opacity="0.08" stroke="#f9a8d4"/>
+  <text x="440" y="230" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#be185d">5. About Me</text>
+  <text x="440" y="250" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ประสบการณ์ + skill + ใบรับรอง</text>
+  <text x="440" y="270" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">รูปโปรไฟล์ + เรื่องราวส่วนตัว</text>
+  <rect x="30" y="295" width="740" height="55" rx="10" fill="#be185d"/>
+  <text x="400" y="318" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="white">6. CTA ติดต่อ — LINE / Email / แบบฟอร์ม</text>
+  <text x="400" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="white" opacity="0.8">ปุ่มติดต่อต้องเด่น เห็นชัดทุกหน้า ลูกค้าไม่ต้องหา</text>
+  <text x="400" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">แพลตฟอร์มแนะนำ: Notion, Framer, Carrd, Readymag, WordPress</text>
+</svg>

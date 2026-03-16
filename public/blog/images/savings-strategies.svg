@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">5 กลยุทธ์สร้างเงินสำรองฉุกเฉินเร็วขึ้น</text>
+  <g transform="translate(40,55)">
+    <rect x="0" y="0" width="720" height="58" rx="12" fill="#6366f1" opacity="0.08" stroke="#6366f1"/>
+    <rect x="12" y="12" width="34" height="34" rx="8" fill="#6366f1"/><text x="29" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">1</text>
+    <text x="60" y="28" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">ตั้งเป้า Auto-Transfer ทุกต้นเดือน</text>
+    <text x="60" y="46" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">โอนอัตโนมัติ 20% ของรายได้ทันทีที่ได้เงิน</text>
+    <rect x="0" y="68" width="720" height="58" rx="12" fill="#10b981" opacity="0.08" stroke="#10b981"/>
+    <rect x="12" y="80" width="34" height="34" rx="8" fill="#10b981"/><text x="29" y="103" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">2</text>
+    <text x="60" y="96" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">ลดค่าใช้จ่ายที่ไม่จำเป็น</text>
+    <text x="60" y="114" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ตัด subscription ที่ไม่ใช้ ลดค่ากินข้าวนอกบ้าน</text>
+    <rect x="0" y="136" width="720" height="58" rx="12" fill="#f59e0b" opacity="0.08" stroke="#f59e0b"/>
+    <rect x="12" y="148" width="34" height="34" rx="8" fill="#f59e0b"/><text x="29" y="171" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">3</text>
+    <text x="60" y="164" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">หารายได้เสริม Side Hustle</text>
+    <text x="60" y="182" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">รับงานเพิ่ม สอนออนไลน์ ขายของ — รายได้เสริม 100% เข้ากองทุน</text>
+    <rect x="0" y="204" width="720" height="58" rx="12" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6"/>
+    <rect x="12" y="216" width="34" height="34" rx="8" fill="#8b5cf6"/><text x="29" y="239" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">4</text>
+    <text x="60" y="232" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">ขายของที่ไม่ใช้แล้ว</text>
+    <text x="60" y="250" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ของสะสม อุปกรณ์เก่า เสื้อผ้า → นำเงินเข้ากองทุนฉุกเฉิน</text>
+    <rect x="0" y="272" width="720" height="58" rx="12" fill="#ec4899" opacity="0.08" stroke="#ec4899"/>
+    <rect x="12" y="284" width="34" height="34" rx="8" fill="#ec4899"/><text x="29" y="307" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">5</text>
+    <text x="60" y="300" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">ฝากบัญชีดอกเบี้ยสูง / กองทุนตลาดเงิน</text>
+    <text x="60" y="318" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ดอกเบี้ย 1.5-2.5% ต่อปี ถอนได้ทันที ไม่เสียโอกาส</text>
+  </g>
+</svg>

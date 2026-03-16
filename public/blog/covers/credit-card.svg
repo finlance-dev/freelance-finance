@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">บัตรที่ฟรีแลนซ์ควรมี</text>
+  <rect x="100" y="165" width="420" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="140" y="186" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="white">Cashback Card</text>
+  <text x="140" y="204" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.7">เงินคืน 1-5% ค่า tools / software</text>
+  <rect x="100" y="225" width="420" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="140" y="246" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="white">Travel Card</text>
+  <text x="140" y="264" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.7">สะสมไมล์ ฟรีแลนซ์ digital nomad</text>
+  <rect x="100" y="285" width="420" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="140" y="306" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="white">Business Card</text>
+  <text x="140" y="324" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.7">วงเงินสูง + สิทธิ์ lounge</text>
+  <rect x="640" y="80" width="500" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="890" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="bold" fill="white">บัตรเครดิต</text>
+  <text x="890" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="bold" fill="white">สำหรับฟรีแลนซ์</text>
+  <text x="890" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">ใบไหนคุ้ม ใช้ยังไงให้ได้ประโยชน์</text>
+  <rect x="790" y="420" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="890" y="452" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

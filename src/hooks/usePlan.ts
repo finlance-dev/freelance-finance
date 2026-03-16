@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { getUserPlan, setUserPlan, getClients, getTransactions, startTrialPlan, hasUsedTrial } from "@/lib/store";
+import { supabase } from "@/lib/supabase";
 import { PLAN_LIMITS, PlanType } from "@/lib/types";
 
 export function usePlan() {
@@ -34,14 +35,50 @@ export function usePlan() {
     }
     setMounted(true);
 
+    // Sync plan from Supabase (in case admin approved a payment)
+    syncPlanFromServer();
+
+    // Auto-poll every 30s for plan upgrade (only when free + logged in)
+    const pollInterval = setInterval(() => {
+      const current = getUserPlan();
+      if (current.plan === "free") syncPlanFromServer();
+    }, 30000);
+
     // Listen for plan changes from other components
     const handlePlanChange = (e: Event) => {
       const detail = (e as CustomEvent).detail;
       if (detail?.plan) setPlan(detail.plan);
     };
     window.addEventListener("ff_plan_changed", handlePlanChange);
-    return () => window.removeEventListener("ff_plan_changed", handlePlanChange);
+    return () => {
+      clearInterval(pollInterval);
+      window.removeEventListener("ff_plan_changed", handlePlanChange);
+    };
   }, []);
+
+  const syncPlanFromServer = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      const res = await fetch(`/api/payment/check-plan?userId=${user.id}`);
+      if (!res.ok) return;
+      const data = await res.json();
+
+      if (data.plan && data.plan !== "free") {
+        const localPlan = getUserPlan();
+        // Only upgrade if server plan is better or local is free
+        if (localPlan.plan === "free" || (data.expiresAt && new Date(data.expiresAt) > new Date(localPlan.expiresAt || 0))) {
+          setUserPlan(data.plan);
+          setPlan(data.plan);
+          setIsTrial(false);
+          window.dispatchEvent(new CustomEvent("ff_plan_changed", { detail: { plan: data.plan } }));
+        }
+      }
+    } catch {
+      // Silently fail — localStorage plan still works
+    }
+  };
 
   const limits = PLAN_LIMITS[plan];
   const isPro = plan === "pro" || plan === "pro_yearly";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import {
   Plus,
   FileText,
@@ -15,10 +15,12 @@ import {
 import { getClients, getProjects, getPromptPayId } from "@/lib/store";
 import { generatePromptPayQRDataURL, isValidPromptPayId } from "@/lib/promptpay";
 import { formatCurrency, formatDate } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import type { Client, Project } from "@/lib/types";
 import { useToast } from "@/components/toast";
 import { useConfirm } from "@/components/confirm-dialog";
 import { usePlan } from "@/hooks/usePlan";
+import { exportInvoicesCSV } from "@/lib/export";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
 import { useLocale } from "@/hooks/useLocale";
 
@@ -72,6 +74,7 @@ export default function InvoicesPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [previewId, setPreviewId] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [filterStatus, setFilterStatus] = useState<"all" | Invoice["status"]>("all");
 
   const [form, setForm] = useState({
     clientId: "",
@@ -86,7 +89,7 @@ export default function InvoicesPage() {
   const { toast } = useToast();
   const { confirm } = useConfirm();
   const { isPro, mounted: planMounted } = usePlan();
-  const { locale, t } = useLocale();
+  const { t } = useLocale();
 
   const statusConfig = {
     draft: { label: t("invoices", "draft"), color: "text-muted bg-secondary", icon: FileText },
@@ -94,6 +97,15 @@ export default function InvoicesPage() {
     paid: { label: t("invoices", "paid"), color: "text-accent bg-accent/10", icon: CheckCircle2 },
     overdue: { label: t("invoices", "overdue"), color: "text-danger bg-danger/10", icon: AlertCircle },
   };
+
+  // Read ?status= from URL on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const s = params.get("status");
+    if (s && ["draft", "sent", "paid", "overdue"].includes(s)) {
+      setFilterStatus(s as Invoice["status"]);
+    }
+  }, []);
 
   useEffect(() => {
     setInvoices(getInvoices());
@@ -460,13 +472,46 @@ export default function InvoicesPage() {
           <h1 className="text-2xl font-bold">{t("invoices", "title")}</h1>
           <p className="text-muted text-sm mt-1">{t("invoices", "subtitle")}</p>
         </div>
-        <button
-          onClick={() => { resetForm(); setShowForm(true); }}
-          className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition flex items-center gap-2"
-        >
-          <Plus className="w-4 h-4" />
-          {t("invoices", "create")}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => { resetForm(); setShowForm(true); }}
+            className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition flex items-center gap-2"
+          >
+            <Plus className="w-4 h-4" />
+            {t("invoices", "create")}
+          </button>
+          {invoices.length > 0 && (
+            <button
+              onClick={() => exportInvoicesCSV(invoices)}
+              className="border border-border text-muted hover:text-foreground px-3 py-2 rounded-xl text-sm transition flex items-center gap-1.5"
+            >
+              <Download className="w-3.5 h-3.5" />
+              CSV
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Filter Tabs */}
+      <div className="flex gap-2 flex-wrap">
+        {(["all", "draft", "sent", "paid", "overdue"] as const).map((status) => {
+          const count = status === "all" ? invoices.length : invoices.filter((i) => i.status === status).length;
+          const label = status === "all" ? t("invoices", "all") : statusConfig[status].label;
+          return (
+            <button
+              key={status}
+              onClick={() => setFilterStatus(status)}
+              className={cn(
+                "px-3 py-1.5 rounded-xl text-sm font-medium transition",
+                filterStatus === status
+                  ? "bg-primary text-white"
+                  : "bg-secondary text-muted hover:text-foreground"
+              )}
+            >
+              {label} ({count})
+            </button>
+          );
+        })}
       </div>
 
       {/* Summary */}
@@ -476,7 +521,11 @@ export default function InvoicesPage() {
           const count = invoices.filter((i) => i.status === status).length;
           const Icon = cfg.icon;
           return (
-            <div key={status} className="bg-card border border-border rounded-2xl p-4">
+            <div
+              key={status}
+              onClick={() => setFilterStatus(status)}
+              className="bg-card border border-border rounded-2xl p-4 cursor-pointer hover:bg-card-hover transition"
+            >
               <div className="flex items-center gap-2 mb-1">
                 <Icon className={`w-4 h-4 ${cfg.color.split(" ")[0]}`} />
                 <span className="text-sm text-muted">{cfg.label}</span>
@@ -718,6 +767,7 @@ export default function InvoicesPage() {
       ) : (
         <div className="bg-card border border-border rounded-2xl overflow-hidden divide-y divide-border">
           {invoices
+            .filter((i) => filterStatus === "all" || i.status === filterStatus)
             .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
             .map((inv) => {
               const cfg = statusConfig[inv.status];

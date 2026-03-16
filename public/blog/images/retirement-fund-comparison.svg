@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">เปรียบเทียบกองทุนลดหย่อนภาษี 2026</text>
+  <g transform="translate(30,50)">
+    <rect x="0" y="0" width="230" height="300" rx="16" fill="#6366f1" opacity="0.06" stroke="#6366f1"/>
+    <text x="115" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#6366f1">SSF</text>
+    <text x="115" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">กองทุนรวมเพื่อการออม</text>
+    <line x1="20" y1="70" x2="210" y2="70" stroke="#e2e8f0"/>
+    <text x="20" y="100" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ลดหย่อน: 30% ของรายได้</text>
+    <text x="20" y="125" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เพดาน: 200,000 บาท</text>
+    <text x="20" y="150" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ถือขั้นต่ำ: 10 ปี</text>
+    <text x="20" y="175" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ซื้อขั้นต่ำ: ไม่มี</text>
+    <text x="20" y="200" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ไม่ต้องซื้อต่อเนื่อง</text>
+    <rect x="20" y="230" width="80" height="24" rx="6" fill="#6366f1" opacity="0.15"/>
+    <text x="60" y="247" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#6366f1">ยืดหยุ่นสุด</text>
+    <rect x="255" y="0" width="230" height="300" rx="16" fill="#10b981" opacity="0.06" stroke="#10b981"/>
+    <text x="370" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#10b981">RMF</text>
+    <text x="370" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">กองทุนรวมเพื่อเกษียณ</text>
+    <line x1="275" y1="70" x2="465" y2="70" stroke="#e2e8f0"/>
+    <text x="275" y="100" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ลดหย่อน: 30% ของรายได้</text>
+    <text x="275" y="125" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เพดาน: 500,000 บาท</text>
+    <text x="275" y="150" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ถือขั้นต่ำ: 5 ปี + อายุ 55</text>
+    <text x="275" y="175" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ซื้อขั้นต่ำ: 1 ครั้ง/ปี</text>
+    <text x="275" y="200" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ต้องซื้อต่อเนื่อง</text>
+    <rect x="275" y="230" width="80" height="24" rx="6" fill="#10b981" opacity="0.15"/>
+    <text x="315" y="247" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#10b981">เพดานสูงสุด</text>
+    <rect x="510" y="0" width="230" height="300" rx="16" fill="#f59e0b" opacity="0.06" stroke="#f59e0b"/>
+    <text x="625" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#f59e0b">ThaiESG</text>
+    <text x="625" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">กองทุนเพื่อความยั่งยืน</text>
+    <line x1="530" y1="70" x2="720" y2="70" stroke="#e2e8f0"/>
+    <text x="530" y="100" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ลดหย่อน: 30% ของรายได้</text>
+    <text x="530" y="125" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เพดาน: 300,000 บาท</text>
+    <text x="530" y="150" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ถือขั้นต่ำ: 5 ปี</text>
+    <text x="530" y="175" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">แยกเพดานจาก SSF/RMF</text>
+    <text x="530" y="200" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">สิ้นสุดสิทธิ์ปี 2575</text>
+    <rect x="530" y="230" width="80" height="24" rx="6" fill="#f59e0b" opacity="0.15"/>
+    <text x="570" y="247" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#f59e0b">โบนัสเพิ่ม</text>
+  </g>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">* SSF+RMF รวมกันไม่เกิน 500,000 บาท / ThaiESG แยกเพดานอีก 300,000 บาท</text>
+</svg>

@@ -137,6 +137,39 @@ export function exportTransactionsPDF(transactions: Transaction[]) {
   setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
 
+export function exportClientsCSV(clients: Client[]) {
+  const headers = ["ชื่อ", "อีเมล", "สร้างเมื่อ"];
+  const rows = clients.map((c) => [
+    `"${(c.name || "").replace(/"/g, '""')}"`,
+    c.email || "",
+    c.createdAt ? new Date(c.createdAt).toLocaleDateString("th-TH") : "",
+  ]);
+
+  const csv = "\uFEFF" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+  downloadFile(csv, "finlance-clients.csv", "text/csv;charset=utf-8");
+}
+
+export function exportInvoicesCSV(invoices: { invoiceNumber: string; clientId: string; items: { description: string; quantity: number; unitPrice: number }[]; status: string; issueDate: string; dueDate: string }[]) {
+  const clients = getClients();
+  const getClientName = (id: string) => clients.find((c) => c.id === id)?.name || "";
+
+  const headers = ["เลขที่ใบแจ้งหนี้", "ลูกค้า", "สถานะ", "วันที่ออก", "วันครบกำหนด", "จำนวนเงิน"];
+  const rows = invoices.map((inv) => {
+    const total = inv.items.reduce((s, i) => s + i.quantity * i.unitPrice, 0);
+    return [
+      inv.invoiceNumber,
+      `"${getClientName(inv.clientId).replace(/"/g, '""')}"`,
+      inv.status,
+      inv.issueDate,
+      inv.dueDate,
+      total.toString(),
+    ];
+  });
+
+  const csv = "\uFEFF" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+  downloadFile(csv, "finlance-invoices.csv", "text/csv;charset=utf-8");
+}
+
 function downloadFile(content: string, filename: string, type: string) {
   const blob = new Blob([content], { type });
   const url = URL.createObjectURL(blob);

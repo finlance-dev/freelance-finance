@@ -262,6 +262,58 @@ export function processRecurringTransactions() {
   return generated;
 }
 
+// ─── Auto-generate Invoices from Recurring Income ───────────────────────
+
+export function generateInvoicesFromRecurring() {
+  const recurring = getRecurringTransactions();
+  const invoices: Invoice[] = getItem("ff_invoices", []);
+  const today = new Date().toISOString().split("T")[0];
+  let created = 0;
+
+  recurring.forEach((rt) => {
+    if (!rt.active || rt.type !== "income" || !rt.clientId) return;
+
+    // Check if invoice already exists for this month + recurring item
+    const monthKey = today.slice(0, 7); // YYYY-MM
+    const invId = `auto-inv-${rt.id}-${monthKey}`;
+    if (invoices.some((inv) => inv.id === invId)) return;
+
+    // Only generate if there's a transaction for this period
+    const txExists = getTransactions().some(
+      (t) => t.id === `rec-${rt.id}-${today}` || (t.description?.includes(rt.description) && t.date.startsWith(monthKey))
+    );
+    if (!txExists) return;
+
+    const y = today.slice(0, 4);
+    const m = today.slice(5, 7);
+    const seq = String(invoices.length + 1).padStart(4, "0");
+
+    const dueDate = new Date();
+    dueDate.setDate(dueDate.getDate() + 30);
+
+    const invoice: Invoice = {
+      id: invId,
+      invoiceNumber: `INV-${y}${m}-${seq}`,
+      clientId: rt.clientId,
+      projectId: rt.projectId,
+      items: [{ description: rt.description, quantity: 1, unitPrice: rt.amount }],
+      status: "sent",
+      issueDate: today,
+      dueDate: dueDate.toISOString().split("T")[0],
+      notes: "สร้างอัตโนมัติจากรายการประจำ",
+      createdAt: new Date().toISOString(),
+    };
+
+    invoices.push(invoice);
+    created++;
+  });
+
+  if (created > 0) {
+    setItem("ff_invoices", invoices);
+  }
+  return created;
+}
+
 // ─── Cloud Sync ─────────────────────────────────────────────────────────
 
 export async function syncFromCloud(): Promise<boolean> {
@@ -348,6 +400,106 @@ export async function syncFromCloud(): Promise<boolean> {
 
 export function isCloudEnabled(): boolean {
   return isSupabaseConfigured();
+}
+
+export async function syncToCloud(): Promise<{ success: boolean; error?: string }> {
+  if (!isSupabaseConfigured()) return { success: false, error: "Supabase not configured" };
+
+  const userId = await getSupabaseUserId();
+  if (!userId) return { success: false, error: "Not logged in" };
+
+  try {
+    const clients = getClients();
+    const projects = getProjects();
+    const transactions = getTransactions();
+    const recurring = getRecurringTransactions();
+    const invoices: Invoice[] = getItem("ff_invoices", []);
+
+    // Upsert clients
+    if (clients.length > 0) {
+      const { error } = await supabase.from("clients").upsert(
+        clients.map((c) => ({
+          id: c.id, user_id: userId, name: c.name,
+          email: c.email, color: c.color, created_at: c.createdAt,
+        })),
+        { onConflict: "id" }
+      );
+      if (error) throw error;
+    }
+
+    // Upsert projects
+    if (projects.length > 0) {
+      const { error } = await supabase.from("projects").upsert(
+        projects.map((p) => ({
+          id: p.id, user_id: userId, client_id: p.clientId, name: p.name,
+          status: p.status, hourly_rate: p.hourlyRate, created_at: p.createdAt,
+        })),
+        { onConflict: "id" }
+      );
+      if (error) throw error;
+    }
+
+    // Upsert transactions
+    if (transactions.length > 0) {
+      const { error } = await supabase.from("transactions").upsert(
+        transactions.map((t) => ({
+          id: t.id, user_id: userId, project_id: t.projectId, client_id: t.clientId,
+          type: t.type, amount: t.amount, date: t.date,
+          description: t.description, category: t.category, currency: t.currency || "THB",
+        })),
+        { onConflict: "id" }
+      );
+      if (error) throw error;
+    }
+
+    // Upsert recurring
+    if (recurring.length > 0) {
+      const { error } = await supabase.from("recurring_transactions").upsert(
+        recurring.map((r) => ({
+          id: r.id, user_id: userId, type: r.type, amount: r.amount,
+          description: r.description, category: r.category,
+          client_id: r.clientId, project_id: r.projectId,
+          frequency: r.frequency, start_date: r.startDate,
+          end_date: r.endDate, active: r.active,
+          last_generated: r.lastGenerated, currency: r.currency || "THB",
+        })),
+        { onConflict: "id" }
+      );
+      if (error) throw error;
+    }
+
+    // Upsert invoices
+    if (invoices.length > 0) {
+      const { error } = await supabase.from("invoices").upsert(
+        invoices.map((i) => ({
+          id: i.id, user_id: userId, invoice_number: i.invoiceNumber,
+          client_id: i.clientId, project_id: i.projectId,
+          items: i.items, status: i.status,
+          issue_date: i.issueDate, due_date: i.dueDate,
+          notes: i.notes, created_at: i.createdAt,
+        })),
+        { onConflict: "id" }
+      );
+      if (error) throw error;
+    }
+
+    // Upsert user profile/settings
+    const { error: profileError } = await supabase.from("user_profiles").upsert({
+      id: userId,
+      plan: getUserPlan().plan,
+      currency: getDefaultCurrency(),
+      tax_rate: getTaxRate(),
+      monthly_expenses: getMonthlyExpenses(),
+      promptpay_id: getPromptPayId(),
+      income_goal: getIncomeGoal(),
+      updated_at: new Date().toISOString(),
+    }, { onConflict: "id" });
+    if (profileError) throw profileError;
+
+    return { success: true };
+  } catch (err) {
+    return { success: false, error: String(err) };
+  }
 }
 
 // ─── Backup / Restore ───────────────────────────────────────────────────

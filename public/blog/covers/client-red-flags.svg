@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#991b1b"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">10 Red Flags</text>
+  <rect x="100" y="155" width="420" height="32" rx="6" fill="white" opacity="0.12"/>
+  <text x="120" y="176" font-family="system-ui,sans-serif" font-size="11" fill="white">1. ไม่ยอมทำสัญญา</text>
+  <rect x="100" y="192" width="420" height="32" rx="6" fill="white" opacity="0.12"/>
+  <text x="120" y="213" font-family="system-ui,sans-serif" font-size="11" fill="white">2. ขอดูงานฟรีก่อนจ้าง</text>
+  <rect x="100" y="229" width="420" height="32" rx="6" fill="white" opacity="0.12"/>
+  <text x="120" y="250" font-family="system-ui,sans-serif" font-size="11" fill="white">3. บอกว่า "งานง่ายๆ ไม่น่าแพง"</text>
+  <rect x="100" y="266" width="420" height="32" rx="6" fill="white" opacity="0.12"/>
+  <text x="120" y="287" font-family="system-ui,sans-serif" font-size="11" fill="white">4. เปลี่ยน scope ตลอดเวลา</text>
+  <rect x="100" y="303" width="420" height="32" rx="6" fill="white" opacity="0.12"/>
+  <text x="120" y="324" font-family="system-ui,sans-serif" font-size="11" fill="white">5. ติดต่อนอกเวลาตลอด</text>
+  <rect x="640" y="80" width="500" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="890" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">สัญญาณอันตราย</text>
+  <text x="890" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">จากลูกค้า</text>
+  <text x="890" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">ที่ฟรีแลนซ์ต้องหนี</text>
+  <rect x="790" y="420" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="890" y="452" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

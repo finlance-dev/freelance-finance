@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Checklist ก่อนเซ็น NDA / สัญญาลิขสิทธิ์</text>
+  <rect x="30" y="50" width="360" height="320" rx="10" fill="white" stroke="#e2e8f0"/>
+  <text x="210" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">NDA — สิ่งที่ต้องตรวจ</text>
+  <text x="50" y="110" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">1. ขอบเขตข้อมูลลับ ชัดเจนหรือกว้างเกินไป?</text>
+  <text x="50" y="135" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">2. ระยะเวลาบังคับใช้ กี่ปี? (1-3 ปี ปกติ)</text>
+  <text x="50" y="160" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">3. เป็น Mutual NDA หรือ One-way?</text>
+  <text x="50" y="185" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">4. มีข้อยกเว้นอะไรบ้าง?</text>
+  <text x="50" y="210" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">5. ค่าเสียหายถ้าผิดสัญญา เท่าไหร่?</text>
+  <text x="50" y="235" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">6. ห้ามใส่ portfolio ด้วยหรือเปล่า?</text>
+  <rect x="50" y="260" width="320" height="45" rx="6" fill="#fef2f2"/>
+  <text x="210" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#dc2626">ระวัง: NDA ที่กว้างเกินไปอาจห้ามคุณ</text>
+  <text x="210" y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#dc2626">รับงานในสายเดียวกันไปอีกหลายปี</text>
+  <rect x="410" y="50" width="360" height="320" rx="10" fill="white" stroke="#e2e8f0"/>
+  <text x="590" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">IP / ลิขสิทธิ์ — สิ่งที่ต้องตรวจ</text>
+  <text x="430" y="110" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">1. โอนลิขสิทธิ์ทั้งหมด หรือแค่ license?</text>
+  <text x="430" y="135" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">2. ได้ credit/ใส่ portfolio มั้ย?</text>
+  <text x="430" y="160" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">3. ค่าตอบแทนสมเหตุสมผลมั้ย?</text>
+  <text x="430" y="185" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">4. Work-for-hire หรือ assignment?</text>
+  <text x="430" y="210" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">5. ครอบคลุม source code/ไฟล์ต้นฉบับมั้ย?</text>
+  <text x="430" y="235" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">6. ลิขสิทธิ์โอนเมื่อจ่ายครบ หรือทันที?</text>
+  <rect x="430" y="260" width="320" height="45" rx="6" fill="#ecfdf5"/>
+  <text x="590" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#059669">แนะนำ: ให้ลิขสิทธิ์โอนหลังจ่ายเงินครบ</text>
+  <text x="590" y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#059669">เป็นหลักประกันว่าจะได้รับเงิน</text>
+</svg>

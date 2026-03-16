@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">เปรียบเทียบช่องทางรับเงินจากต่างประเทศ</text>
+  <rect x="30" y="50" width="100" height="30" rx="4" fill="#059669" opacity="0.15"/>
+  <text x="80" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#059669">ช่องทาง</text>
+  <rect x="140" y="50" width="100" height="30" rx="4" fill="#059669" opacity="0.15"/>
+  <text x="190" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#059669">ค่าธรรมเนียม</text>
+  <rect x="250" y="50" width="120" height="30" rx="4" fill="#059669" opacity="0.15"/>
+  <text x="310" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#059669">อัตราแลกเปลี่ยน</text>
+  <rect x="380" y="50" width="100" height="30" rx="4" fill="#059669" opacity="0.15"/>
+  <text x="430" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#059669">ระยะเวลา</text>
+  <rect x="490" y="50" width="140" height="30" rx="4" fill="#059669" opacity="0.15"/>
+  <text x="560" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#059669">เหมาะกับ</text>
+  <rect x="640" y="50" width="130" height="30" rx="4" fill="#059669" opacity="0.15"/>
+  <text x="705" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#059669">รับ $1,000</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <rect x="30" y="85" width="740" height="45" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="80" y="105" text-anchor="middle" font-weight="bold" fill="#1e293b">Wise</text>
+    <text x="190" y="105" text-anchor="middle">0.5-1.5%</text>
+    <text x="310" y="105" text-anchor="middle" font-weight="bold" fill="#059669">Mid-market</text>
+    <text x="430" y="105" text-anchor="middle">1-2 วัน</text>
+    <text x="560" y="105" text-anchor="middle">งานประจำ</text>
+    <text x="705" y="105" text-anchor="middle" fill="#059669">≈34,650 ฿</text>
+    <rect x="30" y="135" width="740" height="45" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="80" y="155" text-anchor="middle" font-weight="bold" fill="#1e293b">Payoneer</text>
+    <text x="190" y="155" text-anchor="middle">1-2%</text>
+    <text x="310" y="155" text-anchor="middle">ใกล้ mid-market</text>
+    <text x="430" y="155" text-anchor="middle">2-5 วัน</text>
+    <text x="560" y="155" text-anchor="middle">Platform</text>
+    <text x="705" y="155" text-anchor="middle" fill="#059669">≈34,300 ฿</text>
+    <rect x="30" y="185" width="740" height="45" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="80" y="205" text-anchor="middle" font-weight="bold" fill="#1e293b">PayPal</text>
+    <text x="190" y="205" text-anchor="middle" fill="#dc2626">3-4.5%</text>
+    <text x="310" y="205" text-anchor="middle" fill="#dc2626">ต่ำกว่า 3-4%</text>
+    <text x="430" y="205" text-anchor="middle">1-3 วัน</text>
+    <text x="560" y="205" text-anchor="middle">ลูกค้าทั่วไป</text>
+    <text x="705" y="205" text-anchor="middle" fill="#dc2626">≈32,900 ฿</text>
+    <rect x="30" y="235" width="740" height="45" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="80" y="255" text-anchor="middle" font-weight="bold" fill="#1e293b">โอนตรง</text>
+    <text x="190" y="255" text-anchor="middle">$20-40/ครั้ง</text>
+    <text x="310" y="255" text-anchor="middle">ธนาคารกำหนด</text>
+    <text x="430" y="255" text-anchor="middle">3-5 วัน</text>
+    <text x="560" y="255" text-anchor="middle">เงินก้อนใหญ่</text>
+    <text x="705" y="255" text-anchor="middle">≈34,000 ฿</text>
+  </g>
+  <rect x="30" y="300" width="740" height="70" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="400" y="325" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#059669">แนะนำ: ใช้ Wise สำหรับงานประจำ (ค่าธรรมเนียมต่ำ อัตราแลกเปลี่ยนดี)</text>
+  <text x="400" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เงินจากต่างประเทศต้องแจ้งธนาคารว่าเป็นรายได้จากการให้บริการ (Service Income)</text>
+</svg>

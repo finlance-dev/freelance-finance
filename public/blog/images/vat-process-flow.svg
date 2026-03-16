@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">ขั้นตอนจดทะเบียน VAT สำหรับฟรีแลนซ์</text>
+  <g transform="translate(30,55)">
+    <rect x="0" y="0" width="160" height="80" rx="12" fill="#6366f1" opacity="0.1" stroke="#6366f1"/>
+    <text x="80" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#6366f1">1</text>
+    <text x="80" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">รายได้เกิน</text>
+    <text x="80" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#6366f1">1.8 ล้าน/ปี</text>
+    <text x="180" y="40" font-family="system-ui,sans-serif" font-size="20" fill="#94a3b8">→</text>
+    <rect x="200" y="0" width="160" height="80" rx="12" fill="#f59e0b" opacity="0.1" stroke="#f59e0b"/>
+    <text x="280" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#f59e0b">2</text>
+    <text x="280" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ยื่น ภ.พ.01</text>
+    <text x="280" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">ภายใน 30 วัน</text>
+    <text x="380" y="40" font-family="system-ui,sans-serif" font-size="20" fill="#94a3b8">→</text>
+    <rect x="400" y="0" width="160" height="80" rx="12" fill="#10b981" opacity="0.1" stroke="#10b981"/>
+    <text x="480" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#10b981">3</text>
+    <text x="480" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ได้เลขทะเบียน</text>
+    <text x="480" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#10b981">ภาษีมูลค่าเพิ่ม</text>
+    <text x="580" y="40" font-family="system-ui,sans-serif" font-size="20" fill="#94a3b8">→</text>
+    <rect x="600" y="0" width="140" height="80" rx="12" fill="#ec4899" opacity="0.1" stroke="#ec4899"/>
+    <text x="670" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#ec4899">4</text>
+    <text x="670" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ออกใบกำกับภาษี</text>
+    <text x="670" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#ec4899">+ VAT 7%</text>
+  </g>
+  <g transform="translate(30,165)">
+    <rect x="0" y="0" width="740" height="90" rx="14" fill="#ef4444" opacity="0.05" stroke="#ef4444"/>
+    <text x="20" y="25" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ef4444">หน้าที่หลังจด VAT</text>
+    <text x="20" y="50" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ออกใบกำกับภาษีทุกครั้งที่รับเงิน</text>
+    <text x="280" y="50" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ยื่น ภ.พ.30 ทุกเดือน (ภายในวันที่ 15)</text>
+    <text x="20" y="75" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• จัดทำรายงานภาษีซื้อ-ภาษีขาย</text>
+    <text x="280" y="75" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• เก็บเอกสารอย่างน้อย 5 ปี</text>
+  </g>
+  <g transform="translate(30,280)">
+    <rect x="0" y="0" width="360" height="80" rx="14" fill="#f59e0b" opacity="0.06" stroke="#f59e0b"/>
+    <text x="20" y="25" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">บทลงโทษ ถ้าไม่จด</text>
+    <text x="20" y="50" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ค่าปรับ 2 เท่าของภาษีที่ต้องเสีย</text>
+    <text x="20" y="70" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• เงินเพิ่ม 1.5%/เดือน ของภาษีค้างจ่าย</text>
+    <rect x="380" y="0" width="360" height="80" rx="14" fill="#10b981" opacity="0.06" stroke="#10b981"/>
+    <text x="400" y="25" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#10b981">ข้อดีของการจด VAT</text>
+    <text x="400" y="50" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• เครดิตภาษีซื้อ (ขอคืน VAT ที่จ่ายไป)</text>
+    <text x="400" y="70" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ดูเป็นมืออาชีพ ลูกค้าบริษัทใหญ่ชอบ</text>
+  </g>
+</svg>

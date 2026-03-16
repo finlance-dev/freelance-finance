@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">Checklist ตรวจสอบ 50 ทวิ ก่อนยื่นภาษี</text>
+  <g transform="translate(40,55)">
+    <rect x="0" y="0" width="340" height="300" rx="16" fill="#0891b2" opacity="0.05" stroke="#0891b2"/>
+    <text x="170" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#0891b2">ข้อมูลที่ต้องตรวจ</text>
+    <text x="20" y="65" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ ชื่อ-ที่อยู่ผู้จ่ายเงินถูกต้อง</text>
+    <text x="20" y="95" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ ชื่อ-ที่อยู่ผู้รับเงิน (ของเรา) ถูกต้อง</text>
+    <text x="20" y="125" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ เลข 13 หลักถูกต้อง</text>
+    <text x="20" y="155" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ จำนวนเงินตรงกับที่ได้รับจริง</text>
+    <text x="20" y="185" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ ภาษีที่หักคำนวณถูกต้อง (3%)</text>
+    <text x="20" y="215" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ วันเดือนปีที่จ่ายตรงกับปีภาษี</text>
+    <text x="20" y="245" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ ประเภทเงินได้ระบุถูก (40(2) หรือ 40(8))</text>
+    <text x="20" y="275" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">☐ มีลายเซ็น/ตราประทับผู้จ่าย</text>
+    <rect x="380" y="0" width="340" height="140" rx="16" fill="#10b981" opacity="0.05" stroke="#10b981"/>
+    <text x="550" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#10b981">วิธีจัดเก็บ</text>
+    <text x="400" y="60" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• สแกน/ถ่ายรูปเก็บไว้ใน Cloud</text>
+    <text x="400" y="85" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• จัดโฟลเดอร์ตามปีภาษี</text>
+    <text x="400" y="110" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ทำ spreadsheet สรุปยอดรวม</text>
+    <text x="400" y="130" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• บันทึกใน Finlance อัตโนมัติ</text>
+    <rect x="380" y="155" width="340" height="145" rx="16" fill="#f59e0b" opacity="0.05" stroke="#f59e0b"/>
+    <text x="550" y="185" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#f59e0b">ถ้าไม่ได้รับ 50 ทวิ</text>
+    <text x="400" y="215" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ทวงจากผู้ว่าจ้างก่อนยื่นภาษี</text>
+    <text x="400" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ใช้ statement ธนาคารแทนได้</text>
+    <text x="400" y="265" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ยื่นภาษีโดยไม่มี 50 ทวิ ก็ได้</text>
+    <text x="400" y="290" font-family="system-ui,sans-serif" font-size="12" fill="#ef4444">• แต่ขอภาษีคืนไม่ได้ถ้าไม่มีหลักฐาน</text>
+  </g>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">* เก็บ 50 ทวิ อย่างน้อย 5 ปี เผื่อถูกสรรพากรตรวจ</text>
+</svg>

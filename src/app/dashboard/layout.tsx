@@ -23,13 +23,13 @@ import {
   UserCircle,
   BookOpen,
   Languages,
-  Shield,
+  Gift,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePlan } from "@/hooks/usePlan";
 import { useLocale } from "@/hooks/useLocale";
 import { useTheme } from "@/components/theme-provider";
-import { processRecurringTransactions, syncFromCloud, isCloudEnabled, getOverdueInvoiceCount } from "@/lib/store";
+import { processRecurringTransactions, generateInvoicesFromRecurring, syncFromCloud, syncToCloud, isCloudEnabled, getOverdueInvoiceCount } from "@/lib/store";
 import { signOut, getCurrentUser } from "@/lib/supabase-store";
 import { BarChart3 } from "lucide-react";
 import { OnboardingModal } from "@/components/onboarding";
@@ -48,6 +48,7 @@ const navItems: { href: string; labelKey: TranslationKey<"nav">; icon: typeof La
   { href: "/dashboard/profile", labelKey: "profile", icon: UserCircle },
   { href: "/dashboard/settings", labelKey: "settings", icon: Settings },
   { href: "/dashboard/pricing", labelKey: "plan", icon: CreditCard },
+  { href: "/dashboard/referral", labelKey: "referral", icon: Gift },
   { href: "/dashboard/guide", labelKey: "guide", icon: BookOpen },
 ];
 
@@ -90,6 +91,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       // Process recurring transactions on app load
       processRecurringTransactions();
+      generateInvoicesFromRecurring();
 
       // Check overdue invoices
       setOverdueCount(getOverdueInvoiceCount());
@@ -99,6 +101,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         syncFromCloud();
       }
 
+      // Track referral signup (one-time after registration)
+      const refCode = sessionStorage.getItem("ff_ref_code");
+      if (refCode && user) {
+        fetch("/api/referral/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code: refCode, referredId: user.id, referredEmail: user.email }),
+        }).then(() => sessionStorage.removeItem("ff_ref_code")).catch(() => {});
+      }
+
       // Show onboarding for new users
       if (!localStorage.getItem("ff_onboarding_done")) {
         setShowOnboarding(true);
@@ -106,6 +118,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     };
 
     init();
+
+    // Auto-backup to cloud every 5 minutes
+    let autoSyncInterval: ReturnType<typeof setInterval> | null = null;
+    if (isCloudEnabled()) {
+      autoSyncInterval = setInterval(() => {
+        syncToCloud().catch(() => {});
+      }, 5 * 60 * 1000);
+    }
+
+    return () => {
+      if (autoSyncInterval) clearInterval(autoSyncInterval);
+    };
   }, [router]);
 
   const handleLogout = async () => {
@@ -142,7 +166,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="min-h-screen bg-background flex">
       {/* Sidebar - Desktop */}
       <aside className="hidden lg:flex flex-col w-64 border-r border-border bg-card fixed h-full">
-        <div className="flex items-center gap-2 px-6 py-5 border-b border-border">
+        <div className="flex items-center gap-2 px-6 h-14 border-b border-border">
           <DollarSign className="w-7 h-7 text-primary" />
           <span className="text-lg font-bold">Finlance</span>
         </div>
@@ -164,22 +188,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </Link>
           </div>
         )}
-
-        {/* Notifications */}
-        <div className="px-3 pb-2">
-          <NotificationBell />
-        </div>
-
-        {/* Admin Link */}
-        <div className="px-3 pb-2">
-          <Link
-            href="/admin"
-            className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-muted hover:text-foreground hover:bg-secondary transition"
-          >
-            <Shield className="w-4 h-4" />
-            Admin
-          </Link>
-        </div>
 
         {/* Language Toggle */}
         <div className="px-3 pb-2">
@@ -308,8 +316,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         )}
       </div>
 
+      {/* Desktop top bar */}
+      <div className="hidden lg:flex fixed top-0 left-64 right-0 z-30 h-14 bg-card border-b border-border items-center justify-end px-6 gap-2">
+        <NotificationBell />
+      </div>
+
       {/* Main content */}
-      <main className="flex-1 lg:ml-64 pt-14 lg:pt-0">
+      <main className="flex-1 lg:ml-64 pt-14">
         {/* Trial banner */}
         {isTrial && (
           <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 border-b border-primary/20 px-4 py-2 text-center text-sm">

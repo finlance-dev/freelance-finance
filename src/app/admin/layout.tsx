@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield, LayoutDashboard, Users, Activity, LogOut, Lock, Eye, EyeOff, CreditCard } from "lucide-react";
+import { Shield, LayoutDashboard, Users, Activity, LogOut, Lock, Eye, EyeOff, CreditCard, Banknote } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAdmin } from "@/hooks/useAdmin";
 import { useLocale } from "@/hooks/useLocale";
@@ -93,6 +93,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: "/admin/users", label: locale === "th" ? "ผู้ใช้งาน" : "Users", icon: Users },
     { href: "/admin/activity", label: locale === "th" ? "กิจกรรม" : "Activity", icon: Activity },
     { href: "/admin/payments", label: locale === "th" ? "การชำระเงิน" : "Payments", icon: CreditCard },
+    { href: "/admin/withdrawals", label: locale === "th" ? "ถอนค่าคอม" : "Withdrawals", icon: Banknote },
   ];
 
   return (

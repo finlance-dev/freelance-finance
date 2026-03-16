@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">ภาษีบุคคลธรรมดา vs นิติบุคคล (รายได้ 1.2 ล้าน/ปี)</text>
+  <g transform="translate(40,55)">
+    <rect x="0" y="0" width="340" height="290" rx="16" fill="#ef4444" opacity="0.05" stroke="#ef4444"/>
+    <text x="170" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#ef4444">บุคคลธรรมดา</text>
+    <text x="20" y="70" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">รายได้</text>
+    <text x="300" y="70" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">1,200,000</text>
+    <text x="20" y="100" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">หักค่าใช้จ่าย 60%</text>
+    <text x="300" y="100" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">-720,000</text>
+    <text x="20" y="130" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">หักค่าลดหย่อนส่วนตัว</text>
+    <text x="300" y="130" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">-60,000</text>
+    <text x="20" y="160" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">เงินได้สุทธิ</text>
+    <text x="300" y="160" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">420,000</text>
+    <line x1="20" y1="175" x2="320" y2="175" stroke="#e2e8f0"/>
+    <text x="20" y="200" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">ภาษีที่ต้องจ่าย</text>
+    <text x="300" y="200" text-anchor="end" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#ef4444">29,000 ฿</text>
+    <text x="300" y="225" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">อัตราก้าวหน้า 5-35%</text>
+    <rect x="380" y="0" width="340" height="290" rx="16" fill="#10b981" opacity="0.05" stroke="#10b981"/>
+    <text x="550" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#10b981">นิติบุคคล (บจก.)</text>
+    <text x="400" y="70" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">รายได้</text>
+    <text x="680" y="70" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">1,200,000</text>
+    <text x="400" y="100" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">หักค่าใช้จ่ายจริง</text>
+    <text x="680" y="100" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">-700,000</text>
+    <text x="400" y="130" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">เงินเดือนตัวเอง</text>
+    <text x="680" y="130" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">-300,000</text>
+    <text x="400" y="160" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">กำไรสุทธิบริษัท</text>
+    <text x="680" y="160" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">200,000</text>
+    <line x1="400" y1="175" x2="700" y2="175" stroke="#e2e8f0"/>
+    <text x="400" y="200" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">ภาษีนิติบุคคล (SME)</text>
+    <text x="680" y="200" text-anchor="end" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#10b981">0 ฿</text>
+    <text x="680" y="225" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">กำไร ≤ 300K ยกเว้นภาษี</text>
+  </g>
+  <rect x="280" y="355" width="240" height="30" rx="8" fill="#10b981" opacity="0.1"/>
+  <text x="400" y="376" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#10b981">ประหยัดภาษี 29,000 บาท/ปี</text>
+</svg>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import {
   TrendingUp,
   TrendingDown,
@@ -14,37 +14,31 @@ import {
   Pencil,
   Check,
   X,
-  Wallet,
   FileText,
-  RefreshCw,
+  Settings,
 } from "lucide-react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-  AreaChart,
-  Area,
-  CartesianGrid,
-} from "recharts";
+import dynamic from "next/dynamic";
+
+const DashboardCharts = dynamic(() => import("@/components/dashboard-charts"), {
+  ssr: false,
+  loading: () => (
+    <div className="grid md:grid-cols-2 gap-6">
+      <div className="bg-card border border-border rounded-2xl p-5 h-[320px] animate-pulse" />
+      <div className="bg-card border border-border rounded-2xl p-5 h-[320px] animate-pulse" />
+    </div>
+  ),
+});
 import { getTransactions, getClients, getMonthlyExpenses, getTaxRate, seedDemoData, getIncomeGoal, setIncomeGoal as saveIncomeGoal, getInvoices, getOverdueInvoiceCount } from "@/lib/store";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import type { Transaction } from "@/lib/types";
-import { EmptyChartIllustration } from "@/components/illustrations";
+
 import { useToast } from "@/components/toast";
 import { usePlan } from "@/hooks/usePlan";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
 import { useLocale } from "@/hooks/useLocale";
 import Link from "next/link";
-import { CurrencyConverter } from "@/components/currency-converter";
 import { DashboardSkeleton } from "@/components/skeleton";
-
-const COLORS = ["#6366f1", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"];
+import { OnboardingModal } from "@/components/onboarding-modal";
 
 function getMonthlyData(transactions: Transaction[], locale: "th" | "en") {
   const months: Record<string, { income: number; expenses: number }> = {};
@@ -107,13 +101,52 @@ export default function DashboardPage() {
   const { toast } = useToast();
   const { isPro } = usePlan();
   const { locale, t } = useLocale();
+  const [showWidgetSettings, setShowWidgetSettings] = useState(false);
+  const widgetSettingsRef = useRef<HTMLDivElement>(null);
+
+  const defaultWidgets = { statCards: true, thisMonth: true, incomeGoal: true, recentTx: true, profitTrend: true, incomeVsExpense: true, expenseByCategory: true, incomeByClient: true };
+  const [widgetPrefs, setWidgetPrefs] = useState(defaultWidgets);
+
+  const toggleWidget = (key: keyof typeof defaultWidgets) => {
+    const updated = { ...widgetPrefs, [key]: !widgetPrefs[key] };
+    setWidgetPrefs(updated);
+    localStorage.setItem("ff_dashboard_widgets", JSON.stringify(updated));
+  };
+
+  useEffect(() => {
+    const saved = localStorage.getItem("ff_dashboard_widgets");
+    if (saved) {
+      try { setWidgetPrefs({ ...defaultWidgets, ...JSON.parse(saved) }); } catch {}
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Close widget settings on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (widgetSettingsRef.current && !widgetSettingsRef.current.contains(e.target as Node)) {
+        setShowWidgetSettings(false);
+      }
+    };
+    if (showWidgetSettings) document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [showWidgetSettings]);
 
   useEffect(() => {
     setTransactions(getTransactions());
     const goal = getIncomeGoal();
     setGoalInput(goal.monthlyTarget);
     setMounted(true);
-  }, []);
+
+    // Listen for demo load from onboarding modal
+    const handleLoadDemo = () => {
+      seedDemoData();
+      setTransactions(getTransactions());
+      toast("โหลดข้อมูลตัวอย่างแล้ว", "success");
+    };
+    window.addEventListener("ff_load_demo", handleLoadDemo);
+    return () => window.removeEventListener("ff_load_demo", handleLoadDemo);
+  }, [toast]);
 
   const stats = useMemo(() => {
     const totalIncome = transactions
@@ -227,50 +260,84 @@ export default function DashboardPage() {
     }] : []),
   ];
 
-  const tooltipStyle = {
-    backgroundColor: "var(--card)",
-    border: "1px solid var(--border)",
-    borderRadius: "12px",
-    fontSize: "13px",
-  };
+
 
   return (
     <div className="space-y-6">
+      <OnboardingModal />
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">{t("dashboard", "pageTitle")}</h1>
           <p className="text-muted text-sm mt-1">{t("dashboard", "pageSubtitle")}</p>
         </div>
-        <button
-          onClick={() => {
-            seedDemoData();
-            setTransactions(getTransactions());
-          }}
-          className="flex items-center gap-2 text-xs bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
-        >
-          <Database className="w-3.5 h-3.5" />
-          {t("dashboard", "loadDemo")}
-        </button>
+        <div className="flex items-center gap-2">
+          <div className="relative" ref={widgetSettingsRef}>
+            <button
+              onClick={() => setShowWidgetSettings(!showWidgetSettings)}
+              className="flex items-center gap-2 text-xs bg-secondary text-muted hover:text-foreground px-3 py-2 rounded-xl transition"
+              title={t("dashboard", "customizeWidgets")}
+            >
+              <Settings className="w-3.5 h-3.5" />
+            </button>
+            {showWidgetSettings && (
+              <div className="absolute right-0 top-full mt-2 w-56 bg-card border border-border rounded-xl shadow-lg p-3 z-50 space-y-1">
+                <p className="text-xs font-semibold text-muted mb-2">{t("dashboard", "customizeWidgets")}</p>
+                {([
+                  ["statCards", "widgetStatCards"],
+                  ["thisMonth", "widgetThisMonth"],
+                  ["incomeGoal", "widgetIncomeGoal"],
+                  ["recentTx", "widgetRecentTx"],
+                  ["profitTrend", "widgetProfitTrend"],
+                  ["incomeVsExpense", "widgetIncomeVsExpense"],
+                  ["expenseByCategory", "widgetExpenseByCategory"],
+                  ["incomeByClient", "widgetIncomeByClient"],
+                ] as [keyof typeof defaultWidgets, string][]).map(([key, label]) => (
+                  <label key={key} className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-secondary cursor-pointer text-sm">
+                    <input
+                      type="checkbox"
+                      checked={widgetPrefs[key]}
+                      onChange={() => toggleWidget(key)}
+                      className="rounded border-border accent-primary"
+                    />
+                    {t("dashboard", label as any)}
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+          <button
+            onClick={() => {
+              seedDemoData();
+              setTransactions(getTransactions());
+            }}
+            className="flex items-center gap-2 text-xs bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
+          >
+            <Database className="w-3.5 h-3.5" />
+            {t("dashboard", "loadDemo")}
+          </button>
+        </div>
       </div>
 
       {/* Stat Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {statCards.map((stat, i) => (
-          <div key={i} className="bg-card border border-border rounded-2xl p-5">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-sm text-muted">{stat.label}</span>
-              <div className={`w-9 h-9 ${stat.bg} rounded-xl flex items-center justify-center`}>
-                <stat.icon className={`w-5 h-5 ${stat.color}`} />
+      {widgetPrefs.statCards && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {statCards.map((stat, i) => (
+            <div key={i} className="bg-card border border-border rounded-2xl p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm text-muted">{stat.label}</span>
+                <div className={`w-9 h-9 ${stat.bg} rounded-xl flex items-center justify-center`}>
+                  <stat.icon className={`w-5 h-5 ${stat.color}`} />
+                </div>
               </div>
+              <p className="text-2xl font-bold">{stat.value}</p>
             </div>
-            <p className="text-2xl font-bold">{stat.value}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       {/* This Month + Income Goal */}
-      <div className={`grid ${isPro ? "lg:grid-cols-2" : ""} gap-6`}>
-        <div className="bg-card border border-border rounded-2xl p-5">
+      <div className={`grid ${isPro && widgetPrefs.incomeGoal ? "lg:grid-cols-2" : ""} gap-6`}>
+        {widgetPrefs.thisMonth && <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center justify-between mb-1">
             <h3 className="font-semibold">{t("dashboard", "thisMonth")}</h3>
             {stats.incomeChange !== 0 && (
@@ -291,10 +358,10 @@ export default function DashboardPage() {
               <span>{t("dashboard", "runwayWarning")}{stats.monthsOfRunway} {t("dashboard", "months")}</span>
             </div>
           )}
-        </div>
+        </div>}
 
         {/* Income Goal */}
-        {isPro && <div className="bg-card border border-border rounded-2xl p-5">
+        {isPro && widgetPrefs.incomeGoal && <div className="bg-card border border-border rounded-2xl p-5">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Target className="w-5 h-5 text-primary" />
@@ -378,6 +445,43 @@ export default function DashboardPage() {
         </div>}
       </div>
 
+      {/* Recent Transactions */}
+      {widgetPrefs.recentTx && <div className="bg-card border border-border rounded-2xl p-5">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-semibold flex items-center gap-2">
+            <FileText className="w-5 h-5 text-primary" />
+            {t("dashboard", "recentTransactions")}
+          </h3>
+          <Link href="/dashboard/transactions" className="text-xs text-primary hover:underline">
+            {t("dashboard", "viewAll")} →
+          </Link>
+        </div>
+        {recentTx.length > 0 ? (
+          <div className="space-y-2">
+            {recentTx.map((tx) => (
+              <div key={tx.id} className="flex items-center justify-between py-2 border-b border-border last:border-0">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${tx.type === "income" ? "bg-accent/10" : "bg-danger/10"}`}>
+                    {tx.type === "income" ? <ArrowUpRight className="w-4 h-4 text-accent" /> : <ArrowDownRight className="w-4 h-4 text-danger" />}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium truncate">{tx.description}</p>
+                    <p className="text-xs text-muted">{formatDate(tx.date)}</p>
+                  </div>
+                </div>
+                <span className={`text-sm font-semibold whitespace-nowrap ml-2 ${tx.type === "income" ? "text-accent" : "text-danger"}`}>
+                  {tx.type === "income" ? "+" : "-"}{formatCurrency(tx.amount)}
+                </span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-8 text-muted text-sm">
+            <p>{t("dashboard", "noTransactions")}</p>
+          </div>
+        )}
+      </div>}
+
       {/* Charts — Pro only */}
       {!isPro ? (
         <UpgradePrompt
@@ -385,277 +489,20 @@ export default function DashboardPage() {
           description={t("dashboard", "chartsUpgradeDesc")}
         />
       ) : (
-        <>
-          {/* Charts */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Income Trend Area Chart */}
-            <div className="bg-card border border-border rounded-2xl p-5">
-              <h3 className="font-semibold mb-4">{t("dashboard", "profitTrend")}</h3>
-              {transactions.length > 0 ? (
-                <ResponsiveContainer width="100%" height={250}>
-                  <AreaChart data={monthlyData}>
-                    <defs>
-                      <linearGradient id="profitGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3} />
-                        <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                    <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-                    <YAxis tick={{ fontSize: 12 }} />
-                    <Tooltip
-                      formatter={(value) => formatCurrency(Number(value))}
-                      contentStyle={tooltipStyle}
-                      labelStyle={{ fontWeight: "bold" }}
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="profit"
-                      stroke="#6366f1"
-                      strokeWidth={2}
-                      fill="url(#profitGradient)"
-                      name={t("dashboard", "profit")}
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
-              ) : (
-                <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
-                  <EmptyChartIllustration className="w-40 h-auto" />
-                  <p>{t("dashboard", "addToSeeChart")}</p>
-                </div>
-              )}
-            </div>
-
-            {/* Monthly Income vs Expenses Bar Chart */}
-            <div className="bg-card border border-border rounded-2xl p-5">
-              <h3 className="font-semibold mb-4">{t("dashboard", "incomeVsExpense")}</h3>
-              {transactions.length > 0 ? (
-                <ResponsiveContainer width="100%" height={250}>
-                  <BarChart data={monthlyData}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-                    <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-                    <YAxis tick={{ fontSize: 12 }} />
-                    <Tooltip
-                      formatter={(value) => formatCurrency(Number(value))}
-                      contentStyle={tooltipStyle}
-                      labelStyle={{ fontWeight: "bold" }}
-                    />
-                    <Bar dataKey="income" fill="#10b981" radius={[4, 4, 0, 0]} name={t("common", "income")} />
-                    <Bar dataKey="expenses" fill="#ef4444" radius={[4, 4, 0, 0]} name={t("common", "expense")} />
-                  </BarChart>
-                </ResponsiveContainer>
-              ) : (
-                <div className="h-[250px] flex flex-col items-center justify-center text-muted text-sm gap-3">
-                  <EmptyChartIllustration className="w-40 h-auto" />
-                  <p>{t("dashboard", "addToSeeChart")}</p>
-                  <button
-                    onClick={() => {
-                      seedDemoData();
-                      setTransactions(getTransactions());
-                    }}
-                    className="flex items-center gap-2 text-xs bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition"
-                  >
-                    <Database className="w-3.5 h-3.5" />
-                    {t("dashboard", "loadDemo")}
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Expense Pie + Client Income */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Expenses by Category */}
-            <div className="bg-card border border-border rounded-2xl p-5">
-              <h3 className="font-semibold mb-4">{t("dashboard", "expenseByCategory")}</h3>
-              {expenseData.length > 0 ? (
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <div className="w-full sm:w-1/2">
-                    <ResponsiveContainer width="100%" height={180}>
-                      <PieChart>
-                        <Pie
-                          data={expenseData}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={40}
-                          outerRadius={70}
-                          dataKey="value"
-                        >
-                          {expenseData.map((_, i) => (
-                            <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                          ))}
-                        </Pie>
-                        <Tooltip formatter={(value) => formatCurrency(Number(value))} />
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-                  <div className="space-y-2 w-full sm:flex-1">
-                    {expenseData.map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm">
-                        <div
-                          className="w-3 h-3 rounded-full shrink-0"
-                          style={{ backgroundColor: COLORS[i % COLORS.length] }}
-                        />
-                        <span className="text-muted truncate">{item.name}</span>
-                        <span className="font-medium ml-auto whitespace-nowrap">{formatCurrency(item.value)}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="h-[200px] flex flex-col items-center justify-center text-muted text-sm">
-                  <EmptyChartIllustration className="w-36 h-auto mb-3" />
-                  {t("dashboard", "addExpenseToSee")}
-                </div>
-              )}
-            </div>
-
-            {/* Income by Client */}
-            {clientIncomeData.length > 0 && (
-              <div className="bg-card border border-border rounded-2xl p-5">
-                <h3 className="font-semibold mb-4">{t("dashboard", "incomeByClient")}</h3>
-                <div className="space-y-3">
-                  {clientIncomeData.slice(0, 5).map((item, i) => {
-                    const maxIncome = clientIncomeData[0].income;
-                    const widthPercent = (item.income / maxIncome) * 100;
-                    return (
-                      <div key={i}>
-                        <div className="flex items-center justify-between mb-1">
-                          <div className="flex items-center gap-2">
-                            <div
-                              className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-medium shrink-0"
-                              style={{ backgroundColor: item.color }}
-                            >
-                              {item.name.charAt(0).toUpperCase()}
-                            </div>
-                            <span className="text-sm font-medium truncate">{item.name}</span>
-                          </div>
-                          <span className="text-sm font-semibold whitespace-nowrap">{formatCurrency(item.income)}</span>
-                        </div>
-                        <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
-                          <div
-                            className="h-full rounded-full transition-all duration-500"
-                            style={{ width: `${widthPercent}%`, backgroundColor: item.color }}
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-        </>
+        <DashboardCharts
+          monthlyData={monthlyData}
+          expenseData={expenseData}
+          clientIncomeData={clientIncomeData}
+          hasTransactions={transactions.length > 0}
+          widgetPrefs={widgetPrefs}
+          onLoadDemo={() => {
+            seedDemoData();
+            setTransactions(getTransactions());
+          }}
+          t={t as any}
+        />
       )}
 
-      {/* Recent Transactions + Quick Stats + Currency */}
-      <div className="grid lg:grid-cols-3 gap-6">
-        {/* Recent Transactions */}
-        <div className="lg:col-span-2 bg-card border border-border rounded-2xl p-5">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold flex items-center gap-2">
-              <FileText className="w-5 h-5 text-primary" />
-              {t("dashboard", "recentTransactions")}
-            </h3>
-            <Link href="/dashboard/transactions" className="text-xs text-primary hover:underline">
-              {t("dashboard", "viewAll")} →
-            </Link>
-          </div>
-          {recentTx.length > 0 ? (
-            <div className="space-y-2">
-              {recentTx.map((tx) => (
-                <div key={tx.id} className="flex items-center justify-between py-2 border-b border-border last:border-0">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${tx.type === "income" ? "bg-accent/10" : "bg-danger/10"}`}>
-                      {tx.type === "income" ? <ArrowUpRight className="w-4 h-4 text-accent" /> : <ArrowDownRight className="w-4 h-4 text-danger" />}
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium truncate">{tx.description}</p>
-                      <p className="text-xs text-muted">{formatDate(tx.date)}</p>
-                    </div>
-                  </div>
-                  <span className={`text-sm font-semibold whitespace-nowrap ml-2 ${tx.type === "income" ? "text-accent" : "text-danger"}`}>
-                    {tx.type === "income" ? "+" : "-"}{formatCurrency(tx.amount)}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-8 text-muted text-sm">
-              <p>{t("dashboard", "noTransactions")}</p>
-            </div>
-          )}
-        </div>
-
-        {/* Right column: Savings Rate + Invoice Overview */}
-        <div className="space-y-6">
-          {/* Savings Rate */}
-          <div className="bg-card border border-border rounded-2xl p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Wallet className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold">{t("dashboard", "savingsRate")}</h3>
-            </div>
-            <div className="flex items-center justify-center py-3">
-              <div className="relative w-28 h-28">
-                <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="42" fill="none" stroke="var(--secondary)" strokeWidth="10" />
-                  <circle
-                    cx="50" cy="50" r="42" fill="none"
-                    stroke={savingsRate >= 30 ? "var(--accent)" : savingsRate >= 10 ? "var(--warning)" : "var(--danger)"}
-                    strokeWidth="10"
-                    strokeLinecap="round"
-                    strokeDasharray={`${Math.max(0, Math.min(100, savingsRate)) * 2.64} 264`}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className={`text-2xl font-bold ${savingsRate >= 30 ? "text-accent" : savingsRate >= 10 ? "text-warning" : "text-danger"}`}>
-                    {savingsRate.toFixed(0)}%
-                  </span>
-                </div>
-              </div>
-            </div>
-            <p className="text-center text-xs text-muted mt-1">
-              {savingsRate >= 30 ? t("dashboard", "savingsGood") : savingsRate >= 10 ? t("dashboard", "savingsOk") : t("dashboard", "savingsLow")}
-            </p>
-          </div>
-
-          {/* Invoice Overview */}
-          <div className="bg-card border border-border rounded-2xl p-5">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <RefreshCw className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">{t("dashboard", "invoiceOverview")}</h3>
-              </div>
-              <Link href="/dashboard/invoices" className="text-xs text-primary hover:underline">
-                {t("dashboard", "viewAll")}
-              </Link>
-            </div>
-            <div className="space-y-2.5">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-muted">{t("dashboard", "invoicePaid")}</span>
-                <span className="font-medium text-accent">{invoiceStats.paidCount}</span>
-              </div>
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-muted">{t("dashboard", "invoicePending")}</span>
-                <span className="font-medium text-warning">{invoiceStats.pendingCount}</span>
-              </div>
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-muted">{t("dashboard", "invoiceOverdue")}</span>
-                <span className="font-medium text-danger">{invoiceStats.overdueCount}</span>
-              </div>
-              {invoiceStats.totalValue > 0 && (
-                <div className="pt-2 border-t border-border flex justify-between items-center text-sm">
-                  <span className="text-muted">{t("dashboard", "invoiceOutstanding")}</span>
-                  <span className="font-semibold">{formatCurrency(invoiceStats.totalValue)}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Currency Converter */}
-      <CurrencyConverter />
     </div>
   );
 }

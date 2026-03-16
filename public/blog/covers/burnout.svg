@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#64748b"/><stop offset="100%" stop-color="#334155"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">สัญญาณ Burnout</text>
+  <rect x="100" y="170" width="420" height="40" rx="8" fill="#ef4444" opacity="0.2"/>
+  <text x="140" y="196" font-family="system-ui,sans-serif" font-size="13" fill="white">🔴 ทำงานไม่มีแรง ไม่อยากรับงานใหม่</text>
+  <rect x="100" y="220" width="420" height="40" rx="8" fill="#ef4444" opacity="0.2"/>
+  <text x="140" y="246" font-family="system-ui,sans-serif" font-size="13" fill="white">🔴 นอนไม่หลับ วิตกกังวลเรื่องเงิน</text>
+  <rect x="100" y="270" width="420" height="40" rx="8" fill="#ef4444" opacity="0.2"/>
+  <text x="140" y="296" font-family="system-ui,sans-serif" font-size="13" fill="white">🔴 ส่งงานช้า คุณภาพตก deadline พลาด</text>
+  <rect x="100" y="320" width="420" height="40" rx="8" fill="#ef4444" opacity="0.2"/>
+  <text x="140" y="346" font-family="system-ui,sans-serif" font-size="13" fill="white">🔴 แยกเวลาส่วนตัวกับงานไม่ได้</text>
+  <rect x="100" y="370" width="420" height="40" rx="8" fill="#10b981" opacity="0.2"/>
+  <text x="140" y="396" font-family="system-ui,sans-serif" font-size="13" fill="#34d399">✅ วิธีรับมือ → อ่านบทความเต็ม</text>
+  <rect x="640" y="80" width="500" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="890" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="30" font-weight="bold" fill="white">Burnout</text>
+  <text x="890" y="235" text-anchor="middle" font-family="system-ui,sans-serif" font-size="30" font-weight="bold" fill="white">ฟรีแลนซ์</text>
+  <text x="890" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">สัญญาณเตือน + วิธีรับมือ</text>
+  <rect x="790" y="420" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="890" y="452" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

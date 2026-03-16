@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#1e293b">แยกบัญชีส่วนตัวกับบัญชีธุรกิจ</text>
+  <rect x="60" y="80" width="300" height="260" rx="16" fill="#10b981" opacity="0.08" stroke="#10b981" stroke-width="2"/>
+  <text x="210" y="115" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#10b981">บัญชีธุรกิจ</text>
+  <text x="210" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">รับเงินจากลูกค้า</text>
+  <text x="210" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">จ่ายค่าใช้จ่ายธุรกิจ</text>
+  <text x="210" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">สำรองเงินภาษี</text>
+  <text x="210" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">กำไรสะสม</text>
+  <rect x="120" y="260" width="180" height="50" rx="10" fill="#10b981" opacity="0.15"/>
+  <text x="210" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#10b981">เห็นกำไรชัดเจน</text>
+  <rect x="440" y="80" width="300" height="260" rx="16" fill="#6366f1" opacity="0.08" stroke="#6366f1" stroke-width="2"/>
+  <text x="590" y="115" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#6366f1">บัญชีส่วนตัว</text>
+  <text x="590" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">รับเงินเดือนจากตัวเอง</text>
+  <text x="590" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">จ่ายค่าใช้จ่ายส่วนตัว</text>
+  <text x="590" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">ค่าเช่า อาหาร เดินทาง</text>
+  <text x="590" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">เงินออมส่วนตัว</text>
+  <rect x="500" y="260" width="180" height="50" rx="10" fill="#6366f1" opacity="0.15"/>
+  <text x="590" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#6366f1">ควบคุมรายจ่ายได้</text>
+  <polygon points="365,200 395,185 395,215" fill="#f59e0b"/>
+  <text x="380" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#f59e0b" font-weight="bold">โอน</text>
+  <text x="400" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">โอนเงินเดือนตัวเองเป็นจำนวนคงที่ทุกเดือน</text>
+</svg>

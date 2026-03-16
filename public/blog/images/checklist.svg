@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#1e293b">เช็คลิสต์เตรียมตัวก่อนเป็นฟรีแลนซ์</text>
+  <g transform="translate(120,60)">
+    <rect x="0" y="0" width="560" height="55" rx="10" fill="#10b981" opacity="0.08" stroke="#10b981"/>
+    <rect x="15" y="15" width="24" height="24" rx="6" fill="#10b981"/><text x="22" y="33" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">✓</text>
+    <text x="55" y="30" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#1e293b">สำรองเงินฉุกเฉิน 6-12 เดือน</text>
+    <text x="55" y="48" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ค่าใช้จ่ายรายเดือน × 6 = เป้าหมายขั้นต่ำ</text>
+    <rect x="0" y="65" width="560" height="55" rx="10" fill="#10b981" opacity="0.08" stroke="#10b981"/>
+    <rect x="15" y="80" width="24" height="24" rx="6" fill="#10b981"/><text x="22" y="98" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">✓</text>
+    <text x="55" y="95" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#1e293b">ลดค่าใช้จ่ายที่ไม่จำเป็น</text>
+    <text x="55" y="113" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ตัด subscription ลดรายจ่ายฟุ่มเฟือย</text>
+    <rect x="0" y="130" width="560" height="55" rx="10" fill="#6366f1" opacity="0.08" stroke="#6366f1"/>
+    <rect x="15" y="145" width="24" height="24" rx="6" fill="#6366f1"/><text x="22" y="163" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">✓</text>
+    <text x="55" y="160" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#1e293b">มีลูกค้า 2-3 ราย ก่อนลาออก</text>
+    <text x="55" y="178" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ทดลองรับงานนอกเวลา 3-6 เดือน</text>
+    <rect x="0" y="195" width="560" height="55" rx="10" fill="#f59e0b" opacity="0.08" stroke="#f59e0b"/>
+    <rect x="15" y="210" width="24" height="24" rx="6" fill="#f59e0b"/><text x="22" y="228" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">✓</text>
+    <text x="55" y="225" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#1e293b">เตรียมอุปกรณ์ทำงาน</text>
+    <text x="55" y="243" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">คอมพิวเตอร์ ซอฟต์แวร์ อินเทอร์เน็ต</text>
+    <rect x="0" y="260" width="560" height="55" rx="10" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6"/>
+    <rect x="15" y="275" width="24" height="24" rx="6" fill="#8b5cf6"/><text x="22" y="293" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">✓</text>
+    <text x="55" y="290" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#1e293b">เปิดบัญชีธุรกิจแยก + สมัครประกันสังคม</text>
+    <text x="55" y="308" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">มาตรา 39 หรือ 40 + ประกันสุขภาพ</text>
+  </g>
+</svg>

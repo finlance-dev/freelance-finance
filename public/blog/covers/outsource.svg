@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <circle cx="300" cy="250" r="50" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="2"/>
+  <text x="300" y="260" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#3b82f6">You</text>
+  <circle cx="150" cy="420" r="35" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
+  <circle cx="300" cy="450" r="35" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1.5"/>
+  <circle cx="450" cy="420" r="35" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="1.5"/>
+  <line x1="270" y1="290" x2="170" y2="390" stroke="#334155" stroke-width="1.5"/>
+  <line x1="300" y1="300" x2="300" y2="415" stroke="#334155" stroke-width="1.5"/>
+  <line x1="330" y1="290" x2="430" y2="390" stroke="#334155" stroke-width="1.5"/>
+  <text x="850" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="white">จ้างคนช่วยงาน</text>
+  <text x="850" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="#3b82f6">เมื่อไหร่ควร Outsource</text>
+  <text x="850" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8">ขยายธุรกิจฟรีแลนซ์โดยไม่ต้องทำคนเดียว</text>
+  <text x="850" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8">วิธีหาคน มอบงาน และคุมคุณภาพ</text>
+  <rect x="60" y="590" width="120" height="6" rx="3" fill="#3b82f6"/>
+</svg>

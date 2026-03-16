@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#1e293b">กระบวนการชำระเงิน</text>
+  <rect x="40" y="120" width="160" height="80" rx="14" fill="#6366f1"/><text x="120" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="white" font-weight="bold">ส่งใบแจ้งหนี้</text><text x="120" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.8">พร้อม QR Code</text>
+  <polygon points="210,160 230,150 230,170" fill="#6366f1"/>
+  <rect x="240" y="120" width="140" height="80" rx="14" fill="#f59e0b"/><text x="310" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="white" font-weight="bold">ลูกค้าตรวจสอบ</text><text x="310" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.8">Net 15/30</text>
+  <polygon points="390,160 410,150 410,170" fill="#f59e0b"/>
+  <rect x="420" y="120" width="140" height="80" rx="14" fill="#10b981"/><text x="490" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="white" font-weight="bold">ชำระเงิน</text><text x="490" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.8">โอน/PromptPay</text>
+  <polygon points="570,160 590,150 590,170" fill="#10b981"/>
+  <rect x="600" y="120" width="160" height="80" rx="14" fill="#8b5cf6"/><text x="680" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="white" font-weight="bold">ออกใบเสร็จ</text><text x="680" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.8">เก็บหลักฐาน</text>
+  <rect x="100" y="260" width="600" height="80" rx="14" fill="#6366f1" opacity="0.05" stroke="#6366f1" stroke-dasharray="6,4"/>
+  <text x="400" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#6366f1">เคล็ดลับให้ได้เงินเร็ว</text>
+  <text x="400" y="315" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ส่งทันที • ใส่ QR Code • กำหนดวันชัด • Reminder ก่อน 3 วัน • ลด 3% ถ้าจ่ายเร็ว</text>
+</svg>

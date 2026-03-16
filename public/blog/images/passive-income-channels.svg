@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">7 ช่องทาง Passive Income สำหรับฟรีแลนซ์</text>
+  <g transform="translate(25,50)">
+    <rect x="0" y="0" width="240" height="100" rx="12" fill="#6366f1" opacity="0.06" stroke="#6366f1"/>
+    <text x="15" y="28" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#6366f1">1</text>
+    <text x="45" y="28" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">เงินฝากออมทรัพย์พิเศษ</text>
+    <text x="45" y="50" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ความเสี่ยง: ต่ำมาก</text>
+    <text x="45" y="70" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ผลตอบแทน: 1.5-2.5%/ปี</text>
+    <text x="45" y="90" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">เหมาะ: เงินสำรองฉุกเฉิน</text>
+    <rect x="255" y="0" width="240" height="100" rx="12" fill="#10b981" opacity="0.06" stroke="#10b981"/>
+    <text x="270" y="28" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#10b981">2</text>
+    <text x="300" y="28" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">กองทุนตราสารหนี้</text>
+    <text x="300" y="50" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ความเสี่ยง: ต่ำ</text>
+    <text x="300" y="70" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ผลตอบแทน: 2-4%/ปี</text>
+    <text x="300" y="90" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">เหมาะ: พักเงินระยะสั้น</text>
+    <rect x="510" y="0" width="240" height="100" rx="12" fill="#f59e0b" opacity="0.06" stroke="#f59e0b"/>
+    <text x="525" y="28" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#f59e0b">3</text>
+    <text x="555" y="28" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">ETF หุ้นไทย/ต่างประเทศ</text>
+    <text x="555" y="50" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ความเสี่ยง: ปานกลาง-สูง</text>
+    <text x="555" y="70" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ผลตอบแทน: 6-10%/ปี</text>
+    <text x="555" y="90" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">เหมาะ: ลงทุนระยะยาว</text>
+    <rect x="0" y="115" width="240" height="100" rx="12" fill="#ec4899" opacity="0.06" stroke="#ec4899"/>
+    <text x="15" y="143" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#ec4899">4</text>
+    <text x="45" y="143" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">หุ้นปันผล</text>
+    <text x="45" y="165" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ความเสี่ยง: ปานกลาง</text>
+    <text x="45" y="185" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ผลตอบแทน: 3-6%/ปี</text>
+    <text x="45" y="205" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">เหมาะ: รายได้ประจำ</text>
+    <rect x="255" y="115" width="240" height="100" rx="12" fill="#8b5cf6" opacity="0.06" stroke="#8b5cf6"/>
+    <text x="270" y="143" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#8b5cf6">5</text>
+    <text x="300" y="143" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">REIT อสังหาริมทรัพย์</text>
+    <text x="300" y="165" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ความเสี่ยง: ปานกลาง</text>
+    <text x="300" y="185" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ผลตอบแทน: 4-7%/ปี</text>
+    <text x="300" y="205" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">เหมาะ: ปันผลสม่ำเสมอ</text>
+    <rect x="510" y="115" width="240" height="100" rx="12" fill="#0ea5e9" opacity="0.06" stroke="#0ea5e9"/>
+    <text x="525" y="143" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#0ea5e9">6</text>
+    <text x="555" y="143" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">คอร์สออนไลน์</text>
+    <text x="555" y="165" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ความเสี่ยง: ต่ำ (ใช้เวลา)</text>
+    <text x="555" y="185" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ผลตอบแทน: ไม่จำกัด</text>
+    <text x="555" y="205" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">เหมาะ: มีความเชี่ยวชาญ</text>
+  </g>
+  <rect x="25" y="285" width="750" height="70" rx="12" fill="#14b8a6" opacity="0.06" stroke="#14b8a6"/>
+  <text x="40" y="313" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#14b8a6">7</text>
+  <text x="70" y="313" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">Template / Digital Product (เทมเพลต, preset, plugin)</text>
+  <text x="70" y="340" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">สร้างครั้งเดียว ขายได้ตลอด — เหมาะกับดีไซเนอร์, นักเขียน, โปรแกรมเมอร์</text>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">* ผลตอบแทนเป็นค่าเฉลี่ยย้อนหลัง ไม่ได้การันตีอนาคต</text>
+</svg>

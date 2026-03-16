@@ -38,17 +38,60 @@ export async function POST(request: NextRequest) {
     }
 
     // Update order status
+    const now = new Date();
+    const updateData: Record<string, unknown> = {
+      status,
+      admin_note: note || null,
+      updated_at: now.toISOString(),
+    };
+
+    // When approving, calculate plan expiry
+    if (action === "approve") {
+      const plan = order.plan as string;
+      const expiresAt = plan === "pro_yearly"
+        ? new Date(now.getFullYear() + 1, now.getMonth(), now.getDate())
+        : new Date(now.getFullYear(), now.getMonth() + 1, now.getDate());
+      updateData.plan_activated_at = now.toISOString();
+      updateData.plan_expires_at = expiresAt.toISOString();
+    }
+
     const { error: updateError } = await supabaseAdmin
       .from("payment_orders")
-      .update({
-        status,
-        admin_note: note || null,
-        updated_at: new Date().toISOString(),
-      })
+      .update(updateData)
       .eq("id", orderId);
 
     if (updateError) {
       return NextResponse.json({ error: updateError.message }, { status: 500 });
+    }
+
+    // Create referral commission if this user was referred
+    if (action === "approve") {
+      const COMMISSION_RATE = 0.25;
+      const { data: referral } = await supabaseAdmin
+        .from("referrals")
+        .select("referrer_id")
+        .eq("referred_id", order.user_id)
+        .in("status", ["signed_up", "converted"])
+        .limit(1)
+        .single();
+
+      if (referral) {
+        const commissionAmount = Math.round(Number(order.amount) * COMMISSION_RATE);
+        await supabaseAdmin.from("commissions").insert({
+          referrer_id: referral.referrer_id,
+          referred_id: order.user_id,
+          order_id: orderId,
+          amount: commissionAmount,
+          rate: COMMISSION_RATE,
+          status: "pending",
+        });
+        // Update referral status to converted
+        await supabaseAdmin
+          .from("referrals")
+          .update({ status: "converted", converted_at: new Date().toISOString() })
+          .eq("referred_id", order.user_id)
+          .eq("referrer_id", referral.referrer_id);
+      }
     }
 
     return NextResponse.json({ success: true, status, orderId });

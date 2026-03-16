@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">วิธีคำนวณภาษีเมื่อมีรายได้หลายทาง</text>
+  <rect x="30" y="50" width="230" height="70" rx="10" fill="#14b8a6" opacity="0.1" stroke="#5eead4"/>
+  <text x="145" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#0d9488">รับจ้างเขียนโค้ด</text>
+  <text x="145" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">40(2) → 400,000 บาท</text>
+  <text x="145" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#0d9488">หักเหมา 50% = 200,000</text>
+  <rect x="285" y="50" width="230" height="70" rx="10" fill="#14b8a6" opacity="0.1" stroke="#5eead4"/>
+  <text x="400" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#0d9488">ขายของออนไลน์</text>
+  <text x="400" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">40(8) → 300,000 บาท</text>
+  <text x="400" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#0d9488">หักเหมา 60% = 120,000</text>
+  <rect x="540" y="50" width="230" height="70" rx="10" fill="#14b8a6" opacity="0.1" stroke="#5eead4"/>
+  <text x="655" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#0d9488">ค่าเช่าคอนโด</text>
+  <text x="655" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">40(5) → 120,000 บาท</text>
+  <text x="655" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#0d9488">หักเหมา 30% = 84,000</text>
+  <text x="400" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#0d9488">▼ รวมเข้าด้วยกัน ▼</text>
+  <rect x="100" y="160" width="600" height="210" rx="12" fill="white" stroke="#e2e8f0"/>
+  <text x="400" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">คำนวณภาษีรวม</text>
+  <text x="200" y="220" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">รายได้รวม:</text>
+  <text x="550" y="220" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">820,000 บาท</text>
+  <text x="200" y="245" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">หักค่าใช้จ่ายรวม (แต่ละประเภท):</text>
+  <text x="550" y="245" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-404,000 บาท</text>
+  <text x="200" y="270" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เงินได้หลังหักค่าใช้จ่าย:</text>
+  <text x="550" y="270" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">416,000 บาท</text>
+  <text x="200" y="295" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">หักค่าลดหย่อนส่วนตัว:</text>
+  <text x="550" y="295" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">-60,000 บาท</text>
+  <rect x="200" y="310" width="350" height="2" fill="#e2e8f0"/>
+  <text x="200" y="340" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">เงินได้สุทธิ:</text>
+  <text x="550" y="340" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#0d9488">356,000 → ภาษี ฿13,400</text>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">สำคัญ: แต่ละประเภทรายได้หักค่าใช้จ่ายด้วยอัตราต่างกัน ห้ามใช้อัตราเดียว!</text>
+</svg>

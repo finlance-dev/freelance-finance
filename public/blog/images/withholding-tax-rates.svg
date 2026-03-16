@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">อัตราภาษีหัก ณ ที่จ่าย สำหรับฟรีแลนซ์</text>
+  <g transform="translate(40,55)">
+    <rect x="0" y="0" width="720" height="40" rx="8" fill="#6366f1" opacity="0.15"/>
+    <text x="15" y="26" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">ประเภทรายได้</text>
+    <text x="400" y="26" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">อัตราหัก</text>
+    <text x="600" y="26" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">ตัวอย่าง</text>
+    <rect x="0" y="48" width="720" height="45" rx="8" fill="white" stroke="#e2e8f0"/>
+    <text x="15" y="76" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">40(2) ค่าจ้างทำของ / ค่านายหน้า</text>
+    <rect x="360" y="58" width="80" height="28" rx="8" fill="#ef4444" opacity="0.1"/><text x="400" y="78" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#ef4444">3%</text>
+    <text x="600" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">50K → หัก 1,500</text>
+    <rect x="0" y="100" width="720" height="45" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="15" y="128" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">40(8) ค่าบริการ / วิชาชีพอิสระ</text>
+    <rect x="360" y="110" width="80" height="28" rx="8" fill="#f59e0b" opacity="0.1"/><text x="400" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#f59e0b">3%</text>
+    <text x="600" y="128" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">100K → หัก 3,000</text>
+    <rect x="0" y="152" width="720" height="45" rx="8" fill="white" stroke="#e2e8f0"/>
+    <text x="15" y="180" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">40(6) วิชาชีพอิสระ (แพทย์/ทนาย/วิศวกร)</text>
+    <rect x="360" y="162" width="80" height="28" rx="8" fill="#8b5cf6" opacity="0.1"/><text x="400" y="182" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#8b5cf6">3%</text>
+    <text x="600" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">80K → หัก 2,400</text>
+    <rect x="0" y="204" width="720" height="45" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="15" y="232" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">40(3) ค่าลิขสิทธิ์ / ค่ากู๊ดวิลล์</text>
+    <rect x="360" y="214" width="80" height="28" rx="8" fill="#10b981" opacity="0.1"/><text x="400" y="234" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#10b981">3%</text>
+    <text x="600" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">30K → หัก 900</text>
+    <rect x="0" y="256" width="720" height="45" rx="8" fill="white" stroke="#e2e8f0"/>
+    <text x="15" y="284" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">ค่าเช่าทรัพย์สิน</text>
+    <rect x="360" y="266" width="80" height="28" rx="8" fill="#ec4899" opacity="0.1"/><text x="400" y="286" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#ec4899">5%</text>
+    <text x="600" y="284" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">20K → หัก 1,000</text>
+  </g>
+  <text x="400" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">* หักเฉพาะกรณีจ่ายตั้งแต่ 1,000 บาทขึ้นไป (ยกเว้นค่าจ้างทำของ หักทุกจำนวน)</text>
+</svg>

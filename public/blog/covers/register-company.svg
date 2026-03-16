@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">เปรียบเทียบภาษี</text>
+  <rect x="90" y="170" width="210" height="140" rx="14" fill="white" opacity="0.15"/>
+  <text x="195" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">บุคคลธรรมดา</text>
+  <text x="195" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="32" font-weight="bold" fill="#fbbf24">35%</text>
+  <text x="195" y="275" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white" opacity="0.8">อัตราสูงสุด</text>
+  <rect x="320" y="170" width="210" height="140" rx="14" fill="white" opacity="0.15"/>
+  <text x="425" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">นิติบุคคล</text>
+  <text x="425" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="32" font-weight="bold" fill="#34d399">20%</text>
+  <text x="425" y="275" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white" opacity="0.8">อัตราคงที่</text>
+  <text x="310" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="48" fill="white">→</text>
+  <text x="310" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.9">รายได้เท่าไรถึงควรจดบริษัท?</text>
+  <rect x="640" y="80" width="480" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="880" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="34" font-weight="bold" fill="white">เปิดบริษัท</text>
+  <text x="880" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="34" font-weight="bold" fill="white">คนเดียว</text>
+  <text x="880" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">คู่มือจดทะเบียนฉบับสมบูรณ์</text>
+  <text x="880" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">สำหรับฟรีแลนซ์</text>
+  <rect x="780" y="400" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="880" y="432" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

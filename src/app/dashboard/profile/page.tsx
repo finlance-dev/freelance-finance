@@ -155,59 +155,6 @@ export default function ProfilePage() {
     </div>
   );
 
-  if (!isPro) {
-    return (
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-2xl font-bold">{t("profile", "title")}</h1>
-          <p className="text-muted text-sm mt-1">{t("profile", "subtitle")}</p>
-        </div>
-        <UpgradePrompt
-          feature={t("profile", "upgradeFeature")}
-          description={t("profile", "upgradeDesc")}
-        />
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <User className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-sm">{t("profile", "previewPersonal")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("profile", "previewPersonalDesc")}
-            </p>
-          </div>
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <Building2 className="w-5 h-5 text-accent" />
-              <h3 className="font-semibold text-sm">{t("profile", "previewBusiness")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("profile", "previewBusinessDesc")}
-            </p>
-          </div>
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <FileText className="w-5 h-5 text-warning" />
-              <h3 className="font-semibold text-sm">{t("profile", "previewBank")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("profile", "previewBankDesc")}
-            </p>
-          </div>
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <Camera className="w-5 h-5 text-danger" />
-              <h3 className="font-semibold text-sm">{t("profile", "previewAvatar")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("profile", "previewAvatarDesc")}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   const initials = profile.name
     ? profile.name
         .split(" ")

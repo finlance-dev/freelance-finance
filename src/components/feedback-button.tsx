@@ -38,9 +38,9 @@ export function FeedbackButton() {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 z-50" ref={ref}>
+    <div className="fixed bottom-4 right-4 z-50" ref={ref}>
       {open && (
-        <div className="absolute bottom-14 left-0 w-80 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden animate-slide-up">
+        <div className="absolute bottom-14 right-0 w-80 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden animate-slide-up">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-primary/5">
             <div className="flex items-center gap-2">

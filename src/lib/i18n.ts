@@ -49,6 +49,7 @@ export const translations = {
     settings: { th: "ตั้งค่า", en: "Settings" },
     plan: { th: "แพลน", en: "Plan" },
     guide: { th: "คู่มือใช้งาน", en: "Guide" },
+    referral: { th: "แนะนำเพื่อน", en: "Referral" },
     logout: { th: "ออกจากระบบ", en: "Logout" },
     upgradeToPro: { th: "อัปเกรดเป็นโปร", en: "Upgrade to Pro" },
   },
@@ -212,6 +213,15 @@ export const translations = {
     currencyConverter: { th: "แปลงสกุลเงิน", en: "Currency Converter" },
     ratesUpdated: { th: "อัปเดตล่าสุด", en: "Updated" },
     fallbackRates: { th: "อัตราสำรอง", en: "Fallback rates" },
+    customizeWidgets: { th: "ปรับแต่ง Widgets", en: "Customize Widgets" },
+    widgetStatCards: { th: "สรุปยอดรวม", en: "Summary Cards" },
+    widgetThisMonth: { th: "รายรับเดือนนี้", en: "This Month Income" },
+    widgetIncomeGoal: { th: "เป้าหมายรายรับ", en: "Income Goal" },
+    widgetRecentTx: { th: "รายการล่าสุด", en: "Recent Transactions" },
+    widgetProfitTrend: { th: "กราฟกำไร", en: "Profit Trend" },
+    widgetIncomeVsExpense: { th: "รายรับ vs รายจ่าย", en: "Income vs Expense" },
+    widgetExpenseByCategory: { th: "รายจ่ายตามหมวด", en: "Expense by Category" },
+    widgetIncomeByClient: { th: "รายรับตามลูกค้า", en: "Income by Client" },
   },
 
   // Transactions
@@ -329,6 +339,7 @@ export const translations = {
   invoices: {
     title: { th: "ใบแจ้งหนี้", en: "Invoices" },
     subtitle: { th: "สร้างและจัดการใบแจ้งหนี้", en: "Create and manage invoices" },
+    all: { th: "ทั้งหมด", en: "All" },
     create: { th: "สร้างใบแจ้งหนี้", en: "Create Invoice" },
     createNew: { th: "สร้างใบแจ้งหนี้ใหม่", en: "Create New Invoice" },
     edit: { th: "แก้ไขใบแจ้งหนี้", en: "Edit Invoice" },
@@ -871,6 +882,19 @@ export const translations = {
     faq5A: { th: "ตอนนี้ยังไม่รองรับเชื่อมธนาคารโดยตรง แต่คุณสามารถเพิ่มรายการด้วยตัวเองได้ง่ายๆ และเรากำลังพัฒนาฟีเจอร์นี้อยู่", en: "Direct bank connection isn't available yet, but you can easily add transactions manually. We're actively developing this feature." },
     // Nav
     navFaq: { th: "คำถาม", en: "FAQ" },
+    // How it works
+    howItWorksTitle: { th: "ใช้งานง่าย 3 ขั้นตอน", en: "How it works — 3 simple steps" },
+    howStep1Title: { th: "สมัครฟรี", en: "Sign up free" },
+    howStep1Desc: { th: "สร้างบัญชีใน 30 วินาที ไม่ต้องใช้บัตรเครดิต เริ่มใช้ได้ทันที", en: "Create your account in 30 seconds. No credit card. Start immediately." },
+    howStep2Title: { th: "เพิ่มรายรับ-รายจ่าย", en: "Add your transactions" },
+    howStep2Desc: { th: "บันทึกรายรับจากลูกค้า และรายจ่ายธุรกิจ ระบบจัดหมวดหมู่ให้อัตโนมัติ", en: "Record income from clients and business expenses. Auto-categorized for you." },
+    howStep3Title: { th: "ดูภาพรวมการเงิน", en: "See your financial picture" },
+    howStep3Desc: { th: "แดชบอร์ดแสดงกำไร ภาษี และกระแสเงินสดทันที ตัดสินใจได้อย่างมั่นใจ", en: "Dashboard shows profit, tax estimates, and cash flow instantly. Decide with confidence." },
+    // Stats
+    statsUsers: { th: "ฟรีแลนซ์ใช้งาน", en: "Freelancers" },
+    statsTransactions: { th: "รายการบันทึกแล้ว", en: "Transactions tracked" },
+    statsTaxSaved: { th: "ภาษีช่วยประหยัด", en: "Tax saved" },
+    navBlog: { th: "บทความ", en: "Blog" },
   },
   // ─── Notifications ──────────────────────────────────────────────────────
   notifications: {
@@ -883,7 +907,7 @@ export const translations = {
     daysAgo: { th: "วันที่แล้ว", en: "days ago" },
     // Invoice overdue
     notifInvoiceOverdueTitle: { th: "ใบแจ้งหนี้เลยกำหนด", en: "Overdue Invoices" },
-    notifInvoiceOverdueMsg: { th: "คุณมี {count} ใบแจ้งหนี้ที่เลยกำหนดชำระ", en: "You have {count} overdue invoice(s)" },
+    notifInvoiceOverdueMsg: { th: "คุณมี {count} ใบแจ้งหนี้ที่เลยกำหนดชำระ: {details}", en: "You have {count} overdue invoice(s): {details}" },
     // Low runway
     notifLowRunwayTitle: { th: "เงินสำรองเหลือน้อย", en: "Low Cash Runway" },
     notifLowRunwayMsg: { th: "เงินสำรองเหลือประมาณ {months} เดือน ควรวางแผนเพิ่มรายได้", en: "Only {months} months of runway left. Consider increasing income" },

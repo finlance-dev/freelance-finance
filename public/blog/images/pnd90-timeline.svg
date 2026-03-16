@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">ปฏิทินภาษีสำหรับฟรีแลนซ์</text>
+  <line x1="100" y1="80" x2="700" y2="80" stroke="#e2e8f0" stroke-width="3"/>
+  <circle cx="130" cy="80" r="20" fill="#6366f1"/><text x="130" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="white">ม.ค.</text>
+  <text x="130" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เริ่มปีภาษีใหม่</text>
+  <text x="130" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เริ่มบันทึกรายได้</text>
+  <circle cx="300" cy="80" r="20" fill="#f59e0b"/><text x="300" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="white">มี.ค.</text>
+  <text x="300" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#f59e0b" font-weight="bold">ยื่น ภ.ง.ด.90</text>
+  <text x="300" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ภายใน 31 มี.ค.</text>
+  <text x="300" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">(e-Filing ถึง 8 เม.ย.)</text>
+  <circle cx="470" cy="80" r="20" fill="#ef4444"/><text x="470" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="white">ก.ย.</text>
+  <text x="470" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#ef4444" font-weight="bold">ยื่น ภ.ง.ด.94</text>
+  <text x="470" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ภาษีครึ่งปี</text>
+  <text x="470" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ภายใน 30 ก.ย.</text>
+  <circle cx="640" cy="80" r="20" fill="#8b5cf6"/><text x="640" y="86" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="white">ธ.ค.</text>
+  <text x="640" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">สรุปรายได้ทั้งปี</text>
+  <text x="640" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เตรียมเอกสาร</text>
+  <rect x="60" y="180" width="680" height="90" rx="14" fill="#f59e0b" opacity="0.08" stroke="#f59e0b"/>
+  <text x="400" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#f59e0b">เอกสารที่ต้องเตรียม</text>
+  <text x="150" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">📄 50 ทวิ ทุกฉบับ</text>
+  <text x="350" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">📋 สรุปรายได้ทั้งปี</text>
+  <text x="550" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">🧾 ใบเสร็จค่าลดหย่อน</text>
+  <rect x="60" y="290" width="680" height="80" rx="14" fill="#ef4444" opacity="0.08" stroke="#ef4444"/>
+  <text x="400" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#ef4444">โทษยื่นล่าช้า</text>
+  <text x="200" y="348" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่าปรับ 2,000 บาท</text>
+  <text x="400" y="348" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เงินเพิ่ม 1.5%/เดือน</text>
+  <text x="600" y="348" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เบี้ยปรับ 1-2 เท่า</text>
+</svg>

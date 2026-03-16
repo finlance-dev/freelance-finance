@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">10 ช่องทางหาลูกค้าฟรีแลนซ์</text>
+  <g transform="translate(30,50)">
+    <rect x="0" y="0" width="175" height="70" rx="10" fill="#6366f1" opacity="0.08" stroke="#6366f1"/>
+    <text x="88" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">1. LinkedIn</text>
+    <text x="88" y="48" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">โปรไฟล์ + คอนเทนต์</text>
+    <rect x="190" y="0" width="175" height="70" rx="10" fill="#10b981" opacity="0.08" stroke="#10b981"/>
+    <text x="278" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#10b981">2. Upwork</text>
+    <text x="278" y="48" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Freelance Platform</text>
+    <rect x="380" y="0" width="175" height="70" rx="10" fill="#f59e0b" opacity="0.08" stroke="#f59e0b"/>
+    <text x="468" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#f59e0b">3. Fastwork</text>
+    <text x="468" y="48" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">แพลตฟอร์มไทย</text>
+    <rect x="570" y="0" width="175" height="70" rx="10" fill="#ef4444" opacity="0.08" stroke="#ef4444"/>
+    <text x="658" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#ef4444">4. Referral</text>
+    <text x="658" y="48" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ลูกค้าเก่าแนะนำ</text>
+    <rect x="0" y="82" width="175" height="70" rx="10" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6"/>
+    <text x="88" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#8b5cf6">5. Facebook Group</text>
+    <text x="88" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">กลุ่มหางาน/รับงาน</text>
+    <rect x="190" y="82" width="175" height="70" rx="10" fill="#ec4899" opacity="0.08" stroke="#ec4899"/>
+    <text x="278" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#ec4899">6. Personal Web</text>
+    <text x="278" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Portfolio + SEO</text>
+    <rect x="380" y="82" width="175" height="70" rx="10" fill="#0ea5e9" opacity="0.08" stroke="#0ea5e9"/>
+    <text x="468" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#0ea5e9">7. Cold Email</text>
+    <text x="468" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ติดต่อตรงลูกค้า</text>
+    <rect x="570" y="82" width="175" height="70" rx="10" fill="#14b8a6" opacity="0.08" stroke="#14b8a6"/>
+    <text x="658" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#14b8a6">8. Networking</text>
+    <text x="658" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">งาน Event/Meetup</text>
+    <rect x="95" y="164" width="175" height="70" rx="10" fill="#84cc16" opacity="0.08" stroke="#84cc16"/>
+    <text x="183" y="192" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#84cc16">9. Content Mkt</text>
+    <text x="183" y="212" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">บล็อก/YouTube/TikTok</text>
+    <rect x="475" y="164" width="175" height="70" rx="10" fill="#a855f7" opacity="0.08" stroke="#a855f7"/>
+    <text x="563" y="192" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#a855f7">10. Agency</text>
+    <text x="563" y="212" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ตัวแทน/Outsource</text>
+  </g>
+  <rect x="30" y="310" width="740" height="65" rx="12" fill="#6366f1" opacity="0.06" stroke="#6366f1" stroke-dasharray="6,4"/>
+  <text x="400" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">แนะนำ: เริ่มจาก Referral + LinkedIn + 1 Platform → ค่อยๆ ขยายช่องทาง</text>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">อย่าพึ่งช่องทางเดียว กระจายความเสี่ยง อย่างน้อย 3 ช่องทาง</text>
+</svg>

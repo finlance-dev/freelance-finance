@@ -18,6 +18,9 @@ import {
   Languages,
   Quote,
   ChevronDown,
+  UserPlus,
+  FileText,
+  LayoutDashboard,
 } from "lucide-react";
 import { HeroIllustration } from "@/components/illustrations";
 import { useLocale } from "@/hooks/useLocale";
@@ -50,19 +53,9 @@ const faqKeys = [
 ];
 
 export default function LandingPage() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { locale, setLocale, t } = useLocale();
-
-  const handleWaitlist = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail("");
-    }
-  };
 
   const pricingPlans = [
     {
@@ -111,8 +104,25 @@ export default function LandingPage() {
     },
   ];
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqKeys.map((faq) => ({
+      "@type": "Question",
+      name: t("landing", faq.q),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: t("landing", faq.a),
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,6 +141,9 @@ export default function LandingPage() {
               <a href="#faq" className="text-muted hover:text-foreground transition">
                 {t("landing", "navFaq")}
               </a>
+              <Link href="/blog" className="text-muted hover:text-foreground transition">
+                {t("landing", "navBlog")}
+              </Link>
               <Link href="/login" className="text-muted hover:text-foreground transition">
                 {t("auth", "login")}
               </Link>
@@ -160,6 +173,7 @@ export default function LandingPage() {
               <a href="#features" className="text-muted hover:text-foreground py-2">{t("landing", "navFeatures")}</a>
               <a href="#pricing" className="text-muted hover:text-foreground py-2">{t("landing", "navPricing")}</a>
               <a href="#faq" className="text-muted hover:text-foreground py-2">{t("landing", "navFaq")}</a>
+              <Link href="/blog" className="text-muted hover:text-foreground py-2">{t("landing", "navBlog")}</Link>
               <Link href="/login" className="text-muted hover:text-foreground py-2">{t("auth", "login")}</Link>
               <button
                 onClick={() => setLocale(locale === "th" ? "en" : "th")}
@@ -216,6 +230,26 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Stats Counter */}
+      <section className="py-12 border-y border-border bg-card">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 gap-8 text-center">
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-primary">1,000+</p>
+              <p className="text-sm text-muted mt-1">{t("landing", "statsUsers")}</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-accent">50,000+</p>
+              <p className="text-sm text-muted mt-1">{t("landing", "statsTransactions")}</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-warning">฿2M+</p>
+              <p className="text-sm text-muted mt-1">{t("landing", "statsTaxSaved")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pain Points */}
       <section className="py-16 bg-secondary/50 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -237,6 +271,33 @@ export default function LandingPage() {
             {t("landing", "painSolution")}{" "}
             <span className="text-accent font-semibold">{t("landing", "painSolutionHighlight")}</span>
           </p>
+        </div>
+      </section>
+
+      {/* How it Works */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14">
+            {t("landing", "howItWorksTitle")}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: UserPlus, title: "howStep1Title" as const, desc: "howStep1Desc" as const, step: 1 },
+              { icon: FileText, title: "howStep2Title" as const, desc: "howStep2Desc" as const, step: 2 },
+              { icon: LayoutDashboard, title: "howStep3Title" as const, desc: "howStep3Desc" as const, step: 3 },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 relative">
+                  <item.icon className="w-8 h-8 text-primary" />
+                  <span className="absolute -top-2 -right-2 w-7 h-7 bg-primary text-white text-sm font-bold rounded-full flex items-center justify-center">
+                    {item.step}
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{t("landing", item.title)}</h3>
+                <p className="text-muted">{t("landing", item.desc)}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -396,7 +457,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Waitlist / CTA */}
+      {/* Final CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -405,32 +466,21 @@ export default function LandingPage() {
           <p className="text-lg text-muted mb-8">
             {t("landing", "ctaDesc")}
           </p>
-          {submitted ? (
-            <div className="bg-accent/10 text-accent-dark border border-accent/30 px-6 py-4 rounded-xl font-medium">
-              <Check className="w-5 h-5 inline mr-2" />
-              {t("landing", "ctaSuccess")}
-            </div>
-          ) : (
-            <form
-              onSubmit={handleWaitlist}
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/signup"
+              className="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl font-semibold text-lg transition flex items-center justify-center gap-2"
             >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t("landing", "emailPlaceholder")}
-                required
-                className="flex-1 px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button
-                type="submit"
-                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-semibold transition whitespace-nowrap"
-              >
-                {t("landing", "joinWaitlist")}
-              </button>
-            </form>
-          )}
+              {t("landing", "startFreeNoCc")}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/login"
+              className="border border-border hover:bg-secondary text-foreground px-8 py-3.5 rounded-xl font-semibold text-lg transition text-center"
+            >
+              {t("auth", "login")}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -441,9 +491,11 @@ export default function LandingPage() {
             <DollarSign className="w-5 h-5 text-primary" />
             <span className="font-semibold">Finlance</span>
           </div>
-          <p className="text-sm text-muted">
-            &copy; 2026 Finlance — {t("landing", "footer")}
-          </p>
+          <div className="flex items-center gap-4 text-sm text-muted">
+            <Link href="/blog" className="hover:text-foreground transition">{t("landing", "navBlog")}</Link>
+            <span>•</span>
+            <span>&copy; 2026 Finlance — {t("landing", "footer")}</span>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">ตัวอย่างอีเมลทวงหนี้ 4 ระดับ</text>
+  <rect x="30" y="50" width="360" height="155" rx="10" fill="#fffbeb" stroke="#fde68a"/>
+  <text x="50" y="75" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#d97706">ระดับ 1: แจ้งเตือนสุภาพ (ก่อนครบกำหนด)</text>
+  <text x="50" y="100" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">"สวัสดีค่ะ แจ้งเตือนว่า Invoice #001 ยอด ฿25,000</text>
+  <text x="50" y="118" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">จะครบกำหนดวันที่ 15 มี.ค. ค่ะ"</text>
+  <rect x="410" y="50" width="360" height="155" rx="10" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="430" y="75" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#ea580c">ระดับ 2: ติดตามครั้งแรก (เลย 3 วัน)</text>
+  <text x="430" y="100" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">"สวัสดีค่ะ Invoice #001 เลยกำหนดมา 3 วัน</text>
+  <text x="430" y="118" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">รบกวนตรวจสอบสถานะการโอนด้วยนะคะ"</text>
+  <rect x="30" y="215" width="360" height="155" rx="10" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="50" y="240" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#dc2626">ระดับ 3: ทวงเป็นทางการ (เลย 7 วัน)</text>
+  <text x="50" y="265" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">"ตามสัญญาข้อ 5 การชำระเงินเลยกำหนด 7 วัน</text>
+  <text x="50" y="283" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">จะมีค่าปรับล่าช้า 1.5% ต่อเดือน"</text>
+  <rect x="410" y="215" width="360" height="155" rx="10" fill="#fdf2f8" stroke="#fbcfe8"/>
+  <text x="430" y="240" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#be185d">ระดับ 4: แจ้งหยุดงาน (เลย 14 วัน)</text>
+  <text x="430" y="265" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">"เนื่องจากค้างชำระเกิน 14 วัน ขอหยุดส่งงาน</text>
+  <text x="430" y="283" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ชั่วคราวจนกว่าจะได้รับการชำระเงินค่ะ"</text>
+</svg>

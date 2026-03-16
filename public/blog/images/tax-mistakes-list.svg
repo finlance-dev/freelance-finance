@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">10 ข้อผิดพลาดภาษี และผลกระทบ</text>
+  <g font-family="system-ui,sans-serif" font-size="10">
+    <rect x="30" y="50" width="360" height="32" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="50" y="71" font-size="11" font-weight="bold" fill="#dc2626">1. ไม่ยื่น ภ.ง.ด.94</text>
+    <text x="350" y="71" text-anchor="end" fill="#dc2626">ปรับ 2,000 + เงินเพิ่ม 1.5%/เดือน</text>
+    <rect x="30" y="87" width="360" height="32" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="50" y="108" font-size="11" font-weight="bold" fill="#dc2626">2. ไม่เก็บ 50 ทวิ</text>
+    <text x="350" y="108" text-anchor="end" fill="#dc2626">เสียภาษีซ้ำซ้อน</text>
+    <rect x="30" y="124" width="360" height="32" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="50" y="145" font-size="11" font-weight="bold" fill="#dc2626">3. เลือกหักค่าใช้จ่ายผิดวิธี</text>
+    <text x="350" y="145" text-anchor="end" fill="#dc2626">จ่ายภาษีเกิน หลายหมื่น</text>
+    <rect x="30" y="161" width="360" height="32" rx="4" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="50" y="182" font-size="11" font-weight="bold" fill="#c2410c">4. ลืมใช้สิทธิ์ลดหย่อน</text>
+    <text x="350" y="182" text-anchor="end" fill="#c2410c">เสียภาษีเกิน 5,000-50,000</text>
+    <rect x="30" y="198" width="360" height="32" rx="4" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="50" y="219" font-size="11" font-weight="bold" fill="#c2410c">5. ไม่แยกรายได้ตามประเภท</text>
+    <text x="350" y="219" text-anchor="end" fill="#c2410c">หักค่าใช้จ่ายได้น้อยลง</text>
+    <rect x="410" y="50" width="360" height="32" rx="4" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="430" y="71" font-size="11" font-weight="bold" fill="#c2410c">6. ยื่นภาษีช้า</text>
+    <text x="730" y="71" text-anchor="end" fill="#c2410c">ค่าปรับ + เงินเพิ่ม</text>
+    <rect x="410" y="87" width="360" height="32" rx="4" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="430" y="108" font-size="11" font-weight="bold" fill="#c2410c">7. ไม่เก็บเงินจ่ายภาษี</text>
+    <text x="730" y="108" text-anchor="end" fill="#c2410c">เงินไม่พอ ต้องกู้/ผ่อน</text>
+    <rect x="410" y="124" width="360" height="32" rx="4" fill="#fefce8" stroke="#fef08a"/>
+    <text x="430" y="145" font-size="11" font-weight="bold" fill="#a16207">8. ไม่รู้ว่าต้องจด VAT</text>
+    <text x="730" y="145" text-anchor="end" fill="#a16207">รายได้เกิน 1.8M ไม่จด=ผิด</text>
+    <rect x="410" y="161" width="360" height="32" rx="4" fill="#fefce8" stroke="#fef08a"/>
+    <text x="430" y="182" font-size="11" font-weight="bold" fill="#a16207">9. ปนเงินส่วนตัว/ธุรกิจ</text>
+    <text x="730" y="182" text-anchor="end" fill="#a16207">ทำบัญชีลำบาก ตรวจสอบยาก</text>
+    <rect x="410" y="198" width="360" height="32" rx="4" fill="#fefce8" stroke="#fef08a"/>
+    <text x="430" y="219" font-size="11" font-weight="bold" fill="#a16207">10. ไม่วางแผนภาษีล่วงหน้า</text>
+    <text x="730" y="219" text-anchor="end" fill="#a16207">เสียโอกาสลดภาษีหลายหมื่น</text>
+  </g>
+  <rect x="30" y="250" width="740" height="120" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#059669">ตัวอย่าง: ผลกระทบจากข้อผิดพลาด (รายได้ 800,000/ปี)</text>
+  <text x="200" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ไม่ยื่น 94 = ปรับ 2,000</text>
+  <text x="400" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ลืมลดหย่อน = เสีย 15,000+</text>
+  <text x="600" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">หักผิดวิธี = เสีย 30,000+</text>
+  <text x="400" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#dc2626">รวมอาจเสียเงินเกิน 47,000+ บาท/ปี จากความผิดพลาดที่ป้องกันได้</text>
+</svg>

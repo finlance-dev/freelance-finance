@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="300" cy="315" r="200" fill="white" opacity="0.08"/>
+  <circle cx="300" cy="315" r="140" fill="white" opacity="0.08"/>
+  <text x="300" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="48" font-weight="bold" fill="white">฿</text>
+  <text x="300" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="white" opacity="0.8">ค่าบริการ</text>
+  <g transform="translate(580,100)">
+    <rect x="0" y="0" width="540" height="120" rx="16" fill="white" opacity="0.12"/>
+    <text x="30" y="45" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">Cost-Based Pricing</text>
+    <text x="30" y="75" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.7">ต้นทุน + กำไร = ราคาขั้นต่ำ</text>
+    <rect x="30" y="90" width="200" height="8" rx="4" fill="white" opacity="0.3"/><rect x="30" y="90" width="120" height="8" rx="4" fill="#fbbf24"/>
+    <rect x="0" y="140" width="540" height="120" rx="16" fill="white" opacity="0.12"/>
+    <text x="30" y="185" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">Value-Based Pricing</text>
+    <text x="30" y="215" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.7">คุณค่าที่ลูกค้าได้รับ = ราคาที่เหมาะสม</text>
+    <rect x="30" y="230" width="200" height="8" rx="4" fill="white" opacity="0.3"/><rect x="30" y="230" width="160" height="8" rx="4" fill="#fbbf24"/>
+    <rect x="0" y="280" width="540" height="120" rx="16" fill="white" opacity="0.12"/>
+    <text x="30" y="325" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">Market-Rate Pricing</text>
+    <text x="30" y="355" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.7">เทียบราคาตลาด + ประสบการณ์</text>
+    <rect x="30" y="370" width="200" height="8" rx="4" fill="white" opacity="0.3"/><rect x="30" y="370" width="140" height="8" rx="4" fill="#fbbf24"/>
+  </g>
+  <text x="600" y="570" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">ตั้งราคาค่าบริการฟรีแลนซ์</text>
+  <text x="600" y="605" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.7">Finlance.co</text>
+</svg>

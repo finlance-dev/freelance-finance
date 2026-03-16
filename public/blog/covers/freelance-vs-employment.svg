@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="600" height="630" fill="#6366f1"/>
+  <rect x="600" y="0" width="600" height="630" fill="#10b981"/>
+  <text x="300" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">ฟรีแลนซ์</text>
+  <text x="900" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">พนักงานประจำ</text>
+  <text x="600" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">VS</text>
+  <circle cx="600" cy="72" r="35" fill="white" opacity="0.15"/>
+  <g transform="translate(100,120)">
+    <rect x="0" y="0" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="25" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">รายได้</text>
+    <text x="20" y="48" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">ไม่จำกัดเพดาน</text>
+    <rect x="0" y="75" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="100" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">เวลา</text>
+    <text x="20" y="123" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">เลือกเองได้ ยืดหยุ่น</text>
+    <rect x="0" y="150" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="175" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">สวัสดิการ</text>
+    <text x="20" y="198" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">จัดการเอง</text>
+    <rect x="0" y="225" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="250" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">ภาษี</text>
+    <text x="20" y="273" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">หักเหมาได้ 60%</text>
+    <rect x="0" y="300" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="325" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">ความมั่นคง</text>
+    <text x="20" y="348" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">ไม่แน่นอน ขึ้นกับลูกค้า</text>
+  </g>
+  <g transform="translate(700,120)">
+    <rect x="0" y="0" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="25" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">รายได้</text>
+    <text x="20" y="48" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">คงที่ทุกเดือน</text>
+    <rect x="0" y="75" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="100" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">เวลา</text>
+    <text x="20" y="123" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">9-18 ตามกำหนด</text>
+    <rect x="0" y="150" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="175" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">สวัสดิการ</text>
+    <text x="20" y="198" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">บริษัทจัดให้ครบ</text>
+    <rect x="0" y="225" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="250" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">ภาษี</text>
+    <text x="20" y="273" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">หักเหมา 50% ไม่เกิน 100K</text>
+    <rect x="0" y="300" width="400" height="60" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="325" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">ความมั่นคง</text>
+    <text x="20" y="348" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">มั่นคง มีเงินเดือนประจำ</text>
+  </g>
+  <text x="600" y="565" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="bold" fill="white">เปรียบเทียบครบทุกมิติ</text>
+  <text x="600" y="600" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.7">Finlance.co</text>
+</svg>

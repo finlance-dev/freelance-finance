@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">AI Tools สำหรับฟรีแลนซ์ แบ่งตามประเภทงาน</text>
+  <g transform="translate(25,50)">
+    <rect x="0" y="0" width="240" height="150" rx="14" fill="#6366f1" opacity="0.06" stroke="#6366f1"/>
+    <text x="120" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#6366f1">เขียนคอนเทนต์</text>
+    <text x="15" y="55" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• ChatGPT — ร่างบทความ</text>
+    <text x="15" y="75" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Claude — วิเคราะห์/สรุป</text>
+    <text x="15" y="95" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Jasper — คอนเทนต์มาร์เก็ต</text>
+    <text x="15" y="115" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Grammarly — ตรวจภาษา</text>
+    <rect x="15" y="125" width="60" height="18" rx="4" fill="#6366f1" opacity="0.15"/>
+    <text x="45" y="138" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#6366f1">ประหยัด 70%</text>
+    <rect x="255" y="0" width="240" height="150" rx="14" fill="#10b981" opacity="0.06" stroke="#10b981"/>
+    <text x="375" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#10b981">ออกแบบ/กราฟิก</text>
+    <text x="270" y="55" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Midjourney — สร้างภาพ</text>
+    <text x="270" y="75" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Canva AI — ดีไซน์ง่าย</text>
+    <text x="270" y="95" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• DALL-E — ภาพประกอบ</text>
+    <text x="270" y="115" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Remove.bg — ลบพื้นหลัง</text>
+    <rect x="270" y="125" width="60" height="18" rx="4" fill="#10b981" opacity="0.15"/>
+    <text x="300" y="138" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#10b981">ประหยัด 60%</text>
+    <rect x="510" y="0" width="240" height="150" rx="14" fill="#f59e0b" opacity="0.06" stroke="#f59e0b"/>
+    <text x="630" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">เขียนโค้ด</text>
+    <text x="525" y="55" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• GitHub Copilot — autocomplete</text>
+    <text x="525" y="75" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Claude Code — สร้างโปรเจกต์</text>
+    <text x="525" y="95" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Cursor — AI IDE</text>
+    <text x="525" y="115" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• v0.dev — สร้าง UI</text>
+    <rect x="525" y="125" width="60" height="18" rx="4" fill="#f59e0b" opacity="0.15"/>
+    <text x="555" y="138" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#f59e0b">ประหยัด 50%</text>
+    <rect x="0" y="165" width="240" height="150" rx="14" fill="#ec4899" opacity="0.06" stroke="#ec4899"/>
+    <text x="120" y="193" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ec4899">การเงิน/บัญชี</text>
+    <text x="15" y="220" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Finlance — จัดการเงิน</text>
+    <text x="15" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• AI Bookkeeping — บันทึกบัญชี</text>
+    <text x="15" y="260" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Receipt scanner — สแกนใบเสร็จ</text>
+    <rect x="255" y="165" width="240" height="150" rx="14" fill="#8b5cf6" opacity="0.06" stroke="#8b5cf6"/>
+    <text x="375" y="193" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6">Productivity</text>
+    <text x="270" y="220" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Notion AI — จัดระเบียบ</text>
+    <text x="270" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Otter.ai — สรุปประชุม</text>
+    <text x="270" y="260" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Calendly AI — นัดหมาย</text>
+    <rect x="510" y="165" width="240" height="150" rx="14" fill="#0ea5e9" opacity="0.06" stroke="#0ea5e9"/>
+    <text x="630" y="193" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#0ea5e9">การตลาด</text>
+    <text x="525" y="220" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Buffer AI — โพสต์ Social</text>
+    <text x="525" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Copy.ai — เขียน Ad Copy</text>
+    <text x="525" y="260" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">• Surfer SEO — ปรับ SEO</text>
+  </g>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">* เปอร์เซ็นต์ประหยัดเวลาเฉลี่ยจากการใช้ AI เทียบกับทำเอง</text>
+</svg>

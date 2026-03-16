@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#0891b2"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="460" height="420" rx="24" fill="white" opacity="0.12"/>
+  <text x="290" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="white">ใบเสร็จรับเงิน</text>
+  <rect x="100" y="155" width="380" height="35" rx="6" fill="white" opacity="0.15"/>
+  <text x="290" y="179" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">ออกเมื่อรับเงินแล้ว</text>
+  <rect x="100" y="200" width="380" height="35" rx="6" fill="white" opacity="0.15"/>
+  <text x="290" y="224" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">ไม่ต้องจด VAT ก็ออกได้</text>
+  <rect x="100" y="245" width="380" height="35" rx="6" fill="white" opacity="0.15"/>
+  <text x="290" y="269" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">ใช้เป็นหลักฐานการจ่ายเงิน</text>
+  <text x="600" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="48" font-weight="bold" fill="white" opacity="0.3">VS</text>
+  <rect x="680" y="80" width="460" height="420" rx="24" fill="white" opacity="0.12"/>
+  <text x="910" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#fbbf24">ใบกำกับภาษี</text>
+  <rect x="720" y="155" width="380" height="35" rx="6" fill="white" opacity="0.15"/>
+  <text x="910" y="179" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">ต้องจด VAT ก่อนถึงออกได้</text>
+  <rect x="720" y="200" width="380" height="35" rx="6" fill="white" opacity="0.15"/>
+  <text x="910" y="224" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">แสดงยอด VAT 7% แยก</text>
+  <rect x="720" y="245" width="380" height="35" rx="6" fill="white" opacity="0.15"/>
+  <text x="910" y="269" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white">ผู้ซื้อใช้ขอคืน VAT ได้</text>
+  <text x="600" y="560" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">ใบเสร็จ vs ใบกำกับภาษี</text>
+  <text x="600" y="595" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.8">ต่างกันยังไง ใช้ตอนไหน</text>
+</svg>

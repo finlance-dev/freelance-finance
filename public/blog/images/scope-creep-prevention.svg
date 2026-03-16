@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">5 วิธีป้องกัน Scope Creep สำหรับฟรีแลนซ์</text>
+  <g transform="translate(30,55)">
+    <rect x="0" y="0" width="350" height="70" rx="12" fill="#6366f1" opacity="0.06" stroke="#6366f1"/>
+    <text x="15" y="30" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#6366f1">1</text>
+    <text x="50" y="28" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">เขียน Scope of Work ชัดเจน</text>
+    <text x="50" y="52" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ระบุจำนวนหน้า/ชิ้น/รอบแก้ไขในสัญญา</text>
+    <rect x="0" y="80" width="350" height="70" rx="12" fill="#10b981" opacity="0.06" stroke="#10b981"/>
+    <text x="15" y="110" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#10b981">2</text>
+    <text x="50" y="108" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">กำหนดจำนวนรอบแก้ไข</text>
+    <text x="50" y="132" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เช่น "รวมแก้ไข 2 รอบ หลังจากนั้นคิดเพิ่ม"</text>
+    <rect x="0" y="160" width="350" height="70" rx="12" fill="#f59e0b" opacity="0.06" stroke="#f59e0b"/>
+    <text x="15" y="190" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#f59e0b">3</text>
+    <text x="50" y="188" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">มี Change Request Form</text>
+    <text x="50" y="212" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">งานเพิ่มต้องเป็นลายลักษณ์อักษร + ราคาใหม่</text>
+    <rect x="0" y="240" width="350" height="70" rx="12" fill="#ec4899" opacity="0.06" stroke="#ec4899"/>
+    <text x="15" y="270" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#ec4899">4</text>
+    <text x="50" y="268" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">แจ้งลูกค้าทันทีที่เริ่มเกิน scope</text>
+    <text x="50" y="292" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">"สิ่งนี้อยู่นอกขอบเขต ต้องออก quote เพิ่ม"</text>
+    <rect x="380" y="0" width="360" height="180" rx="16" fill="#ef4444" opacity="0.05" stroke="#ef4444"/>
+    <text x="560" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ef4444">ตัวอย่างความเสียหาย</text>
+    <text x="400" y="60" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">งานออกแบบเว็บ 5 หน้า ราคา 15,000 ฿</text>
+    <text x="400" y="85" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ลูกค้าเพิ่มเป็น 12 หน้า</text>
+    <text x="400" y="110" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">เวลาทำงานเพิ่ม 140%</text>
+    <text x="400" y="140" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#ef4444">รายได้/ชม. ลดจาก 500 → 210 ฿</text>
+    <text x="400" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">กำไรหายไป 58%!</text>
+    <rect x="380" y="195" width="360" height="115" rx="16" fill="#10b981" opacity="0.05" stroke="#10b981"/>
+    <text x="395" y="225" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#10b981">5</text>
+    <text x="430" y="223" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">เก็บเงินเป็นงวด (Milestone)</text>
+    <text x="430" y="250" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">30% เซ็นสัญญา / 40% ส่งงาน draft</text>
+    <text x="430" y="275" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">30% ส่งงาน final — ลดความเสี่ยงได้รับเงิน</text>
+  </g>
+</svg>

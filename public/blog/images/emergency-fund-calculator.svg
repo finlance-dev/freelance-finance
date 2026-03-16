@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#1e293b">คำนวณเงินสำรองฉุกเฉินที่ต้องมี</text>
+  <rect x="40" y="55" width="340" height="300" rx="16" fill="#14b8a6" opacity="0.06" stroke="#14b8a6"/>
+  <text x="210" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#14b8a6">ค่าใช้จ่ายรายเดือน</text>
+  <rect x="60" y="100" width="300" height="38" rx="8" fill="white" stroke="#e2e8f0"/>
+  <text x="75" y="124" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">ค่าเช่า/ผ่อนบ้าน</text>
+  <text x="340" y="124" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">12,000</text>
+  <rect x="60" y="144" width="300" height="38" rx="8" fill="white" stroke="#e2e8f0"/>
+  <text x="75" y="168" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">ค่าอาหาร</text>
+  <text x="340" y="168" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">6,000</text>
+  <rect x="60" y="188" width="300" height="38" rx="8" fill="white" stroke="#e2e8f0"/>
+  <text x="75" y="212" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">ค่าเดินทาง</text>
+  <text x="340" y="212" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">3,000</text>
+  <rect x="60" y="232" width="300" height="38" rx="8" fill="white" stroke="#e2e8f0"/>
+  <text x="75" y="256" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">ค่าสาธารณูปโภค + อื่นๆ</text>
+  <text x="340" y="256" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">4,000</text>
+  <rect x="60" y="285" width="300" height="45" rx="10" fill="#14b8a6" opacity="0.15"/>
+  <text x="75" y="313" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#14b8a6">รวมต่อเดือน</text>
+  <text x="340" y="313" text-anchor="end" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#14b8a6">25,000 ฿</text>
+  <rect x="420" y="55" width="340" height="300" rx="16" fill="#f59e0b" opacity="0.06" stroke="#f59e0b"/>
+  <text x="590" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#f59e0b">เป้าหมายเงินสำรอง</text>
+  <rect x="440" y="110" width="300" height="65" rx="12" fill="#f59e0b" opacity="0.1"/>
+  <text x="590" y="138" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#1e293b">พนักงานประจำ: 3-6 เดือน</text>
+  <text x="590" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f59e0b">75,000 - 150,000 ฿</text>
+  <rect x="440" y="190" width="300" height="65" rx="12" fill="#ef4444" opacity="0.1"/>
+  <text x="590" y="218" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#1e293b">ฟรีแลนซ์: 6-12 เดือน</text>
+  <text x="590" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#ef4444">150,000 - 300,000 ฿</text>
+  <rect x="440" y="275" width="300" height="55" rx="12" fill="#10b981"/>
+  <text x="590" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="white">แนะนำฟรีแลนซ์: อย่างน้อย 6 เดือน</text>
+  <text x="590" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">= 150,000 บาท</text>
+</svg>

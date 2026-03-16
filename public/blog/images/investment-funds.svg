@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#1e293b">เปรียบเทียบ SSF กับ RMF</text>
+  <rect x="60" y="70" width="320" height="280" rx="16" fill="#6366f1" opacity="0.05" stroke="#6366f1" stroke-width="2"/>
+  <text x="220" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#6366f1">SSF</text>
+  <text x="220" y="125" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Super Savings Fund</text>
+  <text x="80" y="160" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">ลดหย่อน: สูงสุด 200,000 บาท</text>
+  <text x="80" y="185" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">ระยะเวลาถือ: 10 ปี</text>
+  <text x="80" y="210" font-family="system-ui,sans-serif" font-size="13" fill="#10b981" font-weight="bold">ไม่บังคับซื้อทุกปี ✓</text>
+  <text x="80" y="235" font-family="system-ui,sans-serif" font-size="13" fill="#10b981" font-weight="bold">เหมาะกับฟรีแลนซ์ ✓</text>
+  <rect x="80" y="260" width="260" height="70" rx="10" fill="#6366f1" opacity="0.1"/>
+  <text x="210" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6366f1">แนะนำสำหรับฟรีแลนซ์</text>
+  <text x="210" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">รายได้ไม่แน่นอน ยืดหยุ่นกว่า</text>
+  <rect x="420" y="70" width="320" height="280" rx="16" fill="#8b5cf6" opacity="0.05" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="580" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#8b5cf6">RMF</text>
+  <text x="580" y="125" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Retirement Mutual Fund</text>
+  <text x="440" y="160" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">ลดหย่อน: สูงสุด 500,000 บาท</text>
+  <text x="440" y="185" font-family="system-ui,sans-serif" font-size="13" fill="#1e293b">ระยะเวลาถือ: จนอายุ 55 ปี</text>
+  <text x="440" y="210" font-family="system-ui,sans-serif" font-size="13" fill="#ef4444" font-weight="bold">ต้องซื้อต่อเนื่องทุกปี ✗</text>
+  <text x="440" y="235" font-family="system-ui,sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">เหมาะกับรายได้มั่นคง △</text>
+  <rect x="440" y="260" width="260" height="70" rx="10" fill="#8b5cf6" opacity="0.1"/>
+  <text x="570" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#8b5cf6">เหมาะกับคนรายได้ประจำ</text>
+  <text x="570" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ลดหย่อนได้มากกว่า แต่ผูกมัด</text>
+  <text x="400" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">* รวม SSF + RMF + PVD + ประกันบำนาญ ไม่เกิน 500,000 บาท/ปี</text>
+</svg>

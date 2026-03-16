@@ -59,6 +59,7 @@ export default function RecurringPage() {
   const { confirm } = useConfirm();
   const { isPro, mounted: planMounted } = usePlan();
   const { locale, t } = useLocale();
+  const FREE_RECURRING_LIMIT = 3;
 
   const FREQ_LABELS: Record<string, string> = {
     daily: t("recurring", "daily"),
@@ -85,6 +86,10 @@ export default function RecurringPage() {
 
   const handleSave = () => {
     if (!validate()) return;
+    if (!editingId && !isPro && items.length >= FREE_RECURRING_LIMIT) {
+      toast(locale === "th" ? `แพลนฟรีเพิ่มได้สูงสุด ${FREE_RECURRING_LIMIT} รายการ` : `Free plan limited to ${FREE_RECURRING_LIMIT} items`, "error");
+      return;
+    }
 
     const rt: RecurringTransaction = {
       id: editingId || crypto.randomUUID(),
@@ -164,58 +169,8 @@ export default function RecurringPage() {
 
   if (!mounted || !planMounted) return null;
 
-  if (!isPro) {
-    return (
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-2xl font-bold">{t("recurring", "title")}</h1>
-          <p className="text-muted text-sm mt-1">{t("recurring", "subtitle")}</p>
-        </div>
-        <UpgradePrompt
-          feature={t("recurring", "upgradeFeature")}
-          description={t("recurring", "upgradeDesc")}
-        />
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <RefreshCw className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-sm">{t("recurring", "previewAuto")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("recurring", "previewAutoDesc")}
-            </p>
-          </div>
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <Play className="w-5 h-5 text-accent" />
-              <h3 className="font-semibold text-sm">{t("recurring", "previewPauseResume")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("recurring", "previewPauseDesc")}
-            </p>
-          </div>
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <Pencil className="w-5 h-5 text-warning" />
-              <h3 className="font-semibold text-sm">{t("recurring", "previewEdit")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("recurring", "previewEditDesc")}
-            </p>
-          </div>
-          <div className="bg-card border border-border rounded-2xl p-5 opacity-80">
-            <div className="flex items-center gap-2 mb-2">
-              <Plus className="w-5 h-5 text-danger" />
-              <h3 className="font-semibold text-sm">{t("recurring", "previewLink")}</h3>
-            </div>
-            <p className="text-xs text-muted leading-relaxed">
-              {t("recurring", "previewLinkDesc")}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const canAddRecurring = isPro || items.length < FREE_RECURRING_LIMIT;
+  const recurringRemaining = isPro ? Infinity : FREE_RECURRING_LIMIT - items.length;
 
   return (
     <div className="space-y-6">
@@ -233,7 +188,13 @@ export default function RecurringPage() {
             {t("recurring", "generate")}
           </button>
           <button
-            onClick={() => { resetForm(); setShowForm(true); }}
+            onClick={() => {
+              if (!canAddRecurring) {
+                toast(locale === "th" ? `แพลนฟรีเพิ่มได้สูงสุด ${FREE_RECURRING_LIMIT} รายการ อัปเกรดเป็น Pro เพื่อเพิ่มไม่จำกัด` : `Free plan limited to ${FREE_RECURRING_LIMIT} recurring items. Upgrade to Pro for unlimited.`, "error");
+                return;
+              }
+              resetForm(); setShowForm(true);
+            }}
             className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl font-medium transition flex items-center gap-2"
           >
             <Plus className="w-4 h-4" />
@@ -241,6 +202,13 @@ export default function RecurringPage() {
           </button>
         </div>
       </div>
+
+      {/* Free plan limit banner */}
+      {!isPro && recurringRemaining !== Infinity && recurringRemaining > 0 && recurringRemaining <= 3 && (
+        <div className="bg-warning/10 border border-warning/20 rounded-xl px-4 py-2.5 text-sm text-warning">
+          {locale === "th" ? `เหลือเพิ่มได้อีก ${recurringRemaining} รายการ (แพลนฟรี)` : `${recurringRemaining} recurring items remaining (Free plan)`}
+        </div>
+      )}
 
       {/* Form Modal */}
       {showForm && (

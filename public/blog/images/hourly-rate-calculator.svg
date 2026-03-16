@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">สูตรคำนวณค่าบริการรายชั่วโมง</text>
+  <rect x="30" y="50" width="740" height="80" rx="10" fill="#fffbeb" stroke="#fde68a"/>
+  <text x="400" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#d97706">Hourly Rate = (ค่าใช้จ่ายรายเดือน + กำไรที่ต้องการ) / ชั่วโมงทำงานจริง</text>
+  <text x="400" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#92400e">ชั่วโมงทำงานจริง = ชม. ทำงาน/วัน x วันทำงาน/เดือน x 0.7 (billable ratio)</text>
+  <rect x="30" y="150" width="360" height="220" rx="10" fill="white" stroke="#e2e8f0"/>
+  <text x="210" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">ตัวอย่าง: นักออกแบบ</text>
+  <text x="50" y="210" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่าใช้จ่าย/เดือน:</text>
+  <text x="330" y="210" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">35,000 บาท</text>
+  <text x="50" y="235" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">กำไรที่ต้องการ:</text>
+  <text x="330" y="235" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">25,000 บาท</text>
+  <text x="50" y="260" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ชม.ทำงานจริง (billable):</text>
+  <text x="330" y="260" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">112 ชม./เดือน</text>
+  <rect x="50" y="275" width="280" height="2" fill="#e2e8f0"/>
+  <text x="50" y="300" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#d97706">Hourly Rate:</text>
+  <text x="330" y="300" text-anchor="end" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#d97706">536 บาท/ชม.</text>
+  <text x="50" y="325" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ปัดขึ้น = 550 หรือ 600 บาท/ชม.</text>
+  <rect x="410" y="150" width="360" height="220" rx="10" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="590" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#16a34a">เปรียบเทียบ Rate ตลาด</text>
+  <text x="430" y="210" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Graphic Design:</text>
+  <text x="710" y="210" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">400-800 บาท/ชม.</text>
+  <text x="430" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Web Development:</text>
+  <text x="710" y="240" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">600-1,500 บาท/ชม.</text>
+  <text x="430" y="270" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Content Writing:</text>
+  <text x="710" y="270" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">300-600 บาท/ชม.</text>
+  <text x="430" y="300" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Video Editing:</text>
+  <text x="710" y="300" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">500-1,200 บาท/ชม.</text>
+  <text x="430" y="330" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Consulting:</text>
+  <text x="710" y="330" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">1,000-3,000 บาท/ชม.</text>
+  <text x="400" y="393" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">ใช้ Finlance บันทึกเวลาทำงาน คำนวณค่าบริการอัตโนมัติ</text>
+</svg>

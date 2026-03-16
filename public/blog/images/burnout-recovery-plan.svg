@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">แผนฟื้นฟูจาก Burnout — 4 สัปดาห์</text>
+  <rect x="30" y="50" width="175" height="320" rx="12" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="118" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#dc2626">สัปดาห์ 1</text>
+  <text x="118" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">หยุดพัก</text>
+  <text x="45" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ลดงานลง 50%</text>
+  <text x="45" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• นอน 8 ชม.+</text>
+  <text x="45" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ปิดแจ้งเตือนงาน</text>
+  <text x="45" y="185" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ออกกำลังกาย</text>
+  <rect x="218" y="50" width="175" height="320" rx="12" fill="#fffbeb" stroke="#fde68a"/>
+  <text x="306" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#d97706">สัปดาห์ 2</text>
+  <text x="306" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">จัดระเบียบ</text>
+  <text x="233" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ทบทวนงานทั้งหมด</text>
+  <text x="233" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ปฏิเสธงานที่ไม่จำเป็น</text>
+  <text x="233" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ตั้งเวลาทำงานชัดเจน</text>
+  <text x="233" y="185" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• จัดลำดับความสำคัญ</text>
+  <rect x="406" y="50" width="175" height="320" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="494" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#16a34a">สัปดาห์ 3</text>
+  <text x="494" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">ปรับระบบ</text>
+  <text x="421" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ตั้ง boundary ลูกค้า</text>
+  <text x="421" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• Automate งานซ้ำ</text>
+  <text x="421" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ขึ้นราคา (ถ้าจำเป็น)</text>
+  <text x="421" y="185" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• หา accountability</text>
+  <rect x="594" y="50" width="175" height="320" rx="12" fill="#eef2ff" stroke="#c7d2fe"/>
+  <text x="682" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#4338ca">สัปดาห์ 4</text>
+  <text x="682" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">กลับมาเต็มที่</text>
+  <text x="609" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• รับงานใหม่อย่างมีสติ</text>
+  <text x="609" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• กำหนด max งาน/เดือน</text>
+  <text x="609" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• วาง buffer time</text>
+  <text x="609" y="185" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• Review ทุก 2 สัปดาห์</text>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">สิ่งสำคัญ: Burnout ไม่ได้แก้ด้วยการพักร้อน 1 วัน ต้องเปลี่ยนระบบทั้งหมด</text>
+</svg>

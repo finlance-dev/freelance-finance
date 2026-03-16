@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#1e293b">ขั้นตอนการคำนวณภาษีฟรีแลนซ์</text>
+  <rect x="40" y="80" width="160" height="70" rx="12" fill="#6366f1"/><text x="120" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">รายได้ทั้งปี</text><text x="120" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white" opacity="0.8">รวมทุกแหล่ง</text>
+  <polygon points="210,115 230,105 230,125" fill="#6366f1"/>
+  <rect x="240" y="80" width="160" height="70" rx="12" fill="#8b5cf6"/><text x="320" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">หักค่าใช้จ่าย</text><text x="320" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white" opacity="0.8">เหมา 60% หรือจริง</text>
+  <polygon points="410,115 430,105 430,125" fill="#8b5cf6"/>
+  <rect x="440" y="80" width="160" height="70" rx="12" fill="#10b981"/><text x="520" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">หักค่าลดหย่อน</text><text x="520" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white" opacity="0.8">ส่วนตัว ประกัน SSF</text>
+  <polygon points="610,115 630,105 630,125" fill="#10b981"/>
+  <rect x="640" y="80" width="120" height="70" rx="12" fill="#f59e0b"/><text x="700" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" font-weight="bold">เงินได้สุทธิ</text><text x="700" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white" opacity="0.8">คำนวณภาษี</text>
+  <rect x="240" y="200" width="320" height="100" rx="16" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-width="2"/>
+  <text x="400" y="235" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#6366f1">ตัวอย่าง: รายได้ 800,000 บาท</text>
+  <text x="400" y="260" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">หักเหมา 60% → หักลดหย่อน 213,600</text>
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">เงินได้สุทธิ 106,400 → ภาษี 0 บาท</text>
+  <text x="400" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">* อัตราภาษีก้าวหน้า: 0-150K ยกเว้น, 150-300K 5%, 300-500K 10%</text>
+</svg>

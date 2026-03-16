@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="100" y="80" width="400" height="470" rx="20" fill="white" opacity="0.12"/>
+  <text x="300" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="white">สัญญาจ้างงาน</text>
+  <rect x="140" y="155" width="320" height="2" fill="white" opacity="0.3"/>
+  <text x="160" y="190" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.8">ขอบเขตงาน ✓</text>
+  <text x="160" y="220" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.8">ค่าตอบแทน ✓</text>
+  <text x="160" y="250" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.8">กำหนดส่งงาน ✓</text>
+  <text x="160" y="280" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.8">เงื่อนไขการชำระเงิน ✓</text>
+  <text x="160" y="310" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.8">ทรัพย์สินทางปัญญา ✓</text>
+  <text x="160" y="340" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.8">การยกเลิกสัญญา ✓</text>
+  <rect x="140" y="370" width="320" height="2" fill="white" opacity="0.3"/>
+  <rect x="200" y="400" width="200" height="80" rx="0" fill="white" opacity="0.1"/>
+  <text x="300" y="435" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" fill="white" font-style="italic">ลายเซ็น</text>
+  <text x="300" y="470" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="white" opacity="0.6">___________________</text>
+  <g transform="translate(620,120)">
+    <rect x="0" y="0" width="460" height="100" rx="16" fill="white" opacity="0.1"/>
+    <circle cx="50" cy="50" r="30" fill="#10b981" opacity="0.5"/>
+    <text x="50" y="57" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="white">✓</text>
+    <text x="100" y="40" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">ปกป้องสิทธิ์</text>
+    <text x="100" y="65" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">กำหนดขอบเขตชัดเจน</text>
+    <rect x="0" y="120" width="460" height="100" rx="16" fill="white" opacity="0.1"/>
+    <circle cx="50" cy="170" r="30" fill="#6366f1" opacity="0.5"/>
+    <text x="50" y="177" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="white">฿</text>
+    <text x="100" y="160" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">รับเงินตรงเวลา</text>
+    <text x="100" y="185" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">เงื่อนไขการจ่ายเงินชัดเจน</text>
+    <rect x="0" y="240" width="460" height="100" rx="16" fill="white" opacity="0.1"/>
+    <circle cx="50" cy="290" r="30" fill="#ef4444" opacity="0.5"/>
+    <text x="50" y="297" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="white">!</text>
+    <text x="100" y="280" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">ป้องกันปัญหา</text>
+    <text x="100" y="305" font-family="system-ui,sans-serif" font-size="13" fill="white" opacity="0.7">ลด scope creep และข้อพิพาท</text>
+  </g>
+  <text x="600" y="565" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">สัญญาจ้างงานฟรีแลนซ์</text>
+  <text x="600" y="600" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.7">Finlance.co</text>
+</svg>

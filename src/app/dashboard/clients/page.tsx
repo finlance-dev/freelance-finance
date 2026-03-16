@@ -9,7 +9,9 @@ import {
   FolderOpen,
   ChevronDown,
   ChevronRight,
+  Download,
 } from "lucide-react";
+import { exportClientsCSV } from "@/lib/export";
 import {
   getClients,
   saveClient,
@@ -264,6 +266,15 @@ export default function ClientsPage() {
             <Plus className="w-4 h-4" />
             {t("clients", "addClient")}
           </button>
+          {clients.length > 0 && (
+            <button
+              onClick={() => exportClientsCSV(clients)}
+              className="border border-border text-muted hover:text-foreground px-3 py-2 rounded-xl text-sm transition flex items-center gap-1.5"
+            >
+              <Download className="w-3.5 h-3.5" />
+              CSV
+            </button>
+          )}
         </div>
       </div>
 

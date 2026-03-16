@@ -20,6 +20,7 @@ import {
   importAllData,
   isCloudEnabled,
   syncFromCloud,
+  syncToCloud,
   getDefaultCurrency,
   setDefaultCurrency,
   clearDemoData,
@@ -128,6 +129,17 @@ export default function SettingsPage() {
     }
   };
 
+  const handleBackupToCloud = async () => {
+    setSyncing(true);
+    const result = await syncToCloud();
+    setSyncing(false);
+    if (result.success) {
+      toast(locale === "th" ? "สำรองข้อมูลไปคลาวด์สำเร็จ!" : "Backed up to cloud!");
+    } else {
+      toast(locale === "th" ? "สำรองไม่สำเร็จ: " + (result.error || "") : "Backup failed: " + (result.error || ""), "error");
+    }
+  };
+
   const handleSavePromptPay = () => {
     const clean = promptpayId.replace(/[-\s]/g, "");
     if (clean && !isValidPromptPayId(clean)) {
@@ -209,22 +221,43 @@ export default function SettingsPage() {
 
       {/* Cloud Status */}
       {cloud && (
-        <div className="bg-card border border-border rounded-2xl p-5">
-          <div className="flex items-center gap-3 mb-3">
-            <Cloud className="w-5 h-5 text-accent" />
-            <h3 className="font-semibold">{t("settings", "cloudTitle")}</h3>
+        isPro ? (
+          <div className="bg-card border border-border rounded-2xl p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <Cloud className="w-5 h-5 text-accent" />
+              <h3 className="font-semibold">{t("settings", "cloudTitle")}</h3>
+            </div>
+            <div className="space-y-3">
+              <p className="text-sm text-accent">{t("settings", "cloudConnected")}</p>
+              <div className="flex gap-2 flex-wrap">
+                <button
+                  onClick={handleSync}
+                  disabled={syncing}
+                  className="text-sm bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition disabled:opacity-50"
+                >
+                  {syncing ? t("settings", "syncing") : t("settings", "syncFromCloud")}
+                </button>
+                <button
+                  onClick={handleBackupToCloud}
+                  disabled={syncing}
+                  className="text-sm bg-accent/10 text-accent hover:bg-accent/20 px-4 py-2 rounded-xl transition disabled:opacity-50"
+                >
+                  {syncing
+                    ? (locale === "th" ? "กำลังสำรอง..." : "Backing up...")
+                    : (locale === "th" ? "สำรองไปคลาวด์" : "Backup to Cloud")}
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="space-y-3">
-            <p className="text-sm text-accent">{t("settings", "cloudConnected")}</p>
-            <button
-              onClick={handleSync}
-              disabled={syncing}
-              className="text-sm bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-xl transition disabled:opacity-50"
-            >
-              {syncing ? t("settings", "syncing") : t("settings", "syncFromCloud")}
-            </button>
+        ) : (
+          <div className="bg-card border border-border rounded-2xl p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <Cloud className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold">{t("settings", "cloudTitle")}</h3>
+            </div>
+            <UpgradePrompt feature={t("settings", "cloudTitle")} description={locale === "th" ? "ซิงค์ข้อมูลกับคลาวด์อัตโนมัติ สำรองข้อมูลปลอดภัย" : "Auto-sync data with cloud, secure backup"} />
           </div>
-        </div>
+        )
       )}
 
       {/* Default Currency */}
@@ -234,20 +267,27 @@ export default function SettingsPage() {
           <h3 className="font-semibold">{t("settings", "currencyTitle")}</h3>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-          {SUPPORTED_CURRENCIES.map((c) => (
+          {SUPPORTED_CURRENCIES.map((c) => {
+            const locked = !isPro && c.code !== "THB";
+            return (
             <button
               key={c.code}
-              onClick={() => handleCurrencyChange(c.code)}
+              onClick={() => !locked && handleCurrencyChange(c.code)}
+              disabled={locked}
               className={`px-3 py-2 rounded-xl text-sm font-medium transition border ${
                 currency === c.code
                   ? "bg-primary/10 text-primary border-primary/30"
+                  : locked
+                  ? "bg-secondary text-muted/40 border-border cursor-not-allowed"
                   : "bg-secondary text-muted border-border hover:text-foreground"
               }`}
             >
               <span className="text-base">{c.symbol}</span>{" "}
               <span className="text-xs">{c.code}</span>
+              {locked && <span className="text-[10px] block text-muted/40">Pro</span>}
             </button>
-          ))}
+            );
+          })}
         </div>
         <p className="text-xs text-muted mt-2">{t("settings", "currencyDesc")}</p>
       </div>

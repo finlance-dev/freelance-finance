@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Roadmap การเรียนรู้สำหรับฟรีแลนซ์ 2569</text>
+  <rect x="30" y="50" width="230" height="155" rx="10" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="145" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#059669">ระดับเริ่มต้น (ฟรี)</text>
+  <text x="50" y="100" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">YouTube / Coursera Free</text>
+  <text x="50" y="120" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Google Digital Garage</text>
+  <text x="50" y="140" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">HubSpot Academy</text>
+  <text x="50" y="160" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">freeCodeCamp</text>
+  <text x="50" y="185" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#059669">งบ: 0 บาท</text>
+  <rect x="285" y="50" width="230" height="155" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="400" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#2563eb">ระดับกลาง</text>
+  <text x="305" y="100" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Udemy / Skillshare</text>
+  <text x="305" y="120" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Coursera Plus</text>
+  <text x="305" y="140" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Designlab / Codecademy Pro</text>
+  <text x="305" y="160" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Skooldio (ไทย)</text>
+  <text x="305" y="185" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#2563eb">งบ: 500-3,000 บาท/เดือน</text>
+  <rect x="540" y="50" width="230" height="155" rx="10" fill="#fdf4ff" stroke="#e9d5ff"/>
+  <text x="655" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#7c3aed">ระดับสูง</text>
+  <text x="560" y="100" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Bootcamp 3-6 เดือน</text>
+  <text x="560" y="120" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Certification (AWS/Google)</text>
+  <text x="560" y="140" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Mentorship 1-on-1</text>
+  <text x="560" y="160" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Conference / Workshop</text>
+  <text x="560" y="185" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#7c3aed">งบ: 5,000-50,000 บาท</text>
+  <rect x="30" y="220" width="740" height="150" rx="10" fill="white" stroke="#e2e8f0"/>
+  <text x="400" y="250" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#1e293b">6 สกิลที่มี demand สูงสุด 2569</text>
+  <text x="165" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#0891b2">1. AI / Prompt Engineering</text>
+  <text x="400" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#0891b2">2. UX/UI Design</text>
+  <text x="635" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#0891b2">3. No-Code / Low-Code</text>
+  <text x="165" y="315" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#0891b2">4. Data Analytics</text>
+  <text x="400" y="315" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#0891b2">5. Content Marketing</text>
+  <text x="635" y="315" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#0891b2">6. Financial Literacy</text>
+  <text x="400" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">ROI ของการเรียน: ขึ้นราคาได้ 20-50% ภายใน 6 เดือนหลังจบคอร์ส</text>
+</svg>

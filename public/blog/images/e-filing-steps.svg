@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">ขั้นตอนยื่นภาษี e-Filing ผ่าน rd.go.th</text>
+  <rect x="30" y="50" width="140" height="120" rx="12" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="100" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#7c3aed">1</text>
+  <text x="100" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#7c3aed">สมัคร/เข้าสู่ระบบ</text>
+  <text x="100" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ใช้เลข 13 หลัก</text>
+  <text x="100" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">+ รหัสผ่าน</text>
+  <text x="185" y="105" font-family="system-ui,sans-serif" font-size="20" fill="#c4b5fd">→</text>
+  <rect x="200" y="50" width="140" height="120" rx="12" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="270" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#7c3aed">2</text>
+  <text x="270" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#7c3aed">เลือก ภ.ง.ด.90</text>
+  <text x="270" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">สำหรับผู้มีรายได้</text>
+  <text x="270" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">นอกเหนือเงินเดือน</text>
+  <text x="355" y="105" font-family="system-ui,sans-serif" font-size="20" fill="#c4b5fd">→</text>
+  <rect x="370" y="50" width="140" height="120" rx="12" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="440" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#7c3aed">3</text>
+  <text x="440" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#7c3aed">กรอกข้อมูลรายได้</text>
+  <text x="440" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ระบุรายได้แต่ละ</text>
+  <text x="440" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ประเภท + 50 ทวิ</text>
+  <text x="525" y="105" font-family="system-ui,sans-serif" font-size="20" fill="#c4b5fd">→</text>
+  <rect x="540" y="50" width="120" height="120" rx="12" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="600" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#7c3aed">4</text>
+  <text x="600" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#7c3aed">ค่าลดหย่อน</text>
+  <text x="600" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">SSF RMF ประกัน</text>
+  <text x="600" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">บริจาค อื่นๆ</text>
+  <text x="675" y="105" font-family="system-ui,sans-serif" font-size="20" fill="#c4b5fd">→</text>
+  <rect x="690" y="50" width="80" height="120" rx="12" fill="#7c3aed"/>
+  <text x="730" y="85" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="white">5</text>
+  <text x="730" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="white">ยืนยัน</text>
+  <text x="730" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="white" opacity="0.8">ชำระ/ขอคืน</text>
+  <rect x="30" y="195" width="740" height="180" rx="12" fill="white" stroke="#e2e8f0"/>
+  <text x="400" y="225" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#1e293b">เอกสารที่ต้องเตรียม</text>
+  <text x="200" y="260" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed">📄 หนังสือ 50 ทวิ ทุกใบ</text>
+  <text x="500" y="260" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed">💰 ใบเสร็จค่าลดหย่อน</text>
+  <text x="200" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed">🏥 ใบรับรองประกัน</text>
+  <text x="500" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed">📊 สรุปรายได้ทั้งปี</text>
+  <text x="200" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed">📈 หนังสือรับรองกองทุน SSF/RMF</text>
+  <text x="500" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#7c3aed">🏦 เลขบัญชีธนาคาร (ขอคืน)</text>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8">กำหนดยื่น: 1 ม.ค. - 31 มี.ค. (ออนไลน์ขยายถึง 8 เม.ย.)</text>
+</svg>

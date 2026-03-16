@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#dc2626"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="64" font-weight="bold" fill="white">1.8 ล้าน</text>
+  <text x="310" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="white" opacity="0.9">เกณฑ์รายได้ที่ต้องจด VAT</text>
+  <rect x="100" y="260" width="420" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="310" y="292" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white">⚠ ต้องจดภายใน 30 วัน</text>
+  <rect x="100" y="330" width="420" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="310" y="362" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white">VAT 7% เรียกเก็บจากลูกค้า</text>
+  <rect x="100" y="400" width="420" height="50" rx="10" fill="white" opacity="0.15"/>
+  <text x="310" y="432" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white">ยื่น ภ.พ.30 ทุกเดือน</text>
+  <rect x="640" y="80" width="480" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="880" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="34" font-weight="bold" fill="white">ฟรีแลนซ์</text>
+  <text x="880" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="34" font-weight="bold" fill="white">ต้องจด VAT!</text>
+  <text x="880" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">สิ่งที่ต้องรู้ก่อนสาย</text>
+  <rect x="780" y="400" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="880" y="432" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

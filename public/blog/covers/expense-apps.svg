@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="120" y="80" width="280" height="460" rx="30" fill="white" opacity="0.12" stroke="white" stroke-opacity="0.2" stroke-width="2"/>
+  <rect x="190" y="90" width="140" height="8" rx="4" fill="white" opacity="0.2"/>
+  <rect x="145" y="130" width="230" height="50" rx="10" fill="white" opacity="0.1"/>
+  <text x="170" y="162" font-family="system-ui,sans-serif" font-size="14" fill="white">รายรับวันนี้</text>
+  <text x="330" y="162" text-anchor="end" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#10b981">+5,000</text>
+  <rect x="145" y="195" width="230" height="50" rx="10" fill="white" opacity="0.1"/>
+  <text x="170" y="227" font-family="system-ui,sans-serif" font-size="14" fill="white">ค่ากาแฟ</text>
+  <text x="330" y="227" text-anchor="end" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#ef4444">-85</text>
+  <rect x="145" y="260" width="230" height="50" rx="10" fill="white" opacity="0.1"/>
+  <text x="170" y="292" font-family="system-ui,sans-serif" font-size="14" fill="white">ค่าอินเทอร์เน็ต</text>
+  <text x="330" y="292" text-anchor="end" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#ef4444">-599</text>
+  <rect x="145" y="360" width="230" height="70" rx="14" fill="white" opacity="0.15"/>
+  <text x="260" y="393" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="white" opacity="0.8">ยอดคงเหลือ</text>
+  <text x="260" y="418" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="white">฿ 42,316</text>
+  <g transform="translate(520,100)">
+    <text x="0" y="0" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="white">TOP 7 APPS</text>
+    <rect x="0" y="25" width="560" height="55" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="58" font-family="system-ui,sans-serif" font-size="16" fill="white">1. Finlance — สำหรับฟรีแลนซ์โดยเฉพาะ</text>
+    <rect x="0" y="90" width="560" height="55" rx="12" fill="white" opacity="0.08"/>
+    <text x="20" y="123" font-family="system-ui,sans-serif" font-size="16" fill="white">2. Money Lover — ใช้ง่าย ภาษาไทย</text>
+    <rect x="0" y="155" width="560" height="55" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="188" font-family="system-ui,sans-serif" font-size="16" fill="white">3. PEAK — บัญชีออนไลน์ครบวงจร</text>
+    <rect x="0" y="220" width="560" height="55" rx="12" fill="white" opacity="0.08"/>
+    <text x="20" y="253" font-family="system-ui,sans-serif" font-size="16" fill="white">4. Google Sheets — ฟรี ยืดหยุ่น</text>
+    <rect x="0" y="285" width="560" height="55" rx="12" fill="white" opacity="0.1"/>
+    <text x="20" y="318" font-family="system-ui,sans-serif" font-size="16" fill="white">5. Wave — Invoice + บัญชี</text>
+    <rect x="0" y="350" width="560" height="55" rx="12" fill="white" opacity="0.08"/>
+    <text x="20" y="383" font-family="system-ui,sans-serif" font-size="16" fill="white">6. Notion — จัดระเบียบทุกอย่าง</text>
+  </g>
+  <text x="600" y="565" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">แอปบันทึกรายรับรายจ่าย</text>
+  <text x="600" y="600" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="white" opacity="0.7">Finlance.co</text>
+</svg>

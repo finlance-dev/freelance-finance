@@ -81,18 +81,28 @@ export function checkAndGenerateNotifications() {
     existing.some((n) => n.type === type && n.createdAt.startsWith(today));
 
   // 1. Overdue invoices
-  if (!hasToday("invoice_overdue")) {
-    const invoices = getInvoices();
-    const overdue = invoices.filter(
-      (inv) => inv.status === "overdue" || (inv.status === "sent" && inv.dueDate < today)
-    );
-    if (overdue.length > 0) {
+  const invoices = getInvoices();
+  const overdue = invoices.filter(
+    (inv) => inv.status === "overdue" || (inv.status === "sent" && inv.dueDate < today)
+  );
+
+  if (overdue.length > 0) {
+    if (!hasToday("invoice_overdue")) {
+      const details = overdue
+        .slice(0, 3)
+        .map((inv) => inv.invoiceNumber || inv.id.slice(0, 8))
+        .join(", ");
+      const suffix = overdue.length > 3 ? ` +${overdue.length - 3}` : "";
       addNotification("invoice_overdue", "critical", "notifInvoiceOverdueTitle", "notifInvoiceOverdueMsg", {
-        messageParams: { count: overdue.length },
-        actionUrl: "/dashboard/invoices",
+        messageParams: { count: overdue.length, details: details + suffix },
+        actionUrl: "/dashboard/invoices?status=overdue",
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
       });
     }
+  } else {
+    // No overdue invoices — remove old overdue notifications
+    const list = getNotifications().filter((n) => n.type !== "invoice_overdue");
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
   }
 
   // 2. Low runway (< 3 months)

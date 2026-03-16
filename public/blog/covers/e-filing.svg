@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">ขั้นตอน e-Filing</text>
+  <rect x="100" y="170" width="420" height="45" rx="8" fill="white" opacity="0.15"/>
+  <text x="130" y="198" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#c4b5fd">①</text>
+  <text x="165" y="198" font-family="system-ui,sans-serif" font-size="13" fill="white">สมัครสมาชิก rd.go.th</text>
+  <rect x="100" y="225" width="420" height="45" rx="8" fill="white" opacity="0.15"/>
+  <text x="130" y="253" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#c4b5fd">②</text>
+  <text x="165" y="253" font-family="system-ui,sans-serif" font-size="13" fill="white">เลือกแบบ ภ.ง.ด.90</text>
+  <rect x="100" y="280" width="420" height="45" rx="8" fill="white" opacity="0.15"/>
+  <text x="130" y="308" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#c4b5fd">③</text>
+  <text x="165" y="308" font-family="system-ui,sans-serif" font-size="13" fill="white">กรอกรายได้ + ค่าลดหย่อน</text>
+  <rect x="100" y="335" width="420" height="45" rx="8" fill="white" opacity="0.15"/>
+  <text x="130" y="363" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#c4b5fd">④</text>
+  <text x="165" y="363" font-family="system-ui,sans-serif" font-size="13" fill="white">ตรวจสอบ + ยืนยัน</text>
+  <rect x="100" y="390" width="420" height="45" rx="8" fill="white" opacity="0.15"/>
+  <text x="130" y="418" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#c4b5fd">⑤</text>
+  <text x="165" y="418" font-family="system-ui,sans-serif" font-size="13" fill="white">ชำระภาษี / ขอคืนภาษี</text>
+  <rect x="640" y="80" width="500" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="890" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">ยื่นภาษีออนไลน์</text>
+  <text x="890" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="white">e-Filing 2569</text>
+  <text x="890" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">ทีละขั้นตอนสำหรับฟรีแลนซ์</text>
+  <rect x="790" y="420" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="890" y="452" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>

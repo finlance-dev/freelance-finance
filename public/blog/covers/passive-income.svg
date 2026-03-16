@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="80" width="500" height="470" rx="24" fill="white" opacity="0.1"/>
+  <text x="310" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="white">7 ช่องทาง Passive Income</text>
+  <text x="100" y="190" font-family="system-ui,sans-serif" font-size="15" fill="white">1. เงินฝากออมทรัพย์พิเศษ</text>
+  <text x="100" y="225" font-family="system-ui,sans-serif" font-size="15" fill="white">2. กองทุนรวมตราสารหนี้</text>
+  <text x="100" y="260" font-family="system-ui,sans-serif" font-size="15" fill="white">3. กองทุน ETF หุ้นไทย/ต่างประเทศ</text>
+  <text x="100" y="295" font-family="system-ui,sans-serif" font-size="15" fill="white">4. หุ้นปันผล</text>
+  <text x="100" y="330" font-family="system-ui,sans-serif" font-size="15" fill="white">5. REIT อสังหาริมทรัพย์</text>
+  <text x="100" y="365" font-family="system-ui,sans-serif" font-size="15" fill="white">6. ขายคอร์สออนไลน์</text>
+  <text x="100" y="400" font-family="system-ui,sans-serif" font-size="15" fill="white">7. Template/Digital Product</text>
+  <rect x="640" y="80" width="480" height="470" rx="24" fill="white" opacity="0.08"/>
+  <text x="880" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="34" font-weight="bold" fill="white">Passive Income</text>
+  <text x="880" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="34" font-weight="bold" fill="white">ฟรีแลนซ์</text>
+  <text x="880" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="white" opacity="0.85">ให้เงินทำงานแทนคุณ</text>
+  <rect x="780" y="400" width="200" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="880" y="432" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="white">Finlance.co</text>
+</svg>
