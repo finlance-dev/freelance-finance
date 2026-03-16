@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">เทมเพลตรีวิวการเงินกลางปี</text>
+  <rect x="30" y="50" width="360" height="160" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="210" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#2563eb">1. รายได้ ม.ค.-มิ.ย.</text>
+  <text x="50" y="100" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">รายได้รวม: __________ บาท</text>
+  <text x="50" y="120" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เป้าหมายครึ่งปี: __________ บาท</text>
+  <text x="50" y="140" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ส่วนต่าง: + / - __________ บาท</text>
+  <text x="50" y="165" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ลูกค้าที่ดีที่สุด: __________</text>
+  <text x="50" y="185" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Avg. monthly income: __________</text>
+  <rect x="410" y="50" width="360" height="160" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="590" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">2. เงินออมและลงทุน</text>
+  <text x="430" y="100" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">Emergency Fund: __________ บาท</text>
+  <text x="430" y="120" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เป้าหมาย: __________ บาท</text>
+  <text x="430" y="140" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ลงทุน SSF/RMF: __________ บาท</text>
+  <text x="430" y="165" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เป้าลดหย่อนปีนี้: __________ บาท</text>
+  <text x="430" y="185" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">พอร์ตลงทุนรวม: __________</text>
+  <rect x="30" y="225" width="360" height="140" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="210" y="250" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#92400e">3. ภาษีและค่าใช้จ่าย</text>
+  <text x="50" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ภาษีครึ่งปี (ภ.ง.ด.94): __________</text>
+  <text x="50" y="295" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">เงินกันภาษีสะสม: __________ บาท</text>
+  <text x="50" y="315" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ค่าใช้จ่ายรวม: __________ บาท</text>
+  <text x="50" y="340" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">กำไรสุทธิ: __________ บาท</text>
+  <rect x="410" y="225" width="360" height="140" rx="8" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="590" y="250" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#7c3aed">4. แผนครึ่งปีหลัง</text>
+  <text x="430" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ปรับราคาค่าบริการ?</text>
+  <text x="430" y="295" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ หาลูกค้าใหม่ ____ ราย</text>
+  <text x="430" y="315" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ลงทุนเพิ่ม ____ บาท</text>
+  <text x="430" y="340" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ยื่น ภ.ง.ด.94 ก่อน ก.ย.</text>
+</svg>

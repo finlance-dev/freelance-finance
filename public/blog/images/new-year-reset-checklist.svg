@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Checklist รีเซ็ตการเงินปีใหม่</text>
+  <rect x="30" y="50" width="360" height="160" rx="8" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="210" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#7c3aed">สรุปปีที่ผ่านมา</text>
+  <text x="50" y="100" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ สรุปรายได้รวมทั้งปี</text>
+  <text x="50" y="120" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ สรุปค่าใช้จ่ายรวม</text>
+  <text x="50" y="140" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ คำนวณกำไรสุทธิ</text>
+  <text x="50" y="160" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ เปรียบเทียบกับเป้าหมาย</text>
+  <text x="50" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ สรุปบทเรียนสำคัญ</text>
+  <text x="50" y="200" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ลูกค้าไหนดี/ไม่ดี</text>
+  <rect x="410" y="50" width="360" height="160" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="590" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#2563eb">ตั้งเป้าหมายปีใหม่</text>
+  <text x="430" y="100" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ รายได้เป้าหมาย: _____ บาท</text>
+  <text x="430" y="120" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ เงินออมเป้าหมาย: _____ บาท</text>
+  <text x="430" y="140" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ลงทุน SSF/RMF: _____ บาท</text>
+  <text x="430" y="160" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ Hourly Rate ใหม่: _____ บาท</text>
+  <text x="430" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ลูกค้า retainer: _____ ราย</text>
+  <text x="430" y="200" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ทักษะใหม่ที่จะเรียน</text>
+  <rect x="30" y="225" width="360" height="145" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="210" y="250" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">จัดระบบการเงิน</text>
+  <text x="50" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ทบทวนบัญชีธนาคาร</text>
+  <text x="50" y="295" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ อัพเดทงบประมาณรายเดือน</text>
+  <text x="50" y="315" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ตรวจสอบ subscription ทั้งหมด</text>
+  <text x="50" y="335" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ยกเลิก subscription ที่ไม่ใช้</text>
+  <text x="50" y="355" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ตั้ง auto-transfer เงินออม</text>
+  <rect x="410" y="225" width="360" height="145" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="590" y="250" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#92400e">วางแผนภาษีล่วงหน้า</text>
+  <text x="430" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ ประมาณรายได้ทั้งปี</text>
+  <text x="430" y="295" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ คำนวณภาษีคร่าวๆ</text>
+  <text x="430" y="315" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ วางแผนค่าลดหย่อน</text>
+  <text x="430" y="335" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ กันเงินภาษี ___% ต่อเดือน</text>
+  <text x="430" y="355" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">☐ นัดนักบัญชี (ถ้ามี)</text>
+</svg>

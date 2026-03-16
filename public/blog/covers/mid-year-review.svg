@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <rect x="60" y="60" width="1080" height="180" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="600" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">รีวิวการเงินกลางปี</text>
+  <text x="600" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">ม.ค. — มิ.ย. เป้าหมายถึงไหนแล้ว?</text>
+  <text x="600" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">ทำทุกเดือนกรกฎาคม</text>
+  <rect x="60" y="270" width="250" height="180" rx="12" fill="#059669" opacity="0.15" stroke="#059669"/>
+  <text x="185" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#34d399">รายได้</text>
+  <text x="185" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="#34d399">65%</text>
+  <text x="185" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">ถึงเป้าหมาย</text>
+  <text x="185" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">325,000 / 500,000</text>
+  <rect x="340" y="270" width="250" height="180" rx="12" fill="#f59e0b" opacity="0.15" stroke="#f59e0b"/>
+  <text x="465" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#fbbf24">เงินออม</text>
+  <text x="465" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="#fbbf24">48%</text>
+  <text x="465" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">ถึงเป้าหมาย</text>
+  <text x="465" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">48,000 / 100,000</text>
+  <rect x="620" y="270" width="250" height="180" rx="12" fill="#3b82f6" opacity="0.15" stroke="#3b82f6"/>
+  <text x="745" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#60a5fa">ลงทุน</text>
+  <text x="745" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="#60a5fa">55%</text>
+  <text x="745" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">ถึงเป้าหมาย</text>
+  <text x="745" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">SSF 33,000 / 60,000</text>
+  <rect x="900" y="270" width="240" height="180" rx="12" fill="#dc2626" opacity="0.15" stroke="#dc2626"/>
+  <text x="1020" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f87171">ภาษี</text>
+  <text x="1020" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="bold" fill="#f87171">50%</text>
+  <text x="1020" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">กันไว้แล้ว</text>
+  <text x="1020" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">25,000 / 50,000</text>
+  <text x="600" y="520" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8">ตรวจสอบ ปรับแผน แก้ไข — ก่อนจะสายเกินไป</text>
+  <text x="600" y="590" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">รีวิวการเงินกลางปี | Finlance</text>
+</svg>

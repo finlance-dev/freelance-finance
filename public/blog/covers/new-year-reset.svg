@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <rect x="60" y="60" width="1080" height="510" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="600" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">ปีใหม่ รีเซ็ตการเงินฟรีแลนซ์</text>
+  <text x="600" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">ตั้งเป้าหมายและงบประมาณใหม่</text>
+  <rect x="100" y="200" width="200" height="200" rx="12" fill="#a855f7" opacity="0.15" stroke="#a855f7"/>
+  <text x="200" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#c084fc">Step 1</text>
+  <text x="200" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">สรุปปีที่ผ่านมา</text>
+  <text x="200" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">รายได้รวม</text>
+  <text x="200" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">ค่าใช้จ่ายรวม</text>
+  <text x="200" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">กำไรสุทธิ</text>
+  <text x="200" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">เงินออม/ลงทุน</text>
+  <rect x="330" y="200" width="200" height="200" rx="12" fill="#3b82f6" opacity="0.15" stroke="#3b82f6"/>
+  <text x="430" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#60a5fa">Step 2</text>
+  <text x="430" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">ตั้งเป้าปีใหม่</text>
+  <text x="430" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">รายได้เป้าหมาย</text>
+  <text x="430" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">เงินออมเป้าหมาย</text>
+  <text x="430" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">ลงทุนเป้าหมาย</text>
+  <text x="430" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">ทักษะใหม่ที่จะเรียน</text>
+  <rect x="560" y="200" width="200" height="200" rx="12" fill="#059669" opacity="0.15" stroke="#059669"/>
+  <text x="660" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#34d399">Step 3</text>
+  <text x="660" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">วางงบประมาณ</text>
+  <text x="660" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">งบเครื่องมือ/ซอฟต์แวร์</text>
+  <text x="660" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">งบเรียนรู้/คอร์ส</text>
+  <text x="660" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">งบการตลาด</text>
+  <text x="660" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">งบฉุกเฉิน</text>
+  <rect x="790" y="200" width="310" height="200" rx="12" fill="#f59e0b" opacity="0.15" stroke="#f59e0b"/>
+  <text x="945" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">Step 4</text>
+  <text x="945" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">วางแผนภาษีล่วงหน้า</text>
+  <text x="945" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">ประมาณรายได้ทั้งปี</text>
+  <text x="945" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">คำนวณภาษีคร่าวๆ</text>
+  <text x="945" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">วางแผนค่าลดหย่อน</text>
+  <text x="945" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">กันเงินภาษีรายเดือน</text>
+  <rect x="100" y="430" width="1000" height="100" rx="10" fill="#0f172a" stroke="#334155"/>
+  <text x="600" y="475" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#f59e0b">เป้าหมาย: เริ่มปีใหม่ด้วยแผนการเงินที่ชัดเจน</text>
+  <text x="600" y="505" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">ทำ 4 ขั้นตอนนี้ภายในสัปดาห์แรกของปี แล้วทั้งปีจะง่ายขึ้น</text>
+  <text x="600" y="590" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">รีเซ็ตการเงินปีใหม่ | Finlance</text>
+</svg>

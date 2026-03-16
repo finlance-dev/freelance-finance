@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Timeline เตรียมยื่นภาษี มกราคม - เมษายน</text>
+  <rect x="30" y="55" width="170" height="120" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="115" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#2563eb">ม.ค.</text>
+  <text x="45" y="105" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• รวบรวม 50 ทวิ</text>
+  <text x="45" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• สรุปรายได้ทั้งปี</text>
+  <text x="45" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• รวมหลักฐานค่าใช้จ่าย</text>
+  <text x="45" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• เตรียมค่าลดหย่อน</text>
+  <rect x="220" y="55" width="170" height="120" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="305" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#92400e">ก.พ.</text>
+  <text x="235" y="105" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• คำนวณภาษี</text>
+  <text x="235" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• เลือกเหมา vs จริง</text>
+  <text x="235" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• กรอกแบบ ภ.ง.ด.90</text>
+  <text x="235" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ตรวจสอบความถูกต้อง</text>
+  <rect x="410" y="55" width="170" height="120" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="495" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">มี.ค.</text>
+  <text x="425" y="105" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ยื่นผ่าน e-Filing</text>
+  <text x="425" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• ชำระภาษี/ขอคืน</text>
+  <text x="425" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• เก็บสำเนา</text>
+  <text x="425" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#166534">★ Deadline 31 มี.ค.</text>
+  <rect x="600" y="55" width="170" height="120" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="685" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#dc2626">เม.ย.</text>
+  <text x="615" y="105" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• e-Filing ขยายเวลา</text>
+  <text x="615" y="125" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">• โอกาสสุดท้าย</text>
+  <text x="615" y="145" font-family="system-ui,sans-serif" font-size="10" fill="#dc2626">• หลังจากนี้ = ค่าปรับ</text>
+  <text x="615" y="165" font-family="system-ui,sans-serif" font-size="10" fill="#dc2626">• 2,000 + 1.5%/เดือน</text>
+  <rect x="30" y="200" width="740" height="170" rx="10" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="400" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#059669">เอกสารที่ต้องเตรียม</text>
+  <text x="200" y="265" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">รายได้</text>
+  <text x="200" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">50 ทวิ ทุกใบ</text>
+  <text x="200" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">สรุปรายได้จากแต่ละลูกค้า</text>
+  <text x="200" y="325" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">Statement ธนาคาร</text>
+  <text x="400" y="265" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">ค่าใช้จ่าย</text>
+  <text x="400" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ใบเสร็จค่าใช้จ่ายธุรกิจ</text>
+  <text x="400" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ค่าเช่า ค่าเน็ต ค่าอุปกรณ์</text>
+  <text x="400" y="325" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ค่าจ้าง outsource</text>
+  <text x="600" y="265" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">ค่าลดหย่อน</text>
+  <text x="600" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">เบี้ยประกันชีวิต/สุขภาพ</text>
+  <text x="600" y="305" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">หลักฐาน SSF/RMF</text>
+  <text x="600" y="325" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">ใบเสร็จบริจาค</text>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#059669">เก็บทุกใบ ถ่ายรูปสำรองไว้ในคลาวด์</text>
+</svg>

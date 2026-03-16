@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <rect x="60" y="60" width="500" height="510" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="310" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#f59e0b">เช็กลิสต์ยื่นภาษี มี.ค.</text>
+  <g font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">
+    <text x="100" y="160">☑ รวบรวม 50 ทวิ ทุกใบ</text>
+    <text x="100" y="195">☑ สรุปรายได้ทั้งปี</text>
+    <text x="100" y="230">☑ คำนวณค่าใช้จ่าย (เหมา/จริง)</text>
+    <text x="100" y="265">☑ รวมค่าลดหย่อนทั้งหมด</text>
+    <text x="100" y="300">☑ คำนวณภาษีที่ต้องจ่าย</text>
+    <text x="100" y="335">☐ ยื่น ภ.ง.ด.90 ผ่าน e-Filing</text>
+    <text x="100" y="370">☐ ชำระภาษี / ขอคืนภาษี</text>
+    <text x="100" y="405">☐ เก็บสำเนายื่นภาษี</text>
+  </g>
+  <rect x="100" y="440" width="400" height="8" rx="4" fill="#334155"/>
+  <rect x="100" y="440" width="250" height="8" rx="4" fill="#f59e0b"/>
+  <text x="310" y="480" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">5/8 ขั้นตอนเสร็จแล้ว</text>
+  <rect x="620" y="120" width="520" height="400" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="880" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">กำหนดยื่นภาษี</text>
+  <rect x="660" y="200" width="440" height="60" rx="8" fill="#f59e0b" opacity="0.15" stroke="#f59e0b"/>
+  <text x="880" y="235" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#f59e0b">ภ.ง.ด.90 — ภายใน 31 มี.ค.</text>
+  <text x="880" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">(e-Filing ขยายถึง เม.ย.)</text>
+  <rect x="660" y="280" width="440" height="50" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6"/>
+  <text x="880" y="312" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#60a5fa">ภ.ง.ด.94 — ภายใน 30 ก.ย.</text>
+  <text x="880" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">อย่าลืมยื่นทั้ง 2 แบบ!</text>
+  <rect x="660" y="400" width="440" height="80" rx="8" fill="#dc2626" opacity="0.1" stroke="#dc2626"/>
+  <text x="880" y="435" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#f87171">ยื่นช้า = ค่าปรับ 2,000 บาท</text>
+  <text x="880" y="460" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#f87171">+ เงินเพิ่ม 1.5%/เดือน</text>
+  <text x="600" y="600" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">เตรียมตัวยื่นภาษี มี.ค. | Finlance</text>
+</svg>

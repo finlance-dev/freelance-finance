@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <rect x="60" y="60" width="1080" height="510" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="600" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="bold" fill="#f8fafc">กลยุทธ์เพิ่มรายได้ปลายปี</text>
+  <text x="600" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">ฟรีแลนซ์ทำอะไรได้บ้างก่อนปิดงบ</text>
+  <rect x="100" y="185" width="480" height="70" rx="8" fill="#059669" opacity="0.15" stroke="#059669"/>
+  <text x="120" y="220" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#34d399">1. เสนอ Package Deal ให้ลูกค้าเดิม</text>
+  <text x="120" y="242" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">ลูกค้ามีงบเหลือสิ้นปี ต้องใช้ก่อนหมด</text>
+  <rect x="100" y="270" width="480" height="70" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6"/>
+  <text x="120" y="305" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#60a5fa">2. ขาย Retainer Contract ปีหน้า</text>
+  <text x="120" y="327" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">ล็อครายได้ปีหน้าตั้งแต่ตอนนี้</text>
+  <rect x="100" y="355" width="480" height="70" rx="8" fill="#f59e0b" opacity="0.15" stroke="#f59e0b"/>
+  <text x="120" y="390" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#fbbf24">3. Launch Digital Product</text>
+  <text x="120" y="412" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">Template, Course, E-book รายได้เสริม</text>
+  <rect x="100" y="440" width="480" height="70" rx="8" fill="#a855f7" opacity="0.15" stroke="#a855f7"/>
+  <text x="120" y="475" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#c084fc">4. ขึ้นราคาสำหรับปีใหม่</text>
+  <text x="120" y="497" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">แจ้งลูกค้าล่วงหน้า 1-2 เดือน</text>
+  <rect x="620" y="185" width="480" height="325" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="860" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#f59e0b">เป้าหมาย Q4</text>
+  <text x="860" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="48" font-weight="bold" fill="#f8fafc">+30%</text>
+  <text x="860" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">รายได้เพิ่มจาก Q3</text>
+  <text x="860" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">Q4 คือช่วงที่ลูกค้ามีงบเหลือ</text>
+  <text x="860" y="410" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">โปรเจกต์ต้องปิดก่อนสิ้นปี</text>
+  <text x="860" y="440" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">= โอกาสทองของฟรีแลนซ์</text>
+  <text x="600" y="590" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">เพิ่มรายได้ปลายปี | Finlance</text>
+</svg>
