@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">โมเดลรายได้ Tutor ฟรีแลนซ์</text>
+  <rect x="30" y="50" width="235" height="160" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="147" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#dc2626">1:1 สอนตัวต่อตัว</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="42" y="100">Rate: 300-1,500/ชม.</text>
+    <text x="42" y="120">ชม./วัน: 4-6 ชม.</text>
+    <text x="42" y="140">วัน/เดือน: 22 วัน</text>
+    <text x="42" y="160" font-weight="bold" fill="#dc2626">รายได้: 26K-198K/เดือน</text>
+    <text x="42" y="180">ข้อจำกัด: เวลา จำกัด</text>
+  </g>
+  <rect x="283" y="50" width="235" height="160" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="400" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#92400e">กลุ่มเล็ก (5-10 คน)</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="295" y="100">Rate: 200-400/คน/ชม.</text>
+    <text x="295" y="120">เฉลี่ย 7 คน/กลุ่ม</text>
+    <text x="295" y="140">= 1,400-2,800/ชม.</text>
+    <text x="295" y="160" font-weight="bold" fill="#92400e">รายได้: 123K-369K/เดือน</text>
+    <text x="295" y="180">ต้องจัดการกลุ่มดี</text>
+  </g>
+  <rect x="535" y="50" width="235" height="160" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="652" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#166534">คอร์สออนไลน์</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="547" y="100">ราคา: 990-4,990/คอร์ส</text>
+    <text x="547" y="120">ขาย 50-500 คอร์ส/เดือน</text>
+    <text x="547" y="140">สร้างครั้งเดียว</text>
+    <text x="547" y="160" font-weight="bold" fill="#166534">รายได้: 50K-2.5M/เดือน</text>
+    <text x="547" y="180">Scalable ไม่จำกัด!</text>
+  </g>
+  <rect x="30" y="230" width="740" height="140" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="400" y="260" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#2563eb">ตัวอย่าง: Tutor ภาษาอังกฤษ ที่ผสมทุกโมเดล</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <text x="50" y="290">• สอน 1:1 IELTS: 1,000/ชม. x 3 ชม./วัน x 15 วัน = 45,000</text>
+    <text x="50" y="310">• สอนกลุ่ม Speaking: 300/คน x 8 คน x 2 ชม. x 8 ครั้ง = 38,400</text>
+    <text x="50" y="330">• คอร์สออนไลน์ Grammar: 1,990 x 30 คน = 59,700</text>
+    <text x="50" y="355" font-weight="bold" fill="#2563eb">รวม: 143,100 บาท/เดือน (ทำงานแค่ 15-18 วัน)</text>
+  </g>
+</svg>

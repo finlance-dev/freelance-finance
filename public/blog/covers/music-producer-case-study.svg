@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <rect x="60" y="60" width="1080" height="100" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#ec4899">Case Study: Music Producer ฟรีแลนซ์</text>
+  <text x="600" y="140" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">สร้างรายได้จากเสียง ตั้งแต่ Jingle จนถึง Royalty Income</text>
+  <g transform="translate(60, 185)">
+    <rect width="530" height="390" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="265" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#ec4899">แหล่งรายได้</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <rect x="20" y="60" width="490" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="90">Jingle/โฆษณา: 10,000-100,000/ชิ้น</text>
+      <rect x="20" y="120" width="490" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="150">เพลงประกอบ Film/Series: 30,000-300,000</text>
+      <rect x="20" y="180" width="490" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="210">Podcast Production: 3,000-15,000/ตอน</text>
+      <rect x="20" y="240" width="490" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="270">Beat/Sample ขาย: Passive Income</text>
+      <rect x="20" y="300" width="490" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="330">Royalty จากแพลตฟอร์ม Streaming</text>
+    </g>
+  </g>
+  <g transform="translate(620, 185)">
+    <rect width="520" height="390" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="260" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">การลงทุนอุปกรณ์</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <rect x="20" y="60" width="480" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="90">DAW Software (Logic/Ableton): 5,000-20,000</text>
+      <rect x="20" y="120" width="480" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="150">Audio Interface: 5,000-30,000</text>
+      <rect x="20" y="180" width="480" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="210">Studio Monitor: 10,000-50,000</text>
+      <rect x="20" y="240" width="480" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="270">Microphone: 5,000-50,000</text>
+      <rect x="20" y="300" width="480" height="50" rx="8" fill="#0f172a"/>
+      <text x="40" y="330">Acoustic Treatment: 10,000-50,000</text>
+    </g>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

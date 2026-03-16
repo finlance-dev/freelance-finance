@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">แหล่งรายได้ Music Producer ฟรีแลนซ์</text>
+  <rect x="30" y="50" width="360" height="310" rx="8" fill="#fce7f3" stroke="#f9a8d4"/>
+  <text x="210" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#be185d">Active Income (ทำงาน=ได้เงิน)</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <rect x="45" y="90" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="55" y="115">Jingle โฆษณา: 10,000-100,000/ชิ้น</text>
+    <rect x="45" y="138" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="55" y="163">เพลงประกอบ: 30,000-300,000/โปรเจกต์</text>
+    <rect x="45" y="186" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="55" y="211">Podcast Production: 3,000-15,000/ตอน</text>
+    <rect x="45" y="234" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="55" y="259">Mixing/Mastering: 3,000-20,000/เพลง</text>
+    <rect x="45" y="282" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="55" y="307">สอน/Workshop: 5,000-20,000/ครั้ง</text>
+  </g>
+  <rect x="410" y="50" width="360" height="310" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="590" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">Passive Income (ได้เงินตลอด)</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <rect x="425" y="90" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="435" y="115">Beat ขาย: 500-5,000/beat (ขายซ้ำได้)</text>
+    <rect x="425" y="138" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="435" y="163">Sample Pack: 300-2,000/pack (ขายซ้ำได้)</text>
+    <rect x="425" y="186" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="435" y="211">Royalty Free Music: ขายบน AudioJungle</text>
+    <rect x="425" y="234" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="435" y="259">Streaming Royalty: จาก Spotify/Apple</text>
+    <rect x="425" y="282" width="330" height="40" rx="4" fill="white" stroke="#e2e8f0"/>
+    <text x="435" y="307">คอร์สสอนออนไลน์: สร้างครั้งเดียว</text>
+  </g>
+  <rect x="30" y="370" width="740" height="20" rx="4" fill="#eff6ff"/>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#2563eb">เป้าหมาย: Passive Income > 50% ของรายได้ทั้งหมด = อิสระทางการเงิน</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">โมเดล Retainer สำหรับ Digital Marketer</text>
+  <rect x="30" y="50" width="235" height="310" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="147" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#c2410c">Package S: 15K/เดือน</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="42" y="100">✓ Social Media 3 platforms</text>
+    <text x="42" y="120">✓ 12 posts/เดือน</text>
+    <text x="42" y="140">✓ Monthly report</text>
+    <text x="42" y="160">✗ Ads management</text>
+    <text x="42" y="180">✗ SEO</text>
+    <text x="42" y="210" font-weight="bold" fill="#c2410c">เหมาะกับ: ร้านค้าเล็ก</text>
+    <text x="42" y="230" font-weight="bold" fill="#c2410c">SME ที่เริ่มทำออนไลน์</text>
+  </g>
+  <rect x="283" y="50" width="235" height="310" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="400" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#2563eb">Package M: 35K/เดือน</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="295" y="100">✓ Social Media ทุก platform</text>
+    <text x="295" y="120">✓ 20 posts/เดือน</text>
+    <text x="295" y="140">✓ Facebook/IG Ads (งบ 10K)</text>
+    <text x="295" y="160">✓ Monthly report + meeting</text>
+    <text x="295" y="180">✓ Content calendar</text>
+    <text x="295" y="210" font-weight="bold" fill="#2563eb">เหมาะกับ: SME ที่เติบโต</text>
+    <text x="295" y="230" font-weight="bold" fill="#2563eb">ต้องการ reach มากขึ้น</text>
+  </g>
+  <rect x="535" y="50" width="235" height="310" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="652" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#166534">Package L: 80K/เดือน</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="547" y="100">✓ Full digital strategy</text>
+    <text x="547" y="120">✓ Social + Ads + SEO + Email</text>
+    <text x="547" y="140">✓ Weekly report + meeting</text>
+    <text x="547" y="160">✓ A/B testing</text>
+    <text x="547" y="180">✓ Conversion optimization</text>
+    <text x="547" y="210" font-weight="bold" fill="#166534">เหมาะกับ: บริษัทขนาดกลาง</text>
+    <text x="547" y="230" font-weight="bold" fill="#166534">ที่ต้องการ growth จริงจัง</text>
+  </g>
+  <rect x="30" y="370" width="740" height="20" rx="4" fill="#fef3c7"/>
+  <text x="400" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#92400e">เป้าหมาย: ลูกค้า 3 Package M + 1 Package L = 185,000 บาท/เดือน</text>
+</svg>
