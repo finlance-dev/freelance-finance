@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">วิวัฒนาการราคา Designer ฟรีแลนซ์</text>
+  <rect x="30" y="50" width="170" height="320" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="115" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#dc2626">Level 1: เริ่มต้น</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="42" y="100">โลโก้: 3,000-5,000</text>
+    <text x="42" y="120">นามบัตร: 1,000-2,000</text>
+    <text x="42" y="140">ป้าย/แบนเนอร์: 1,500</text>
+    <text x="42" y="160">รายได้: ~25K/เดือน</text>
+    <text x="42" y="190" font-weight="bold" fill="#dc2626">ปัญหา:</text>
+    <text x="42" y="210">แข่งราคา</text>
+    <text x="42" y="230">งานเยอะ เงินน้อย</text>
+    <text x="42" y="250">ไม่มีเวลาพัฒนา</text>
+  </g>
+  <rect x="215" y="50" width="185" height="320" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="307" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#92400e">Level 2: Specialist</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="227" y="100">Brand Identity: 30K-80K</text>
+    <text x="227" y="120">Packaging: 15K-50K</text>
+    <text x="227" y="140">UI Design: 20K-60K</text>
+    <text x="227" y="160">รายได้: ~70K/เดือน</text>
+    <text x="227" y="190" font-weight="bold" fill="#92400e">เปลี่ยนอะไร:</text>
+    <text x="227" y="210">เลือกสายเฉพาะ</text>
+    <text x="227" y="230">สร้าง portfolio เด่น</text>
+    <text x="227" y="250">ขายกระบวนการ</text>
+  </g>
+  <rect x="415" y="50" width="185" height="320" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="507" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#166534">Level 3: Consultant</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="427" y="100">Brand Strategy: 100K+</text>
+    <text x="427" y="120">Design System: 80K+</text>
+    <text x="427" y="140">Retainer: 30-80K/เดือน</text>
+    <text x="427" y="160">รายได้: ~150K/เดือน</text>
+    <text x="427" y="190" font-weight="bold" fill="#166534">เปลี่ยนอะไร:</text>
+    <text x="427" y="210">ขาย strategy + design</text>
+    <text x="427" y="230">สร้าง retainer model</text>
+    <text x="427" y="250">คัดเลือกลูกค้า</text>
+  </g>
+  <rect x="615" y="50" width="155" height="320" rx="8" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="692" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#7c3aed">Level 4: Agency</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="627" y="100">มีทีม 3-5 คน</text>
+    <text x="627" y="120">รับงานใหญ่ 500K+</text>
+    <text x="627" y="140">Passive จาก template</text>
+    <text x="627" y="160">รายได้: 300K+/เดือน</text>
+    <text x="627" y="190" font-weight="bold" fill="#7c3aed">เปลี่ยนอะไร:</text>
+    <text x="627" y="210">จ้างทีม</text>
+    <text x="627" y="230">สร้าง brand agency</text>
+    <text x="627" y="250">ขาย digital product</text>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <rect x="60" y="60" width="520" height="510" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="320" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="bold" fill="#f472b6">Case Study: Designer ฟรีแลนซ์</text>
+  <text x="320" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">จาก Graphic Designer สู่ Brand Consultant</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="90" y="175" width="430" height="80" rx="8" fill="#0f172a"/>
+    <text x="110" y="200" font-size="12" fill="#f472b6" font-weight="bold">Phase 1: รับงานทั่วไป</text>
+    <text x="110" y="225" font-size="11" fill="#94a3b8">โลโก้ 3,000-5,000 / ป้าย / นามบัตร</text>
+    <text x="110" y="245" font-size="11" fill="#94a3b8">รายได้: 20,000-30,000/เดือน</text>
+    <rect x="90" y="265" width="430" height="80" rx="8" fill="#0f172a"/>
+    <text x="110" y="290" font-size="12" fill="#a78bfa" font-weight="bold">Phase 2: Specialize</text>
+    <text x="110" y="315" font-size="11" fill="#94a3b8">Brand Identity / UI-UX / Packaging</text>
+    <text x="110" y="335" font-size="11" fill="#94a3b8">รายได้: 50,000-80,000/เดือน</text>
+    <rect x="90" y="355" width="430" height="80" rx="8" fill="#0f172a"/>
+    <text x="110" y="380" font-size="12" fill="#34d399" font-weight="bold">Phase 3: Brand Consultant</text>
+    <text x="110" y="405" font-size="11" fill="#94a3b8">Brand Strategy + Design System + Retainer</text>
+    <text x="110" y="425" font-size="11" fill="#94a3b8">รายได้: 100,000-200,000/เดือน</text>
+  </g>
+  <rect x="90" y="455" width="430" height="80" rx="8" fill="#831843"/>
+  <text x="305" y="490" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#f9a8d4">ขึ้นราคา 10x ใน 5 ปี</text>
+  <text x="305" y="515" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#fce7f3">ด้วยการ specialize + สร้าง portfolio + ขายคุณค่า</text>
+  <g transform="translate(640, 60)">
+    <rect width="500" height="510" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="250" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">แผนการเงิน Designer</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <rect x="30" y="75" width="210" height="90" rx="8" fill="#0f172a"/>
+      <text x="135" y="105" text-anchor="middle" fill="#f472b6" font-weight="bold">รายได้หลัก</text>
+      <text x="135" y="130" text-anchor="middle" font-size="11">Brand Identity</text>
+      <text x="135" y="150" text-anchor="middle" font-size="11">50,000-200,000/โปรเจกต์</text>
+      <rect x="260" y="75" width="210" height="90" rx="8" fill="#0f172a"/>
+      <text x="365" y="105" text-anchor="middle" fill="#a78bfa" font-weight="bold">รายได้เสริม</text>
+      <text x="365" y="130" text-anchor="middle" font-size="11">Template/Asset ขาย</text>
+      <text x="365" y="150" text-anchor="middle" font-size="11">5,000-20,000/เดือน</text>
+      <rect x="30" y="180" width="210" height="90" rx="8" fill="#0f172a"/>
+      <text x="135" y="210" text-anchor="middle" fill="#34d399" font-weight="bold">ค่าใช้จ่าย</text>
+      <text x="135" y="235" text-anchor="middle" font-size="11">Adobe CC 1,500/เดือน</text>
+      <text x="135" y="255" text-anchor="middle" font-size="11">Font/Stock 1,000/เดือน</text>
+      <rect x="260" y="180" width="210" height="90" rx="8" fill="#0f172a"/>
+      <text x="365" y="210" text-anchor="middle" fill="#f59e0b" font-weight="bold">การลงทุน</text>
+      <text x="365" y="235" text-anchor="middle" font-size="11">iPad + Apple Pencil</text>
+      <text x="365" y="255" text-anchor="middle" font-size="11">คอร์ส UX/Branding</text>
+    </g>
+    <rect x="30" y="290" width="440" height="190" rx="8" fill="#0f172a"/>
+    <text x="250" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">สูตรขึ้นราคา Designer</text>
+    <g font-family="system-ui,sans-serif" font-size="11" fill="#cbd5e1">
+      <text x="50" y="350">1. สร้าง portfolio ที่แสดงผลลัพธ์ ไม่ใช่แค่ผลงาน</text>
+      <text x="50" y="375">2. ขายกระบวนการทำงาน ไม่ใช่แค่ deliverable</text>
+      <text x="50" y="400">3. เลือกลูกค้าที่ให้คุณค่ากับงานดีไซน์</text>
+      <text x="50" y="425">4. สร้าง package ที่รวมงาน strategy + design</text>
+      <text x="50" y="450">5. ใช้ case study แสดง ROI ให้ลูกค้าเห็น</text>
+    </g>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

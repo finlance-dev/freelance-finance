@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">โครงสร้างรายได้ Content Creator</text>
+  <rect x="30" y="50" width="355" height="320" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="207" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#dc2626">ช่องทางรายได้ (ตัวอย่าง: 100K/เดือน)</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <rect x="50" y="90" width="200" height="20" rx="4" fill="#ef4444"/>
+    <text x="270" y="105">AdSense: 40,000 (40%)</text>
+    <rect x="50" y="120" width="150" height="20" rx="4" fill="#f59e0b"/>
+    <text x="270" y="135">Sponsor: 30,000 (30%)</text>
+    <rect x="50" y="150" width="75" height="20" rx="4" fill="#34d399"/>
+    <text x="270" y="165">Affiliate: 15,000 (15%)</text>
+    <rect x="50" y="180" width="50" height="20" rx="4" fill="#60a5fa"/>
+    <text x="270" y="195">Course: 10,000 (10%)</text>
+    <rect x="50" y="210" width="25" height="20" rx="4" fill="#a78bfa"/>
+    <text x="270" y="225">Merch: 5,000 (5%)</text>
+  </g>
+  <rect x="50" y="250" width="315" height="100" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="207" y="275" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#1e293b">เป้าหมาย: กระจายรายได้</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="65" y="295">• AdSense ไม่ควรเกิน 50% ของรายได้</text>
+    <text x="65" y="315">• Sponsor + Affiliate = รายได้ที่ควบคุมได้</text>
+    <text x="65" y="335">• Course + Merch = Passive Income</text>
+  </g>
+  <rect x="410" y="50" width="360" height="320" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="590" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">การจัดสรรเงิน Creator</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <rect x="430" y="90" width="320" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="440" y="115">กันภาษี: 8-10% → 8,000-10,000</text>
+    <rect x="430" y="140" width="320" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="440" y="165">ออม/ลงทุน: 20% → 20,000</text>
+    <rect x="430" y="190" width="320" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="440" y="215">อุปกรณ์/อัพเกรด: 15% → 15,000</text>
+    <rect x="430" y="240" width="320" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="440" y="265">ค่าใช้จ่ายธุรกิจ: 15% → 15,000</text>
+    <rect x="430" y="290" width="320" height="40" rx="6" fill="white" stroke="#e2e8f0"/>
+    <text x="440" y="315">ใช้จ่ายส่วนตัว: 42% → 42,000</text>
+  </g>
+  <text x="590" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="bold" fill="#166534">หมายเหตุ: กันงบอุปกรณ์แยกเพราะเป็นการลงทุนในธุรกิจ</text>
+</svg>

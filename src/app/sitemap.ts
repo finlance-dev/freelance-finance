@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 
 const blogSlugs = [
+  "freelance-writer-financial-case-study",
+  "freelance-youtuber-financial-case-study",
+  "freelance-photographer-financial-case-study",
+  "freelance-designer-financial-case-study",
+  "freelance-developer-financial-case-study",
   "freelance-monthly-financial-routine-template",
   "freelance-rainy-season-slow-period-survival",
   "freelance-q4-tax-optimization-guide",

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">โครงสร้างรายได้ Developer ฟรีแลนซ์ (ตัวอย่าง)</text>
+  <rect x="30" y="50" width="360" height="160" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="210" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#2563eb">รายได้ 150,000 บาท/เดือน</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <text x="50" y="100">Retainer ลูกค้า A: 40,000 (Web maintenance)</text>
+    <text x="50" y="120">Retainer ลูกค้า B: 35,000 (App dev)</text>
+    <text x="50" y="140">Retainer ลูกค้า C: 25,000 (API dev)</text>
+    <text x="50" y="160">โปรเจกต์ต่างชาติ: 30,000 (USD payment)</text>
+    <text x="50" y="180">Side project/SaaS: 20,000</text>
+  </g>
+  <rect x="410" y="50" width="360" height="160" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="590" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#dc2626">ค่าใช้จ่าย 25,000 บาท/เดือน</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <text x="430" y="100">Cloud/Hosting: 5,000</text>
+    <text x="430" y="120">Software licenses: 3,000</text>
+    <text x="430" y="140">Co-working space: 3,000</text>
+    <text x="430" y="160">อินเทอร์เน็ต: 1,500</text>
+    <text x="430" y="180">อื่นๆ (อุปกรณ์/คอร์ส): 12,500</text>
+  </g>
+  <rect x="30" y="225" width="740" height="145" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="400" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">การจัดสรรเงิน 125,000 บาท (หลังหักค่าใช้จ่าย)</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <rect x="50" y="270" width="150" height="25" rx="4" fill="#60a5fa"/>
+    <text x="125" y="288" text-anchor="middle" fill="white" font-weight="bold">ภาษี 10,000 (8%)</text>
+    <rect x="210" y="270" width="150" height="25" rx="4" fill="#34d399"/>
+    <text x="285" y="288" text-anchor="middle" fill="white" font-weight="bold">ออม 25,000 (20%)</text>
+    <rect x="370" y="270" width="150" height="25" rx="4" fill="#f59e0b"/>
+    <text x="445" y="288" text-anchor="middle" fill="white" font-weight="bold">ลงทุน 37,500 (30%)</text>
+    <rect x="530" y="270" width="220" height="25" rx="4" fill="#a78bfa"/>
+    <text x="640" y="288" text-anchor="middle" fill="white" font-weight="bold">ใช้จ่ายส่วนตัว 52,500 (42%)</text>
+    <text x="400" y="330" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">เป้าหมาย: ออม+ลงทุน 50% = สร้างความมั่งคั่งระยะยาว</text>
+    <text x="400" y="355" text-anchor="middle" font-size="10" fill="#64748b">* ตัวเลขเป็นตัวอย่าง ปรับตามรายได้และสถานการณ์จริงของแต่ละคน</text>
+  </g>
+</svg>
