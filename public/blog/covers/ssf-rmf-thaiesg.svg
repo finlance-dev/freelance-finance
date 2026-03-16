@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <text x="600" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">เปรียบเทียบ SSF vs RMF vs ThaiESG 2569</text>
+  <g transform="translate(60, 80)">
+    <rect width="350" height="490" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="50" rx="12" fill="#f59e0b"/>
+    <text x="175" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#0f172a">SSF</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="25" y="80" fill="#fbbf24" font-weight="bold">ลดหย่อนสูงสุด</text>
+      <text x="25" y="100">200,000 บาท (ไม่เกิน 30%)</text>
+      <text x="25" y="135" fill="#fbbf24" font-weight="bold">ระยะเวลาถือครอง</text>
+      <text x="25" y="155">10 ปี</text>
+      <text x="25" y="190" fill="#fbbf24" font-weight="bold">เงื่อนไขซื้อ</text>
+      <text x="25" y="210">ไม่ต้องซื้อต่อเนื่อง</text>
+      <text x="25" y="230">ซื้อปีไหนก็ได้</text>
+      <text x="25" y="265" fill="#fbbf24" font-weight="bold">เหมาะกับ</text>
+      <text x="25" y="285">ฟรีแลนซ์ทุกระดับรายได้</text>
+      <text x="25" y="305">ยืดหยุ่นสูง</text>
+    </g>
+    <rect x="20" y="340" width="310" height="50" rx="8" fill="#422006"/>
+    <text x="175" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#fbbf24">แนะนำ: ตัวเลือกแรกที่ควรซื้อ</text>
+  </g>
+  <g transform="translate(425, 80)">
+    <rect width="350" height="490" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="50" rx="12" fill="#34d399"/>
+    <text x="175" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#0f172a">RMF</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="25" y="80" fill="#6ee7b7" font-weight="bold">ลดหย่อนสูงสุด</text>
+      <text x="25" y="100">500,000 บาท (ไม่เกิน 30%)</text>
+      <text x="25" y="135" fill="#6ee7b7" font-weight="bold">ระยะเวลาถือครอง</text>
+      <text x="25" y="155">จนถึงอายุ 55 ปี</text>
+      <text x="25" y="190" fill="#6ee7b7" font-weight="bold">เงื่อนไขซื้อ</text>
+      <text x="25" y="210">ไม่ต้องซื้อต่อเนื่อง</text>
+      <text x="25" y="230">(เปลี่ยนกฎแล้ว 2563)</text>
+      <text x="25" y="265" fill="#6ee7b7" font-weight="bold">เหมาะกับ</text>
+      <text x="25" y="285">ฟรีแลนซ์รายได้สูง</text>
+      <text x="25" y="305">ต้องการเพดานลดหย่อนสูง</text>
+    </g>
+    <rect x="20" y="340" width="310" height="50" rx="8" fill="#064e3b"/>
+    <text x="175" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7">เหมาะ: รายได้ > 1 ล้าน/ปี</text>
+  </g>
+  <g transform="translate(790, 80)">
+    <rect width="350" height="490" rx="12" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="50" rx="12" fill="#60a5fa"/>
+    <text x="175" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#0f172a">ThaiESG</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="25" y="80" fill="#93c5fd" font-weight="bold">ลดหย่อนสูงสุด</text>
+      <text x="25" y="100">300,000 บาท (ไม่เกิน 30%)</text>
+      <text x="25" y="135" fill="#93c5fd" font-weight="bold">ระยะเวลาถือครอง</text>
+      <text x="25" y="155">8 ปี (สั้นกว่า RMF)</text>
+      <text x="25" y="190" fill="#93c5fd" font-weight="bold">เงื่อนไขซื้อ</text>
+      <text x="25" y="210">ไม่ต้องซื้อต่อเนื่อง</text>
+      <text x="25" y="230">ลงทุนในหุ้น ESG</text>
+      <text x="25" y="265" fill="#93c5fd" font-weight="bold">เหมาะกับ</text>
+      <text x="25" y="285">ฟรีแลนซ์ที่ใช้ SSF เต็มแล้ว</text>
+      <text x="25" y="305">ต้องการเพดานเพิ่ม</text>
+    </g>
+    <rect x="20" y="340" width="310" height="50" rx="8" fill="#0c4a6e"/>
+    <text x="175" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#93c5fd">เหมาะ: ถือสั้นกว่า RMF</text>
+  </g>
+  <rect x="60" y="500" width="1080" height="60" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="600" y="530" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">เพดานรวม SSF + RMF + ThaiESG + กองทุนอื่น = ไม่เกิน 500,000 บาท</text>
+  <text x="600" y="550" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">และไม่เกิน 30% ของเงินได้พึงประเมิน</text>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

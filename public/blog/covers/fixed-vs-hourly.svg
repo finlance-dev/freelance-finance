@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <text x="600" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">เปรียบเทียบ: คิดเงินแบบเหมา vs รายชั่วโมง</text>
+  <g transform="translate(60, 80)">
+    <rect width="520" height="490" rx="12" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="0" y="0" width="520" height="50" rx="12" fill="#a78bfa"/>
+    <text x="260" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#0f172a">Fixed Rate (เหมาโปรเจกต์)</text>
+    <g font-family="system-ui,sans-serif" font-size="13" fill="#cbd5e1">
+      <text x="30" y="85" fill="#34d399">✓</text><text x="55" y="85">ลูกค้ารู้ราคาล่วงหน้า</text>
+      <text x="30" y="115" fill="#34d399">✓</text><text x="55" y="115">ทำเร็วได้เงินเท่าเดิม (เพิ่ม $/ชม.)</text>
+      <text x="30" y="145" fill="#34d399">✓</text><text x="55" y="145">ง่ายต่อการเสนอราคา</text>
+      <text x="30" y="175" fill="#34d399">✓</text><text x="55" y="175">ไม่ต้อง track เวลา</text>
+      <text x="30" y="220" fill="#ef4444">✗</text><text x="55" y="220">ประเมินเวลาผิด = ขาดทุน</text>
+      <text x="30" y="250" fill="#ef4444">✗</text><text x="55" y="250">Scope creep = ทำงานฟรี</text>
+      <text x="30" y="280" fill="#ef4444">✗</text><text x="55" y="280">ลูกค้าอาจแก้ไม่จบ</text>
+    </g>
+    <rect x="30" y="320" width="460" height="60" rx="8" fill="#2e1065"/>
+    <text x="260" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#c4b5fd">เหมาะกับ: งานที่ scope ชัดเจน</text>
+  </g>
+  <g transform="translate(620, 80)">
+    <rect width="520" height="490" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <rect x="0" y="0" width="520" height="50" rx="12" fill="#f97316"/>
+    <text x="260" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#0f172a">Hourly Rate (รายชั่วโมง)</text>
+    <g font-family="system-ui,sans-serif" font-size="13" fill="#cbd5e1">
+      <text x="30" y="85" fill="#34d399">✓</text><text x="55" y="85">ยุติธรรม ทำเท่าไหร่ได้เท่านั้น</text>
+      <text x="30" y="115" fill="#34d399">✓</text><text x="55" y="115">ไม่เสี่ยงขาดทุน</text>
+      <text x="30" y="145" fill="#34d399">✓</text><text x="55" y="145">Scope เปลี่ยน = ได้เงินเพิ่ม</text>
+      <text x="30" y="175" fill="#34d399">✓</text><text x="55" y="175">เหมาะกับงาน retainer</text>
+      <text x="30" y="220" fill="#ef4444">✗</text><text x="55" y="220">ลูกค้าไม่รู้ราคาสุดท้าย</text>
+      <text x="30" y="250" fill="#ef4444">✗</text><text x="55" y="250">ต้อง track เวลาทุกชั่วโมง</text>
+      <text x="30" y="280" fill="#ef4444">✗</text><text x="55" y="280">ทำเร็ว = ได้เงินน้อย</text>
+    </g>
+    <rect x="30" y="320" width="460" height="60" rx="8" fill="#7c2d12"/>
+    <text x="260" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#fdba74">เหมาะกับ: งาน retainer / scope ไม่ชัด</text>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

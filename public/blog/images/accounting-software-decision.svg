@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#0f172a"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">เลือกซอฟต์แวร์บัญชีตามสถานการณ์ของคุณ</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="280" y="45" width="240" height="35" rx="8" fill="#60a5fa"/>
+    <text x="400" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">คุณจดทะเบียนบริษัทไหม?</text>
+    <line x1="340" y1="80" x2="150" y2="110" stroke="#34d399" stroke-width="2"/>
+    <line x1="460" y1="80" x2="650" y2="110" stroke="#ef4444" stroke-width="2"/>
+    <text x="220" y="100" font-size="10" fill="#34d399">จดแล้ว</text>
+    <text x="550" y="100" font-size="10" fill="#ef4444">บุคคลธรรมดา</text>
+
+    <rect x="30" y="110" width="240" height="55" rx="8" fill="#34d399"/>
+    <text x="150" y="133" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">FlowAccount</text>
+    <text x="150" y="153" text-anchor="middle" font-size="10" fill="#064e3b">ระบบบัญชีครบ + e-Filing</text>
+
+    <rect x="530" y="110" width="240" height="35" rx="8" fill="#1e293b" stroke="#f97316"/>
+    <text x="650" y="133" text-anchor="middle" font-size="11" fill="#f97316">งบเท่าไหร่?</text>
+    <line x1="600" y1="145" x2="500" y2="175" stroke="#34d399" stroke-width="2"/>
+    <line x1="700" y1="145" x2="750" y2="175" stroke="#ef4444" stroke-width="2"/>
+    <text x="530" y="165" font-size="9" fill="#34d399">มีงบ</text>
+    <text x="730" y="165" font-size="9" fill="#ef4444">ฟรี</text>
+
+    <rect x="400" y="175" width="200" height="55" rx="8" fill="#60a5fa"/>
+    <text x="500" y="198" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">PEAK Account</text>
+    <text x="500" y="218" text-anchor="middle" font-size="10" fill="#0c4a6e">UI สวย + มี plan ฟรี</text>
+
+    <rect x="650" y="175" width="130" height="55" rx="8" fill="#1e293b" stroke="#a78bfa"/>
+    <text x="715" y="198" text-anchor="middle" font-size="11" fill="#a78bfa">ลูกค้า?</text>
+    <line x1="690" y1="230" x2="640" y2="260" stroke="#34d399" stroke-width="1.5"/>
+    <line x1="740" y1="230" x2="750" y2="260" stroke="#ec4899" stroke-width="1.5"/>
+    <text x="645" y="250" font-size="8" fill="#34d399">ไทย</text>
+    <text x="745" y="250" font-size="8" fill="#ec4899">ต่างชาติ</text>
+
+    <rect x="560" y="260" width="160" height="45" rx="8" fill="#a78bfa"/>
+    <text x="640" y="280" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">Google Sheets</text>
+    <text x="640" y="296" text-anchor="middle" font-size="9" fill="#2e1065">ฟรี + ยืดหยุ่น</text>
+
+    <rect x="680" y="260" width="100" height="45" rx="8" fill="#ec4899"/>
+    <text x="730" y="280" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">Wave</text>
+    <text x="730" y="296" text-anchor="middle" font-size="9" fill="#500724">ฟรี + ครบ</text>
+
+    <rect x="30" y="185" width="240" height="35" rx="8" fill="#1e293b" stroke="#fbbf24"/>
+    <text x="150" y="208" text-anchor="middle" font-size="11" fill="#fbbf24">เน้นวางแผนภาษี?</text>
+
+    <rect x="30" y="235" width="240" height="45" rx="8" fill="#f59e0b"/>
+    <text x="150" y="255" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">iTAX</text>
+    <text x="150" y="272" text-anchor="middle" font-size="10" fill="#422006">คำนวณ + วางแผนลดหย่อน</text>
+  </g>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">finlance.co</text>
+</svg>

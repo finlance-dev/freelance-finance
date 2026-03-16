@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#0f172a"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">เปรียบเทียบภาษีจริง: บุคคลธรรมดา vs นิติบุคคล</text>
+  <g font-family="system-ui,sans-serif">
+    <text x="200" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#f59e0b">บุคคลธรรมดา (หักเหมา 60%)</text>
+    <text x="600" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#60a5fa">นิติบุคคล (SME)</text>
+    <g font-size="11" fill="#cbd5e1">
+      <text x="50" y="90">รายได้</text>
+      <text x="200" y="90" text-anchor="middle">ภาษีบุคคล</text>
+      <text x="400" y="90" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="90" text-anchor="middle">ภาษีนิติ</text>
+      <text x="750" y="90" text-anchor="middle">ประหยัด</text>
+    </g>
+    <line x1="30" y1="100" x2="770" y2="100" stroke="#334155"/>
+    <g font-size="11" fill="#cbd5e1">
+      <text x="50" y="125">500K</text>
+      <text x="200" y="125" text-anchor="middle" fill="#34d399">0 บาท</text>
+      <text x="400" y="125" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="125" text-anchor="middle">~15,000</text>
+      <text x="750" y="125" text-anchor="middle" fill="#ef4444">บุคคลดีกว่า</text>
+
+      <text x="50" y="155">800K</text>
+      <text x="200" y="155" text-anchor="middle">6,000</text>
+      <text x="400" y="155" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="155" text-anchor="middle">~30,000</text>
+      <text x="750" y="155" text-anchor="middle" fill="#ef4444">บุคคลดีกว่า</text>
+
+      <text x="50" y="185">1.2M</text>
+      <text x="200" y="185" text-anchor="middle">29,000</text>
+      <text x="400" y="185" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="185" text-anchor="middle">~50,000</text>
+      <text x="750" y="185" text-anchor="middle" fill="#ef4444">บุคคลดีกว่า</text>
+
+      <text x="50" y="215">1.5M</text>
+      <text x="200" y="215" text-anchor="middle">52,500</text>
+      <text x="400" y="215" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="215" text-anchor="middle">~55,000</text>
+      <text x="750" y="215" text-anchor="middle" fill="#fbbf24">ใกล้เคียง</text>
+
+      <text x="50" y="245">2M</text>
+      <text x="200" y="245" text-anchor="middle">103,000</text>
+      <text x="400" y="245" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="245" text-anchor="middle">~80,000</text>
+      <text x="750" y="245" text-anchor="middle" fill="#34d399">นิติดีกว่า</text>
+
+      <text x="50" y="275">3M</text>
+      <text x="200" y="275" text-anchor="middle">223,000</text>
+      <text x="400" y="275" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="275" text-anchor="middle">~130,000</text>
+      <text x="750" y="275" text-anchor="middle" fill="#34d399">นิติดีกว่า</text>
+
+      <text x="50" y="305">5M</text>
+      <text x="200" y="305" text-anchor="middle">503,000</text>
+      <text x="400" y="305" text-anchor="middle" fill="#64748b">│</text>
+      <text x="600" y="305" text-anchor="middle">~250,000</text>
+      <text x="750" y="305" text-anchor="middle" fill="#34d399">นิติดีกว่า</text>
+    </g>
+    <rect x="30" y="325" width="740" height="35" rx="6" fill="#064e3b"/>
+    <text x="400" y="348" text-anchor="middle" font-size="12" font-weight="bold" fill="#34d399">จุดคุ้มทุน: รายได้ประมาณ 1.5-2 ล้านบาท/ปี → พิจารณาจดบริษัท</text>
+  </g>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">finlance.co</text>
+</svg>

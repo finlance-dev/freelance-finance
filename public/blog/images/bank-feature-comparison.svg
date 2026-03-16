@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#0f172a"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">เปรียบเทียบฟีเจอร์ธนาคารสำหรับฟรีแลนซ์</text>
+  <g font-family="system-ui,sans-serif">
+    <g font-size="11" fill="#94a3b8">
+      <text x="30" y="60">ฟีเจอร์</text>
+      <text x="200" y="60" text-anchor="middle" fill="#1a5276" font-weight="bold">กรุงไทย</text>
+      <text x="340" y="60" text-anchor="middle" fill="#4a1a7a" font-weight="bold">SCB</text>
+      <text x="480" y="60" text-anchor="middle" fill="#006428" font-weight="bold">กสิกร</text>
+      <text x="620" y="60" text-anchor="middle" fill="#f97316" font-weight="bold">TTB</text>
+      <text x="740" y="60" text-anchor="middle" fill="#ec4899" font-weight="bold">ออมสิน</text>
+    </g>
+    <line x1="20" y1="70" x2="780" y2="70" stroke="#334155"/>
+    <g font-size="10" fill="#cbd5e1">
+      <text x="30" y="95">ดอกเบี้ยออมทรัพย์</text>
+      <text x="200" y="95" text-anchor="middle">0.25%</text>
+      <text x="340" y="95" text-anchor="middle">0.25%</text>
+      <text x="480" y="95" text-anchor="middle">0.25%</text>
+      <text x="620" y="95" text-anchor="middle" fill="#34d399">1.5-2.0%</text>
+      <text x="740" y="95" text-anchor="middle">0.25%</text>
+
+      <text x="30" y="120">โอนฟรี (app)</text>
+      <text x="200" y="120" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="340" y="120" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="480" y="120" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="620" y="120" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="740" y="120" text-anchor="middle" fill="#34d399">✓</text>
+
+      <text x="30" y="145">PromptPay ฟรี</text>
+      <text x="200" y="145" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="340" y="145" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="480" y="145" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="620" y="145" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="740" y="145" text-anchor="middle" fill="#34d399">✓</text>
+
+      <text x="30" y="170">App คุณภาพ</text>
+      <text x="200" y="170" text-anchor="middle">★★★★</text>
+      <text x="340" y="170" text-anchor="middle" fill="#34d399">★★★★★</text>
+      <text x="480" y="170" text-anchor="middle">★★★★</text>
+      <text x="620" y="170" text-anchor="middle">★★★</text>
+      <text x="740" y="170" text-anchor="middle">★★★</text>
+
+      <text x="30" y="195">QR Payment</text>
+      <text x="200" y="195" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="340" y="195" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="480" y="195" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="620" y="195" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="740" y="195" text-anchor="middle" fill="#34d399">✓</text>
+
+      <text x="30" y="220">บัญชีออมดอกเบี้ยสูง</text>
+      <text x="200" y="220" text-anchor="middle" fill="#ef4444">✗</text>
+      <text x="340" y="220" text-anchor="middle" fill="#ef4444">✗</text>
+      <text x="480" y="220" text-anchor="middle" fill="#ef4444">✗</text>
+      <text x="620" y="220" text-anchor="middle" fill="#34d399">ME Save</text>
+      <text x="740" y="220" text-anchor="middle" fill="#34d399">GSB UP</text>
+
+      <text x="30" y="245">เปิดบัญชีออนไลน์</text>
+      <text x="200" y="245" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="340" y="245" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="480" y="245" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="620" y="245" text-anchor="middle" fill="#34d399">✓</text>
+      <text x="740" y="245" text-anchor="middle" fill="#ef4444">✗</text>
+
+      <text x="30" y="270">สินเชื่อฟรีแลนซ์</text>
+      <text x="200" y="270" text-anchor="middle" fill="#ef4444">ยาก</text>
+      <text x="340" y="270" text-anchor="middle" fill="#fbbf24">ปานกลาง</text>
+      <text x="480" y="270" text-anchor="middle" fill="#fbbf24">ปานกลาง</text>
+      <text x="620" y="270" text-anchor="middle" fill="#fbbf24">ปานกลาง</text>
+      <text x="740" y="270" text-anchor="middle" fill="#34d399">ง่ายสุด</text>
+    </g>
+    <rect x="30" y="295" width="740" height="70" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text x="400" y="318" text-anchor="middle" font-size="12" font-weight="bold" fill="#f8fafc">แนะนำสำหรับฟรีแลนซ์</text>
+    <text x="50" y="338" font-size="10" fill="#34d399">บัญชีหลัก: SCB หรือ กสิกร (app ดี, QR ครบ)</text>
+    <text x="50" y="355" font-size="10" fill="#f59e0b">บัญชีออม: TTB ME Save (ดอกเบี้ยสูงสุด)</text>
+  </g>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">finlance.co</text>
+</svg>
