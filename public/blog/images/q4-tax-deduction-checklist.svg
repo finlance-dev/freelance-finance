@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Checklist ค่าลดหย่อนภาษี Q4</text>
+  <rect x="30" y="50" width="360" height="155" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="210" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#92400e">กองทุน/การลงทุน</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <text x="50" y="100">☐ SSF: ลงทุนแล้ว _____ / 200,000 บาท</text>
+    <text x="50" y="120">☐ RMF: ลงทุนแล้ว _____ / 500,000 บาท</text>
+    <text x="50" y="140">☐ ThaiESG: ลงทุนแล้ว _____ / 300,000 บาท</text>
+    <text x="50" y="160">☐ เช็คเพดานรวม 30% ของรายได้</text>
+    <text x="50" y="180">☐ เลือกกองทุนที่เหมาะสม</text>
+  </g>
+  <rect x="410" y="50" width="360" height="155" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="590" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">ประกัน</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <text x="430" y="100">☐ ประกันชีวิต: _____ / 100,000 บาท</text>
+    <text x="430" y="120">☐ ประกันสุขภาพ: _____ / 25,000 บาท</text>
+    <text x="430" y="140">☐ ประกันบำนาญ: _____ / 200,000 บาท</text>
+    <text x="430" y="160">☐ เบี้ยประกันพ่อแม่: _____ / 15,000</text>
+    <text x="430" y="180">☐ รวบรวมใบเสร็จประกันทั้งหมด</text>
+  </g>
+  <rect x="30" y="220" width="360" height="150" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="210" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#2563eb">ค่าลดหย่อนอื่นๆ</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <text x="50" y="270">☐ เงินบริจาค (2 เท่า): _____ บาท</text>
+    <text x="50" y="290">☐ ดอกเบี้ยบ้าน: _____ / 100,000 บาท</text>
+    <text x="50" y="310">☐ ช้อปดีมีคืน (ถ้ามี): _____ บาท</text>
+    <text x="50" y="330">☐ ม.33 เรารักกัน (ถ้ามี)</text>
+    <text x="50" y="350">☐ ค่าฝากครรภ์/คลอดบุตร</text>
+  </g>
+  <rect x="410" y="220" width="360" height="150" rx="8" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="590" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#7c3aed">สิ่งที่ต้องทำก่อน 31 ธ.ค.</text>
+  <g font-family="system-ui,sans-serif" font-size="11" fill="#64748b">
+    <text x="430" y="270">☐ คำนวณภาษีที่ต้องจ่ายจริง</text>
+    <text x="430" y="290">☐ ซื้อกองทุน/ประกันที่ขาด</text>
+    <text x="430" y="310">☐ บริจาคเงินที่วางแผนไว้</text>
+    <text x="430" y="330">☐ เก็บเอกสารทุกอย่างเข้าแฟ้ม</text>
+    <text x="430" y="350">☐ นัดนักบัญชี (มกราคม)</text>
+  </g>
+</svg>

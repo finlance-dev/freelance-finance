@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <text x="600" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">รูทีนการเงินรายเดือนสำหรับฟรีแลนซ์</text>
+  <g transform="translate(60, 80)">
+    <rect width="250" height="220" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="0" y="0" width="250" height="45" rx="12" fill="#7c3aed"/>
+    <text x="125" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="white">สัปดาห์ที่ 1</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">✓ สรุปรายได้เดือนที่แล้ว</text>
+      <text x="20" y="100">✓ บันทึกรายจ่ายทั้งหมด</text>
+      <text x="20" y="125">✓ ส่ง invoice ค้างส่ง</text>
+      <text x="20" y="150">✓ ตรวจสอบเงินเข้า</text>
+      <text x="20" y="175">✓ อัพเดท cashflow</text>
+    </g>
+  </g>
+  <g transform="translate(330, 80)">
+    <rect width="250" height="220" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="0" y="0" width="250" height="45" rx="12" fill="#2563eb"/>
+    <text x="125" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="white">สัปดาห์ที่ 2</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">✓ กันเงินภาษี</text>
+      <text x="20" y="100">✓ โอนเงินออม</text>
+      <text x="20" y="125">✓ จ่ายบิลประจำ</text>
+      <text x="20" y="150">✓ ทบทวน subscription</text>
+      <text x="20" y="175">✓ เช็คงบประมาณ</text>
+    </g>
+  </g>
+  <g transform="translate(600, 80)">
+    <rect width="250" height="220" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="0" y="0" width="250" height="45" rx="12" fill="#0d9488"/>
+    <text x="125" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="white">สัปดาห์ที่ 3</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">✓ ติดตามหนี้ค้างชำระ</text>
+      <text x="20" y="100">✓ วางแผนงานเดือนหน้า</text>
+      <text x="20" y="125">✓ ทบทวนเป้าหมายการเงิน</text>
+      <text x="20" y="150">✓ อัพเดท pipeline</text>
+      <text x="20" y="175">✓ ปรับกลยุทธ์ราคา</text>
+    </g>
+  </g>
+  <g transform="translate(870, 80)">
+    <rect width="250" height="220" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="0" y="0" width="250" height="45" rx="12" fill="#dc2626"/>
+    <text x="125" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="white">สัปดาห์ที่ 4</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">✓ สรุปผลเดือนนี้</text>
+      <text x="20" y="100">✓ เปรียบเทียบกับเป้า</text>
+      <text x="20" y="125">✓ สำรองข้อมูลการเงิน</text>
+      <text x="20" y="150">✓ วางแผนเดือนถัดไป</text>
+      <text x="20" y="175">✓ ให้รางวัลตัวเอง!</text>
+    </g>
+  </g>
+  <g transform="translate(60, 340)">
+    <rect width="1080" height="230" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="540" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#f59e0b">KPI ที่ต้องติดตามทุกเดือน</text>
+    <g font-family="system-ui,sans-serif">
+      <rect x="30" y="65" width="230" height="70" rx="8" fill="#0f172a"/>
+      <text x="145" y="95" text-anchor="middle" font-size="13" font-weight="bold" fill="#34d399">รายได้รวม</text>
+      <text x="145" y="120" text-anchor="middle" font-size="11" fill="#94a3b8">เทียบกับเป้าหมาย</text>
+      <rect x="290" y="65" width="230" height="70" rx="8" fill="#0f172a"/>
+      <text x="405" y="95" text-anchor="middle" font-size="13" font-weight="bold" fill="#60a5fa">อัตราเก็บเงินได้</text>
+      <text x="405" y="120" text-anchor="middle" font-size="11" fill="#94a3b8">เป้า: 90%+</text>
+      <rect x="550" y="65" width="230" height="70" rx="8" fill="#0f172a"/>
+      <text x="665" y="95" text-anchor="middle" font-size="13" font-weight="bold" fill="#f59e0b">อัตราออม</text>
+      <text x="665" y="120" text-anchor="middle" font-size="11" fill="#94a3b8">เป้า: 20%+ ของรายได้</text>
+      <rect x="810" y="65" width="230" height="70" rx="8" fill="#0f172a"/>
+      <text x="925" y="95" text-anchor="middle" font-size="13" font-weight="bold" fill="#a78bfa">จำนวนลูกค้า</text>
+      <text x="925" y="120" text-anchor="middle" font-size="11" fill="#94a3b8">ใหม่ vs เดิม</text>
+      <rect x="30" y="150" width="490" height="55" rx="8" fill="#064e3b"/>
+      <text x="275" y="183" text-anchor="middle" font-size="13" font-weight="bold" fill="#34d399">ใช้เวลาแค่ 30 นาที/สัปดาห์ = การเงินเป็นระบบทั้งปี</text>
+      <rect x="550" y="150" width="490" height="55" rx="8" fill="#422006"/>
+      <text x="795" y="183" text-anchor="middle" font-size="13" font-weight="bold" fill="#fbbf24">ฟรีแลนซ์ที่มีระบบ = ฟรีแลนซ์ที่รวย</text>
+    </g>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

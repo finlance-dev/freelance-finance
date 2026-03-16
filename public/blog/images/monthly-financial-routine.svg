@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">รูทีนการเงิน 4 สัปดาห์</text>
+  <rect x="30" y="50" width="175" height="320" rx="8" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="117" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#7c3aed">Week 1: สรุป</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="42" y="100">☐ สรุปรายได้</text>
+    <text x="42" y="120">☐ บันทึกรายจ่าย</text>
+    <text x="42" y="140">☐ ส่ง invoice</text>
+    <text x="42" y="160">☐ เช็คเงินเข้า</text>
+    <text x="42" y="180">☐ อัพเดท cashflow</text>
+  </g>
+  <text x="117" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#7c3aed">30 นาที</text>
+  <rect x="220" y="50" width="175" height="320" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="307" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#2563eb">Week 2: จัดการ</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="232" y="100">☐ กันเงินภาษี</text>
+    <text x="232" y="120">☐ โอนเงินออม</text>
+    <text x="232" y="140">☐ จ่ายบิลประจำ</text>
+    <text x="232" y="160">☐ เช็ค subscription</text>
+    <text x="232" y="180">☐ ทบทวนงบ</text>
+  </g>
+  <text x="307" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#2563eb">20 นาที</text>
+  <rect x="410" y="50" width="175" height="320" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="497" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#166534">Week 3: วางแผน</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="422" y="100">☐ ติดตามหนี้</text>
+    <text x="422" y="120">☐ วางแผนเดือนหน้า</text>
+    <text x="422" y="140">☐ ทบทวนเป้าหมาย</text>
+    <text x="422" y="160">☐ อัพเดท pipeline</text>
+    <text x="422" y="180">☐ ปรับราคา</text>
+  </g>
+  <text x="497" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#166534">20 นาที</text>
+  <rect x="600" y="50" width="175" height="320" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="687" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#92400e">Week 4: ทบทวน</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="612" y="100">☐ สรุปผลเดือนนี้</text>
+    <text x="612" y="120">☐ เทียบกับเป้า</text>
+    <text x="612" y="140">☐ สำรองข้อมูล</text>
+    <text x="612" y="160">☐ วางแผนถัดไป</text>
+    <text x="612" y="180">☐ ให้รางวัลตัวเอง</text>
+  </g>
+  <text x="687" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#92400e">15 นาที</text>
+  <rect x="30" y="250" width="745" height="30" rx="6" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="400" y="271" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#059669">รวม: ~85 นาที/เดือน = น้อยกว่า 1.5 ชั่วโมง สำหรับการเงินเป็นระบบทั้งเดือน!</text>
+  <rect x="30" y="295" width="745" height="70" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="400" y="320" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#c2410c">เคล็ดลับ: ตั้ง Calendar Reminder ทุกวันจันทร์แรกของเดือน</text>
+  <text x="400" y="345" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ทำเป็นนิสัย → ไม่ต้องคิดมาก → การเงินดีอัตโนมัติ</text>
+</svg>

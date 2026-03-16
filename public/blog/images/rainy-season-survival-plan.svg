@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">แผนเอาตัวรอดช่วง Low Season</text>
+  <rect x="30" y="50" width="740" height="55" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="400" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#dc2626">สถานการณ์: รายได้ลดลง 30-50% ช่วง พ.ค.-ก.ย.</text>
+  <text x="400" y="92" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">ลูกค้าชะลองาน + ฝนตกบ่อย + เศรษฐกิจชะลอตัว</text>
+  <rect x="30" y="120" width="235" height="250" rx="8" fill="#dcfce7" stroke="#86efac"/>
+  <text x="147" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#166534">เตรียมตัว (ก่อน พ.ค.)</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="45" y="170">• เก็บเงินสำรอง 3-6 เดือน</text>
+    <text x="45" y="190">• ลดค่าใช้จ่ายคงที่</text>
+    <text x="45" y="210">• ยกเลิก subscription ไม่จำเป็น</text>
+    <text x="45" y="230">• สร้าง retainer contract</text>
+    <text x="45" y="250">• เจรจา payment term ใหม่</text>
+    <text x="45" y="270">• เตรียม portfolio ใหม่</text>
+    <text x="45" y="290">• หาช่องทางรายได้เสริม</text>
+    <text x="45" y="310">• วางแผนคอร์สเรียน</text>
+  </g>
+  <rect x="283" y="120" width="235" height="250" rx="8" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="400" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#92400e">ระหว่าง Low Season</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="298" y="170">• ใช้เงินสำรอง</text>
+    <text x="298" y="190">• หาลูกค้าเชิงรุก</text>
+    <text x="298" y="210">• ลดราคาเล็กน้อย (ถ้าจำเป็น)</text>
+    <text x="298" y="230">• เปิดรับงาน rush/ด่วน</text>
+    <text x="298" y="250">• สร้าง content marketing</text>
+    <text x="298" y="270">• Upskill ทักษะใหม่</text>
+    <text x="298" y="290">• ทำ side project</text>
+    <text x="298" y="310">• networking ออนไลน์</text>
+  </g>
+  <rect x="535" y="120" width="235" height="250" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="652" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#2563eb">ฟื้นตัว (หลัง ก.ย.)</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#64748b">
+    <text x="550" y="170">• ทบทวนบทเรียน</text>
+    <text x="550" y="190">• ปรับราคาขึ้น</text>
+    <text x="550" y="210">• รับงานใหม่เต็มที่</text>
+    <text x="550" y="230">• ใช้ทักษะที่เรียนมา</text>
+    <text x="550" y="250">• เริ่มเก็บสำรองใหม่</text>
+    <text x="550" y="270">• ตั้งเป้ารายได้ Q4</text>
+    <text x="550" y="290">• วางแผนภาษี</text>
+    <text x="550" y="310">• สร้างระบบป้องกัน</text>
+  </g>
+</svg>

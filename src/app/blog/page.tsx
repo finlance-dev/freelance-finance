@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 };
 
 const posts = [
+  { slug: "freelance-monthly-financial-routine-template", title: "รูทีนการเงินรายเดือนสำหรับฟรีแลนซ์: Template จัดการเงินใน 85 นาที", excerpt: "Template รูทีนการเงินรายเดือนสำหรับฟรีแลนซ์ แบ่งเป็น 4 สัปดาห์ ครอบคลุมตั้งแต่สรุปรายได้ กันเงินภาษี ติดตามหนี้ ไปจนถึงทบทวนเป้าหมาย ใช้เวลาแค่ 85 นาทีต่อเดือน", coverImage: "/blog/covers/monthly-routine.svg", date: "2026-04-29" },
+  { slug: "freelance-rainy-season-slow-period-survival", title: "ฟรีแลนซ์เอาตัวรอดช่วง Low Season อย่างไร: คู่มือรับมือช่วงงานน้อย", excerpt: "คู่มือเอาตัวรอดสำหรับฟรีแลนซ์ช่วง Low Season หรือฤดูฝน เตรียมตัวก่อนงานหด บริหารเงินสำรอง หารายได้เสริม", coverImage: "/blog/covers/rainy-season-survival.svg", date: "2026-04-28" },
+  { slug: "freelance-q4-tax-optimization-guide", title: "วางแผนภาษี Q4 สำหรับฟรีแลนซ์: คู่มือประหยัดภาษีก่อนสิ้นปี", excerpt: "คู่มือวางแผนภาษีไตรมาส 4 ตั้งแต่ทบทวนรายได้ เลือกค่าลดหย่อน SSF RMF ThaiESG ไปจนถึงเตรียมเอกสารก่อน 31 ธันวาคม", coverImage: "/blog/covers/q4-tax-optimization.svg", date: "2026-04-27" },
   { slug: "freelance-new-year-financial-reset", title: "ปีใหม่ รีเซ็ตการเงินฟรีแลนซ์ ตั้งเป้าหมายและงบประมาณใหม่", excerpt: "เริ่มต้นปีใหม่ด้วยการรีเซ็ตการเงิน สรุปปีที่ผ่านมา ตั้งเป้าหมายใหม่ วางงบประมาณ และวางแผนภาษีล่วงหน้า", coverImage: "/blog/covers/new-year-reset.svg", date: "2026-04-24" },
   { slug: "freelance-songkran-financial-planning", title: "วางแผนการเงินช่วงสงกรานต์ ฟรีแลนซ์รับมืองานหยุดยาวอย่างไร", excerpt: "ลูกค้าหยุดยาว งานชะงัก รายได้หายไป 1-2 สัปดาห์ เรียนรู้วิธีวางแผนการเงินรับมือช่วงสงกรานต์", coverImage: "/blog/covers/songkran-planning.svg", date: "2026-04-23" },
   { slug: "freelance-year-end-income-boost-strategy", title: "กลยุทธ์เพิ่มรายได้ปลายปีสำหรับฟรีแลนซ์ก่อนปิดงบ", excerpt: "Q4 คือช่วงโอกาสทองของฟรีแลนซ์ บริษัทมีงบเหลือต้องใช้ก่อนสิ้นปี เรียนรู้ 6 กลยุทธ์เพิ่มรายได้ปลายปี", coverImage: "/blog/covers/year-end-boost.svg", date: "2026-04-22" },
