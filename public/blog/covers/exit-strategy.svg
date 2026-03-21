@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a78bfa"/>
+  <text x="600" y="120" font-family="system-ui,sans-serif" font-size="52" font-weight="700" fill="#a78bfa" text-anchor="middle">Exit Strategy</text>
+  <text x="600" y="172" font-family="system-ui,sans-serif" font-size="26" fill="#e2e8f0" text-anchor="middle">ขายธุรกิจฟรีแลนซ์ สร้างมูลค่าให้ขายได้</text>
+  <rect x="80" y="230" width="280" height="250" rx="14" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="220" y="270" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#a78bfa" text-anchor="middle">ปัจจัยมูลค่าธุรกิจ</text>
+  <text x="100" y="305" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Recurring Revenue</text>
+  <text x="100" y="330" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ฐานลูกค้าประจำ</text>
+  <text x="100" y="355" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Process Documentation</text>
+  <text x="100" y="380" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Brand ที่แข็งแกร่ง</text>
+  <text x="100" y="405" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ทีมที่ไม่ขึ้นกับตัวคุณ</text>
+  <text x="100" y="430" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ทรัพย์สินทาง IP</text>
+  <rect x="460" y="230" width="280" height="250" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="600" y="270" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#f59e0b" text-anchor="middle">Valuation Method</text>
+  <text x="480" y="305" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">Revenue Multiple</text>
+  <text x="480" y="325" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">1-3x ยอดขายต่อปี</text>
+  <text x="480" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">EBITDA Multiple</text>
+  <text x="480" y="380" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">3-5x กำไรต่อปี</text>
+  <text x="480" y="415" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">Asset-Based</text>
+  <text x="480" y="435" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">มูลค่าทรัพย์สิน + IP</text>
+  <rect x="840" y="230" width="280" height="250" rx="14" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="980" y="270" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#34d399" text-anchor="middle">Exit Options</text>
+  <text x="860" y="305" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ขายให้คู่แข่ง/Competitor</text>
+  <text x="860" y="330" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ขายให้ลูกค้าปัจจุบัน</text>
+  <text x="860" y="355" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ขายให้ทีมงาน (MBO)</text>
+  <text x="860" y="380" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Acqui-hire</text>
+  <text x="860" y="405" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Merge กับ Agency อื่น</text>
+  <text x="860" y="430" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ส่งต่อลูกค้า</text>
+  <text x="600" y="580" font-family="system-ui,sans-serif" font-size="20" fill="#64748b" text-anchor="middle">วางแผน Exit Strategy ตั้งแต่วันแรก</text>
+</svg>

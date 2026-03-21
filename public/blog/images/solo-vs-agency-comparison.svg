@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#60a5fa" text-anchor="middle">Solo Freelance vs Agency เปรียบเทียบ</text>
+  <rect x="30" y="55" width="740" height="38" rx="6" fill="#1e293b"/>
+  <text x="200" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">หัวข้อ</text>
+  <text x="430" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">Solo Freelance</text>
+  <text x="660" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#34d399" text-anchor="middle">Agency / ทีม</text>
+  <rect x="30" y="98" width="740" height="38" rx="4" fill="#1e293b" opacity="0.5"/>
+  <text x="200" y="122" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">รายได้สูงสุด</text>
+  <text x="430" y="122" font-family="system-ui,sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">~300K/เดือน (มีเพดาน)</text>
+  <text x="660" y="122" font-family="system-ui,sans-serif" font-size="12" fill="#34d399" text-anchor="middle">ไม่มีเพดาน</text>
+  <rect x="30" y="141" width="740" height="38" rx="4" fill="#1e3a5f" opacity="0.3"/>
+  <text x="200" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">ความเสี่ยง</text>
+  <text x="430" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">ต่ำ (ตัวคนเดียว)</text>
+  <text x="660" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">สูงขึ้น (payroll fixed cost)</text>
+  <rect x="30" y="184" width="740" height="38" rx="4" fill="#1e293b" opacity="0.5"/>
+  <text x="200" y="208" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">ความยืดหยุ่น</text>
+  <text x="430" y="208" font-family="system-ui,sans-serif" font-size="12" fill="#34d399" text-anchor="middle">สูงมาก</text>
+  <text x="660" y="208" font-family="system-ui,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">ลดลงต้องรับผิดชอบทีม</text>
+  <rect x="30" y="227" width="740" height="38" rx="4" fill="#1e3a5f" opacity="0.3"/>
+  <text x="200" y="251" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Overhead ต้นทุน</text>
+  <text x="430" y="251" font-family="system-ui,sans-serif" font-size="12" fill="#34d399" text-anchor="middle">ต่ำมาก</text>
+  <text x="660" y="251" font-family="system-ui,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">สูง (เงินเดือน, ออฟฟิศ)</text>
+  <rect x="30" y="270" width="740" height="38" rx="4" fill="#1e293b" opacity="0.5"/>
+  <text x="200" y="294" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Scalability</text>
+  <text x="430" y="294" font-family="system-ui,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">จำกัด (ชั่วโมงมีจำกัด)</text>
+  <text x="660" y="294" font-family="system-ui,sans-serif" font-size="12" fill="#34d399" text-anchor="middle">Scale ได้ไม่จำกัด</text>
+  <rect x="30" y="325" width="740" height="50" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1"/>
+  <text x="400" y="348" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#60a5fa" text-anchor="middle">คำแนะนำ: เริ่ม Solo ให้มีระบบก่อน แล้วค่อยขยายทีมเมื่อรายได้ถึง 200K+/เดือน</text>
+  <text x="400" y="366" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">อย่าเร่งขยายเพราะคิดว่าต้องเป็น Agency — Solo ที่มีระบบดีรายได้ไม่แพ้กัน</text>
+</svg>

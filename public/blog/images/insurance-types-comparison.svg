@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#34d399" text-anchor="middle">เปรียบเทียบประกันภัยสำหรับฟรีแลนซ์</text>
+  <rect x="30" y="55" width="740" height="38" rx="6" fill="#1e293b"/>
+  <text x="130" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ประเภท</text>
+  <text x="270" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ค่าเบี้ย/ปี</text>
+  <text x="420" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ความคุ้มครอง</text>
+  <text x="580" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ลดหย่อนภาษี</text>
+  <text x="700" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ความจำเป็น</text>
+  <rect x="30" y="98" width="740" height="38" rx="4" fill="#064e3b" opacity="0.4"/>
+  <text x="130" y="122" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#34d399" text-anchor="middle">สุขภาพ</text>
+  <text x="270" y="122" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">8,000-50,000</text>
+  <text x="420" y="122" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">IPD/OPD รักษาพยาบาล</text>
+  <text x="580" y="122" font-family="system-ui,sans-serif" font-size="12" fill="#34d399" text-anchor="middle">สูงสุด 25,000 บาท</text>
+  <text x="700" y="122" font-family="system-ui,sans-serif" font-size="12" fill="#34d399" text-anchor="middle">สูงมาก</text>
+  <rect x="30" y="141" width="740" height="38" rx="4" fill="#1e3a5f" opacity="0.4"/>
+  <text x="130" y="165" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">อุบัติเหตุ (PA)</text>
+  <text x="270" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">1,500-5,000</text>
+  <text x="420" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">เสียชีวิต ทุพพลภาพ บาดเจ็บ</text>
+  <text x="580" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">สูงสุด 25,000 บาท</text>
+  <text x="700" y="165" font-family="system-ui,sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">สูง</text>
+  <rect x="30" y="184" width="740" height="38" rx="4" fill="#451a03" opacity="0.4"/>
+  <text x="130" y="208" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">ชีวิต (Term)</text>
+  <text x="270" y="208" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">3,000-20,000</text>
+  <text x="420" y="208" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">เสียชีวิต วงเงินสูง</text>
+  <text x="580" y="208" font-family="system-ui,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">สูงสุด 100,000 บาท</text>
+  <text x="700" y="208" font-family="system-ui,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">ถ้ามีครอบครัว</text>
+  <rect x="30" y="227" width="740" height="38" rx="4" fill="#2d1b4e" opacity="0.4"/>
+  <text x="130" y="251" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#a78bfa" text-anchor="middle">ชีวิต (Whole)</text>
+  <text x="270" y="251" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">20,000-80,000</text>
+  <text x="420" y="251" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">ออมเงิน + คุ้มครอง</text>
+  <text x="580" y="251" font-family="system-ui,sans-serif" font-size="12" fill="#a78bfa" text-anchor="middle">สูงสุด 100,000 บาท</text>
+  <text x="700" y="251" font-family="system-ui,sans-serif" font-size="12" fill="#a78bfa" text-anchor="middle">ปานกลาง</text>
+  <rect x="30" y="270" width="740" height="38" rx="4" fill="#4c0519" opacity="0.4"/>
+  <text x="130" y="294" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#ef4444" text-anchor="middle">วิชาชีพ (E&amp;O)</text>
+  <text x="270" y="294" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">15,000-50,000</text>
+  <text x="420" y="294" font-family="system-ui,sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">ถูกฟ้องความผิดพลาดงาน</text>
+  <text x="580" y="294" font-family="system-ui,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">หักค่าใช้จ่ายธุรกิจ</text>
+  <text x="700" y="294" font-family="system-ui,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">สูง (งาน IT/กฎหมาย)</text>
+  <rect x="30" y="348" width="740" height="35" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
+  <text x="400" y="370" font-family="system-ui,sans-serif" font-size="12" fill="#34d399" text-anchor="middle">ลำดับสำคัญ: สุขภาพ → อุบัติเหตุ → ชีวิต → วิชาชีพ (ตามความจำเป็น)</text>
+</svg>

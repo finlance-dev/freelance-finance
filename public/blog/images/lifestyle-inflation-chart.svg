@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#f59e0b" text-anchor="middle">กับดัก Lifestyle Inflation</text>
+  <line x1="80" y1="340" x2="750" y2="340" stroke="#334155" stroke-width="1.5"/>
+  <line x1="80" y1="340" x2="80" y2="70" stroke="#334155" stroke-width="1.5"/>
+  <text x="80" y="358" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">ปี 1</text>
+  <text x="215" y="358" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">ปี 2</text>
+  <text x="350" y="358" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">ปี 3</text>
+  <text x="485" y="358" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">ปี 4</text>
+  <text x="620" y="358" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">ปี 5</text>
+  <text x="750" y="358" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">ปี 6</text>
+  <text x="55" y="340" font-family="system-ui,sans-serif" font-size="10" fill="#64748b" text-anchor="end">30K</text>
+  <text x="55" y="270" font-family="system-ui,sans-serif" font-size="10" fill="#64748b" text-anchor="end">60K</text>
+  <text x="55" y="200" font-family="system-ui,sans-serif" font-size="10" fill="#64748b" text-anchor="end">90K</text>
+  <text x="55" y="130" font-family="system-ui,sans-serif" font-size="10" fill="#64748b" text-anchor="end">120K</text>
+  <polyline points="80,320 215,285 350,240 485,195 620,155 750,120" fill="none" stroke="#34d399" stroke-width="3"/>
+  <circle cx="80" cy="320" r="4" fill="#34d399"/>
+  <circle cx="215" cy="285" r="4" fill="#34d399"/>
+  <circle cx="350" cy="240" r="4" fill="#34d399"/>
+  <circle cx="485" cy="195" r="4" fill="#34d399"/>
+  <circle cx="620" cy="155" r="4" fill="#34d399"/>
+  <circle cx="750" cy="120" r="4" fill="#34d399"/>
+  <polyline points="80,310 215,278 350,230 485,190 620,148 750,115" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4"/>
+  <circle cx="80" cy="310" r="4" fill="#ef4444"/>
+  <circle cx="215" cy="278" r="4" fill="#ef4444"/>
+  <circle cx="350" cy="230" r="4" fill="#ef4444"/>
+  <circle cx="485" cy="190" r="4" fill="#ef4444"/>
+  <circle cx="620" cy="148" r="4" fill="#ef4444"/>
+  <circle cx="750" cy="115" r="4" fill="#ef4444"/>
+  <line x1="600" y1="80" x2="625" y2="80" stroke="#34d399" stroke-width="2"/>
+  <text x="630" y="84" font-family="system-ui,sans-serif" font-size="12" fill="#34d399">รายได้</text>
+  <line x1="600" y1="100" x2="625" y2="100" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="630" y="104" font-family="system-ui,sans-serif" font-size="12" fill="#ef4444">รายจ่าย</text>
+  <text x="400" y="375" font-family="system-ui,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">ช่องว่างเล็กมาก = เงินเก็บน้อยทั้งที่รายได้เพิ่มขึ้น 4 เท่า</text>
+</svg>

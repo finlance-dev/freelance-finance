@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a78bfa"/>
+  <text x="600" y="120" font-family="system-ui,sans-serif" font-size="50" font-weight="700" fill="#a78bfa" text-anchor="middle">Pricing Mindset</text>
+  <text x="600" y="175" font-family="system-ui,sans-serif" font-size="28" fill="#e2e8f0" text-anchor="middle">เลิกรู้สึกผิดที่เก็บค่าบริการแพง</text>
+  <rect x="150" y="230" width="380" height="240" rx="16" fill="#2d1b4e" stroke="#a78bfa" stroke-width="2"/>
+  <text x="340" y="272" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#a78bfa" text-anchor="middle">คุณค่าที่ส่งมอบ</text>
+  <text x="200" y="310" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">✓ ประสบการณ์หลายปี</text>
+  <text x="200" y="340" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">✓ ทักษะเฉพาะทาง</text>
+  <text x="200" y="370" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">✓ ผลลัพธ์ที่ลูกค้าได้รับ</text>
+  <text x="200" y="400" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">✓ เวลาที่ประหยัดให้ลูกค้า</text>
+  <text x="200" y="430" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">✓ ความเสี่ยงที่ลดให้ลูกค้า</text>
+  <text x="600" y="360" font-family="system-ui,sans-serif" font-size="48" fill="#f59e0b" text-anchor="middle">=</text>
+  <rect x="670" y="230" width="380" height="240" rx="16" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="860" y="272" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#34d399" text-anchor="middle">ราคาที่สมเหตุสมผล</text>
+  <text x="860" y="335" font-family="system-ui,sans-serif" font-size="52" font-weight="700" fill="#34d399" text-anchor="middle">฿฿฿</text>
+  <text x="860" y="390" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">ไม่ใช่ความโลภ</text>
+  <text x="860" y="420" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">แต่คือการประเมินมูลค่า</text>
+  <text x="860" y="450" font-family="system-ui,sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">อย่างยุติธรรม</text>
+  <text x="600" y="580" font-family="system-ui,sans-serif" font-size="20" fill="#64748b" text-anchor="middle">Value-Based Pricing สำหรับฟรีแลนซ์</text>
+</svg>

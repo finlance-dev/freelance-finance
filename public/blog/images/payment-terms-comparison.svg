@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#60a5fa" text-anchor="middle">เปรียบเทียบ Payment Terms</text>
+  <rect x="30" y="55" width="740" height="40" rx="6" fill="#1e293b"/>
+  <text x="140" y="80" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#94a3b8" text-anchor="middle">Payment Term</text>
+  <text x="310" y="80" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#94a3b8" text-anchor="middle">ความเสี่ยง</text>
+  <text x="470" y="80" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#94a3b8" text-anchor="middle">เหมาะกับงาน</text>
+  <text x="660" y="80" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#94a3b8" text-anchor="middle">แนะนำ</text>
+  <rect x="30" y="100" width="740" height="42" rx="4" fill="#064e3b" opacity="0.4"/>
+  <text x="140" y="126" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle">100% มัดจำล่วงหน้า</text>
+  <text x="310" y="126" font-family="system-ui,sans-serif" font-size="13" fill="#34d399" text-anchor="middle">ต่ำมาก</text>
+  <text x="470" y="126" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">ลูกค้าใหม่, งานเล็ก</text>
+  <text x="660" y="126" font-family="system-ui,sans-serif" font-size="13" fill="#34d399" text-anchor="middle">ดีที่สุด</text>
+  <rect x="30" y="147" width="740" height="42" rx="4" fill="#1e3a5f" opacity="0.4"/>
+  <text x="140" y="173" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#60a5fa" text-anchor="middle">50% มัดจำ + 50% ส่งงาน</text>
+  <text x="310" y="173" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">ต่ำ</text>
+  <text x="470" y="173" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">งานกลาง-ใหญ่ทั่วไป</text>
+  <text x="660" y="173" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">แนะนำมาก</text>
+  <rect x="30" y="194" width="740" height="42" rx="4" fill="#1e293b" opacity="0.5"/>
+  <text x="140" y="220" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#a78bfa" text-anchor="middle">NET 15</text>
+  <text x="310" y="220" font-family="system-ui,sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">ปานกลาง</text>
+  <text x="470" y="220" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">ลูกค้าประจำ มีประวัติดี</text>
+  <text x="660" y="220" font-family="system-ui,sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">โอเค</text>
+  <rect x="30" y="241" width="740" height="42" rx="4" fill="#451a03" opacity="0.4"/>
+  <text x="140" y="267" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#f59e0b" text-anchor="middle">NET 30</text>
+  <text x="310" y="267" font-family="system-ui,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">สูง</text>
+  <text x="470" y="267" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">บริษัทใหญ่ มีระบบบัญชี</text>
+  <text x="660" y="267" font-family="system-ui,sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">เพิ่มค่างาน 10%</text>
+  <rect x="30" y="288" width="740" height="42" rx="4" fill="#4c0519" opacity="0.4"/>
+  <text x="140" y="314" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#ef4444" text-anchor="middle">NET 60+</text>
+  <text x="310" y="314" font-family="system-ui,sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">สูงมาก</text>
+  <text x="470" y="314" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">องค์กรขนาดใหญ่เท่านั้น</text>
+  <text x="660" y="314" font-family="system-ui,sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">เพิ่มค่างาน 20%+</text>
+  <rect x="30" y="350" width="740" height="35" rx="6" fill="#1e293b" stroke="#60a5fa" stroke-width="1"/>
+  <text x="400" y="372" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">ยิ่งรอนาน ยิ่งต้องคิดค่าบริการสูงขึ้น เพื่อชดเชย Cash Flow ที่เสียไป</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#34d399"/>
+  <text x="600" y="120" font-family="system-ui,sans-serif" font-size="48" font-weight="700" fill="#34d399" text-anchor="middle">Recurring Revenue</text>
+  <text x="600" y="172" font-family="system-ui,sans-serif" font-size="26" fill="#e2e8f0" text-anchor="middle">หยุดเริ่มนับหนึ่งใหม่ทุกเดือน</text>
+  <rect x="80" y="230" width="230" height="200" rx="14" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <text x="195" y="270" font-family="system-ui,sans-serif" font-size="36" text-anchor="middle">📋</text>
+  <text x="195" y="310" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#34d399" text-anchor="middle">Retainer</text>
+  <text x="195" y="338" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">สัญญารายเดือน</text>
+  <text x="195" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">รายได้ประจำ</text>
+  <rect x="335" y="230" width="230" height="200" rx="14" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+  <text x="450" y="270" font-family="system-ui,sans-serif" font-size="36" text-anchor="middle">📦</text>
+  <text x="450" y="310" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#60a5fa" text-anchor="middle">Subscription</text>
+  <text x="450" y="338" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">บริการรายเดือน</text>
+  <text x="450" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">ซื้อซ้ำอัตโนมัติ</text>
+  <rect x="590" y="230" width="230" height="200" rx="14" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="705" y="270" font-family="system-ui,sans-serif" font-size="36" text-anchor="middle">🎓</text>
+  <text x="705" y="310" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#a78bfa" text-anchor="middle">Course/Community</text>
+  <text x="705" y="338" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">ขายได้ตลอด</text>
+  <text x="705" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">ไม่ต้องทำซ้ำ</text>
+  <rect x="845" y="230" width="230" height="200" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="960" y="270" font-family="system-ui,sans-serif" font-size="36" text-anchor="middle">🤝</text>
+  <text x="960" y="310" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#f59e0b" text-anchor="middle">Affiliate/Referral</text>
+  <text x="960" y="338" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">รายได้ passive</text>
+  <text x="960" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">จากการแนะนำ</text>
+  <rect x="300" y="465" width="600" height="60" rx="12" fill="#064e3b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="600" y="500" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#34d399" text-anchor="middle">เป้าหมาย: Recurring &gt; 50% ของรายได้ทั้งหมด</text>
+  <text x="600" y="580" font-family="system-ui,sans-serif" font-size="20" fill="#64748b" text-anchor="middle">สร้างรายได้ประจำสำหรับฟรีแลนซ์</text>
+</svg>

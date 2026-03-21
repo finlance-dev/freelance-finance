@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#f59e0b"/>
+  <text x="600" y="130" font-family="system-ui,sans-serif" font-size="52" font-weight="700" fill="#f59e0b" text-anchor="middle">Money Mindset</text>
+  <text x="600" y="185" font-family="system-ui,sans-serif" font-size="28" fill="#e2e8f0" text-anchor="middle">จากความขาดแคลนสู่ความมั่งคั่ง</text>
+  <rect x="80" y="240" width="460" height="240" rx="16" fill="#4c0519" opacity="0.5" stroke="#ef4444" stroke-width="2"/>
+  <text x="310" y="285" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#ef4444" text-anchor="middle">Scarcity Mindset</text>
+  <text x="310" y="315" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🔴 กลัวไม่มีงาน รับทุกงาน</text>
+  <text x="310" y="345" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🔴 ตั้งราคาถูกเพราะกลัวเสียลูกค้า</text>
+  <text x="310" y="375" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🔴 ไม่กล้าลงทุนในตัวเอง</text>
+  <text x="310" y="405" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🔴 เงินเก็บแทบไม่มี</text>
+  <rect x="660" y="240" width="460" height="240" rx="16" fill="#064e3b" opacity="0.5" stroke="#34d399" stroke-width="2"/>
+  <text x="890" y="285" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#34d399" text-anchor="middle">Abundance Mindset</text>
+  <text x="890" y="315" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🟢 เลือกงานที่ใช่ ปฏิเสธงานที่ไม่ดี</text>
+  <text x="890" y="345" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🟢 ตั้งราคาตามคุณค่าที่ส่งมอบ</text>
+  <text x="890" y="375" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🟢 ลงทุนพัฒนาทักษะสม่ำเสมอ</text>
+  <text x="890" y="405" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">🟢 เงินเก็บเติบโตทุกปี</text>
+  <text x="600" y="530" font-family="system-ui,sans-serif" font-size="38" fill="#f59e0b" text-anchor="middle">→</text>
+  <text x="600" y="590" font-family="system-ui,sans-serif" font-size="22" fill="#64748b" text-anchor="middle">คู่มือเปลี่ยน Mindset การเงินสำหรับฟรีแลนซ์</text>
+</svg>

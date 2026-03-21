@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#f59e0b"/>
+  <text x="600" y="130" font-family="system-ui,sans-serif" font-size="50" font-weight="700" fill="#f59e0b" text-anchor="middle">คำนวณเงินเกษียณ</text>
+  <text x="600" y="185" font-family="system-ui,sans-serif" font-size="30" fill="#e2e8f0" text-anchor="middle">ฟรีแลนซ์ต้องเก็บเดือนละเท่าไหร่?</text>
+  <rect x="100" y="230" width="450" height="280" rx="16" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="325" y="270" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#f59e0b" text-anchor="middle">เป้าหมายเกษียณ</text>
+  <text x="140" y="315" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">ค่าใช้จ่าย/เดือน:</text>
+  <text x="510" y="315" font-family="system-ui,sans-serif" font-size="16" fill="#e2e8f0" text-anchor="end">50,000 บาท</text>
+  <text x="140" y="345" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">อายุเกษียณ:</text>
+  <text x="510" y="345" font-family="system-ui,sans-serif" font-size="16" fill="#e2e8f0" text-anchor="end">60 ปี</text>
+  <text x="140" y="375" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">คาดอยู่ถึงอายุ:</text>
+  <text x="510" y="375" font-family="system-ui,sans-serif" font-size="16" fill="#e2e8f0" text-anchor="end">85 ปี</text>
+  <text x="140" y="405" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">เงินที่ต้องมี:</text>
+  <text x="510" y="405" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="#f59e0b" text-anchor="end">15,000,000 บาท</text>
+  <rect x="140" y="430" width="370" height="2" fill="#334155"/>
+  <text x="140" y="460" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">เริ่มอายุ 30, ผลตอบแทน 7%:</text>
+  <text x="510" y="460" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#34d399" text-anchor="end">เก็บ 12,000/เดือน</text>
+  <rect x="650" y="230" width="450" height="280" rx="16" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+  <text x="875" y="270" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#60a5fa" text-anchor="middle">เครื่องมือออม</text>
+  <text x="690" y="310" font-family="system-ui,sans-serif" font-size="16" fill="#34d399">✓ RMF</text>
+  <text x="690" y="340" font-family="system-ui,sans-serif" font-size="16" fill="#34d399">✓ SSF</text>
+  <text x="690" y="370" font-family="system-ui,sans-serif" font-size="16" fill="#34d399">✓ Thai ESG</text>
+  <text x="690" y="400" font-family="system-ui,sans-serif" font-size="16" fill="#34d399">✓ ประกันบำนาญ</text>
+  <text x="690" y="430" font-family="system-ui,sans-serif" font-size="16" fill="#34d399">✓ กบข./กองทุนรวม</text>
+  <text x="690" y="460" font-family="system-ui,sans-serif" font-size="16" fill="#34d399">✓ ประกันสังคม ม.39/40</text>
+  <text x="600" y="580" font-family="system-ui,sans-serif" font-size="20" fill="#64748b" text-anchor="middle">เจาะลึกสูตรคำนวณและแผนเกษียณสำหรับฟรีแลนซ์</text>
+</svg>

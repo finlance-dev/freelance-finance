@@ -1,6 +1,23 @@
 import type { MetadataRoute } from "next";
 
 const blogSlugs = [
+  "freelance-exit-strategy-sell-business",
+  "freelance-build-team-first-hire",
+  "freelance-raise-rates-without-losing-clients",
+  "freelance-recurring-revenue-strategies",
+  "freelance-productized-service-model",
+  "freelance-scaling-solo-to-agency",
+  "freelance-delayed-gratification-investing",
+  "freelance-money-guilt-charging-worth",
+  "freelance-lifestyle-inflation-trap",
+  "freelance-saying-no-to-bad-clients",
+  "freelance-financial-anxiety-management",
+  "freelance-money-mindset-scarcity-vs-abundance",
+  "freelance-business-expense-categories-deep-dive",
+  "freelance-retirement-calculation-deep-dive",
+  "freelance-insurance-types-deep-dive",
+  "freelance-invoice-payment-terms-deep-dive",
+  "freelance-copyright-work-for-hire-deep-dive",
   "freelance-withholding-tax-3-percent-deep-dive",
   "freelance-vat-system-deep-dive",
   "freelance-income-tax-brackets-deep-dive",

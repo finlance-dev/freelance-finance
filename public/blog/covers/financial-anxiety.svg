@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#60a5fa"/>
+  <text x="600" y="130" font-family="system-ui,sans-serif" font-size="50" font-weight="700" fill="#60a5fa" text-anchor="middle">Financial Anxiety</text>
+  <text x="600" y="185" font-family="system-ui,sans-serif" font-size="28" fill="#e2e8f0" text-anchor="middle">จัดการความวิตกกังวลเรื่องเงิน</text>
+  <text x="600" y="225" font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">คู่มือสุขภาพจิตการเงินฟรีแลนซ์</text>
+  <rect x="150" y="270" width="180" height="180" rx="90" fill="#1e1b4b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="240" y="348" font-family="system-ui,sans-serif" font-size="50" text-anchor="middle">😰</text>
+  <text x="240" y="415" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">ความวิตกกังวล</text>
+  <text x="500" y="365" font-family="system-ui,sans-serif" font-size="48" fill="#60a5fa" text-anchor="middle">→</text>
+  <rect x="600" y="270" width="180" height="180" rx="90" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="690" y="348" font-family="system-ui,sans-serif" font-size="50" text-anchor="middle">🧘</text>
+  <text x="690" y="415" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">ความสงบ</text>
+  <text x="900" y="290" font-family="system-ui,sans-serif" font-size="16" fill="#60a5fa">• วางแผนฉุกเฉิน</text>
+  <text x="900" y="320" font-family="system-ui,sans-serif" font-size="16" fill="#60a5fa">• ติดตามรายรับรายจ่าย</text>
+  <text x="900" y="350" font-family="system-ui,sans-serif" font-size="16" fill="#60a5fa">• สร้าง Buffer เงิน</text>
+  <text x="900" y="380" font-family="system-ui,sans-serif" font-size="16" fill="#60a5fa">• หยุดเปรียบเทียบ</text>
+  <text x="900" y="410" font-family="system-ui,sans-serif" font-size="16" fill="#60a5fa">• หาชุมชนซัพพอร์ต</text>
+  <text x="600" y="580" font-family="system-ui,sans-serif" font-size="20" fill="#64748b" text-anchor="middle">สุขภาพจิตการเงินที่ดีคือพื้นฐานความสำเร็จ</text>
+</svg>

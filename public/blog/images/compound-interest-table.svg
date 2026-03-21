@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#34d399" text-anchor="middle">พลังของ Compound Interest (ออม 10,000 บาท/เดือน)</text>
+  <rect x="30" y="55" width="740" height="38" rx="6" fill="#1e293b"/>
+  <text x="115" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ระยะเวลา</text>
+  <text x="255" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">เงินที่ออม</text>
+  <text x="395" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ผลตอบแทน 5%/ปี</text>
+  <text x="555" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ผลตอบแทน 7%/ปี</text>
+  <text x="700" y="79" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">ผลตอบแทน 10%/ปี</text>
+  <rect x="30" y="98" width="740" height="38" rx="4" fill="#1e293b" opacity="0.5"/>
+  <text x="115" y="122" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">5 ปี</text>
+  <text x="255" y="122" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">600,000</text>
+  <text x="395" y="122" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">680,000</text>
+  <text x="555" y="122" font-family="system-ui,sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">714,000</text>
+  <text x="700" y="122" font-family="system-ui,sans-serif" font-size="13" fill="#34d399" text-anchor="middle">776,000</text>
+  <rect x="30" y="141" width="740" height="38" rx="4" fill="#064e3b" opacity="0.2"/>
+  <text x="115" y="165" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">10 ปี</text>
+  <text x="255" y="165" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">1,200,000</text>
+  <text x="395" y="165" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">1,551,000</text>
+  <text x="555" y="165" font-family="system-ui,sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">1,736,000</text>
+  <text x="700" y="165" font-family="system-ui,sans-serif" font-size="13" fill="#34d399" text-anchor="middle">2,049,000</text>
+  <rect x="30" y="184" width="740" height="38" rx="4" fill="#064e3b" opacity="0.3"/>
+  <text x="115" y="208" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">20 ปี</text>
+  <text x="255" y="208" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">2,400,000</text>
+  <text x="395" y="208" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">4,110,000</text>
+  <text x="555" y="208" font-family="system-ui,sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">5,240,000</text>
+  <text x="700" y="208" font-family="system-ui,sans-serif" font-size="13" fill="#34d399" text-anchor="middle">7,590,000</text>
+  <rect x="30" y="227" width="740" height="38" rx="4" fill="#064e3b" opacity="0.4"/>
+  <text x="115" y="251" font-family="system-ui,sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">30 ปี</text>
+  <text x="255" y="251" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">3,600,000</text>
+  <text x="395" y="251" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">8,320,000</text>
+  <text x="555" y="251" font-family="system-ui,sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">12,200,000</text>
+  <text x="700" y="251" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle">22,600,000</text>
+  <rect x="30" y="300" width="740" height="75" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
+  <text x="400" y="325" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle">กุญแจสำคัญ: เวลา + ผลตอบแทน + ความสม่ำเสมอ</text>
+  <text x="400" y="348" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">ออม 30 ปี ด้วยผลตอบแทน 10% จากเงิน 3.6 ล้านกลายเป็น 22.6 ล้านบาท</text>
+  <text x="400" y="366" font-family="system-ui,sans-serif" font-size="12" fill="#64748b" text-anchor="middle">= ดอกผลมากกว่าเงินต้น 6 เท่า ไม่ต้องทำงาน</text>
+</svg>

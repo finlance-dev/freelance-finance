@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#a78bfa" text-anchor="middle">ใครเป็นเจ้าของลิขสิทธิ์? Flowchart</text>
+  <rect x="300" y="60" width="200" height="50" rx="8" fill="#2d1b4e" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="400" y="90" font-family="system-ui,sans-serif" font-size="14" fill="#e2e8f0" text-anchor="middle">มีสัญญากำหนดสิทธิ์หรือไม่?</text>
+  <line x1="400" y1="110" x2="400" y2="145" stroke="#a78bfa" stroke-width="1.5"/>
+  <line x1="400" y1="145" x2="200" y2="145" stroke="#a78bfa" stroke-width="1.5"/>
+  <line x1="400" y1="145" x2="600" y2="145" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="280" y="138" font-family="system-ui,sans-serif" font-size="13" fill="#34d399">ไม่มี</text>
+  <text x="500" y="138" font-family="system-ui,sans-serif" font-size="13" fill="#ef4444">มี</text>
+  <line x1="200" y1="145" x2="200" y2="180" stroke="#34d399" stroke-width="1.5"/>
+  <rect x="100" y="180" width="200" height="50" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="200" y="205" font-family="system-ui,sans-serif" font-size="13" fill="#34d399" text-anchor="middle">ฟรีแลนซ์เป็นเจ้าของ</text>
+  <text x="200" y="220" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">โดยกฎหมายลิขสิทธิ์</text>
+  <line x1="600" y1="145" x2="600" y2="180" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="500" y="180" width="200" height="50" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="600" y="205" font-family="system-ui,sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">สัญญาระบุว่าอย่างไร?</text>
+  <line x1="600" y1="230" x2="600" y2="265" stroke="#60a5fa" stroke-width="1.5"/>
+  <line x1="600" y1="265" x2="450" y2="265" stroke="#60a5fa" stroke-width="1.5"/>
+  <line x1="600" y1="265" x2="720" y2="265" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="510" y="258" font-family="system-ui,sans-serif" font-size="12" fill="#34d399">โอนสิทธิ์ให้ลูกค้า</text>
+  <text x="640" y="258" font-family="system-ui,sans-serif" font-size="12" fill="#a78bfa">License เท่านั้น</text>
+  <line x1="450" y1="265" x2="450" y2="300" stroke="#34d399" stroke-width="1.5"/>
+  <rect x="350" y="300" width="200" height="50" rx="8" fill="#7f1d1d" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="450" y="325" font-family="system-ui,sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">ลูกค้าเป็นเจ้าของ</text>
+  <text x="450" y="340" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Work for Hire</text>
+  <line x1="720" y1="265" x2="720" y2="300" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="620" y="300" width="200" height="50" rx="8" fill="#2d1b4e" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="720" y="325" font-family="system-ui,sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">ฟรีแลนซ์เป็นเจ้าของ</text>
+  <text x="720" y="340" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">ให้สิทธิ์ใช้งานเท่านั้น</text>
+  <rect x="50" y="355" width="700" height="30" rx="6" fill="#1e293b"/>
+  <text x="400" y="374" font-family="system-ui,sans-serif" font-size="12" fill="#64748b" text-anchor="middle">เคล็ดลับ: ถ้าไม่มีสัญญา กฎหมายไทยให้สิทธิ์ผู้สร้างสรรค์เป็นเจ้าของโดยอัตโนมัติ</text>
+</svg>

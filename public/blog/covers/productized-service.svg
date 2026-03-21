@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a78bfa"/>
+  <text x="600" y="120" font-family="system-ui,sans-serif" font-size="46" font-weight="700" fill="#a78bfa" text-anchor="middle">Productized Service</text>
+  <text x="600" y="172" font-family="system-ui,sans-serif" font-size="26" fill="#e2e8f0" text-anchor="middle">เปลี่ยนบริการเป็นสินค้าที่ขายได้ซ้ำ</text>
+  <rect x="80" y="230" width="260" height="240" rx="14" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="210" y="268" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#ef4444" text-anchor="middle">บริการแบบเดิม</text>
+  <text x="110" y="300" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Quote ราคาทุกครั้ง</text>
+  <text x="110" y="325" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Scope ไม่แน่นอน</text>
+  <text x="110" y="350" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ใช้เวลาต่างกัน</text>
+  <text x="110" y="375" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ยากต่อ Scale</text>
+  <text x="110" y="400" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• รายได้ไม่แน่นอน</text>
+  <text x="420" y="355" font-family="system-ui,sans-serif" font-size="48" fill="#a78bfa" text-anchor="middle">→</text>
+  <rect x="490" y="230" width="260" height="240" rx="14" fill="#2d1b4e" stroke="#a78bfa" stroke-width="2"/>
+  <text x="620" y="268" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#a78bfa" text-anchor="middle">Productized</text>
+  <text x="510" y="300" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ราคาคงที่ชัดเจน</text>
+  <text x="510" y="325" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Scope ตายตัว</text>
+  <text x="510" y="350" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Process มาตรฐาน</text>
+  <text x="510" y="375" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Scale ได้ง่าย</text>
+  <text x="510" y="400" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• ลูกค้าซื้อซ้ำได้</text>
+  <rect x="820" y="230" width="300" height="240" rx="14" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="970" y="268" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#34d399" text-anchor="middle">ตัวอย่าง</text>
+  <text x="840" y="298" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Logo Pack: ฿9,900</text>
+  <text x="840" y="323" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Landing Page: ฿25,000</text>
+  <text x="840" y="348" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• 10 Social Posts/เดือน</text>
+  <text x="840" y="373" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• Monthly SEO: ฿15,000</text>
+  <text x="840" y="398" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">• 4 Blog Posts: ฿8,000</text>
+  <text x="600" y="580" font-family="system-ui,sans-serif" font-size="20" fill="#64748b" text-anchor="middle">สร้างรายได้สม่ำเสมอด้วย Productized Service</text>
+</svg>
