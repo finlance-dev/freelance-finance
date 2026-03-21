@@ -1,6 +1,16 @@
 import type { MetadataRoute } from "next";
 
 const blogSlugs = [
+  "freelance-withholding-tax-3-percent-deep-dive",
+  "freelance-vat-system-deep-dive",
+  "freelance-income-tax-brackets-deep-dive",
+  "freelance-social-security-benefits-deep-dive",
+  "freelance-digital-nomad-tax-residency",
+  "freelance-payment-gateway-comparison",
+  "freelance-health-insurance-vs-social-security",
+  "freelance-platform-comparison-2026",
+  "freelance-actual-vs-lump-sum-tax-deduction",
+  "freelance-coworking-space-comparison-bangkok",
   "freelance-sole-proprietor-vs-company-registration",
   "freelance-ssf-vs-rmf-vs-thaiesg-comparison",
   "freelance-fixed-rate-vs-hourly-rate-comparison",

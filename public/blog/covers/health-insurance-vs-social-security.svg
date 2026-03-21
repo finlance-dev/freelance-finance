@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <text x="600" y="55" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">ประกันสุขภาพเอกชน vs ประกันสังคม สำหรับฟรีแลนซ์</text>
+  <g transform="translate(60,80)">
+    <rect width="520" height="490" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="520" height="50" rx="12" fill="#f59e0b"/><text x="260" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#0f172a">ประกันสังคม ม.39/40</text>
+    <g font-family="system-ui,sans-serif" font-size="13" fill="#cbd5e1">
+      <text x="30" y="85" fill="#34d399">✓</text><text x="55" y="85">เบี้ยต่ำ 100-432 บาท/เดือน</text>
+      <text x="30" y="115" fill="#34d399">✓</text><text x="55" y="115">ลดหย่อนภาษีได้</text>
+      <text x="30" y="145" fill="#34d399">✓</text><text x="55" y="145">สิทธิ์บำนาญชราภาพ</text>
+      <text x="30" y="175" fill="#34d399">✓</text><text x="55" y="175">เงินทดแทนกรณีทุพพลภาพ</text>
+      <text x="30" y="205" fill="#34d399">✓</text><text x="55" y="205">เงินสงเคราะห์บุตร (ม.39)</text>
+      <text x="30" y="250" fill="#ef4444">✗</text><text x="55" y="250">เลือก รพ. ไม่ได้ (ม.39)</text>
+      <text x="30" y="280" fill="#ef4444">✗</text><text x="55" y="280">ไม่ครอบคลุมทุกโรค</text>
+      <text x="30" y="310" fill="#ef4444">✗</text><text x="55" y="310">ต้องรอคิวนาน</text>
+    </g>
+    <rect x="30" y="360" width="460" height="70" rx="8" fill="#422006"/>
+    <text x="260" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#fbbf24">ค่าใช้จ่าย: 100-432 บาท/เดือน</text>
+    <text x="260" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#fed7aa">เป็นฐานขั้นต่ำที่ทุกคนควรมี</text>
+  </g>
+  <g transform="translate(620,80)">
+    <rect width="520" height="490" rx="12" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <rect width="520" height="50" rx="12" fill="#60a5fa"/><text x="260" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="bold" fill="#0f172a">ประกันสุขภาพเอกชน</text>
+    <g font-family="system-ui,sans-serif" font-size="13" fill="#cbd5e1">
+      <text x="30" y="85" fill="#34d399">✓</text><text x="55" y="85">เลือก รพ. เอกชนได้</text>
+      <text x="30" y="115" fill="#34d399">✓</text><text x="55" y="115">ไม่ต้องรอคิว</text>
+      <text x="30" y="145" fill="#34d399">✓</text><text x="55" y="145">วงเงินคุ้มครองสูง</text>
+      <text x="30" y="175" fill="#34d399">✓</text><text x="55" y="175">ลดหย่อนภาษีได้สูงสุด 25,000</text>
+      <text x="30" y="205" fill="#34d399">✓</text><text x="55" y="205">ครอบคลุม IPD/OPD</text>
+      <text x="30" y="250" fill="#ef4444">✗</text><text x="55" y="250">เบี้ย 5,000-30,000+ บาท/ปี</text>
+      <text x="30" y="280" fill="#ef4444">✗</text><text x="55" y="280">เบี้ยเพิ่มตามอายุ</text>
+      <text x="30" y="310" fill="#ef4444">✗</text><text x="55" y="310">มีเงื่อนไขโรคเดิม</text>
+    </g>
+    <rect x="30" y="360" width="460" height="70" rx="8" fill="#0c4a6e"/>
+    <text x="260" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#7dd3fc">ค่าใช้จ่าย: 5,000-30,000+ บาท/ปี</text>
+    <text x="260" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#bae6fd">เสริมจากประกันสังคมเพื่อความสบายใจ</text>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

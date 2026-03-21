@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <text x="600" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">เปรียบเทียบช่องทางรับชำระเงินสำหรับฟรีแลนซ์ 2569</text>
+  <g transform="translate(40,75)">
+    <rect width="215" height="480" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="215" height="45" rx="12" fill="#f59e0b"/><text x="107" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">PromptPay QR</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">ค่าธรรมเนียม: <tspan fill="#34d399">ฟรี</tspan></text>
+      <text x="20" y="100">รับเงินทันที</text>
+      <text x="20" y="125">ไม่ต้องสมัครเพิ่ม</text>
+      <text x="20" y="155" fill="#34d399">✓ ง่ายที่สุด</text>
+      <text x="20" y="180" fill="#34d399">✓ ไม่มีค่าใช้จ่าย</text>
+      <text x="20" y="210" fill="#ef4444">✗ ไม่มี recurring</text>
+      <text x="20" y="235" fill="#ef4444">✗ ไม่รับบัตรเครดิต</text>
+    </g>
+    <rect x="15" y="390" width="185" height="55" rx="6" fill="#422006"/>
+    <text x="107" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">เหมาะกับ:</text>
+    <text x="107" y="435" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#fed7aa">งานเล็ก ลูกค้าไทย</text>
+  </g>
+  <g transform="translate(275,75)">
+    <rect width="215" height="480" rx="12" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+    <rect width="215" height="45" rx="12" fill="#60a5fa"/><text x="107" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">PayPal</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">ค่าธรรมเนียม: <tspan fill="#fbbf24">3.9%+฿11</tspan></text>
+      <text x="20" y="100">รับเงินต่างประเทศ</text>
+      <text x="20" y="125">ถอนเข้าบัญชีไทยได้</text>
+      <text x="20" y="155" fill="#34d399">✓ ลูกค้าทั่วโลก</text>
+      <text x="20" y="180" fill="#34d399">✓ Buyer Protection</text>
+      <text x="20" y="210" fill="#ef4444">✗ ค่าธรรมเนียมสูง</text>
+      <text x="20" y="235" fill="#ef4444">✗ ถูกระงับบัญชีง่าย</text>
+    </g>
+    <rect x="15" y="390" width="185" height="55" rx="6" fill="#0c4a6e"/>
+    <text x="107" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#7dd3fc">เหมาะกับ:</text>
+    <text x="107" y="435" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#bae6fd">ลูกค้าต่างชาติ</text>
+  </g>
+  <g transform="translate(510,75)">
+    <rect width="215" height="480" rx="12" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+    <rect width="215" height="45" rx="12" fill="#a78bfa"/><text x="107" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Stripe</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">ค่าธรรมเนียม: <tspan fill="#fbbf24">3.65%+฿11</tspan></text>
+      <text x="20" y="100">รับบัตรเครดิตทั่วโลก</text>
+      <text x="20" y="125">Subscription billing</text>
+      <text x="20" y="155" fill="#34d399">✓ API ดีที่สุด</text>
+      <text x="20" y="180" fill="#34d399">✓ Recurring payment</text>
+      <text x="20" y="210" fill="#ef4444">✗ ต้อง dev ติดตั้ง</text>
+      <text x="20" y="235" fill="#ef4444">✗ ไม่รับ PromptPay</text>
+    </g>
+    <rect x="15" y="390" width="185" height="55" rx="6" fill="#2e1065"/>
+    <text x="107" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#c4b5fd">เหมาะกับ:</text>
+    <text x="107" y="435" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#ddd6fe">SaaS/Subscription</text>
+  </g>
+  <g transform="translate(745,75)">
+    <rect width="215" height="480" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+    <rect width="215" height="45" rx="12" fill="#34d399"/><text x="107" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Wise</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">ค่าธรรมเนียม: <tspan fill="#34d399">0.5-1.5%</tspan></text>
+      <text x="20" y="100">อัตราแลกเปลี่ยนจริง</text>
+      <text x="20" y="125">รับได้ 40+ สกุลเงิน</text>
+      <text x="20" y="155" fill="#34d399">✓ ค่าธรรมเนียมต่ำ</text>
+      <text x="20" y="180" fill="#34d399">✓ Multi-currency</text>
+      <text x="20" y="210" fill="#ef4444">✗ ไม่รับบัตรเครดิต</text>
+      <text x="20" y="235" fill="#ef4444">✗ ไม่มี invoice</text>
+    </g>
+    <rect x="15" y="390" width="185" height="55" rx="6" fill="#064e3b"/>
+    <text x="107" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#6ee7b7">เหมาะกับ:</text>
+    <text x="107" y="435" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#a7f3d0">โอนเงินข้ามประเทศ</text>
+  </g>
+  <g transform="translate(980,75)">
+    <rect width="180" height="480" rx="12" fill="#1e293b" stroke="#fb923c" stroke-width="2"/>
+    <rect width="180" height="45" rx="12" fill="#fb923c"/><text x="90" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#0f172a">GB Prime Pay</text>
+    <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+      <text x="20" y="75">ค่าธรรมเนียม: <tspan fill="#fbbf24">2.9-3.5%</tspan></text>
+      <text x="20" y="100">บัตร+PromptPay</text>
+      <text x="20" y="125">รองรับผ่อนชำระ</text>
+      <text x="20" y="155" fill="#34d399">✓ ครบทุกช่องทาง</text>
+      <text x="20" y="180" fill="#34d399">✓ รองรับไทย</text>
+      <text x="20" y="210" fill="#ef4444">✗ สมัครยาก</text>
+      <text x="20" y="235" fill="#ef4444">✗ ต้องมีเว็บไซต์</text>
+    </g>
+    <rect x="15" y="390" width="150" height="55" rx="6" fill="#431407"/>
+    <text x="90" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="bold" fill="#fdba74">เหมาะกับ:</text>
+    <text x="90" y="435" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#fed7aa">E-commerce ไทย</text>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

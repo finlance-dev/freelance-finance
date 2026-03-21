@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <text x="600" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">ภาษีสำหรับ Digital Nomad ฟรีแลนซ์</text>
+  <text x="600" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">ทำงานจากไทย รับเงินจากต่างประเทศ เสียภาษีที่ไหน?</text>
+  <g transform="translate(80,140)" font-family="system-ui,sans-serif">
+    <rect width="500" height="400" rx="12" fill="#1e293b"/>
+    <text x="250" y="40" text-anchor="middle" font-size="18" font-weight="bold" fill="#f59e0b">กฎ 180 วัน</text>
+    <text x="30" y="80" font-size="14" fill="#cbd5e1">อยู่ในไทย <tspan fill="#ef4444" font-weight="bold">≥ 180 วัน/ปี</tspan></text>
+    <text x="30" y="110" font-size="13" fill="#94a3b8">= ผู้มีถิ่นที่อยู่ในไทย</text>
+    <text x="30" y="150" font-size="13" fill="#cbd5e1">• รายได้จากต่างประเทศที่นำเข้าไทย</text>
+    <text x="30" y="175" font-size="13" fill="#cbd5e1">  ในปีเดียวกัน → <tspan fill="#ef4444">เสียภาษีไทย</tspan></text>
+    <text x="30" y="210" font-size="13" fill="#cbd5e1">• รายได้จากในไทย</text>
+    <text x="30" y="235" font-size="13" fill="#cbd5e1">  → <tspan fill="#ef4444">เสียภาษีไทยเสมอ</tspan></text>
+    <rect x="30" y="270" width="440" height="50" rx="8" fill="#422006"/>
+    <text x="250" y="300" text-anchor="middle" font-size="13" font-weight="bold" fill="#fbbf24">ตั้งแต่ 1 ม.ค. 2567 เป็นต้นไป</text>
+    <text x="250" y="330" text-anchor="middle" font-size="12" fill="#fed7aa">นำเงินเข้าปีไหนก็ต้องเสียภาษีปีนั้น</text>
+  </g>
+  <g transform="translate(620,140)" font-family="system-ui,sans-serif">
+    <rect width="500" height="400" rx="12" fill="#1e293b"/>
+    <text x="250" y="40" text-anchor="middle" font-size="18" font-weight="bold" fill="#60a5fa">สิ่งที่ต้องทำ</text>
+    <g font-size="13" fill="#cbd5e1">
+      <text x="30" y="80" fill="#34d399">✓</text><text x="55" y="80">เก็บหลักฐานรายได้ต่างประเทศ</text>
+      <text x="30" y="115" fill="#34d399">✓</text><text x="55" y="115">บันทึกอัตราแลกเปลี่ยน ณ วันรับเงิน</text>
+      <text x="30" y="150" fill="#34d399">✓</text><text x="55" y="150">ยื่น ภ.ง.ด.90 (ไม่ใช่ 91)</text>
+      <text x="30" y="185" fill="#34d399">✓</text><text x="55" y="185">แจ้งรายได้ต่างประเทศในแบบยื่น</text>
+      <text x="30" y="220" fill="#34d399">✓</text><text x="55" y="220">ตรวจสอบ DTA (สนธิสัญญาภาษีซ้อน)</text>
+      <text x="30" y="255" fill="#34d399">✓</text><text x="55" y="255">หัก foreign tax credit ได้ (ถ้ามี)</text>
+      <text x="30" y="300" fill="#fbbf24" font-weight="bold">⚠ ปรึกษานักบัญชี/ที่ปรึกษาภาษี</text>
+      <text x="55" y="325" fill="#94a3b8">เรื่อง DTA ซับซ้อน ควรปรึกษาผู้เชี่ยวชาญ</text>
+    </g>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

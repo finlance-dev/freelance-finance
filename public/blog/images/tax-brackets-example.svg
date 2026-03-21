@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#0f172a"/>
+  <text x="400" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="bold" fill="#f8fafc">ตัวอย่าง: เงินได้สุทธิ 800,000 บาท เสียภาษีเท่าไหร่?</text>
+  <g font-family="system-ui,sans-serif" font-size="12" fill="#cbd5e1">
+    <rect x="50" y="45" width="700" height="40" rx="6" fill="#064e3b"/>
+    <text x="70" y="70">0 - 150,000 (150,000 บาท)</text><text x="500" y="70">× 0%</text><text x="650" y="70" text-anchor="end" fill="#34d399">= 0</text>
+    <rect x="50" y="95" width="700" height="40" rx="6" fill="#1e293b"/>
+    <text x="70" y="120">150,001 - 300,000 (150,000 บาท)</text><text x="500" y="120">× 5%</text><text x="650" y="120" text-anchor="end">= 7,500</text>
+    <rect x="50" y="145" width="700" height="40" rx="6" fill="#1e293b"/>
+    <text x="70" y="170">300,001 - 500,000 (200,000 บาท)</text><text x="500" y="170">× 10%</text><text x="650" y="170" text-anchor="end">= 20,000</text>
+    <rect x="50" y="195" width="700" height="40" rx="6" fill="#1e293b"/>
+    <text x="70" y="220">500,001 - 750,000 (250,000 บาท)</text><text x="500" y="220">× 15%</text><text x="650" y="220" text-anchor="end">= 37,500</text>
+    <rect x="50" y="245" width="700" height="40" rx="6" fill="#422006"/>
+    <text x="70" y="270" fill="#fbbf24">750,001 - 800,000 (50,000 บาท)</text><text x="500" y="270" fill="#fbbf24">× 20%</text><text x="650" y="270" text-anchor="end" fill="#fbbf24">= 10,000</text>
+    <line x1="50" y1="300" x2="750" y2="300" stroke="#334155"/>
+    <rect x="50" y="310" width="700" height="50" rx="6" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="70" y="340" font-size="14" font-weight="bold" fill="#f8fafc">ภาษีรวม</text>
+    <text x="650" y="340" text-anchor="end" font-size="16" font-weight="bold" fill="#60a5fa">= 75,000 บาท</text>
+    <text x="400" y="380" text-anchor="middle" font-size="12" fill="#94a3b8">อัตราภาษีจริง (Effective Tax Rate) = 75,000 ÷ 800,000 = 9.38% ไม่ใช่ 20%!</text>
+  </g>
+  <text x="400" y="395" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#64748b">finlance.co</text>
+</svg>

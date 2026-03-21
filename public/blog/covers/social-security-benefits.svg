@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="16" fill="#0f172a"/>
+  <text x="600" y="70" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">เจาะลึกสิทธิประโยชน์ประกันสังคม</text>
+  <text x="600" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">ฟรีแลนซ์ได้อะไรบ้างจากประกันสังคม ม.39/40</text>
+  <g transform="translate(60,130)" font-family="system-ui,sans-serif">
+    <rect width="340" height="170" rx="10" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+    <text x="170" y="35" text-anchor="middle" font-size="15" font-weight="bold" fill="#34d399">เจ็บป่วย</text>
+    <text x="20" y="65" font-size="12" fill="#cbd5e1">ม.39: รักษาฟรีตาม รพ.สิทธิ์</text>
+    <text x="20" y="90" font-size="12" fill="#cbd5e1">ม.40: ชดเชย 300 บ./วัน</text>
+    <text x="20" y="115" font-size="12" fill="#cbd5e1">(นอน รพ. สูงสุด 30 วัน/ปี)</text>
+    <text x="20" y="150" font-size="11" fill="#94a3b8">+ ค่าทำฟัน 900 บ./ปี (ม.39)</text>
+    <rect x="370" y="0" width="340" height="170" rx="10" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="540" y="35" text-anchor="middle" font-size="15" font-weight="bold" fill="#60a5fa">ทุพพลภาพ</text>
+    <text x="390" y="65" font-size="12" fill="#cbd5e1">ม.39: เงินทดแทน 50%</text>
+    <text x="390" y="90" font-size="12" fill="#cbd5e1">ของค่าจ้างเฉลี่ย ตลอดชีวิต</text>
+    <text x="390" y="115" font-size="12" fill="#cbd5e1">ม.40: เงินทดแทน 500-1,000</text>
+    <text x="390" y="140" font-size="12" fill="#cbd5e1">บาท/เดือน (15 ปี)</text>
+    <rect x="740" y="0" width="340" height="170" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="910" y="35" text-anchor="middle" font-size="15" font-weight="bold" fill="#f59e0b">ชราภาพ</text>
+    <text x="760" y="65" font-size="12" fill="#cbd5e1">ม.39: บำเหน็จ/บำนาญ</text>
+    <text x="760" y="90" font-size="12" fill="#cbd5e1">ส่ง 180 เดือน = บำนาญ</text>
+    <text x="760" y="115" font-size="12" fill="#cbd5e1">ม.40: เงินออมสะสม</text>
+    <text x="760" y="140" font-size="12" fill="#cbd5e1">รัฐสมทบ 50-100 บ./เดือน</text>
+    <rect x="0" y="200" width="340" height="170" rx="10" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="170" y="235" text-anchor="middle" font-size="15" font-weight="bold" fill="#a78bfa">เสียชีวิต</text>
+    <text x="20" y="265" font-size="12" fill="#cbd5e1">ม.39: ค่าทำศพ 50,000 บ.</text>
+    <text x="20" y="290" font-size="12" fill="#cbd5e1">+ เงินสงเคราะห์ 50%x3 เดือน</text>
+    <text x="20" y="315" font-size="12" fill="#cbd5e1">ม.40: ค่าทำศพ 25,000-50,000</text>
+    <rect x="370" y="200" width="340" height="170" rx="10" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
+    <text x="540" y="235" text-anchor="middle" font-size="15" font-weight="bold" fill="#f472b6">คลอดบุตร</text>
+    <text x="390" y="265" font-size="12" fill="#cbd5e1">ม.39: ค่าคลอด 15,000 บ.</text>
+    <text x="390" y="290" font-size="12" fill="#cbd5e1">+ เงินสงเคราะห์ 50%x90 วัน</text>
+    <text x="390" y="315" font-size="12" fill="#cbd5e1">ม.40: ไม่ได้สิทธิ์นี้</text>
+    <rect x="740" y="200" width="340" height="170" rx="10" fill="#1e293b" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="910" y="235" text-anchor="middle" font-size="15" font-weight="bold" fill="#fb923c">สงเคราะห์บุตร</text>
+    <text x="760" y="265" font-size="12" fill="#cbd5e1">ม.39: 800 บ./เดือน/คน</text>
+    <text x="760" y="290" font-size="12" fill="#cbd5e1">(ไม่เกิน 3 คน ถึง 6 ขวบ)</text>
+    <text x="760" y="315" font-size="12" fill="#cbd5e1">ม.40 ทางเลือก 3: 200 บ./เดือน</text>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">finlance.co</text>
+</svg>

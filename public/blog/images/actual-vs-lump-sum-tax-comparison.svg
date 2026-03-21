@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#0f172a"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">เปรียบเทียบภาษีจริง: หักเหมา vs หักจริง (รายได้ 40(7)(8))</text>
+  <g font-family="system-ui,sans-serif">
+    <g font-size="11" fill="#94a3b8">
+      <text x="50" y="60">รายได้/ปี</text>
+      <text x="200" y="60" text-anchor="middle" fill="#f59e0b" font-weight="bold">หักเหมา 60%</text>
+      <text x="370" y="60" text-anchor="middle" fill="#f59e0b">ภาษี</text>
+      <text x="500" y="60" text-anchor="middle" fill="#60a5fa" font-weight="bold">หักจริง (สมมติ 40%)</text>
+      <text x="670" y="60" text-anchor="middle" fill="#60a5fa">ภาษี</text>
+    </g>
+    <line x1="30" y1="70" x2="770" y2="70" stroke="#334155"/>
+    <g font-size="12" fill="#cbd5e1">
+      <text x="50" y="100">500K</text>
+      <text x="200" y="100" text-anchor="middle">หัก 300K</text>
+      <text x="370" y="100" text-anchor="middle" fill="#34d399">0</text>
+      <text x="500" y="100" text-anchor="middle">หัก 200K</text>
+      <text x="670" y="100" text-anchor="middle">7,500</text>
+      <text x="750" y="100" fill="#34d399" font-size="10">เหมาดี</text>
+      <text x="50" y="140">800K</text>
+      <text x="200" y="140" text-anchor="middle">หัก 480K</text>
+      <text x="370" y="140" text-anchor="middle" fill="#34d399">6,000</text>
+      <text x="500" y="140" text-anchor="middle">หัก 320K</text>
+      <text x="670" y="140" text-anchor="middle">29,000</text>
+      <text x="750" y="140" fill="#34d399" font-size="10">เหมาดี</text>
+      <text x="50" y="180">1.2M</text>
+      <text x="200" y="180" text-anchor="middle">หัก 720K</text>
+      <text x="370" y="180" text-anchor="middle">29,000</text>
+      <text x="500" y="180" text-anchor="middle">หัก 480K</text>
+      <text x="670" y="180" text-anchor="middle">57,000</text>
+      <text x="750" y="180" fill="#34d399" font-size="10">เหมาดี</text>
+      <text x="50" y="220">1.5M</text>
+      <text x="200" y="220" text-anchor="middle">หัก 900K</text>
+      <text x="370" y="220" text-anchor="middle">52,500</text>
+      <text x="500" y="220" text-anchor="middle">หัก 600K</text>
+      <text x="670" y="220" text-anchor="middle">97,500</text>
+      <text x="750" y="220" fill="#34d399" font-size="10">เหมาดี</text>
+      <text x="50" y="260">2M</text>
+      <text x="200" y="260" text-anchor="middle">หัก 1.2M</text>
+      <text x="370" y="260" text-anchor="middle">103,000</text>
+      <text x="500" y="260" text-anchor="middle">หัก 1.4M (70%)</text>
+      <text x="670" y="260" text-anchor="middle" fill="#34d399">22,500</text>
+      <text x="750" y="260" fill="#60a5fa" font-size="10">จริงดี</text>
+    </g>
+    <rect x="30" y="295" width="740" height="65" rx="6" fill="#064e3b"/>
+    <text x="400" y="318" text-anchor="middle" font-size="12" font-weight="bold" fill="#34d399">สรุป: ค่าใช้จ่ายจริง &lt; 60% → ใช้เหมา | ค่าใช้จ่ายจริง &gt; 60% → ใช้หักจริง</text>
+    <text x="400" y="345" text-anchor="middle" font-size="11" fill="#a7f3d0">รายได้ 40(2) เหมาได้แค่ 50% สูงสุด 100K → หักจริงมักคุ้มกว่า</text>
+  </g>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">finlance.co</text>
+</svg>

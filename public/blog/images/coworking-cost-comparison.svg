@@ -1,37 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
-  <rect width="800" height="400" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
-  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#1e293b">เปรียบเทียบต้นทุน: Co-working vs Work from Home</text>
-  <rect x="30" y="50" width="360" height="310" rx="10" fill="#eef2ff" stroke="#c7d2fe"/>
-  <text x="210" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#4338ca">Co-working Space</text>
-  <text x="50" y="110" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่าสมาชิก/เดือน:</text>
-  <text x="340" y="110" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">4,500 บาท</text>
-  <text x="50" y="135" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่าเดินทาง (BTS/MRT):</text>
-  <text x="340" y="135" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">2,000 บาท</text>
-  <text x="50" y="160" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่ากาแฟ/อาหารนอกบ้าน:</text>
-  <text x="340" y="160" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">3,000 บาท</text>
-  <rect x="50" y="175" width="300" height="2" fill="#e2e8f0"/>
-  <text x="50" y="200" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#4338ca">รวม/เดือน:</text>
-  <text x="340" y="200" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#4338ca">9,500 บาท</text>
-  <text x="50" y="235" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a">+ อินเทอร์เน็ตเร็ว ไม่ต้องจ่ายเพิ่ม</text>
-  <text x="50" y="255" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a">+ ห้องประชุม พบลูกค้าได้</text>
-  <text x="50" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a">+ สังคม networking โอกาสใหม่</text>
-  <text x="50" y="295" font-family="system-ui,sans-serif" font-size="11" fill="#dc2626">- เสียเวลาเดินทาง 1-2 ชม./วัน</text>
-  <text x="50" y="315" font-family="system-ui,sans-serif" font-size="11" fill="#dc2626">- มีเสียงรบกวน ไม่เหมาะงาน focus</text>
-  <rect x="410" y="50" width="360" height="310" rx="10" fill="#fefce8" stroke="#fef08a"/>
-  <text x="590" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#a16207">Work from Home</text>
-  <text x="430" y="110" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่าอินเทอร์เน็ต:</text>
-  <text x="720" y="110" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">700 บาท</text>
-  <text x="430" y="135" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่าไฟ (ส่วนเพิ่ม):</text>
-  <text x="720" y="135" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">500 บาท</text>
-  <text x="430" y="160" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">ค่ากาแฟ (ชงเอง):</text>
-  <text x="720" y="160" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#1e293b">300 บาท</text>
-  <rect x="430" y="175" width="300" height="2" fill="#e2e8f0"/>
-  <text x="430" y="200" font-family="system-ui,sans-serif" font-size="13" font-weight="bold" fill="#a16207">รวม/เดือน:</text>
-  <text x="720" y="200" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" font-weight="bold" fill="#a16207">1,500 บาท</text>
-  <text x="430" y="235" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a">+ ประหยัด 8,000 บาท/เดือน</text>
-  <text x="430" y="255" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a">+ ยืดหยุ่นเวลา 100%</text>
-  <text x="430" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#16a34a">+ ไม่เสียเวลาเดินทาง</text>
-  <text x="430" y="295" font-family="system-ui,sans-serif" font-size="11" fill="#dc2626">- ขาดวินัย อาจ distract ง่าย</text>
-  <text x="430" y="315" font-family="system-ui,sans-serif" font-size="11" fill="#dc2626">- ไม่มีที่พบลูกค้า</text>
-  <text x="400" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="bold" fill="#1e293b">ประหยัดได้ 96,000 บาท/ปี ถ้าทำงานที่บ้าน</text>
+  <rect width="800" height="400" rx="12" fill="#0f172a"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">ต้นทุนทำงาน/เดือน: บ้าน vs Co-working vs คาเฟ่</text>
+  <g font-family="system-ui,sans-serif">
+    <g font-size="11" fill="#94a3b8">
+      <text x="50" y="65">รายการ</text>
+      <text x="250" y="65" text-anchor="middle" fill="#34d399" font-weight="bold">ทำงานที่บ้าน</text>
+      <text x="450" y="65" text-anchor="middle" fill="#60a5fa" font-weight="bold">Co-working</text>
+      <text x="650" y="65" text-anchor="middle" fill="#f59e0b" font-weight="bold">คาเฟ่</text>
+    </g>
+    <line x1="30" y1="75" x2="770" y2="75" stroke="#334155"/>
+    <g font-size="12" fill="#cbd5e1">
+      <text x="50" y="105">ค่าเช่า/สมาชิก</text>
+      <text x="250" y="105" text-anchor="middle" fill="#34d399">0</text>
+      <text x="450" y="105" text-anchor="middle">3,500-5,900</text>
+      <text x="650" y="105" text-anchor="middle">0</text>
+      <text x="50" y="140">ค่าไฟเพิ่ม</text>
+      <text x="250" y="140" text-anchor="middle">500-1,500</text>
+      <text x="450" y="140" text-anchor="middle" fill="#34d399">0</text>
+      <text x="650" y="140" text-anchor="middle" fill="#34d399">0</text>
+      <text x="50" y="175">ค่าเน็ตเพิ่ม</text>
+      <text x="250" y="175" text-anchor="middle">0-600</text>
+      <text x="450" y="175" text-anchor="middle" fill="#34d399">0</text>
+      <text x="650" y="175" text-anchor="middle" fill="#34d399">0</text>
+      <text x="50" y="210">ค่าเดินทาง</text>
+      <text x="250" y="210" text-anchor="middle" fill="#34d399">0</text>
+      <text x="450" y="210" text-anchor="middle">1,000-3,000</text>
+      <text x="650" y="210" text-anchor="middle">1,500-4,000</text>
+      <text x="50" y="245">ค่าเครื่องดื่ม/อาหาร</text>
+      <text x="250" y="245" text-anchor="middle" fill="#34d399">0</text>
+      <text x="450" y="245" text-anchor="middle">0-500</text>
+      <text x="650" y="245" text-anchor="middle" fill="#ef4444">3,000-6,000</text>
+      <line x1="30" y1="265" x2="770" y2="265" stroke="#334155"/>
+      <text x="50" y="295" font-weight="bold" fill="#f8fafc">รวม/เดือน</text>
+      <text x="250" y="295" text-anchor="middle" font-weight="bold" fill="#34d399">500-2,100</text>
+      <text x="450" y="295" text-anchor="middle" font-weight="bold" fill="#60a5fa">4,500-9,400</text>
+      <text x="650" y="295" text-anchor="middle" font-weight="bold" fill="#f59e0b">4,500-10,000</text>
+    </g>
+    <rect x="30" y="320" width="740" height="40" rx="6" fill="#064e3b"/>
+    <text x="400" y="345" text-anchor="middle" font-size="12" font-weight="bold" fill="#34d399">บ้านถูกสุด แต่ co-working คุ้มกว่าคาเฟ่ ถ้าใช้เกิน 10 วัน/เดือน</text>
+  </g>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#64748b">finlance.co</text>
 </svg>
