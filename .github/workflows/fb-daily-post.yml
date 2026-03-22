@@ -1,0 +1,27 @@
+name: Facebook Daily Post
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+    - cron: '0 7 * * *'
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install sharp
+        run: npm install sharp
+
+      - name: Post to Facebook
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+        run: node scripts/fb-daily-post.js
