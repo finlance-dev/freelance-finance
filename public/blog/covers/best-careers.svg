@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#34d399"/>
+  <circle cx="600" cy="315" r="400" fill="#34d399" opacity="0.03"/>
+  <rect x="80" y="80" width="180" height="50" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="170" y="112" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">1. Developer 💻</text>
+  <rect x="280" y="80" width="180" height="50" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="370" y="112" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" text-anchor="middle">2. Designer 🎨</text>
+  <rect x="480" y="80" width="180" height="50" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="570" y="112" font-family="system-ui, sans-serif" font-size="14" fill="#34d399" text-anchor="middle">3. นักเขียน ✍️</text>
+  <rect x="680" y="80" width="180" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="770" y="112" font-family="system-ui, sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle">4. ช่างภาพ 📷</text>
+  <rect x="880" y="80" width="180" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="970" y="112" font-family="system-ui, sans-serif" font-size="14" fill="#ef4444" text-anchor="middle">5. Video 🎬</text>
+  <rect x="80" y="150" width="180" height="50" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="170" y="182" font-family="system-ui, sans-serif" font-size="14" fill="#34d399" text-anchor="middle">6. Marketing 📢</text>
+  <rect x="280" y="150" width="180" height="50" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="370" y="182" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">7. VA 📋</text>
+  <rect x="480" y="150" width="180" height="50" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="570" y="182" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" text-anchor="middle">8. Data 📊</text>
+  <rect x="680" y="150" width="180" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="770" y="182" font-family="system-ui, sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle">9. นักแปล 🌐</text>
+  <rect x="880" y="150" width="180" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="970" y="182" font-family="system-ui, sans-serif" font-size="14" fill="#ef4444" text-anchor="middle">10. Consultant 🧠</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">10 อาชีพฟรีแลนซ์</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#34d399" font-weight="800">ที่เหมาะกับคนไทย 2569</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

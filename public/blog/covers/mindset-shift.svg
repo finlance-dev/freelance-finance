@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a78bfa"/>
+  <circle cx="600" cy="315" r="400" fill="#a78bfa" opacity="0.03"/>
+  <rect x="80" y="80" width="450" height="200" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="305" y="115" font-family="system-ui, sans-serif" font-size="20" fill="#ef4444" text-anchor="middle" font-weight="700">❌ Mindset พนักงาน</text>
+  <text x="105" y="150" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• รอคำสั่ง ทำตาม brief</text>
+  <text x="105" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• เงินเดือนเท่าเดิมทุกเดือน</text>
+  <text x="105" y="200" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• บริษัทรับความเสี่ยง</text>
+  <text x="105" y="225" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• เวลา = เงิน (จำกัด)</text>
+  <text x="105" y="250" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• แข่งกับเพื่อนร่วมงาน</text>
+  <rect x="670" y="80" width="450" height="200" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <text x="895" y="115" font-family="system-ui, sans-serif" font-size="20" fill="#34d399" text-anchor="middle" font-weight="700">✓ Mindset ฟรีแลนซ์</text>
+  <text x="695" y="150" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• เป็นเจ้าของ ตัดสินใจเอง</text>
+  <text x="695" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• รายได้ไม่จำกัด = ความพยายาม</text>
+  <text x="695" y="200" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• คุณรับความเสี่ยงทั้งหมด</text>
+  <text x="695" y="225" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• คุณค่า = เงิน (ไม่จำกัด)</text>
+  <text x="695" y="250" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">• Collaborate กับฟรีแลนซ์อื่น</text>
+  <text x="600" y="180" font-family="system-ui, sans-serif" font-size="36" text-anchor="middle">→</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">เปลี่ยน Mindset</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#a78bfa" font-weight="800">จากพนักงานสู่ฟรีแลนซ์</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

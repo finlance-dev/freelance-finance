@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a78bfa"/>
+  <circle cx="600" cy="315" r="400" fill="#a78bfa" opacity="0.03"/>
+  <rect x="80" y="80" width="200" height="200" rx="16" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="180" y="170" font-family="system-ui, sans-serif" font-size="64" text-anchor="middle">🚀</text>
+  <text x="180" y="250" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">เริ่มต้น</text>
+  <rect x="340" y="100" width="160" height="60" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="420" y="136" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" text-anchor="middle">หาทักษะ</text>
+  <rect x="340" y="180" width="160" height="60" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="420" y="216" font-family="system-ui, sans-serif" font-size="14" fill="#34d399" text-anchor="middle">สร้าง Portfolio</text>
+  <rect x="560" y="100" width="160" height="60" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="640" y="136" font-family="system-ui, sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle">หาลูกค้า</text>
+  <rect x="560" y="180" width="160" height="60" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="640" y="216" font-family="system-ui, sans-serif" font-size="14" fill="#ef4444" text-anchor="middle">จัดการภาษี</text>
+  <rect x="780" y="100" width="160" height="60" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="860" y="136" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">วางแผนการเงิน</text>
+  <rect x="780" y="180" width="160" height="60" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="860" y="216" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" text-anchor="middle">Scale ธุรกิจ</text>
+  <line x1="280" y1="160" x2="340" y2="130" stroke="#334155" stroke-width="1.5"/>
+  <line x1="280" y1="180" x2="340" y2="210" stroke="#334155" stroke-width="1.5"/>
+  <line x1="500" y1="130" x2="560" y2="130" stroke="#334155" stroke-width="1.5"/>
+  <line x1="500" y1="210" x2="560" y2="210" stroke="#334155" stroke-width="1.5"/>
+  <line x1="720" y1="130" x2="780" y2="130" stroke="#334155" stroke-width="1.5"/>
+  <line x1="720" y1="210" x2="780" y2="210" stroke="#334155" stroke-width="1.5"/>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">เริ่มต้นเป็นฟรีแลนซ์</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#a78bfa" font-weight="800">คู่มือฉบับสมบูรณ์ 2569</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

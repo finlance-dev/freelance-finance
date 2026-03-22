@@ -1,0 +1,39 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="700">ทักษะสำคัญสำหรับฟรีแลนซ์</text>
+  <rect x="40" y="55" width="230" height="155" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="155" y="80" font-family="system-ui, sans-serif" font-size="16" fill="#a78bfa" text-anchor="middle" font-weight="700">💰 การเงิน</text>
+  <text x="60" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• ตั้งราคาค่าบริการ</text>
+  <text x="60" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• บริหารกระแสเงินสด</text>
+  <text x="60" y="145" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• วางแผนภาษี</text>
+  <text x="60" y="165" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• ลงทุน &amp; ออม</text>
+  <text x="60" y="185" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• เจรจาต่อรอง</text>
+  <rect x="285" y="55" width="230" height="155" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="400" y="80" font-family="system-ui, sans-serif" font-size="16" fill="#60a5fa" text-anchor="middle" font-weight="700">🗣 สื่อสาร</text>
+  <text x="305" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• นำเสนอผลงาน</text>
+  <text x="305" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• เขียน Proposal</text>
+  <text x="305" y="145" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• สื่อสารกับลูกค้า</text>
+  <text x="305" y="165" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• จัดการ Feedback</text>
+  <text x="305" y="185" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Networking</text>
+  <rect x="530" y="55" width="230" height="155" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="645" y="80" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" text-anchor="middle" font-weight="700">⏰ บริหารจัดการ</text>
+  <text x="550" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Time Management</text>
+  <text x="550" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Project Management</text>
+  <text x="550" y="145" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• จัดลำดับความสำคัญ</text>
+  <text x="550" y="165" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• ตั้ง Deadline ตัวเอง</text>
+  <text x="550" y="185" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• วางแผนระยะยาว</text>
+  <rect x="40" y="230" width="350" height="155" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="215" y="255" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b" text-anchor="middle" font-weight="700">📢 Marketing &amp; Sales</text>
+  <text x="60" y="280" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Personal Branding</text>
+  <text x="60" y="300" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Content Marketing</text>
+  <text x="60" y="320" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Social Media</text>
+  <text x="60" y="340" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Cold Outreach</text>
+  <text x="60" y="360" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Upselling &amp; Cross-selling</text>
+  <rect x="410" y="230" width="350" height="155" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="585" y="255" font-family="system-ui, sans-serif" font-size="16" fill="#ef4444" text-anchor="middle" font-weight="700">🧠 Mindset &amp; Growth</text>
+  <text x="430" y="280" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Growth Mindset</text>
+  <text x="430" y="300" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• รับมือ Rejection</text>
+  <text x="430" y="320" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Self-Discipline</text>
+  <text x="430" y="340" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Continuous Learning</text>
+  <text x="430" y="360" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">• Work-Life Balance</text>
+</svg>

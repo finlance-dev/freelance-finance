@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#ef4444"/>
+  <circle cx="600" cy="315" r="400" fill="#ef4444" opacity="0.03"/>
+  <rect x="80" y="80" width="200" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="180" y="112" font-family="system-ui, sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">1. ตั้งราคาต่ำเกินไป</text>
+  <rect x="300" y="80" width="200" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="400" y="112" font-family="system-ui, sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">2. ไม่ทำสัญญา</text>
+  <rect x="520" y="80" width="200" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="620" y="112" font-family="system-ui, sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">3. ไม่แยกบัญชี</text>
+  <rect x="740" y="80" width="200" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="840" y="112" font-family="system-ui, sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">4. ลืมภาษี</text>
+  <rect x="960" y="80" width="200" height="50" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="1060" y="112" font-family="system-ui, sans-serif" font-size="13" fill="#ef4444" text-anchor="middle">5. ไม่มี Emergency</text>
+  <rect x="80" y="150" width="200" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="180" y="182" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">6. รับงานทุกอย่าง</text>
+  <rect x="300" y="150" width="200" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="400" y="182" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">7. ไม่ทำ Portfolio</text>
+  <rect x="520" y="150" width="200" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="620" y="182" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">8. ไม่ Networking</text>
+  <rect x="740" y="150" width="200" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="840" y="182" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">9. Burnout</text>
+  <rect x="960" y="150" width="200" height="50" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="1060" y="182" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">10. ไม่พัฒนาทักษะ</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">10 ผิดพลาดที่ฟรีแลนซ์</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#ef4444" font-weight="800">มือใหม่ทำ และวิธีหลีกเลี่ยง</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

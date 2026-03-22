@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#60a5fa"/>
+  <circle cx="600" cy="315" r="400" fill="#60a5fa" opacity="0.03"/>
+  <rect x="80" y="80" width="500" height="200" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <text x="330" y="115" font-family="system-ui, sans-serif" font-size="20" fill="#34d399" text-anchor="middle" font-weight="700">✅ ข้อดี</text>
+  <text x="100" y="150" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• อิสระเลือกงาน เลือกเวลา</text>
+  <text x="100" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• รายได้ไม่มีเพดาน</text>
+  <text x="100" y="200" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• ทำงานจากที่ไหนก็ได้</text>
+  <text x="100" y="225" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• เลือกลูกค้าที่ชอบ</text>
+  <text x="100" y="250" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• หักค่าใช้จ่ายภาษีได้เยอะ</text>
+  <rect x="620" y="80" width="500" height="200" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="870" y="115" font-family="system-ui, sans-serif" font-size="20" fill="#ef4444" text-anchor="middle" font-weight="700">❌ ข้อเสีย</text>
+  <text x="640" y="150" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• รายได้ไม่แน่นอน</text>
+  <text x="640" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• ไม่มีสวัสดิการจากนายจ้าง</text>
+  <text x="640" y="200" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• ต้องจัดการภาษีเอง</text>
+  <text x="640" y="225" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• โดดเดี่ยว ไม่มีทีม</text>
+  <text x="640" y="250" font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8">• หาลูกค้าเองตลอด</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">ข้อดีข้อเสียฟรีแลนซ์</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#60a5fa" font-weight="800">ความจริงที่ไม่มีใครบอก</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

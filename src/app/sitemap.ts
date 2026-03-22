@@ -1,6 +1,16 @@
 import type { MetadataRoute } from "next";
 
 const blogSlugs = [
+  "how-to-start-freelancing-thailand",
+  "quit-job-to-freelance-preparation",
+  "freelance-average-income-thailand-2026",
+  "freelance-social-security-33-resignation",
+  "essential-skills-for-freelancing",
+  "best-freelance-careers-thailand-2026",
+  "financial-runway-before-freelancing",
+  "employee-to-freelancer-mindset-shift",
+  "freelancing-pros-cons-honest-review",
+  "freelance-beginner-mistakes-avoid",
   "freelance-exit-strategy-sell-business",
   "freelance-build-team-first-hire",
   "freelance-raise-rates-without-losing-clients",

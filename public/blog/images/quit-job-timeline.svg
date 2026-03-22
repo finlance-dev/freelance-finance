@@ -1,0 +1,37 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="700">Timeline เตรียมตัวก่อนลาออก</text>
+  <line x1="80" y1="80" x2="720" y2="80" stroke="#334155" stroke-width="3"/>
+  <circle cx="120" cy="80" r="12" fill="#a78bfa"/>
+  <text x="120" y="110" font-family="system-ui, sans-serif" font-size="12" fill="#a78bfa" text-anchor="middle" font-weight="600">6 เดือนก่อน</text>
+  <text x="120" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">เริ่มเก็บเงินสำรอง</text>
+  <text x="120" y="148" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">สร้าง Portfolio</text>
+  <circle cx="280" cy="80" r="12" fill="#60a5fa"/>
+  <text x="280" y="110" font-family="system-ui, sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle" font-weight="600">3 เดือนก่อน</text>
+  <text x="280" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">หาลูกค้าแรก</text>
+  <text x="280" y="148" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ทดลองรับงาน</text>
+  <circle cx="440" cy="80" r="12" fill="#f59e0b"/>
+  <text x="440" y="110" font-family="system-ui, sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle" font-weight="600">1 เดือนก่อน</text>
+  <text x="440" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ยื่นลาออก</text>
+  <text x="440" y="148" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ศึกษาภาษี/ประกัน</text>
+  <circle cx="600" cy="80" r="12" fill="#34d399"/>
+  <text x="600" y="110" font-family="system-ui, sans-serif" font-size="12" fill="#34d399" text-anchor="middle" font-weight="600">วันลาออก</text>
+  <text x="600" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">สมัคร ม.39</text>
+  <text x="600" y="148" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">แยกบัญชี</text>
+  <circle cx="680" cy="80" r="12" fill="#ef4444"/>
+  <text x="680" y="110" font-family="system-ui, sans-serif" font-size="12" fill="#ef4444" text-anchor="middle" font-weight="600">เดือนแรก</text>
+  <text x="680" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Full-time</text>
+  <text x="680" y="148" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ฟรีแลนซ์</text>
+  <rect x="40" y="180" width="720" height="200" rx="8" fill="#1e293b"/>
+  <text x="60" y="210" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b" font-weight="600">Checklist สำคัญก่อนลาออก</text>
+  <text x="60" y="240" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ เงินสำรอง 6-12 เดือน ค่าใช้จ่าย</text>
+  <text x="60" y="262" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ ลูกค้าอย่างน้อย 2-3 ราย</text>
+  <text x="60" y="284" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ ประกันสุขภาพ/ประกันสังคม</text>
+  <text x="60" y="306" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ Portfolio พร้อม</text>
+  <text x="60" y="328" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ สัญญา &amp; Invoice template</text>
+  <text x="420" y="240" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ แยกบัญชีธุรกิจ-ส่วนตัว</text>
+  <text x="420" y="262" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ ศึกษาวิธีจ่ายภาษี</text>
+  <text x="420" y="284" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ แจ้งลูกค้าประจำ (ถ้ามี)</text>
+  <text x="420" y="306" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ ตั้งราคาค่าบริการ</text>
+  <text x="420" y="328" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">☐ Backup ข้อมูลจากที่ทำงานเดิม</text>
+</svg>
