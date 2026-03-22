@@ -1,7 +1,6 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
 
 // Load env
 const envPath = path.join(__dirname, '..', '.env.local');
@@ -96,10 +95,10 @@ async function main() {
   const svgPath = path.join(__dirname, '..', 'public', 'blog', 'covers', post.cover + '.svg');
   const pngPath = path.join(__dirname, '..', 'public', 'blog', 'covers', post.cover + '.png');
 
-  // Convert SVG to PNG if needed
+  // PNG should already exist (pre-converted and committed)
   if (!fs.existsSync(pngPath)) {
-    console.log(`Converting ${post.cover}.svg to PNG...`);
-    await sharp(svgPath).png().toFile(pngPath);
+    console.error(`PNG not found: ${pngPath}`);
+    process.exit(1);
   }
 
   const message = post.caption + '\n\nอ่านบทความเต็ม: https://finlance.co/blog/' + post.slug;
