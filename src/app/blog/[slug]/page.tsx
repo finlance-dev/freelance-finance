@@ -16,12 +16,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | Finlance Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
+      url: `https://finlance.co/blog/${slug}`,
       publishedTime: post.date,
+      modifiedTime: post.date,
       images: [{ url: `https://finlance.co${post.coverImage}`, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [`https://finlance.co${post.coverImage}`],
     },
   };
 }

@@ -64,11 +64,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://finlance.co"),
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://finlance.co",
-    languages: {
-      "th-TH": "https://finlance.co",
-      "en-US": "https://finlance.co",
-    },
+    canonical: "/",
   },
   category: "finance",
   other: {

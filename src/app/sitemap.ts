@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { posts } from "./blog/[slug]/posts";
 
 const blogSlugs = [
   "how-to-start-freelancing-thailand",
@@ -116,7 +117,7 @@ const blogSlugs = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogEntries = blogSlugs.map((slug) => ({
     url: `https://finlance.co/blog/${slug}`,
-    lastModified: new Date(),
+    lastModified: posts[slug]?.date ? new Date(posts[slug].date) : new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

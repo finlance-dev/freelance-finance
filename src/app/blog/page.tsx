@@ -6,6 +6,9 @@ import BlogList from "./BlogList";
 export const metadata: Metadata = {
   title: "บทความการเงินสำหรับฟรีแลนซ์ | Finlance Blog",
   description: "เคล็ดลับการเงิน ภาษี และการจัดการรายรับรายจ่ายสำหรับฟรีแลนซ์ไทย อ่านบทความที่จะช่วยให้คุณจัดการเงินได้ดีขึ้น",
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
     title: "บทความการเงินสำหรับฟรีแลนซ์ | Finlance Blog",
     description: "เคล็ดลับการเงิน ภาษี และการจัดการรายรับรายจ่ายสำหรับฟรีแลนซ์ไทย",
