@@ -66,19 +66,28 @@ export default function BlogList({ posts }: { posts: Post[] }) {
             <ChevronLeft className="w-4 h-4" />
           </button>
 
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => goToPage(page)}
-              className={`w-10 h-10 flex items-center justify-center rounded-xl text-sm font-medium transition ${
-                page === currentPage
-                  ? "bg-primary text-white shadow-sm"
-                  : "border border-border bg-card text-muted hover:border-primary/30 hover:text-primary"
-              }`}
-            >
-              {page}
-            </button>
-          ))}
+          {(() => {
+            const maxVisible = 10;
+            let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+            let end = start + maxVisible - 1;
+            if (end > totalPages) {
+              end = totalPages;
+              start = Math.max(1, end - maxVisible + 1);
+            }
+            return Array.from({ length: end - start + 1 }, (_, i) => start + i).map((page) => (
+              <button
+                key={page}
+                onClick={() => goToPage(page)}
+                className={`w-10 h-10 flex items-center justify-center rounded-xl text-sm font-medium transition ${
+                  page === currentPage
+                    ? "bg-primary text-white shadow-sm"
+                    : "border border-border bg-card text-muted hover:border-primary/30 hover:text-primary"
+                }`}
+              >
+                {page}
+              </button>
+            ));
+          })()}
 
           <button
             onClick={() => goToPage(currentPage + 1)}
