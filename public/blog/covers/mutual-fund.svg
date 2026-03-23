@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#60a5fa"/>
+  <circle cx="600" cy="315" r="400" fill="#60a5fa" opacity="0.03"/>
+  <rect x="100" y="80" width="220" height="70" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="210" y="108" font-family="system-ui, sans-serif" font-size="13" fill="#34d399" text-anchor="middle">ความเสี่ยงต่ำ</text>
+  <text x="210" y="135" font-family="system-ui, sans-serif" font-size="16" fill="#f8fafc" text-anchor="middle" font-weight="700">กองทุนตลาดเงิน</text>
+  <rect x="340" y="80" width="220" height="70" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="450" y="108" font-family="system-ui, sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle">ความเสี่ยงกลาง</text>
+  <text x="450" y="135" font-family="system-ui, sans-serif" font-size="16" fill="#f8fafc" text-anchor="middle" font-weight="700">กองทุนผสม</text>
+  <rect x="580" y="80" width="220" height="70" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="690" y="108" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">ความเสี่ยงสูง</text>
+  <text x="690" y="135" font-family="system-ui, sans-serif" font-size="16" fill="#f8fafc" text-anchor="middle" font-weight="700">กองทุนหุ้น</text>
+  <rect x="820" y="80" width="220" height="70" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="930" y="108" font-family="system-ui, sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle">ลดหย่อนภาษี</text>
+  <text x="930" y="135" font-family="system-ui, sans-serif" font-size="16" fill="#f8fafc" text-anchor="middle" font-weight="700">SSF / RMF</text>
+  <rect x="100" y="175" width="940" height="70" rx="8" fill="#1e293b"/>
+  <text x="570" y="218" font-family="system-ui, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle" font-weight="600">💡 ฟรีแลนซ์ควรเริ่มจากกองทุนตลาดเงิน → ผสม → หุ้น ตามความเสี่ยงที่รับได้</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">กองทุนรวม</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#60a5fa" font-weight="800">สำหรับฟรีแลนซ์มือใหม่</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

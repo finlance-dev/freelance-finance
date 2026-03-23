@@ -1,0 +1,30 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="700">ปัจจัยที่ส่งผลต่อเครดิตสกอร์</text>
+  <rect x="40" y="60" width="340" height="45" rx="6" fill="#1e293b"/>
+  <text x="60" y="89" font-family="system-ui, sans-serif" font-size="14" fill="#34d399" font-weight="600">35% ประวัติการชำระเงิน</text>
+  <rect x="60" y="96" width="238" height="6" rx="3" fill="#34d399" opacity="0.3"/>
+  <rect x="40" y="115" width="340" height="45" rx="6" fill="#1e293b"/>
+  <text x="60" y="144" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" font-weight="600">30% ยอดหนี้คงค้าง</text>
+  <rect x="60" y="151" width="204" height="6" rx="3" fill="#60a5fa" opacity="0.3"/>
+  <rect x="40" y="170" width="340" height="45" rx="6" fill="#1e293b"/>
+  <text x="60" y="199" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" font-weight="600">15% ความยาวประวัติเครดิต</text>
+  <rect x="60" y="206" width="102" height="6" rx="3" fill="#a78bfa" opacity="0.3"/>
+  <rect x="40" y="225" width="340" height="45" rx="6" fill="#1e293b"/>
+  <text x="60" y="254" font-family="system-ui, sans-serif" font-size="14" fill="#f59e0b" font-weight="600">10% ประเภทสินเชื่อ</text>
+  <rect x="60" y="261" width="68" height="6" rx="3" fill="#f59e0b" opacity="0.3"/>
+  <rect x="40" y="280" width="340" height="45" rx="6" fill="#1e293b"/>
+  <text x="60" y="309" font-family="system-ui, sans-serif" font-size="14" fill="#ef4444" font-weight="600">10% การสมัครสินเชื่อใหม่</text>
+  <rect x="60" y="316" width="68" height="6" rx="3" fill="#ef4444" opacity="0.3"/>
+  <rect x="420" y="60" width="340" height="265" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="590" y="90" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" text-anchor="middle" font-weight="700">วิธีเพิ่มเครดิตสกอร์</text>
+  <text x="440" y="120" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">1. จ่ายบิลตรงเวลาทุกเดือน</text>
+  <text x="440" y="148" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">2. ใช้บัตรเครดิตไม่เกิน 30% วงเงิน</text>
+  <text x="440" y="176" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">3. อย่าปิดบัตรเก่า (ยิ่งเก่ายิ่งดี)</text>
+  <text x="440" y="204" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">4. ไม่สมัครสินเชื่อบ่อยเกินไป</text>
+  <text x="440" y="232" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">5. มีสินเชื่อหลายประเภท</text>
+  <text x="440" y="260" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">6. เช็ค NCB ปีละ 1 ครั้ง (ฟรี)</text>
+  <text x="440" y="290" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">7. แก้ไขข้อมูลผิดพลาดใน NCB</text>
+  <rect x="40" y="345" width="720" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="400" y="371" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle">⚠ ฟรีแลนซ์มักเครดิตต่ำเพราะไม่มีประวัติสินเชื่อ → เริ่มจากบัตรเครดิตเล็กๆ แล้วค่อยสร้าง</text>
+</svg>

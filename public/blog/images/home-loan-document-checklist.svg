@@ -1,0 +1,24 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="700">เอกสารกู้บ้านสำหรับฟรีแลนซ์</text>
+  <rect x="40" y="55" width="350" height="155" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="215" y="80" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" text-anchor="middle" font-weight="700">เอกสารส่วนตัว</text>
+  <text x="60" y="105" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ สำเนาบัตรประชาชน</text>
+  <text x="60" y="128" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ สำเนาทะเบียนบ้าน</text>
+  <text x="60" y="151" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ สำเนาทะเบียนสมรส (ถ้ามี)</text>
+  <text x="60" y="174" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ ใบเปลี่ยนชื่อ-สกุล (ถ้ามี)</text>
+  <text x="60" y="197" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ รูปถ่าย 2 นิ้ว</text>
+  <rect x="410" y="55" width="350" height="155" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="585" y="80" font-family="system-ui, sans-serif" font-size="16" fill="#60a5fa" text-anchor="middle" font-weight="700">เอกสารการเงิน</text>
+  <text x="430" y="105" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ Statement ย้อนหลัง 12 เดือน</text>
+  <text x="430" y="128" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ 50 ทวิ / Invoice ย้อนหลัง</text>
+  <text x="430" y="151" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ ทะเบียนพาณิชย์ (เพิ่มโอกาส)</text>
+  <text x="430" y="174" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ สัญญาจ้างงาน / Retainer</text>
+  <text x="430" y="197" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">✅ หลักฐานรายได้อื่นๆ</text>
+  <rect x="40" y="230" width="720" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="400" y="258" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b" text-anchor="middle" font-weight="700">เคล็ดลับเพิ่มโอกาสกู้ผ่าน</text>
+  <text x="60" y="288" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">1. มีรายได้เข้าบัญชีสม่ำเสมอ 12 เดือน → ธนาคารดูความสม่ำเสมอไม่ใช่แค่ยอดรวม</text>
+  <text x="60" y="313" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">2. วางเงินดาวน์ 20-30% → ลดความเสี่ยงของธนาคาร กู้ผ่านง่ายขึ้น</text>
+  <text x="60" y="338" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">3. จดทะเบียนพาณิชย์ → พิสูจน์ว่ามีธุรกิจจริง ไม่ใช่แค่รายได้ชั่วคราว</text>
+  <text x="60" y="363" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">4. กู้ร่วมกับคู่สมรสที่มีรายได้ประจำ → เพิ่มวงเงินและโอกาสผ่านมาก</text>
+</svg>

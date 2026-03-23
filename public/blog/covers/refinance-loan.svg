@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#ef4444"/>
+  <circle cx="600" cy="315" r="400" fill="#ef4444" opacity="0.03"/>
+  <rect x="100" y="80" width="400" height="90" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="120" y="115" font-family="system-ui, sans-serif" font-size="16" fill="#ef4444" font-weight="600">ก่อนรีไฟแนนซ์</text>
+  <text x="120" y="150" font-family="system-ui, sans-serif" font-size="28" fill="#f8fafc" font-weight="800">ดอกเบี้ย 7.5%</text>
+  <text x="460" y="150" font-family="system-ui, sans-serif" font-size="16" fill="#ef4444" text-anchor="end">ผ่อน ฿15,000/เดือน</text>
+  <path d="M520 125 L580 125" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,3"/>
+  <text x="550" y="118" font-family="system-ui, sans-serif" font-size="20" text-anchor="middle" fill="#f59e0b">→</text>
+  <rect x="600" y="80" width="400" height="90" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <text x="620" y="115" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" font-weight="600">หลังรีไฟแนนซ์</text>
+  <text x="620" y="150" font-family="system-ui, sans-serif" font-size="28" fill="#f8fafc" font-weight="800">ดอกเบี้ย 4.5%</text>
+  <text x="960" y="150" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" text-anchor="end">ผ่อน ฿12,000/เดือน</text>
+  <rect x="100" y="200" width="900" height="60" rx="8" fill="#1e293b"/>
+  <text x="550" y="238" font-family="system-ui, sans-serif" font-size="20" fill="#f59e0b" text-anchor="middle" font-weight="700">ประหยัด ฿3,000/เดือน = ฿36,000/ปี</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">รีไฟแนนซ์หนี้</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#ef4444" font-weight="800">ฟรีแลนซ์ทำได้ไหม</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

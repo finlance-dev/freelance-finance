@@ -1,0 +1,41 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="700">5 ขั้นตอนเริ่มลงทุนหุ้นสำหรับฟรีแลนซ์</text>
+  <rect x="40" y="60" width="140" height="130" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="110" y="85" font-family="system-ui, sans-serif" font-size="24" fill="#60a5fa" text-anchor="middle" font-weight="800">1</text>
+  <text x="110" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#60a5fa" text-anchor="middle" font-weight="600">เปิดบัญชี</text>
+  <text x="110" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">สมัครโบรกเกอร์</text>
+  <text x="110" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ออนไลน์</text>
+  <text x="110" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ฟรี ไม่มีค่าใช้จ่าย</text>
+  <rect x="190" y="60" width="140" height="130" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="260" y="85" font-family="system-ui, sans-serif" font-size="24" fill="#a78bfa" text-anchor="middle" font-weight="800">2</text>
+  <text x="260" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle" font-weight="600">เรียนรู้พื้นฐาน</text>
+  <text x="260" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">อ่านงบการเงิน</text>
+  <text x="260" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">PE, PBV, ROE</text>
+  <text x="260" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Dividend Yield</text>
+  <rect x="340" y="60" width="140" height="130" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="410" y="85" font-family="system-ui, sans-serif" font-size="24" fill="#34d399" text-anchor="middle" font-weight="800">3</text>
+  <text x="410" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#34d399" text-anchor="middle" font-weight="600">เริ่ม DCA</text>
+  <text x="410" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">เลือกหุ้นพื้นฐานดี</text>
+  <text x="410" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ลงทุนทุกเดือน</text>
+  <text x="410" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">เริ่มจาก ฿3,000-5,000</text>
+  <rect x="490" y="60" width="140" height="130" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="560" y="85" font-family="system-ui, sans-serif" font-size="24" fill="#f59e0b" text-anchor="middle" font-weight="800">4</text>
+  <text x="560" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b" text-anchor="middle" font-weight="600">กระจายพอร์ต</text>
+  <text x="560" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">หุ้น 3-5 ตัว</text>
+  <text x="560" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ต่างอุตสาหกรรม</text>
+  <text x="560" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">อย่าทุ่มตัวเดียว</text>
+  <rect x="640" y="60" width="120" height="130" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="700" y="85" font-family="system-ui, sans-serif" font-size="24" fill="#ef4444" text-anchor="middle" font-weight="800">5</text>
+  <text x="700" y="110" font-family="system-ui, sans-serif" font-size="13" fill="#ef4444" text-anchor="middle" font-weight="600">ถือยาว</text>
+  <text x="700" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">อย่าตื่นตกใจ</text>
+  <text x="700" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">ลงทุนระยะยาว</text>
+  <text x="700" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">5-10+ ปี</text>
+  <rect x="40" y="210" width="720" height="170" rx="8" fill="#1e293b"/>
+  <text x="400" y="240" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" text-anchor="middle" font-weight="700">กฎเหล็กสำหรับฟรีแลนซ์ลงทุนหุ้น</text>
+  <text x="60" y="270" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">1. สร้าง Emergency Fund 6 เดือนก่อน → อย่าเอาเงินสำรองมาลงทุน</text>
+  <text x="60" y="295" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">2. ลงทุนเฉพาะเงินที่ไม่ต้องใช้ 3-5 ปี → เดือนรายได้น้อยอาจหยุด DCA ได้</text>
+  <text x="60" y="320" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">3. แยกเงินลงทุนจากเงินทำงาน → มีบัญชีลงทุนแยกต่างหาก</text>
+  <text x="60" y="345" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">4. ใช้ SSF/RMF ลดหย่อนภาษีด้วย → ลงทุนแล้วได้ภาษีคืน</text>
+  <text x="60" y="370" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b">⚠ ห้ามกู้เงินมาลงทุนหุ้น และห้ามเล่น margin สำหรับมือใหม่</text>
+</svg>

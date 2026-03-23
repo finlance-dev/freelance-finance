@@ -1,0 +1,23 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="700">คำนวณค่างวดรถสำหรับฟรีแลนซ์</text>
+  <rect x="40" y="55" width="340" height="170" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="210" y="82" font-family="system-ui, sans-serif" font-size="16" fill="#60a5fa" text-anchor="middle" font-weight="700">ตัวอย่าง: รถราคา 800,000 บาท</text>
+  <text x="60" y="112" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ราคารถ</text><text x="340" y="112" font-family="system-ui, sans-serif" font-size="13" fill="#f8fafc" text-anchor="end">฿800,000</text>
+  <text x="60" y="137" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ดาวน์ 25%</text><text x="340" y="137" font-family="system-ui, sans-serif" font-size="13" fill="#f8fafc" text-anchor="end">-฿200,000</text>
+  <text x="60" y="162" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ยอดกู้</text><text x="340" y="162" font-family="system-ui, sans-serif" font-size="13" fill="#60a5fa" text-anchor="end" font-weight="700">฿600,000</text>
+  <line x1="60" y1="172" x2="340" y2="172" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="195" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ดอกเบี้ย 4% ผ่อน 60 เดือน</text><text x="340" y="195" font-family="system-ui, sans-serif" font-size="15" fill="#f59e0b" text-anchor="end" font-weight="700">฿11,050/เดือน</text>
+  <rect x="420" y="55" width="340" height="170" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="590" y="82" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b" text-anchor="middle" font-weight="700">กฎ 20% — ค่างวดไม่เกิน 20% รายได้</text>
+  <text x="440" y="115" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">รายได้ 40,000 บ./เดือน</text>
+  <text x="440" y="140" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ค่างวดไม่ควรเกิน</text><text x="720" y="140" font-family="system-ui, sans-serif" font-size="15" fill="#34d399" text-anchor="end" font-weight="700">฿8,000</text>
+  <text x="440" y="172" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">รายได้ 60,000 บ./เดือน</text>
+  <text x="440" y="197" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ค่างวดไม่ควรเกิน</text><text x="720" y="197" font-family="system-ui, sans-serif" font-size="15" fill="#34d399" text-anchor="end" font-weight="700">฿12,000</text>
+  <rect x="40" y="245" width="720" height="135" rx="8" fill="#1e293b"/>
+  <text x="400" y="275" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" text-anchor="middle" font-weight="700">เปรียบเทียบระยะเวลาผ่อน</text>
+  <text x="60" y="305" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">48 เดือน: ฿13,800/เดือน — ดอกเบี้ยรวม ฿62,400</text>
+  <text x="60" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">60 เดือน: ฿11,050/เดือน — ดอกเบี้ยรวม ฿63,000</text>
+  <text x="60" y="355" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">84 เดือน: ฿8,550/เดือน — ดอกเบี้ยรวม ฿118,200</text>
+  <text x="60" y="380" font-family="system-ui, sans-serif" font-size="12" fill="#f59e0b">💡 ผ่อนสั้น = ดอกเบี้ยน้อย แต่งวดสูง | ผ่อนยาว = งวดเบา แต่ดอกเบี้ยเยอะ</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#f8fafc" text-anchor="middle" font-weight="700">บัตรเครดิตที่ฟรีแลนซ์สมัครง่าย</text>
+  <rect x="40" y="55" width="230" height="160" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="155" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#a78bfa" text-anchor="middle" font-weight="700">บัตร Classic</text>
+  <text x="60" y="108" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">รายได้ขั้นต่ำ: 15,000</text>
+  <text x="60" y="130" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">วงเงิน: 15K-50K</text>
+  <text x="60" y="152" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">ค่าธรรมเนียม: 0-500 บ.</text>
+  <text x="60" y="174" font-family="system-ui, sans-serif" font-size="12" fill="#34d399">สมัครง่าย ⭐⭐⭐⭐⭐</text>
+  <text x="60" y="196" font-family="system-ui, sans-serif" font-size="12" fill="#f59e0b">สิทธิ์ประโยชน์: ⭐⭐</text>
+  <rect x="285" y="55" width="230" height="160" rx="8" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="400" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#60a5fa" text-anchor="middle" font-weight="700">บัตร Gold</text>
+  <text x="305" y="108" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">รายได้ขั้นต่ำ: 30,000</text>
+  <text x="305" y="130" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">วงเงิน: 30K-150K</text>
+  <text x="305" y="152" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">ค่าธรรมเนียม: 500-2,000 บ.</text>
+  <text x="305" y="174" font-family="system-ui, sans-serif" font-size="12" fill="#34d399">สมัครง่าย ⭐⭐⭐⭐</text>
+  <text x="305" y="196" font-family="system-ui, sans-serif" font-size="12" fill="#f59e0b">สิทธิ์ประโยชน์: ⭐⭐⭐</text>
+  <rect x="530" y="55" width="230" height="160" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="645" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#f59e0b" text-anchor="middle" font-weight="700">บัตร Platinum</text>
+  <text x="550" y="108" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">รายได้ขั้นต่ำ: 50,000</text>
+  <text x="550" y="130" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">วงเงิน: 50K-500K</text>
+  <text x="550" y="152" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">ค่าธรรมเนียม: 2,000-5,000 บ.</text>
+  <text x="550" y="174" font-family="system-ui, sans-serif" font-size="12" fill="#34d399">สมัครง่าย ⭐⭐⭐</text>
+  <text x="550" y="196" font-family="system-ui, sans-serif" font-size="12" fill="#f59e0b">สิทธิ์ประโยชน์: ⭐⭐⭐⭐⭐</text>
+  <rect x="40" y="235" width="720" height="145" rx="8" fill="#1e293b"/>
+  <text x="400" y="263" font-family="system-ui, sans-serif" font-size="16" fill="#a78bfa" text-anchor="middle" font-weight="700">แนะนำสำหรับฟรีแลนซ์</text>
+  <text x="60" y="295" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">มือใหม่ (รายได้ 15-30K): เริ่มจากบัตร Classic → สร้างประวัติเครดิต</text>
+  <text x="60" y="320" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ระดับกลาง (30-60K): อัปเกรดเป็น Gold → cashback ดีกว่า</text>
+  <text x="60" y="345" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">รายได้สูง (60K+): Platinum → สิทธิ์ lounge, ประกันเดินทาง, concierge</text>
+  <text x="60" y="370" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b">💡 เคล็ดลับ: สมัครธนาคารที่มีบัญชีเงินฝากอยู่แล้ว โอกาสผ่านสูงกว่ามาก</text>
+</svg>

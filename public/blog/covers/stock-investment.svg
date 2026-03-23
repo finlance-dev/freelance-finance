@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#34d399"/>
+  <circle cx="600" cy="315" r="400" fill="#34d399" opacity="0.03"/>
+  <rect x="100" y="80" width="900" height="190" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="550" y="115" font-family="system-ui, sans-serif" font-size="18" fill="#34d399" text-anchor="middle" font-weight="700">📈 เส้นทางลงทุนหุ้นสำหรับฟรีแลนซ์</text>
+  <rect x="130" y="140" width="180" height="55" rx="8" fill="#0f172a" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="220" y="163" font-family="system-ui, sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">ขั้น 1: เปิดบัญชี</text>
+  <text x="220" y="183" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">เลือกโบรกเกอร์</text>
+  <text x="325" y="168" font-family="system-ui, sans-serif" font-size="16" fill="#334155">→</text>
+  <rect x="340" y="140" width="180" height="55" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="430" y="163" font-family="system-ui, sans-serif" font-size="12" fill="#a78bfa" text-anchor="middle">ขั้น 2: เรียนรู้</text>
+  <text x="430" y="183" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">งบการเงิน PE PBV</text>
+  <text x="535" y="168" font-family="system-ui, sans-serif" font-size="16" fill="#334155">→</text>
+  <rect x="550" y="140" width="180" height="55" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="640" y="163" font-family="system-ui, sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">ขั้น 3: เริ่มลงทุน</text>
+  <text x="640" y="183" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">DCA หุ้นพื้นฐานดี</text>
+  <text x="745" y="168" font-family="system-ui, sans-serif" font-size="16" fill="#334155">→</text>
+  <rect x="760" y="140" width="180" height="55" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+  <text x="850" y="163" font-family="system-ui, sans-serif" font-size="12" fill="#34d399" text-anchor="middle">ขั้น 4: กระจายพอร์ต</text>
+  <text x="850" y="183" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">หุ้น + กองทุน + SSF</text>
+  <text x="550" y="240" font-family="system-ui, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">⚠ กฎเหล็ก: ลงทุนเฉพาะเงินที่ไม่ต้องใช้ใน 3-5 ปี อย่าใช้เงิน Emergency Fund!</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">ฟรีแลนซ์ลงทุนหุ้น</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#34d399" font-weight="800">เริ่มต้นยังไง</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

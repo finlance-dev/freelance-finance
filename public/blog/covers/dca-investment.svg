@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#f59e0b"/>
+  <circle cx="600" cy="315" r="400" fill="#f59e0b" opacity="0.03"/>
+  <rect x="100" y="80" width="900" height="180" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="550" y="115" font-family="system-ui, sans-serif" font-size="18" fill="#f59e0b" text-anchor="middle" font-weight="700">DCA (Dollar Cost Averaging) คือการลงทุนสม่ำเสมอ</text>
+  <rect x="130" y="135" width="160" height="50" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+  <text x="210" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">เดือน 1: ฿5,000</text>
+  <rect x="310" y="135" width="160" height="50" rx="6" fill="#0f172a" stroke="#60a5fa" stroke-width="1"/>
+  <text x="390" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" text-anchor="middle">เดือน 2: ฿5,000</text>
+  <rect x="490" y="135" width="160" height="50" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="570" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#34d399" text-anchor="middle">เดือน 3: ฿5,000</text>
+  <rect x="670" y="135" width="160" height="50" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="750" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle">เดือน 4: ฿5,000</text>
+  <text x="900" y="165" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc" text-anchor="middle">...</text>
+  <text x="550" y="230" font-family="system-ui, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">ลงทุนจำนวนเท่ากันทุกเดือน ไม่ต้องจับจังหวะตลาด เฉลี่ยต้นทุนอัตโนมัติ</text>
+  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">DCA ลงทุนสม่ำเสมอ</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="42" fill="#f59e0b" font-weight="800">สำหรับรายได้ไม่แน่นอน</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

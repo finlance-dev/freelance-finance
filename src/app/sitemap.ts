@@ -2,6 +2,16 @@ import type { MetadataRoute } from "next";
 import { posts } from "./blog/[slug]/posts";
 
 const blogSlugs = [
+  "freelance-home-loan-mortgage-guide",
+  "freelance-credit-card-application-guide",
+  "freelance-car-loan-guide",
+  "freelance-open-business-bank-account",
+  "freelance-credit-score-build-guide",
+  "freelance-refinance-loan-guide",
+  "freelance-savings-insurance-guide",
+  "freelance-mutual-fund-beginner-guide",
+  "freelance-dca-investment-strategy",
+  "freelance-stock-investment-beginner",
   "how-to-start-freelancing-thailand",
   "quit-job-to-freelance-preparation",
   "freelance-average-income-thailand-2026",
