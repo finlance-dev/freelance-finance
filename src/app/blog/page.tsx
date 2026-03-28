@@ -16,6 +16,12 @@ export const metadata: Metadata = {
 };
 
 const posts = [
+  { slug: "freelance-stock-investment-guide", title: "ลงทุนหุ้นสำหรับฟรีแลนซ์ เริ่มต้นยังไงเมื่อรายได้ไม่แน่นอน", excerpt: "เปิดบัญชีหุ้น เลือกหุ้นปันผล ETF จัดพอร์ต และหลีกเลี่ยงข้อผิดพลาดมือใหม่", coverImage: "/blog/covers/stock-investment.svg", date: "2026-06-17" },
+  { slug: "freelance-life-insurance-savings", title: "ประกันชีวิตแบบออมทรัพย์สำหรับฟรีแลนซ์ คุ้มไหม เลือกยังไง", excerpt: "เปรียบเทียบสะสมทรัพย์ ยูนิตลิงค์ ตลอดชีพ วิธีลดหย่อนภาษี 100,000 บาท", coverImage: "/blog/covers/life-insurance-savings.svg", date: "2026-06-17" },
+  { slug: "freelance-refinance-guide", title: "รีไฟแนนซ์สินเชื่อสำหรับฟรีแลนซ์ คุ้มไหม เมื่อไหร่ควรทำ", excerpt: "คำนวณจุดคุ้มทุน เปรียบเทียบรีไฟแนนซ์บ้าน รถ บัตรเครดิต", coverImage: "/blog/covers/refinance.svg", date: "2026-06-17" },
+  { slug: "freelance-credit-score-building", title: "ฟรีแลนซ์สร้างเครดิตสกอร์ยังไง คู่มือเพิ่มคะแนนเครดิตบูโร", excerpt: "เครดิตบูโรคืออะไร วิธีเช็ค ปัจจัยที่ส่งผล 7 วิธีเพิ่มคะแนน", coverImage: "/blog/covers/credit-score.svg", date: "2026-06-16" },
+  { slug: "freelance-business-bank-account", title: "เปิดบัญชีธุรกิจสำหรับฟรีแลนซ์ ธนาคารไหนดี", excerpt: "เปรียบเทียบ กสิกร SCB กรุงไทย BBL TTB วิธีเปิดบัญชี PromptPay ธุรกิจ", coverImage: "/blog/covers/business-bank-account.svg", date: "2026-06-16" },
+  { slug: "freelance-credit-card-guide", title: "บัตรเครดิตสำหรับฟรีแลนซ์ สมัครยังไงให้ผ่าน", excerpt: "เปรียบเทียบ 5 บัตร เอกสาร เทคนิคเพิ่มโอกาสผ่าน วิธีใช้อย่างฉลาด", coverImage: "/blog/covers/credit-card.svg", date: "2026-06-16" },
   { slug: "freelance-home-loan-mortgage-guide", title: "ฟรีแลนซ์กู้บ้านยังไงให้ผ่าน", excerpt: "คู่มือกู้บ้านสำหรับฟรีแลนซ์ เตรียมเอกสาร เพิ่มโอกาสผ่าน ดอกเบี้ย และข้อควรระวัง", coverImage: "/blog/covers/home-loan-mortgage.png", date: "2026-06-14" },
   { slug: "freelance-credit-card-application-guide", title: "ฟรีแลนซ์สมัครบัตรเครดิตได้ไหม ทำยังไงให้ผ่าน", excerpt: "เงื่อนไข เอกสาร บัตรที่สมัครง่าย และเคล็ดลับเพิ่มโอกาสผ่านสำหรับฟรีแลนซ์", coverImage: "/blog/covers/credit-card-application.png", date: "2026-06-13" },
   { slug: "freelance-car-loan-guide", title: "ฟรีแลนซ์กู้รถ เตรียมเอกสารยังไง", excerpt: "เอกสาร ดาวน์ขั้นต่ำ ดอกเบี้ย ระยะเวลาผ่อน และกฎ 20% ที่ช่วยให้ผ่อนสบาย", coverImage: "/blog/covers/car-loan.png", date: "2026-06-12" },

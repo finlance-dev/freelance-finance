@@ -2,6 +2,12 @@ import type { MetadataRoute } from "next";
 import { posts } from "./blog/[slug]/posts";
 
 const blogSlugs = [
+  "freelance-stock-investment-guide",
+  "freelance-life-insurance-savings",
+  "freelance-refinance-guide",
+  "freelance-credit-score-building",
+  "freelance-business-bank-account",
+  "freelance-credit-card-guide",
   "freelance-home-loan-mortgage-guide",
   "freelance-credit-card-application-guide",
   "freelance-car-loan-guide",
