@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a78bfa"/>
+  <circle cx="600" cy="315" r="400" fill="#a78bfa" opacity="0.03"/>
+  <rect x="80" y="70" width="320" height="100" rx="12" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="100" y="105" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" font-weight="600">สะสมทรัพย์</text>
+  <text x="100" y="135" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc" font-weight="700">1.5-3%/ปี</text>
+  <text x="270" y="135" font-family="system-ui, sans-serif" font-size="14" fill="#34d399">✓ แน่นอน</text>
+  <text x="100" y="155" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">ผลตอบแทนคงที่ + คุ้มครองชีวิต</text>
+  <rect x="440" y="70" width="320" height="100" rx="12" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+  <text x="460" y="105" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" font-weight="600">ยูนิตลิงค์</text>
+  <text x="460" y="135" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc" font-weight="700">5-10%/ปี</text>
+  <text x="630" y="135" font-family="system-ui, sans-serif" font-size="14" fill="#f59e0b">⚠ มีความเสี่ยง</text>
+  <text x="460" y="155" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">ลงทุนกองทุนรวม + คุ้มครอง</text>
+  <rect x="800" y="70" width="320" height="100" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <text x="820" y="105" font-family="system-ui, sans-serif" font-size="14" fill="#34d399" font-weight="600">ตลอดชีพ</text>
+  <text x="820" y="135" font-family="system-ui, sans-serif" font-size="24" fill="#f8fafc" font-weight="700">Cash Value</text>
+  <text x="820" y="155" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">คุ้มครองตลอดชีวิต + กู้ได้</text>
+  <rect x="700" y="210" width="420" height="120" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="720" y="245" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b" font-weight="600">ลดหย่อนภาษี</text>
+  <text x="720" y="280" font-family="system-ui, sans-serif" font-size="28" fill="#34d399" font-weight="800">สูงสุด 100,000 บ./ปี</text>
+  <text x="720" y="310" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">กรมธรรม์ 10 ปีขึ้นไป ลดภาษีได้ 20-35%</text>
+  <text x="80" y="280" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">ประกันชีวิตแบบออม</text>
+  <text x="80" y="335" font-family="system-ui, sans-serif" font-size="42" fill="#a78bfa" font-weight="800">สำหรับฟรีแลนซ์</text>
+  <text x="80" y="390" font-family="system-ui, sans-serif" font-size="32" fill="#f8fafc" font-weight="600">คุ้มไหม เลือกยังไง</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>
