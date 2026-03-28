@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a78bfa"/>
+  <circle cx="600" cy="315" r="400" fill="#a78bfa" opacity="0.03"/>
+  <circle cx="200" cy="150" r="80" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+  <text x="200" y="158" font-family="system-ui, sans-serif" font-size="32" text-anchor="middle">🤖</text>
+  <circle cx="600" cy="100" r="80" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+  <text x="600" y="108" font-family="system-ui, sans-serif" font-size="32" text-anchor="middle">💡</text>
+  <circle cx="1000" cy="150" r="80" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <text x="1000" y="158" font-family="system-ui, sans-serif" font-size="32" text-anchor="middle">🚀</text>
+  <line x1="270" y1="150" x2="520" y2="110" stroke="#334155" stroke-width="2" stroke-dasharray="8,4"/>
+  <line x1="680" y1="110" x2="920" y2="145" stroke="#334155" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="200" y="255" font-family="system-ui, sans-serif" font-size="16" fill="#a78bfa" text-anchor="middle">AI Tools</text>
+  <text x="600" y="205" font-family="system-ui, sans-serif" font-size="16" fill="#60a5fa" text-anchor="middle">Human Skills</text>
+  <text x="1000" y="255" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" text-anchor="middle">Career Growth</text>
+  <rect x="80" y="300" width="320" height="70" rx="8" fill="#1e293b"/>
+  <text x="100" y="330" font-family="system-ui, sans-serif" font-size="16" fill="#ef4444" font-weight="600">งานที่ AI แทนได้</text>
+  <text x="100" y="355" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">งาน Repetitive, Data Entry</text>
+  <rect x="440" y="300" width="320" height="70" rx="8" fill="#1e293b"/>
+  <text x="460" y="330" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b" font-weight="600">งาน AI ช่วยได้</text>
+  <text x="460" y="355" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Research, Draft, Analysis</text>
+  <rect x="800" y="300" width="320" height="70" rx="8" fill="#1e293b"/>
+  <text x="820" y="330" font-family="system-ui, sans-serif" font-size="16" fill="#34d399" font-weight="600">งานที่คนเท่านั้นทำได้</text>
+  <text x="820" y="355" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">Strategy, Relationship, Creative</text>
+  <text x="80" y="430" font-family="system-ui, sans-serif" font-size="42" fill="#f8fafc" font-weight="800">ฟรีแลนซ์ทำงานกับ AI</text>
+  <text x="80" y="478" font-family="system-ui, sans-serif" font-size="42" fill="#a78bfa" font-weight="800">อย่างไรไม่ให้ตกงาน</text>
+  <text x="80" y="560" font-family="system-ui, sans-serif" font-size="18" fill="#64748b">finlance.co — คู่มือสำหรับฟรีแลนซ์ไทย</text>
+</svg>

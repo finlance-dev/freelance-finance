@@ -1,0 +1,32 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="38" font-family="system-ui, sans-serif" font-size="20" fill="#34d399" font-weight="700" text-anchor="middle">เอกสารกู้ธนาคารสำหรับฟรีแลนซ์</text>
+  <rect x="20" y="55" width="240" height="310" rx="10" fill="#1e293b"/>
+  <text x="140" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#34d399" font-weight="600" text-anchor="middle">เอกสารส่วนตัว</text>
+  <text x="35" y="108" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ บัตรประชาชนตัวจริง</text>
+  <text x="35" y="130" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ สำเนาทะเบียนบ้าน</text>
+  <text x="35" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ ใบเปลี่ยนชื่อ (ถ้ามี)</text>
+  <text x="35" y="174" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ ใบสมรส/หย่า (ถ้ามี)</text>
+  <text x="35" y="196" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ เครดิตบูโร (ขอเอง)</text>
+  <rect x="280" y="55" width="240" height="310" rx="10" fill="#1e293b"/>
+  <text x="400" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#60a5fa" font-weight="600" text-anchor="middle">เอกสารรายได้</text>
+  <text x="295" y="108" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ ภ.ง.ด.90/91 ย้อนหลัง 2 ปี</text>
+  <text x="295" y="130" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ Statement 12 เดือน (ทุกบัญชี)</text>
+  <text x="295" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ หนังสือรับรองการหักภาษี</text>
+  <text x="295" y="174" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ Contract / Portfolio ลูกค้า</text>
+  <text x="295" y="196" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ Invoice ย้อนหลัง 12 เดือน</text>
+  <text x="295" y="218" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b">★ ทะเบียนพาณิชย์ (ช่วยมาก)</text>
+  <rect x="540" y="55" width="240" height="310" rx="10" fill="#1e293b"/>
+  <text x="660" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#f59e0b" font-weight="600" text-anchor="middle">เอกสารอสังหาริมทรัพย์</text>
+  <text x="555" y="108" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ สำเนาโฉนดที่ดิน</text>
+  <text x="555" y="130" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ ราคาประเมิน (กรมที่ดิน)</text>
+  <text x="555" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ สัญญาจะซื้อจะขาย</text>
+  <text x="555" y="174" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ ใบอนุญาตก่อสร้าง (ถ้ามี)</text>
+  <text x="555" y="196" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">□ แผนที่ตั้งอสังหาฯ</text>
+  <rect x="20" y="285" width="760" height="70" rx="10" fill="#1e293b"/>
+  <text x="400" y="313" font-family="system-ui, sans-serif" font-size="15" fill="#f8fafc" font-weight="700" text-anchor="middle">เทคนิคเพิ่มโอกาสผ่านสำหรับฟรีแลนซ์</text>
+  <text x="100" y="340" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">รายได้เฉลี่ยสม่ำเสมอ 2 ปี</text>
+  <text x="320" y="340" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Down 20%+ (ยิ่งสูงยิ่งดี)</text>
+  <text x="530" y="340" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">เลือกธนาคารที่รับฟรีแลนซ์</text>
+  <text x="400" y="390" font-family="system-ui, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">DSR (Debt Service Ratio) ต้องไม่เกิน 40-50% ของรายได้เฉลี่ย</text>
+</svg>

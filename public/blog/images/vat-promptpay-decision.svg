@@ -1,0 +1,29 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="20" fill="#a78bfa" font-weight="700" text-anchor="middle">Decision Tree: ฟรีแลนซ์ต้องจด VAT ไหม?</text>
+  <rect x="290" y="50" width="220" height="55" rx="27" fill="#4c1d95"/>
+  <text x="400" y="83" font-family="system-ui, sans-serif" font-size="15" fill="#a78bfa" font-weight="700" text-anchor="middle">รายได้รวมปีนี้เท่าไหร่?</text>
+  <line x1="310" y1="105" x2="160" y2="150" stroke="#334155" stroke-width="2"/>
+  <line x1="490" y1="105" x2="640" y2="150" stroke="#334155" stroke-width="2"/>
+  <text x="215" y="140" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">น้อยกว่า 1.8M</text>
+  <text x="530" y="140" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">เกิน 1.8M</text>
+  <rect x="60" y="155" width="200" height="70" rx="10" fill="#14532d"/>
+  <text x="160" y="183" font-family="system-ui, sans-serif" font-size="15" fill="#34d399" text-anchor="middle" font-weight="700">ไม่ต้องจด VAT</text>
+  <text x="160" y="205" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">รับ PromptPay ได้ปกติ</text>
+  <rect x="540" y="155" width="200" height="70" rx="10" fill="#450a0a"/>
+  <text x="640" y="183" font-family="system-ui, sans-serif" font-size="15" fill="#ef4444" text-anchor="middle" font-weight="700">ต้องจด VAT</text>
+  <text x="640" y="205" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">ภายใน 30 วัน</text>
+  <line x1="640" y1="225" x2="640" y2="260" stroke="#334155" stroke-width="2"/>
+  <polygon points="635,260 645,260 640,270" fill="#334155"/>
+  <rect x="490" y="270" width="300" height="100" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+  <text x="640" y="298" font-family="system-ui, sans-serif" font-size="14" fill="#ef4444" text-anchor="middle" font-weight="600">หน้าที่หลังจด VAT</text>
+  <text x="640" y="318" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">เก็บ VAT 7% จากลูกค้า</text>
+  <text x="640" y="338" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">ยื่น ภ.พ.30 ทุกเดือน</text>
+  <text x="640" y="358" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">ออกใบกำกับภาษีทุกครั้ง</text>
+  <rect x="30" y="260" width="380" height="110" rx="10" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+  <text x="220" y="288" font-family="system-ui, sans-serif" font-size="15" fill="#a78bfa" text-anchor="middle" font-weight="700">ข้อเท็จจริงเรื่อง PromptPay</text>
+  <text x="50" y="312" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">• PromptPay ไม่ได้กำหนด VAT โดยตรง</text>
+  <text x="50" y="332" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">• VAT ขึ้นอยู่กับยอดรายได้รวม ไม่ใช่วิธีรับเงิน</text>
+  <text x="50" y="352" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">• ธนาคารรายงานยอดเงินเข้าให้กรมสรรพากร</text>
+  <text x="400" y="390" font-family="system-ui, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">รายได้จากทุกช่องทางรวมกัน: โอนธนาคาร, Cash, PromptPay, ต่างประเทศ</text>
+</svg>

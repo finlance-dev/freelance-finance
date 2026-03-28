@@ -1,0 +1,49 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="38" font-family="system-ui, sans-serif" font-size="20" fill="#60a5fa" font-weight="700" text-anchor="middle">LinkedIn Profile Checklist สำหรับฟรีแลนซ์ไทย</text>
+  <rect x="20" y="55" width="370" height="320" rx="10" fill="#1e293b"/>
+  <text x="205" y="85" font-family="system-ui, sans-serif" font-size="16" fill="#60a5fa" font-weight="700" text-anchor="middle">Profile พื้นฐาน (ต้องมี)</text>
+  <rect x="35" y="97" width="340" height="38" rx="6" fill="#0f172a"/>
+  <text x="55" y="115" font-family="system-ui, sans-serif" font-size="13" fill="#34d399">✓</text>
+  <text x="75" y="115" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">รูปโปรไฟล์มืออาชีพ (พื้นหลังสว่าง)</text>
+  <text x="75" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">หน้าตรง แต่งกายสุภาพ ไม่ใช่รูปเซลฟี่</text>
+  <rect x="35" y="140" width="340" height="38" rx="6" fill="#1a1a2e"/>
+  <text x="55" y="158" font-family="system-ui, sans-serif" font-size="13" fill="#34d399">✓</text>
+  <text x="75" y="158" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Headline ที่บอก Value ชัดเจน</text>
+  <text x="75" y="173" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">เช่น "UX Designer helping SaaS increase conversions"</text>
+  <rect x="35" y="183" width="340" height="38" rx="6" fill="#0f172a"/>
+  <text x="55" y="201" font-family="system-ui, sans-serif" font-size="13" fill="#34d399">✓</text>
+  <text x="75" y="201" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">About Section ที่เล่า Story</text>
+  <text x="75" y="216" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">ปัญหาที่แก้ได้ + ผลลัพธ์ที่เคยทำ + CTA</text>
+  <rect x="35" y="226" width="340" height="38" rx="6" fill="#1a1a2e"/>
+  <text x="55" y="244" font-family="system-ui, sans-serif" font-size="13" fill="#34d399">✓</text>
+  <text x="75" y="244" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Custom URL (linkedin.com/in/ชื่อของคุณ)</text>
+  <text x="75" y="259" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">ดู Professional กว่า URL อัตโนมัติมาก</text>
+  <rect x="35" y="269" width="340" height="38" rx="6" fill="#0f172a"/>
+  <text x="55" y="287" font-family="system-ui, sans-serif" font-size="13" fill="#34d399">✓</text>
+  <text x="75" y="287" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ประสบการณ์พร้อม Metrics ชัดเจน</text>
+  <text x="75" y="302" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">เช่น "เพิ่ม Conversion Rate 40% ใน 3 เดือน"</text>
+  <rect x="35" y="312" width="340" height="38" rx="6" fill="#1a1a2e"/>
+  <text x="55" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#f59e0b">★</text>
+  <text x="75" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Featured Section — Portfolio ที่ดีที่สุด</text>
+  <text x="75" y="345" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">3-5 ผลงาน Case Study รูปภาพหรือลิงก์</text>
+  <rect x="410" y="55" width="370" height="320" rx="10" fill="#1e293b"/>
+  <text x="595" y="85" font-family="system-ui, sans-serif" font-size="16" fill="#f59e0b" font-weight="700" text-anchor="middle">Content Strategy (หาลูกค้า)</text>
+  <rect x="425" y="97" width="340" height="55" rx="6" fill="#1a2744"/>
+  <text x="445" y="117" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" font-weight="600">Post สม่ำเสมอ 2-3 ครั้ง/สัปดาห์</text>
+  <text x="445" y="137" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Insights จากงาน, เรื่องราวจากลูกค้า,</text>
+  <text x="445" y="152" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Tip ที่เป็นประโยชน์ในอุตสาหกรรม</text>
+  <rect x="425" y="158" width="340" height="55" rx="6" fill="#0f172a"/>
+  <text x="445" y="178" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" font-weight="600">Comment อย่างมีคุณค่า</text>
+  <text x="445" y="198" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">ไม่ใช่แค่ "Great post!" แต่ Add Value</text>
+  <text x="445" y="213" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">บน Post ของ ICP (Ideal Client Profile)</text>
+  <rect x="425" y="219" width="340" height="55" rx="6" fill="#1a2744"/>
+  <text x="445" y="239" font-family="system-ui, sans-serif" font-size="14" fill="#60a5fa" font-weight="600">DM Strategy ที่ไม่ Spammy</text>
+  <text x="445" y="259" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Engage ก่อน 2-3 ครั้ง แล้วค่อย DM</text>
+  <text x="445" y="274" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">เริ่มด้วย Give Value ไม่ใช่ Ask for Job</text>
+  <rect x="425" y="280" width="340" height="80" rx="6" fill="#14532d"/>
+  <text x="595" y="308" font-family="system-ui, sans-serif" font-size="15" fill="#34d399" text-anchor="middle" font-weight="700">เป้าหมาย 90 วัน</text>
+  <text x="595" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#34d399" text-anchor="middle">500+ connections ใน niche ที่ต้องการ</text>
+  <text x="595" y="348" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Inbound inquiry อย่างน้อย 2-3 ราย/เดือน</text>
+  <text x="400" y="390" font-family="system-ui, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">LinkedIn Algorithm ชอบ: Post บ่อย + Engage กับ Comment + DM ที่ Personalized</text>
+</svg>

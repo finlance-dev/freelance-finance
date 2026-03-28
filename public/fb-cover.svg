@@ -1,0 +1,20 @@
+<svg width="1640" height="624" viewBox="0 0 1640 624" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1640" height="624" fill="#0f172a"/>
+  <rect x="0" y="0" width="1640" height="4" fill="#a78bfa"/>
+  <circle cx="820" cy="312" r="500" fill="#a78bfa" opacity="0.03"/>
+  <circle cx="300" cy="200" r="150" fill="#1e293b" opacity="0.5"/>
+  <circle cx="1340" cy="400" r="120" fill="#1e293b" opacity="0.5"/>
+  <circle cx="1100" cy="150" r="80" fill="#1e293b" opacity="0.3"/>
+  <rect x="120" y="160" width="280" height="80" rx="12" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5" opacity="0.8"/>
+  <text x="260" y="210" font-family="system-ui, sans-serif" font-size="22" fill="#a78bfa" text-anchor="middle" font-weight="600">ติดตามรายได้</text>
+  <rect x="440" y="100" width="280" height="80" rx="12" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5" opacity="0.8"/>
+  <text x="580" y="150" font-family="system-ui, sans-serif" font-size="22" fill="#60a5fa" text-anchor="middle" font-weight="600">ประมาณภาษี</text>
+  <rect x="760" y="140" width="280" height="80" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="1.5" opacity="0.8"/>
+  <text x="900" y="190" font-family="system-ui, sans-serif" font-size="22" fill="#34d399" text-anchor="middle" font-weight="600">วางแผนการเงิน</text>
+  <rect x="1080" y="90" width="280" height="80" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"/>
+  <text x="1220" y="140" font-family="system-ui, sans-serif" font-size="22" fill="#f59e0b" text-anchor="middle" font-weight="600">สร้างกระแสเงินสด</text>
+  <text x="820" y="350" font-family="system-ui, sans-serif" font-size="72" fill="#f8fafc" text-anchor="middle" font-weight="800">ผู้ช่วยการเงินอัจฉริยะ</text>
+  <text x="820" y="430" font-family="system-ui, sans-serif" font-size="56" fill="#a78bfa" text-anchor="middle" font-weight="700">สำหรับฟรีแลนซ์ไทย</text>
+  <text x="820" y="510" font-family="system-ui, sans-serif" font-size="24" fill="#64748b" text-anchor="middle">finlance.co — เริ่มใช้ฟรี ไม่ต้องใช้บัตรเครดิต</text>
+  <rect x="0" y="620" width="1640" height="4" fill="#a78bfa"/>
+</svg>

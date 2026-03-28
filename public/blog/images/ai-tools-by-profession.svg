@@ -1,0 +1,37 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0f172a"/>
+  <text x="400" y="38" font-family="system-ui, sans-serif" font-size="20" fill="#a78bfa" font-weight="700" text-anchor="middle">AI Tools แนะนำตามอาชีพฟรีแลนซ์</text>
+  <rect x="20" y="55" width="370" height="150" rx="10" fill="#1e293b"/>
+  <text x="205" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#60a5fa" font-weight="600" text-anchor="middle">นักเขียน / Content Creator</text>
+  <rect x="35" y="92" width="340" height="35" rx="6" fill="#0f172a"/>
+  <text x="55" y="115" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">ChatGPT / Claude — ช่วย Draft &amp; Edit</text>
+  <rect x="35" y="133" width="340" height="35" rx="6" fill="#1a1a2e"/>
+  <text x="55" y="156" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Grammarly — ตรวจคุณภาพภาษา</text>
+  <rect x="35" y="173" width="340" height="25" rx="6" fill="#0f172a"/>
+  <text x="55" y="191" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Jasper — สร้าง SEO Content อัตโนมัติ</text>
+  <rect x="410" y="55" width="370" height="150" rx="10" fill="#1e293b"/>
+  <text x="595" y="82" font-family="system-ui, sans-serif" font-size="15" fill="#f59e0b" font-weight="600" text-anchor="middle">นักออกแบบ / Designer</text>
+  <rect x="425" y="92" width="340" height="35" rx="6" fill="#0f172a"/>
+  <text x="445" y="115" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Midjourney / DALL-E — สร้าง Visual Concept</text>
+  <rect x="425" y="133" width="340" height="35" rx="6" fill="#1a1a2e"/>
+  <text x="445" y="156" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Adobe Firefly — Generative Fill ใน Photoshop</text>
+  <rect x="425" y="173" width="340" height="25" rx="6" fill="#0f172a"/>
+  <text x="445" y="191" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Canva AI — ออกแบบอัตโนมัติ</text>
+  <rect x="20" y="220" width="370" height="150" rx="10" fill="#1e293b"/>
+  <text x="205" y="247" font-family="system-ui, sans-serif" font-size="15" fill="#34d399" font-weight="600" text-anchor="middle">นักพัฒนา / Developer</text>
+  <rect x="35" y="257" width="340" height="35" rx="6" fill="#0f172a"/>
+  <text x="55" y="280" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">GitHub Copilot — เขียนโค้ดอัตโนมัติ</text>
+  <rect x="35" y="298" width="340" height="35" rx="6" fill="#1a1a2e"/>
+  <text x="55" y="321" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Cursor — AI Code Editor</text>
+  <rect x="35" y="338" width="340" height="25" rx="6" fill="#0f172a"/>
+  <text x="55" y="356" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">v0.dev — สร้าง UI จาก Prompt</text>
+  <rect x="410" y="220" width="370" height="150" rx="10" fill="#1e293b"/>
+  <text x="595" y="247" font-family="system-ui, sans-serif" font-size="15" fill="#ef4444" font-weight="600" text-anchor="middle">Marketer / Social Media</text>
+  <rect x="425" y="257" width="340" height="35" rx="6" fill="#0f172a"/>
+  <text x="445" y="280" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">SurferSEO — วิเคราะห์ SEO อัตโนมัติ</text>
+  <rect x="425" y="298" width="340" height="35" rx="6" fill="#1a1a2e"/>
+  <text x="445" y="321" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Copy.ai — เขียน Ad Copy / Caption</text>
+  <rect x="425" y="338" width="340" height="25" rx="6" fill="#0f172a"/>
+  <text x="445" y="356" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">Hootsuite AI — วางแผน Content Calendar</text>
+  <text x="400" y="390" font-family="system-ui, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">ใช้ AI เป็น Assistant ไม่ใช่ Replacement — คุณคือ Director, AI คือ Executor</text>
+</svg>
