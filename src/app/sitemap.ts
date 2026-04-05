@@ -2,6 +2,16 @@ import type { MetadataRoute } from "next";
 import { posts } from "./blog/[slug]/posts";
 
 const blogSlugs = [
+  "freelance-efiling-step-by-step",
+  "freelance-e-tax-invoice-2026",
+  "freelance-tax-appeal-guide",
+  "freelance-tax-penalty-guide",
+  "freelance-back-tax-penalty",
+  "freelance-married-couple-tax",
+  "freelance-online-selling-tax",
+  "freelance-diy-vs-hire-accountant",
+  "freelance-receipt-vs-tax-invoice",
+  "freelance-tax-audit-preparation",
   "freelance-stock-investment-guide",
   "freelance-life-insurance-savings",
   "freelance-refinance-guide",
